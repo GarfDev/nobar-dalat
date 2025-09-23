@@ -1,11 +1,12 @@
-import { AnimatePresence } from "framer-motion";
+import cn from 'classnames';
+import { AnimatePresence } from 'framer-motion';
 
 export function Branding() {
-    return (
-        <section className="w-[100vw] h-[100px]">
-            <AnimatePresence>
-                
-            </AnimatePresence>
-        </section>
-    )
+  return (
+    <AnimatePresence>
+      <section className={cn('relative w-[100vw] h-[100vh] overflow-hidden')}>
+
+      </section>
+    </AnimatePresence>
+  );
 }

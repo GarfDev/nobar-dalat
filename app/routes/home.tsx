@@ -1,10 +1,12 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+
+// Import internal modules
+import { Welcome } from "../../modules/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Nobar - there nothing inside nothing" },
+    { name: "description", content: "from da lat" },
   ];
 }
 
