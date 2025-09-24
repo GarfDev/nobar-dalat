@@ -20,7 +20,7 @@ export function Concept() {
               restDelta: 0.001,
             },
           }}
-          className="absolute top-[-100px] left-[-50px] rotate-3 w-[120vw] h-[400px] bg-white z-10"
+          className="absolute top-[-100px] overflow-x-hidden left-[-50px] rotate-3 w-[120vw] h-[400px] bg-white z-10"
         />
         <motion.div
           initial={{ opacity: 0 }}
