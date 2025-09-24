@@ -1,1 +1,1 @@
-export const BASE_DELAY = 1.5;
+export const BASE_DELAY = 0.05;
