@@ -1,16 +1,23 @@
 import cn from "classnames";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BASE_DELAY } from "../constants";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export function Branding() {
   const ref = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  }, []);
 
   return (
     <section
@@ -27,9 +34,10 @@ export function Branding() {
             duration: 0.5,
           },
         }}
-        className="absolute top-0 left-0 w-full h-full bg-black"
+        className="absolute top-0 left-0 w-full h-full"
       >
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
