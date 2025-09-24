@@ -17,7 +17,7 @@ export function Branding() {
       ref={ref}
       className={cn("relative w-[100vw] bg-white h-[100vh] overflow-hidden")}
     >
-      <motion.video
+      <motion.div
         initial={{ opacity: 0, filter: "blur(10px)" }}
         animate={{
           opacity: 1,
@@ -27,14 +27,18 @@ export function Branding() {
             duration: 0.5,
           },
         }}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full bg-black"
       >
-        <source src="/videos/branding-video.mp4" type="video/mp4" />
-      </motion.video>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/videos/branding-video.mp4" type="video/mp4" />
+        </video>
+      </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
