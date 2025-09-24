@@ -21,6 +21,7 @@ export function Branding() {
           autoPlay
           loop
           muted
+          playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source src="/videos/branding-video.mp4" type="video/mp4" />
@@ -74,7 +75,7 @@ export function Branding() {
               restDelta: 0.001,
             },
           }}
-          className="absolute bottom-[-120px] left-[-20px] rotate-3 w-[120vw] h-[200px] bg-primary-500 z-10"
+          className="absolute bottom-[-120px] left-[-20px] rotate-3 w-[120vw] h-[200px] bg-white z-10"
         />
       </section>
     </AnimatePresence>
