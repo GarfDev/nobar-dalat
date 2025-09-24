@@ -31,18 +31,19 @@ export function Branding() {
           filter: "blur(0px)",
           transition: {
             delay: BASE_DELAY,
-            duration: 0.5,
+            duration: 0.8,
+            ease: "easeInOut",
           },
         }}
         className="absolute top-0 left-0 w-full h-full"
       >
         <video
           ref={videoRef}
+          playsInline
           autoPlay
           muted
           loop
           preload="auto"
-          playsInline
           className="w-full h-full object-cover"
         >
           <source src="/videos/branding-video.mp4" type="video/mp4" />
