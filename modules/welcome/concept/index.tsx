@@ -20,12 +20,8 @@ export function Concept() {
           }}
           className="absolute top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-start justify-center text-primary-500"
         >
-          <h1 className="text-5xl text-white font-light">TRONG</h1>
-          <h1 className="text-6xl text-white font-light">CÁI</h1>
-          <h1 className="text-9xl text-white font-light">O</h1>
-          <h1 className="text-6xl text-white font-light">KHÔNG</h1>
-          <h1 className="text-6xl text-white font-light">CÓ</h1>
-          <h1 className="text-6xl text-white font-light">GÌ</h1>
+          <h1 className="text-5xl text-white font-light">TRONG CÁI O</h1>
+          <h1 className="text-5xl text-white font-light">CÓ GÌ KHÔNG?</h1>
         </motion.div>
       </AnimatePresence>
     </section>

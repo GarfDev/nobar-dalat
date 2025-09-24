@@ -1,44 +1,44 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-  --color-primary-500: #7f3e96;
+  --color-primary-500: #55476a;
 }
 
 @font-face {
-  font-family: 'Biko';
+  font-family: "Biko";
   src:
-    url('/fonts/biko/BikoRegular.woff2') format('woff2'),
-    url('/fonts/biko/BikoRegular.woff') format('woff');
+    url("/fonts/biko/BikoRegular.woff2") format("woff2"),
+    url("/fonts/biko/BikoRegular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Biko';
+  font-family: "Biko";
   src:
-    url('/fonts/biko/BikoLight.woff2') format('woff2'),
-    url('/fonts/biko/BikoLight.woff') format('woff');
+    url("/fonts/biko/BikoLight.woff2") format("woff2"),
+    url("/fonts/biko/BikoLight.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Biko';
+  font-family: "Biko";
   src:
-    url('/fonts/biko/BikoBlack.woff2') format('woff2'),
-    url('/fonts/biko/BikoBlack.woff') format('woff');
+    url("/fonts/biko/BikoBlack.woff2") format("woff2"),
+    url("/fonts/biko/BikoBlack.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Biko';
+  font-family: "Biko";
   src:
-    url('/fonts/biko/BikoBold.woff2') format('woff2'),
-    url('/fonts/biko/BikoBold.woff') format('woff');
+    url("/fonts/biko/BikoBold.woff2") format("woff2"),
+    url("/fonts/biko/BikoBold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -46,7 +46,7 @@
 
 html,
 body {
-  font-family: 'Biko';
+  font-family: "Biko";
 
   @apply bg-white dark:bg-gray-950;
 

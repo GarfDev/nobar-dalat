@@ -28,13 +28,6 @@ export function Branding() {
             alt="Nobar Lo"
             className="h-[290px]"
           />
-
-          {/* <h1 className="text-5xl font-light">TRONG</h1>
-          <h1 className="text-6xl font-light">CÁI</h1>
-          <h1 className="text-9xl font-light">O</h1>
-          <h1 className="text-6xl font-light">KHÔNG</h1>
-          <h1 className="text-6xl font-light">CÓ</h1>
-          <h1 className="text-6xl font-light">GÌ</h1> */}
         </motion.div>
         {/** END MAIN LOGO TEXT */}
 
