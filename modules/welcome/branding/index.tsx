@@ -1,8 +1,7 @@
 import cn from "classnames";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-
-const BASE_DELAY = 1.5;
+import { BASE_DELAY } from "../constants";
 
 export function Branding() {
   return (
@@ -12,7 +11,7 @@ export function Branding() {
       >
         <motion.video
           initial={{ opacity: 0 }}
-          whileInView={{
+          animate={{
             opacity: 1,
             transition: {
               delay: BASE_DELAY,
@@ -28,7 +27,7 @@ export function Branding() {
         </motion.video>
         <motion.div
           initial={{ opacity: 0, transform: "blur(10px)" }}
-          whileInView={{
+          animate={{
             opacity: 0.6,
             transform: "none",
             transition: {
@@ -40,7 +39,7 @@ export function Branding() {
         {/** MAIN LOGO TEXT */}
         <motion.div
           initial={{ opacity: 0, y: -40 }}
-          whileInView={{
+          animate={{
             opacity: 1,
             y: 0,
             transition: {
@@ -60,23 +59,6 @@ export function Branding() {
           />
         </motion.div>
         {/** END MAIN LOGO TEXT */}
-
-        {/** End section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{
-            opacity: 1,
-            transition: {
-              delay: BASE_DELAY * 2,
-              type: "spring",
-              duration: 0.5,
-              damping: 10,
-              stiffness: 100,
-              restDelta: 0.001,
-            },
-          }}
-          className="absolute bottom-[-120px] left-[-20px] rotate-3 w-[120vw] h-[200px] bg-white z-10"
-        />
       </section>
     </AnimatePresence>
   );
