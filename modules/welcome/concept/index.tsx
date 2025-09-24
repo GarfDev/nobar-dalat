@@ -12,7 +12,7 @@ export function Concept() {
           animate={{
             opacity: 1,
             transition: {
-              delay: BASE_DELAY * 2,
+              delay: BASE_DELAY,
               type: "spring",
               duration: 0.5,
               damping: 10,
