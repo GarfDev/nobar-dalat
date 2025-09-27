@@ -8,10 +8,12 @@ export function Concept() {
   return (
     <section
       id="concept"
-      className="h-[100vh] w-[100vw] bg-primary-500 flex flex-col items-center justify-center drop-shadow-3xl drop-shadow-[--primary-500]"
+      className="h-[100vh] w-[100vw] bg-black flex flex-col items-center justify-center shadow-2xl drop-shadow-2xl shadow-xl/30"
     >
       <motion.div>
-        <AnimatePresence></AnimatePresence>
+        <AnimatePresence>
+          <p className="text-white text-2xl">CON CHÓ DŨNG NÓI NHIỀU</p>
+        </AnimatePresence>
       </motion.div>
     </section>
   );
