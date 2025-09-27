@@ -2,6 +2,7 @@ import cn from "classnames";
 import { motion } from "framer-motion";
 import { BASE_DELAY } from "../constants";
 import { useEffect, useRef } from "react";
+import { LanguageSwitcher } from "./components/language-switcher";
 
 export const LOGO_DELAY = 0.5;
 
@@ -61,11 +62,10 @@ export function Branding() {
       />
       {/** MAIN LOGO TEXT */}
       <motion.div
-        initial={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
         animate={{
-          opacity: 0,
+          opacity: 1,
           transition: {
-            delay: LOGO_DELAY,
             duration: 1,
           },
         }}
@@ -80,7 +80,7 @@ export function Branding() {
       {/** END MAIN LOGO TEXT */}
 
       {/** SEC LOGO TEXT */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
@@ -96,8 +96,13 @@ export function Branding() {
           alt="nobar-dalat-logo"
           className="h-[170px]"
         />
-      </motion.div>
+      </motion.div> */}
       {/** END SEC LOGO TEXT */}
+
+      {/** FLOATING COMPONENTS */}
+      <div className="absolute top-5 right-5 z-10">
+        <LanguageSwitcher />
+      </div>
     </section>
   );
 }
