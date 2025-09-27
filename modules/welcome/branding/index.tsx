@@ -2,6 +2,7 @@ import cn from "classnames";
 import { motion } from "framer-motion";
 import { BASE_DELAY } from "../constants";
 import { useEffect, useRef } from "react";
+import { Link } from "react-scroll";
 import { LanguageSwitcher } from "./components/language-switcher";
 
 export const LOGO_DELAY = 0.5;
@@ -100,6 +101,7 @@ export function Branding() {
       {/** END SEC LOGO TEXT */}
 
       {/** FLOATING COMPONENTS */}
+
       <motion.div
         initial={{ transform: "translateX(100px)" }}
         animate={{
@@ -111,7 +113,25 @@ export function Branding() {
         }}
         className="absolute top-5 right-5 z-10"
       >
-        <LanguageSwitcher />
+        <Link to="concept" smooth duration={500}>
+          <LanguageSwitcher />
+        </Link>
+      </motion.div>
+
+      <motion.div
+        initial={{ transform: "translateX(-150px)" }}
+        animate={{
+          transform: "translateY(0px)",
+          transition: {
+            delay: LOGO_DELAY,
+            duration: 0.3,
+          },
+        }}
+        className="absolute top-5 left-5 z-10"
+      >
+        <Link to="concept" smooth duration={500}>
+          <h3 className="text-2xl">CONCEPT</h3>
+        </Link>
       </motion.div>
     </section>
   );
