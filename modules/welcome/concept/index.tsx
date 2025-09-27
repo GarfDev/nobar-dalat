@@ -8,7 +8,7 @@ export function Concept() {
   return (
     <section
       id="concept"
-      className="h-[100vh] w-[100vw] bg-black flex flex-col items-center justify-center shadow-2xl drop-shadow-2xl shadow-xl/30"
+      className="h-[100vh] w-[100vw] bg-black flex flex-col items-center justify-center shadow-[0_-25px_50px_-12px_rgb(0,0,0,0.25)]"
     >
       <motion.div>
         <AnimatePresence>

@@ -5,41 +5,101 @@
 }
 
 @font-face {
-  font-family: "Biko";
+  font-family: "BT Beau Sans";
   src:
-    url("/fonts/biko/BikoRegular.woff2") format("woff2"),
-    url("/fonts/biko/BikoRegular.woff") format("woff");
+    url("/fonts/beau-san/BT-BeauSans-BoldItalic.woff2") format("woff2"),
+    url("/fonts/beau-san/BT-BeauSans-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BT Beau Sans";
+  src:
+    url("/fonts/beau-san/BT-BeauSans-Bold.woff2") format("woff2"),
+    url("/fonts/beau-san/BT-BeauSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BT Beau Sans Extra";
+  src:
+    url("/fonts/beau-san/BT-BeauSans-ExtraBoldItalic.woff2") format("woff2"),
+    url("/fonts/beau-san/BT-BeauSans-ExtraBoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BT Beau Sans";
+  src:
+    url("/fonts/beau-san/BT-BeauSans-ExtraBold.woff2") format("woff2"),
+    url("/fonts/beau-san/BT-BeauSans-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BT Beau Sans";
+  src:
+    url("/fonts/beau-san/BT-BeauSans-LightItalic.woff2") format("woff2"),
+    url("/fonts/beau-san/BT-BeauSans-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BT Beau Sans";
+  src:
+    url("/fonts/beau-san/BT-BeauSans-Italic.woff2") format("woff2"),
+    url("/fonts/beau-san/BT-BeauSans-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BT Beau Sans";
+  src:
+    url("/fonts/beau-san/BT-BeauSans-Medium.woff2") format("woff2"),
+    url("/fonts/beau-san/BT-BeauSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BT Beau Sans";
+  src:
+    url("/fonts/beau-san/BT-BeauSans-MediumItalic.woff2") format("woff2"),
+    url("/fonts/beau-san/BT-BeauSans-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BT Beau Sans";
+  src:
+    url("/fonts/beau-san/BT-BeauSans-Regular.woff2") format("woff2"),
+    url("/fonts/beau-san/BT-BeauSans-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Biko";
+  font-family: "BT Beau Sans";
   src:
-    url("/fonts/biko/BikoLight.woff2") format("woff2"),
-    url("/fonts/biko/BikoLight.woff") format("woff");
+    url("/fonts/beau-san/BT-BeauSans-Light.woff2") format("woff2"),
+    url("/fonts/beau-san/BT-BeauSans-Light.woff") format("woff");
   font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Biko";
-  src:
-    url("/fonts/biko/BikoBlack.woff2") format("woff2"),
-    url("/fonts/biko/BikoBlack.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Biko";
-  src:
-    url("/fonts/biko/BikoBold.woff2") format("woff2"),
-    url("/fonts/biko/BikoBold.woff") format("woff");
-  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
