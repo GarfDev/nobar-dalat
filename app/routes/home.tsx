@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 
 // Import internal modules
-import { Welcome } from "../../modules/welcome";
+import { Welcome } from "../modules/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
