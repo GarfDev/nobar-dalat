@@ -1,9 +1,10 @@
-import cn from "classnames";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import { BASE_DELAY } from "../constants";
+import { useTranslation } from "react-i18next";
 
 export function Concept() {
+  const { t } = useTranslation();
+
   return (
     <motion.section className="relative w-[100vw] h-[100vh] bg-white">
       <AnimatePresence>
@@ -22,8 +23,8 @@ export function Concept() {
           }}
           className="absolute top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-start justify-center text-primary-500"
         >
-          <h1 className="text-5xl font-light">TRONG CÁI O</h1>
-          <h1 className="text-5xl font-light">CÓ GÌ KHÔNG?</h1>
+          <h1 className="text-5xl font-light">{t("welcome.title")}</h1>
+          <h1 className="text-5xl font-light">{t("welcome.subtitle")}</h1>
         </motion.div>
       </AnimatePresence>
     </motion.section>
