@@ -100,9 +100,19 @@ export function Branding() {
       {/** END SEC LOGO TEXT */}
 
       {/** FLOATING COMPONENTS */}
-      <div className="absolute top-5 right-5 z-10">
+      <motion.div
+        initial={{ transform: "translateX(100px)" }}
+        animate={{
+          transform: "translateY(0px)",
+          transition: {
+            delay: LOGO_DELAY,
+            duration: 0.3,
+          },
+        }}
+        className="absolute top-5 right-5 z-10"
+      >
         <LanguageSwitcher />
-      </div>
+      </motion.div>
     </section>
   );
 }

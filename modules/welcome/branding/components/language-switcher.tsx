@@ -18,17 +18,17 @@ export function LanguageSwitcher() {
       <h5
         onClick={handleLanguageChange.bind(null, LANGUAGES.EN)}
         className={cn(
-          "text-white text-2xl cursor-pointer",
+          "text-white text-2xl cursor-pointer select-none transition-all",
           language === LANGUAGES.EN ? "opacity-100" : "opacity-60",
         )}
       >
         EN
       </h5>
-      <h5 className="text-white mx-2 text-2xl opacity-60">/</h5>
+      <h5 className="text-white mx-2 text-2xl opacity-60 select-none">/</h5>
       <h5
         onClick={handleLanguageChange.bind(null, LANGUAGES.VI)}
         className={cn(
-          "text-white text-2xl cursor-pointer",
+          "text-white text-2xl cursor-pointer select-none transition-all",
           language === LANGUAGES.VI ? "opacity-100" : "opacity-60",
         )}
       >
