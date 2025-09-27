@@ -107,6 +107,7 @@
 html,
 body {
   font-family: "Biko";
+  content-visibility: auto;
 
   @apply bg-white dark:bg-gray-950;
 

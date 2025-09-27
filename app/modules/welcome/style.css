@@ -9,3 +9,18 @@
   height: 100vh;
   width: 100%;
 }
+
+.masonry-item {
+  break-inside: avoid;
+  border-radius: 0;
+  margin-bottom: 0;
+  width: 100%;
+  display: block;
+}
+
+.masonry-scroll {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
