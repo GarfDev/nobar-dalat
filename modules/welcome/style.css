@@ -1,0 +1,19 @@
+.card-container {
+  position: relative;
+  height: 200vh;
+}
+
+.card {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.card-front {
+  z-index: 1;
+}
+
+.card-back {
+  z-index: 0;
+}

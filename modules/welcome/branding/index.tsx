@@ -47,7 +47,6 @@ export function Branding() {
           className="w-full h-full object-cover"
         >
           <source src="/videos/branding-video.mp4" type="video/mp4" />
-          <source src="/videos/branding-video.webm" type="video/webm" />
         </video>
       </motion.div>
       <motion.div
