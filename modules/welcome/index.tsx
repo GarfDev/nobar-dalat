@@ -2,19 +2,19 @@ import { Branding } from "./branding";
 import { Concept } from "./concept";
 import "./style.css";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { ReactLenis } from "lenis/react";
 
 export function Welcome() {
-  const containerRef = useRef(null);
-
   return (
-    <div ref={containerRef} className="card-container">
-      <motion.div className="card">
-        <Branding />
-      </motion.div>
-      <div className="card">
-        <Concept />
+    <ReactLenis root>
+      <div className="card-container">
+        <motion.div className="card">
+          <Branding />
+        </motion.div>
+        <div className="card">
+          <Concept />
+        </div>
       </div>
-    </div>
+    </ReactLenis>
   );
 }
