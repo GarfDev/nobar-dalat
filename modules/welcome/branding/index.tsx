@@ -113,9 +113,7 @@ export function Branding() {
         }}
         className="absolute top-5 right-5 z-10"
       >
-        <Link to="concept" smooth duration={500}>
-          <LanguageSwitcher />
-        </Link>
+        <LanguageSwitcher />
       </motion.div>
 
       <motion.div
