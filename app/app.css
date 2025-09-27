@@ -7,8 +7,8 @@
 @font-face {
   font-family: "BT Beau Sans";
   src:
-    url("/fonts/beau-san/BT-BeauSans-BoldItalic.woff2") format("woff2"),
-    url("/fonts/beau-san/BT-BeauSans-BoldItalic.woff") format("woff");
+    url("/fonts/beau-sans/BT-BeauSans-BoldItalic.woff2") format("woff2"),
+    url("/fonts/beau-sans/BT-BeauSans-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -17,8 +17,8 @@
 @font-face {
   font-family: "BT Beau Sans";
   src:
-    url("/fonts/beau-san/BT-BeauSans-Bold.woff2") format("woff2"),
-    url("/fonts/beau-san/BT-BeauSans-Bold.woff") format("woff");
+    url("/fonts/beau-sans/BT-BeauSans-Bold.woff2") format("woff2"),
+    url("/fonts/beau-sans/BT-BeauSans-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -27,8 +27,8 @@
 @font-face {
   font-family: "BT Beau Sans Extra";
   src:
-    url("/fonts/beau-san/BT-BeauSans-ExtraBoldItalic.woff2") format("woff2"),
-    url("/fonts/beau-san/BT-BeauSans-ExtraBoldItalic.woff") format("woff");
+    url("/fonts/beau-sans/BT-BeauSans-ExtraBoldItalic.woff2") format("woff2"),
+    url("/fonts/beau-sans/BT-BeauSans-ExtraBoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -37,8 +37,8 @@
 @font-face {
   font-family: "BT Beau Sans";
   src:
-    url("/fonts/beau-san/BT-BeauSans-ExtraBold.woff2") format("woff2"),
-    url("/fonts/beau-san/BT-BeauSans-ExtraBold.woff") format("woff");
+    url("/fonts/beau-sans/BT-BeauSans-ExtraBold.woff2") format("woff2"),
+    url("/fonts/beau-sans/BT-BeauSans-ExtraBold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -47,8 +47,8 @@
 @font-face {
   font-family: "BT Beau Sans";
   src:
-    url("/fonts/beau-san/BT-BeauSans-LightItalic.woff2") format("woff2"),
-    url("/fonts/beau-san/BT-BeauSans-LightItalic.woff") format("woff");
+    url("/fonts/beau-sans/BT-BeauSans-LightItalic.woff2") format("woff2"),
+    url("/fonts/beau-sans/BT-BeauSans-LightItalic.woff") format("woff");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -57,8 +57,8 @@
 @font-face {
   font-family: "BT Beau Sans";
   src:
-    url("/fonts/beau-san/BT-BeauSans-Italic.woff2") format("woff2"),
-    url("/fonts/beau-san/BT-BeauSans-Italic.woff") format("woff");
+    url("/fonts/beau-sans/BT-BeauSans-Italic.woff2") format("woff2"),
+    url("/fonts/beau-sans/BT-BeauSans-Italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -67,8 +67,8 @@
 @font-face {
   font-family: "BT Beau Sans";
   src:
-    url("/fonts/beau-san/BT-BeauSans-Medium.woff2") format("woff2"),
-    url("/fonts/beau-san/BT-BeauSans-Medium.woff") format("woff");
+    url("/fonts/beau-sans/BT-BeauSans-Medium.woff2") format("woff2"),
+    url("/fonts/beau-sans/BT-BeauSans-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -77,8 +77,8 @@
 @font-face {
   font-family: "BT Beau Sans";
   src:
-    url("/fonts/beau-san/BT-BeauSans-MediumItalic.woff2") format("woff2"),
-    url("/fonts/beau-san/BT-BeauSans-MediumItalic.woff") format("woff");
+    url("/fonts/beau-sans/BT-BeauSans-MediumItalic.woff2") format("woff2"),
+    url("/fonts/beau-sans/BT-BeauSans-MediumItalic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -87,8 +87,8 @@
 @font-face {
   font-family: "BT Beau Sans";
   src:
-    url("/fonts/beau-san/BT-BeauSans-Regular.woff2") format("woff2"),
-    url("/fonts/beau-san/BT-BeauSans-Regular.woff") format("woff");
+    url("/fonts/beau-sans/BT-BeauSans-Regular.woff2") format("woff2"),
+    url("/fonts/beau-sans/BT-BeauSans-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -97,8 +97,8 @@
 @font-face {
   font-family: "BT Beau Sans";
   src:
-    url("/fonts/beau-san/BT-BeauSans-Light.woff2") format("woff2"),
-    url("/fonts/beau-san/BT-BeauSans-Light.woff") format("woff");
+    url("/fonts/beau-sans/BT-BeauSans-Light.woff2") format("woff2"),
+    url("/fonts/beau-sans/BT-BeauSans-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;

@@ -1,5 +1,6 @@
 import cn from "classnames";
-import { useLanguageStore } from "~/store/language";
+import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 enum LANGUAGES {
   EN = "en",
@@ -7,11 +8,25 @@ enum LANGUAGES {
 }
 
 export function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguageStore();
+  const { i18n } = useTranslation();
+  const current = i18n.resolvedLanguage || i18n.language || "en";
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleLanguageChange = (language: LANGUAGES) => {
-    setLanguage(language);
+    void i18n.changeLanguage(language);
+    if (typeof window !== "undefined") {
+      try {
+        window.localStorage.setItem("i18nextLng", language);
+      } catch {}
+    }
   };
+
+  const isENActive = mounted && current === LANGUAGES.EN;
+  const isVIActive = mounted && current === LANGUAGES.VI;
 
   return (
     <div className="flex">
@@ -19,7 +34,7 @@ export function LanguageSwitcher() {
         onClick={handleLanguageChange.bind(null, LANGUAGES.EN)}
         className={cn(
           "text-white text-2xl cursor-pointer select-none transition-all",
-          language === LANGUAGES.EN ? "opacity-100" : "opacity-60",
+          isENActive ? "opacity-100" : "opacity-60",
         )}
       >
         EN
@@ -29,7 +44,7 @@ export function LanguageSwitcher() {
         onClick={handleLanguageChange.bind(null, LANGUAGES.VI)}
         className={cn(
           "text-white text-2xl cursor-pointer select-none transition-all",
-          language === LANGUAGES.VI ? "opacity-100" : "opacity-60",
+          isVIActive ? "opacity-100" : "opacity-60",
         )}
       >
         VI

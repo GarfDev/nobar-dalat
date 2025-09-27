@@ -13,7 +13,12 @@ export function Branding() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play();
+      const playPromise = videoRef.current.play();
+      if (playPromise && typeof playPromise.then === "function") {
+        playPromise.catch(() => {
+          // Autoplay could be blocked; ignore since we show a poster
+        });
+      }
     }
   }, []);
 
@@ -44,8 +49,10 @@ export function Branding() {
           muted
           loop
           preload="auto"
+          poster="/images/nobar-logo-black-white.png"
           className="w-full h-full object-cover"
         >
+          <source src="/videos/branding-video.webm" type="video/webm" />
           <source src="/videos/branding-video.mp4" type="video/mp4" />
         </video>
       </motion.div>
