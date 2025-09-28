@@ -11,7 +11,14 @@ export async function loader() {
       .map((e) => e.name)
       .filter((name) => /\.(jpe?g|png|gif|webp|mp4|webm)$/i.test(name));
 
-    return new Response(JSON.stringify({ files }), {
+    // Randomize order using Fisher-Yates shuffle
+    const shuffled = files.slice();
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return new Response(JSON.stringify({ files: shuffled }), {
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
