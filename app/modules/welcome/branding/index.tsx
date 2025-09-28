@@ -165,7 +165,7 @@ export function Branding() {
         className="absolute bottom-5 left-5 z-10"
       >
         <Link to="menu" smooth duration={500}>
-          <span className="text-2xl">OUR MENU</span>
+          <span className="text-2xl">{t("menu")}</span>
         </Link>
       </motion.div>
 
