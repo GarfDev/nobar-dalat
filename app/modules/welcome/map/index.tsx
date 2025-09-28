@@ -7,9 +7,9 @@ export function Map() {
   return (
     <motion.section
       id="concept"
-      className="h-[100vh] w-[100vw] bg-[#59267bda] flex shadow-[0_-25px_50px_-12px_rgb(0,0,0,0.25)] gap-10"
+      className="h-[100vh] w-[100vw] bg-[#4d2a65cb] flex shadow-[0_-25px_50px_-12px_rgb(0,0,0,0.25)] gap-10"
     >
-      asdfasdf
+      Day la cai map
     </motion.section>
   );
 }

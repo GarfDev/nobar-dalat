@@ -1,5 +1,6 @@
 import { Branding } from "./branding";
 import { Concept } from "./concept";
+import Contact from "./contact";
 import { Map } from "./map";
 import Menu from "./menu";
 import "./style.css";
@@ -21,6 +22,9 @@ export function Welcome() {
         </motion.div>
         <motion.div className="card">
           <Menu />
+        </motion.div>
+        <motion.div className="card">
+          <Contact />
         </motion.div>
       </div>
     </ReactLenis>
