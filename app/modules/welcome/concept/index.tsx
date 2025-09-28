@@ -8,14 +8,14 @@ export function Concept() {
   return (
     <section
       id="concept"
-      className="h-[100vh] w-[100vw] bg-black flex shadow-[0_-25px_50px_-12px_rgb(0,0,0,0.25)] gap-10 p-20"
+      className="h-[100vh] w-[100vw] bg-black flex shadow-[0_-25px_50px_-12px_rgb(0,0,0,0.25)] gap-10"
     >
-      <motion.div className="flex-1 flex flex-col items-center justify-center gap-5">
-        <div className="lg:max-w-[800px] flex flex-col gap-2">
-          <div className="text-6xl font-bold text-center uppercase">
+      <motion.div className="flex-1 flex flex-col items-center justify-center">
+        <div className="max-w-[380px] lg:max-w-[800px] w-full flex flex-col">
+          <div className="text-4xl lg:text-6xl font-light text-center lg:mb-3 uppercase">
             Tính Việt Vẹn Nguyên
           </div>
-          <div className="text-6xl font-bold text-center uppercase mb-5">
+          <div className="text-4xl lg:text-6xl font-light text-center uppercase mb-5">
             Giao Thoa Thời Đại
           </div>
           <motion.div
@@ -26,10 +26,10 @@ export function Concept() {
               animationDelay: 0.5,
             }}
             transition={{ duration: 0.6 }}
-            className="text-2xl font-bold text-white text-center"
+            className="text-md lg:text-2xl font-medium text-white text-center"
           >
             Trên hành trình mang di sản Việt gặp gỡ tinh thần đương đại. Hương
-            vị cũ được tái hiện, kiến tạo nên hình hài của tương lai.
+            vị cũ được tái hiện, trong hình hài của thời đại.
           </motion.div>
         </div>
       </motion.div>
