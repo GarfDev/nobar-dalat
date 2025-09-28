@@ -32,6 +32,7 @@
     "sharp": "^0.34.4",
     "styled-components": "^6.1.19",
     "tailwind-merge": "^3.3.1",
+    "yet-another-react-lightbox": "^3.25.0",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
