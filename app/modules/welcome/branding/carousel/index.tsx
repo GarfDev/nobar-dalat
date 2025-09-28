@@ -159,7 +159,7 @@ const ImageWithPlaceholder = ({
 
   return (
     <div
-      className="masonry-item pointer-events-auto relative cursor-pointer bg-cover bg-center"
+      className="masonry-item pointer-events-auto relative cursor-pointer overflow-hidden bg-cover bg-center"
       style={{
         aspectRatio: width && height ? `${width} / ${height}` : "auto",
         backgroundImage: `url(${placeholder})`,
@@ -169,10 +169,11 @@ const ImageWithPlaceholder = ({
       <img
         src={src}
         alt={alt}
-        className={`transition-opacity duration-500 ease-in-out ${isLoaded ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded ? "opacity-100" : "opacity-0"}`}
         loading="lazy"
         decoding="async"
         onLoad={() => setIsLoaded(true)}
+        data-loaded={isLoaded}
       />
     </div>
   );
