@@ -42,18 +42,22 @@ export function Branding() {
   const [carouselItems, setCarouselItems] = useState<any[]>([]);
   const [index, setIndex] = useState(0);
   const controls = useAnimation();
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-    const handleResize = () => {
+    if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth);
-    };
 
-    window.addEventListener("resize", handleResize);
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   useEffect(() => {
