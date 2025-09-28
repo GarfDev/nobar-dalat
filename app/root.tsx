@@ -9,11 +9,24 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import "./i18n";
+import i18next from "./i18n";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
 ];
+
+function pickClientLanguage() {
+  try {
+    const stored = window.localStorage.getItem("i18nextLng");
+    const nav = navigator.language?.split("-")[0];
+    const candidate = (stored || nav || i18next.language || "en").toLowerCase();
+    const base = candidate.replace("_", "-").split("-")[0];
+    const supported = (i18next.options.supportedLngs || []) as string[];
+    return supported.includes(base) ? base : "en";
+  } catch {
+    return "en";
+  }
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -37,6 +50,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  // Client-only: after hydration, switch to user's preferred language to avoid hydration mismatch.
+  if (typeof window !== "undefined") {
+    // If user is at root ("/"), push them to their language-prefixed path.
+    if (window.location.pathname === "/") {
+      const desired = pickClientLanguage();
+      const target = `/${desired}`;
+      if (window.location.pathname !== target) {
+        window.history.replaceState(null, "", target);
+      }
+      if (i18next.language !== desired) {
+        void i18next.changeLanguage(desired);
+      }
+    } else {
+      // Otherwise just ensure i18n matches the URL-based language set by lang route
+      const seg = window.location.pathname.split("/")[1]?.toLowerCase();
+      if (seg === "en" || seg === "vi") {
+        if (i18next.language !== seg) void i18next.changeLanguage(seg);
+      }
+    }
+  }
+
   return (
     <>
       <Outlet />

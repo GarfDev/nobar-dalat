@@ -5,11 +5,13 @@ import { useRef } from "react";
 import { Link } from "react-scroll";
 import { LanguageSwitcher } from "./components/language-switcher";
 import Carousel from "./carousel";
+import { useTranslation } from "react-i18next";
 
 export const LOGO_DELAY = 0.5;
 
 export function Branding() {
   const ref = useRef(null);
+  const { t } = useTranslation();
 
   return (
     <section
@@ -77,7 +79,7 @@ export function Branding() {
         className="absolute top-5 left-5 z-10"
       >
         <Link to="concept" smooth duration={500}>
-          <h3 className="text-2xl">CONCEPT</h3>
+          <h3 className="text-2xl">{t("concept")}</h3>
         </Link>
       </motion.div>
 
