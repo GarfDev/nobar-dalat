@@ -35,11 +35,18 @@ function useAutoTranslate(
   containerRef: { current: HTMLElement | null },
   contentRef: { current: HTMLElement | null },
   speedPxPerSec: number,
+  enabled: boolean,
 ) {
   const offsetRef = useRef(0);
   const lastFrameTimeRef = useRef(performance.now());
 
   useEffect(() => {
+    if (!enabled) {
+      if (contentRef.current) {
+        contentRef.current.style.transform = "translateY(0px)";
+      }
+      return;
+    }
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -70,7 +77,7 @@ function useAutoTranslate(
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [containerRef, contentRef, speedPxPerSec]);
+  }, [containerRef, contentRef, speedPxPerSec, enabled]);
 }
 
 const Carousel = ({
@@ -85,10 +92,11 @@ const Carousel = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const columnCount = useColumnCount();
+  const isMobile = columnCount === 1;
 
   const allItems = [...items];
 
-  useAutoTranslate(containerRef, contentRef, 14);
+  useAutoTranslate(containerRef, contentRef, 14, !isMobile);
 
   return (
     <div className="absolute inset-0 overflow-hidden">
