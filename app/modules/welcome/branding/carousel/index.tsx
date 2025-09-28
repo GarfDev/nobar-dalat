@@ -97,7 +97,7 @@ const Carousel = ({
 
   const allItems = [...items];
 
-  useAutoTranslate(containerRef, contentRef, 14, !isMobile);
+  useAutoTranslate(containerRef, contentRef, 14, true);
 
   useEffect(() => {
     const container = containerRef.current;
