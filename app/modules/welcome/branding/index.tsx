@@ -4,7 +4,6 @@ import { BASE_DELAY } from "../constants";
 import { useRef } from "react";
 import { Link } from "react-scroll";
 import { LanguageSwitcher } from "./components/language-switcher";
-import { BackgroundVideo } from "./components/background-video";
 import Carousel from "./carousel";
 
 export const LOGO_DELAY = 0.5;
@@ -19,14 +18,8 @@ export function Branding() {
         "relative w-[100vw] bg-white h-[calc(100vh+1px)] overflow-hidden",
       )}
     >
-      {/* Mobile: video background */}
-      <div className="md:hidden">
-        <BackgroundVideo />
-      </div>
-      {/* Tablet/Desktop: carousel background */}
-      <div className="hidden md:block">
-        <Carousel />
-      </div>
+      {/* Carousel background for all breakpoints */}
+      <Carousel />
 
       <motion.div
         initial={{ opacity: 0 }}
