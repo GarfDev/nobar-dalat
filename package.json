@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
-    "dev": "react-router dev",
+    "build": "tsx ./scripts/prebuild-carousel.ts && react-router build",
+    "dev": "tsx ./scripts/prebuild-carousel.ts && react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
   },
@@ -41,6 +41,8 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "tailwindcss": "^4.1.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
     "vite-tsconfig-paths": "^5.1.4"

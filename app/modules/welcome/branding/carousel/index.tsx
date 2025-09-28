@@ -32,61 +32,45 @@ function useColumnCount() {
 function useAutoTranslate(
   containerRef: { current: HTMLElement | null },
   contentRef: { current: HTMLElement | null },
-  speedPxPerSec = 12,
+  speedPxPerSec: number,
 ) {
-  const rafId = useRef<number | null>(null);
-  const lastTimeRef = useRef<number>(0);
-  const offsetRef = useRef<number>(0);
+  const offsetRef = useRef(0);
+  const lastFrameTimeRef = useRef(performance.now());
 
   useEffect(() => {
-    const container = containerRef.current;
-    const content = contentRef.current;
-    if (!container || !content) return;
-
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
     if (reduceMotion) return;
 
-    lastTimeRef.current = performance.now();
-
-    const step = (now: number) => {
-      if (!containerRef.current || !contentRef.current) return;
-      const dt = Math.min(now - lastTimeRef.current, 100); // clamp
-      lastTimeRef.current = now;
-      const inc = (speedPxPerSec * dt) / 1000;
-      offsetRef.current += inc;
-      const maxOffset = Math.max(
-        contentRef.current.scrollHeight - containerRef.current.clientHeight,
-        0,
-      );
-      if (offsetRef.current >= maxOffset - 1) {
-        offsetRef.current = 0;
+    let animationFrameId: number;
+    const animate = (now: number) => {
+      if (!containerRef.current || !contentRef.current) {
+        animationFrameId = requestAnimationFrame(animate);
+        return;
       }
-      contentRef.current.style.transform = `translate3d(0, -${offsetRef.current}px, 0)`;
-      rafId.current = requestAnimationFrame(step);
+
+      const deltaMs = now - lastFrameTimeRef.current;
+      lastFrameTimeRef.current = now;
+
+      const deltaPx = (deltaMs / 1000) * speedPxPerSec;
+      offsetRef.current += deltaPx;
+
+      const singleContentHeight = contentRef.current.scrollHeight / 2;
+
+      if (singleContentHeight > 0) {
+        const transformOffset = offsetRef.current % singleContentHeight;
+        contentRef.current.style.transform = `translateY(-${transformOffset}px)`;
+      } else {
+        contentRef.current.style.transform = `translateY(0px)`;
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    rafId.current = requestAnimationFrame(step);
-    return () => {
-      if (rafId.current) cancelAnimationFrame(rafId.current);
-      if (contentRef.current) contentRef.current.style.transform = "";
-      offsetRef.current = 0;
-    };
+    animationFrameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrameId);
   }, [containerRef, contentRef, speedPxPerSec]);
-
-  useEffect(() => {
-    const onResize = () => {
-      if (!containerRef.current || !contentRef.current) return;
-      const maxOffset = Math.max(
-        contentRef.current.scrollHeight - containerRef.current.clientHeight,
-        0,
-      );
-      if (offsetRef.current > maxOffset) offsetRef.current = 0;
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [containerRef, contentRef]);
 }
 
 const Carousel = () => {
@@ -112,7 +96,7 @@ const Carousel = () => {
     };
   }, []);
 
-  const allItems = items;
+  const allItems = [...items];
 
   useAutoTranslate(containerRef, contentRef, 14);
 
@@ -131,7 +115,10 @@ const Carousel = () => {
                   key={`${item.src}-${idx}`}
                   src={item.src}
                   placeholder={item.placeholder}
-                  alt={item.alt || "A photo from the Nobar Đà Lạt restaurant and bar"}
+                  alt={
+                    item.alt ||
+                    "A photo from the Nobar Đà Lạt restaurant and bar"
+                  }
                   width={item.width}
                   height={item.height}
                 />
