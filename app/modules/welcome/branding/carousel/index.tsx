@@ -102,9 +102,9 @@ const Carousel = ({
     const container = containerRef.current;
     if (container) {
       if (isMobile) {
-        container.style.overflow = "hidden";
+        container.style.userSelect = "none";
       } else {
-        container.style.overflow = "auto";
+        container.style.userSelect = "auto";
       }
     }
   }, [isMobile]);
