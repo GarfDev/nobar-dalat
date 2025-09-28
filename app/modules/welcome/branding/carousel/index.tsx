@@ -85,10 +85,12 @@ const Carousel = ({
   items,
   setOpen,
   setIndex,
+  isLogoClicked,
 }: {
   items: MediaItem[];
   setOpen: (open: boolean) => void;
   setIndex: (index: number) => void;
+  isLogoClicked: boolean;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -116,7 +118,12 @@ const Carousel = ({
         "pointer-events-none": isMobile,
       })}
     >
-      <div ref={containerRef} className="masonry-scroll">
+      <div
+        ref={containerRef}
+        className={cn("masonry-scroll", {
+          "pointer-events-none": !isLogoClicked,
+        })}
+      >
         <div
           ref={contentRef}
           style={{ columnCount: columnCount, columnGap: 0 }}

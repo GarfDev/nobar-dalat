@@ -89,7 +89,12 @@ export function Branding() {
       )}
     >
       {/* Carousel background for all breakpoints */}
-      <Carousel items={carouselItems} setOpen={setOpen} setIndex={setIndex} />
+      <Carousel
+        items={carouselItems}
+        setOpen={setOpen}
+        setIndex={setIndex}
+        isLogoClicked={isLogoClicked}
+      />
 
       <motion.div
         initial={{ opacity: 0 }}
