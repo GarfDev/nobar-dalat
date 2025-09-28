@@ -117,6 +117,7 @@ const Carousel = ({
                   width={item.width}
                   height={item.height}
                   onClick={handleItemClick}
+                  loading={idx < columnCount * 2 ? "eager" : "lazy"}
                 />
               );
             }
@@ -147,6 +148,7 @@ const ImageWithPlaceholder = ({
   width,
   height,
   onClick,
+  loading,
 }: {
   src: string;
   placeholder?: string;
@@ -154,6 +156,7 @@ const ImageWithPlaceholder = ({
   width?: number;
   height?: number;
   onClick: () => void;
+  loading?: "eager" | "lazy";
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -170,7 +173,7 @@ const ImageWithPlaceholder = ({
         src={src}
         alt={alt}
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        loading="lazy"
+        loading={loading || "lazy"}
         decoding="async"
         onLoad={() => setIsLoaded(true)}
         data-loaded={isLoaded}
