@@ -1,5 +1,7 @@
 import { Branding } from "./branding";
 import { Concept } from "./concept";
+import { Map } from "./map";
+import Menu from "./menu";
 import "./style.css";
 import { motion } from "framer-motion";
 import { ReactLenis } from "lenis/react";
@@ -11,9 +13,15 @@ export function Welcome() {
         <motion.div className="card">
           <Branding />
         </motion.div>
-        <div className="card">
+        <motion.div className="card">
           <Concept />
-        </div>
+        </motion.div>
+        <motion.div className="card">
+          <Map />
+        </motion.div>
+        <motion.div className="card">
+          <Menu />
+        </motion.div>
       </div>
     </ReactLenis>
   );
