@@ -98,6 +98,17 @@ const Carousel = ({
 
   useAutoTranslate(containerRef, contentRef, 14, !isMobile);
 
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      if (isMobile) {
+        container.style.overflow = "hidden";
+      } else {
+        container.style.overflow = "auto";
+      }
+    }
+  }, [isMobile]);
+
   return (
     <div className="absolute inset-0 overflow-hidden">
       <div ref={containerRef} className="masonry-scroll">
