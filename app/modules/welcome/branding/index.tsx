@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 import { LanguageSwitcher } from "./components/language-switcher";
 import Carousel from "./carousel";
 import { useTranslation } from "react-i18next";
-import Lightbox from "./lightbox";
+import Lightbox from "./carousel/lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
 
 import { useEffect, useState } from "react";
@@ -28,9 +28,6 @@ const logoVariants = {
   clicked: {
     opacity: 0,
     filter: "blur(10px)",
-    scale: 0.25,
-    x: "calc(100vw - 100px)",
-    y: "calc(100vh - 50px)",
     transition: {
       duration: 0.3,
     },
@@ -72,11 +69,7 @@ export function Branding() {
       )}
     >
       {/* Carousel background for all breakpoints */}
-      <Carousel
-        items={carouselItems}
-        setOpen={setOpen}
-        setIndex={setIndex}
-      />
+      <Carousel items={carouselItems} setOpen={setOpen} setIndex={setIndex} />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -94,7 +87,7 @@ export function Branding() {
         variants={logoVariants}
         initial="initial"
         animate={controls}
-        className="absolute top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-center justify-center text-primary-500 z-10"
+        className="absolute  rounded-2xl top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-center cursor-pointer justify-center text-primary-500 z-10"
         onClick={handleLogoClick}
       >
         <h1>
@@ -159,14 +152,15 @@ export function Branding() {
         index={index}
         slides={carouselItems.map((item) => ({
           type: item.type,
-          sources: item.type === "video"
-            ? [
-                {
-                  src: item.src,
-                  type: "video/mp4",
-                },
-              ]
-            : [],
+          sources:
+            item.type === "video"
+              ? [
+                  {
+                    src: item.src,
+                    type: "video/mp4",
+                  },
+                ]
+              : [],
           src: item.type === "image" ? item.src : undefined,
         }))}
         plugins={[Video]}
