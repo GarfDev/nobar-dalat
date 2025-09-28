@@ -6,6 +6,7 @@ type MediaItem = {
   placeholder?: string;
   width?: number;
   height?: number;
+  alt?: string;
 };
 
 function useColumnCount() {
@@ -130,7 +131,7 @@ const Carousel = () => {
                   key={`${item.src}-${idx}`}
                   src={item.src}
                   placeholder={item.placeholder}
-                  alt="carousel-item"
+                  alt={item.alt || "A photo from the Nobar Đà Lạt restaurant and bar"}
                   width={item.width}
                   height={item.height}
                 />

@@ -45,11 +45,13 @@ export function Branding() {
         }}
         className="absolute top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-center justify-center text-primary-500 z-10"
       >
-        <img
-          src="/images/nobar-logo-black-white.png"
-          alt="nobar-dalat-logo"
-          className="h-[200px] lg:h-[250px]"
-        />
+        <h1>
+          <img
+            src="/images/nobar-logo-black-white.png"
+            alt="nobar-dalat-logo"
+            className="h-[200px] lg:h-[250px]"
+          />
+        </h1>
       </motion.div>
       {/** END MAIN LOGO TEXT */}
 
@@ -79,7 +81,7 @@ export function Branding() {
         className="absolute top-5 left-5 z-10"
       >
         <Link to="concept" smooth duration={500}>
-          <h3 className="text-2xl">{t("concept")}</h3>
+          <span className="text-2xl">{t("concept")}</span>
         </Link>
       </motion.div>
 
@@ -95,7 +97,7 @@ export function Branding() {
         className="absolute bottom-5 left-5 z-10"
       >
         <Link to="menu" smooth duration={500}>
-          <h3 className="text-2xl">OUR MENU</h3>
+          <span className="text-2xl">OUR MENU</span>
         </Link>
       </motion.div>
     </section>

@@ -12,7 +12,7 @@ export function Concept() {
     >
       <motion.div>
         <AnimatePresence>
-          <p className="text-white text-2xl">CON CHÓ DŨNG NÓI NHIỀU</p>
+          <blockquote className="text-white text-2xl">CON CHÓ DŨNG NÓI NHIỀU</blockquote>
         </AnimatePresence>
       </motion.div>
     </section>

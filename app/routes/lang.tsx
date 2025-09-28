@@ -35,14 +35,70 @@ export async function loader({ params, request }: Route.LoaderArgs) {
     } catch {}
   }
 
-  return { lang, resources } as const;
+  const t = await i18next.getFixedT(lang);
+  const title = t("meta_title", "Nobar - there nothing inside nothing");
+  const description = t("meta_description", "from da lat");
+
+  return { lang, resources, title, description };
 }
 
 export function meta({ data }: Route.MetaArgs) {
   return [
-    { title: "Nobar - there nothing inside nothing" },
-    { name: "description", content: "from da lat" },
+    { title: data?.title || "Nobar - there nothing inside nothing" },
+    { name: "description", content: data?.description || "from da lat" },
     { name: "og:locale", content: data?.lang === "vi" ? "vi_VN" : "en_US" },
+    {
+      name: "keywords",
+      content: "nobar, da lat, restaurant, bar, vietnamese, modern, cuisine",
+    },
+    // Open Graph tags
+    { property: "og:title", content: data?.title || "Nobar - there nothing inside nothing" },
+    { property: "og:description", content: data?.description || "from da lat" },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: `https://nobardalat.com/${data?.lang || "en"}` },
+    { property: "og:image", content: "https://nobardalat.com/images/nobar-logo-color.png" },
+    // Twitter Card tags
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: data?.title || "Nobar - there nothing inside nothing" },
+    { name: "twitter:description", content: data?.description || "from da lat" },
+    { name: "twitter:image", content: "https://nobardalat.com/images/nobar-logo-color.png" },
+    // JSON-LD for Local Business
+    {
+      "script:ld+json": {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Nobar Đà Lạt",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "23/1 Đống Đa, Phường 3",
+          "addressLocality": "Đà Lạt",
+          "addressRegion": "Lâm Đồng",
+          "postalCode": "670000",
+          "addressCountry": "VN"
+        },
+        "telephone": "+84 98 247 70 73",
+        "servesCuisine": "Vietnamese",
+        "priceRange": "$$ - $$$$ ",
+        "url": "https://nobardalat.com",
+        "image": "https://nobardalat.com/images/nobar-logo-color.png",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "17:00",
+            "closes": "23:00"
+          }
+        ]
+      }
+    }
   ];
 }
 
