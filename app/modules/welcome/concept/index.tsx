@@ -7,7 +7,7 @@ export function Concept() {
   return (
     <motion.section
       id="concept"
-      className="h-[100vh] w-[100vw] bg-black/80 backdrop-blur-sm flex shadow-[0_-25px_50px_-12px_rgb(0,0,0,0.25)] gap-10"
+      className="h-[100vh] w-[100vw] bg-[#654b2acb] backdrop-blur-sm flex shadow-[0_-25px_50px_-12px_rgb(0,0,0,0.25)] gap-10"
     >
       <motion.div className="flex-1 flex flex-col items-center justify-center">
         <div className="max-w-[380px] lg:max-w-[800px] w-full flex flex-col">
