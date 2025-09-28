@@ -42,6 +42,19 @@ export function Branding() {
   const [carouselItems, setCarouselItems] = useState<any[]>([]);
   const [index, setIndex] = useState(0);
   const controls = useAnimation();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     fetch("/api/carousel-content")
@@ -58,7 +71,10 @@ export function Branding() {
   }, [isLogoClicked, controls]);
 
   const handleLogoClick = () => {
-    setIsLogoClicked(true);
+    if (windowWidth >= 768) {
+      // Only allow click on devices wider than 768px
+      setIsLogoClicked(true);
+    }
   };
 
   return (
@@ -87,7 +103,10 @@ export function Branding() {
         variants={logoVariants}
         initial="initial"
         animate={controls}
-        className="absolute  rounded-2xl top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-center cursor-pointer justify-center text-primary-500 z-10"
+        className={cn(
+          "absolute  rounded-2xl top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-center justify-center text-primary-500 z-10",
+          windowWidth < 768 ? "cursor-default" : "cursor-pointer",
+        )}
         onClick={handleLogoClick}
       >
         <h1>
