@@ -17,6 +17,8 @@ function useColumnCount() {
       const w = window.innerWidth;
       if (w < 640)
         setCount(1); // sm: 1 column on mobile
+      else if (w <= 770)
+        setCount(2); // md (inclusive for iPad at 1024)
       else if (w <= 1024)
         setCount(3); // md (inclusive for iPad at 1024)
       else setCount(4); // lg+
@@ -45,63 +47,51 @@ function useAutoTranslate(
 
     let animationFrameId: number;
     const animate = (now: number) => {
-      if (!containerRef.current || !contentRef.current) {
-        animationFrameId = requestAnimationFrame(animate);
-        return;
-      }
+      if (containerRef.current && contentRef.current) {
+        const deltaMs = now - lastFrameTimeRef.current;
+        const deltaPx = (deltaMs / 1000) * speedPxPerSec;
+        offsetRef.current += deltaPx;
 
-      const deltaMs = now - lastFrameTimeRef.current;
+        const singleContentHeight = contentRef.current.scrollHeight / 2;
+
+        if (singleContentHeight > 0) {
+          const transformOffset = offsetRef.current % singleContentHeight;
+          contentRef.current.style.transform = `translateY(-${transformOffset}px)`;
+        } else {
+          contentRef.current.style.transform = `translateY(0px)`;
+        }
+      }
       lastFrameTimeRef.current = now;
-
-      const deltaPx = (deltaMs / 1000) * speedPxPerSec;
-      offsetRef.current += deltaPx;
-
-      const singleContentHeight = contentRef.current.scrollHeight / 2;
-
-      if (singleContentHeight > 0) {
-        const transformOffset = offsetRef.current % singleContentHeight;
-        contentRef.current.style.transform = `translateY(-${transformOffset}px)`;
-      } else {
-        contentRef.current.style.transform = `translateY(0px)`;
-      }
-
       animationFrameId = requestAnimationFrame(animate);
     };
 
     animationFrameId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrameId);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
   }, [containerRef, contentRef, speedPxPerSec]);
 }
 
-const Carousel = () => {
+const Carousel = ({
+  items,
+  setOpen,
+  setIndex,
+}: {
+  items: MediaItem[];
+  setOpen: (open: boolean) => void;
+  setIndex: (index: number) => void;
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const columnCount = useColumnCount();
-  // Replace static items with dynamic fetch from /api/carousel-content
-  const [items, setItems] = useState<MediaItem[]>([]);
-
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const res = await fetch("/api/carousel-content");
-        const data = await res.json();
-        if (!cancelled) setItems(data.files);
-      } catch (e) {
-        // silently ignore; empty list renders nothing
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   const allItems = [...items];
 
   useAutoTranslate(containerRef, contentRef, 14);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden">
       <div ref={containerRef} className="masonry-scroll">
         <div
           ref={contentRef}
@@ -109,6 +99,11 @@ const Carousel = () => {
           className="w-full masonry-inner"
         >
           {allItems.map((item, idx) => {
+            const handleItemClick = () => {
+              setOpen(true);
+              setIndex(idx % items.length);
+            };
+
             if (item.type === "image") {
               return (
                 <ImageWithPlaceholder
@@ -121,6 +116,7 @@ const Carousel = () => {
                   }
                   width={item.width}
                   height={item.height}
+                  onClick={handleItemClick}
                 />
               );
             }
@@ -128,12 +124,13 @@ const Carousel = () => {
               <video
                 key={`${item.src}-${idx}`}
                 src={item.src}
-                className="masonry-item"
+                className="masonry-item cursor-pointer"
                 playsInline
                 autoPlay
                 muted
                 loop
                 preload="metadata"
+                onClick={handleItemClick}
               />
             );
           })}
@@ -149,25 +146,25 @@ const ImageWithPlaceholder = ({
   alt,
   width,
   height,
+  onClick,
 }: {
   src: string;
   placeholder?: string;
   alt: string;
   width?: number;
   height?: number;
+  onClick: () => void;
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div
-      className="masonry-item relative bg-cover bg-center"
+      className="masonry-item pointer-events-auto relative cursor-pointer bg-cover bg-center"
       style={{
         aspectRatio: width && height ? `${width} / ${height}` : "auto",
         backgroundImage: `url(${placeholder})`,
-        filter: isLoaded ? "none" : "blur(5px)",
-        transform: isLoaded ? "scale(1)" : "scale(1.1)",
-        transition: "filter 0.2s ease-out, transform 0.2s ease-out",
       }}
+      onClick={onClick}
     >
       <img
         src={src}
