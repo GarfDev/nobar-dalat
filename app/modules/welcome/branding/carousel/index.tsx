@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from "react";
 type MediaItem = {
   type: "image" | "video";
   src: string;
+  placeholder?: string;
+  width?: number;
+  height?: number;
 };
 
 function useColumnCount() {
@@ -98,14 +101,7 @@ const Carousel = () => {
       try {
         const res = await fetch("/api/carousel-content");
         const data = await res.json();
-        const files: string[] = Array.isArray(data?.files) ? data.files : [];
-        const mapped: MediaItem[] = files.map((name) => {
-          const lower = name.toLowerCase();
-          const isVideo = lower.endsWith(".mp4") || lower.endsWith(".webm");
-          const src = `/carousel-content/${encodeURIComponent(name)}`;
-          return { type: isVideo ? "video" : "image", src };
-        });
-        if (!cancelled) setItems(mapped);
+        if (!cancelled) setItems(data.files);
       } catch (e) {
         // silently ignore; empty list renders nothing
       }
@@ -130,13 +126,13 @@ const Carousel = () => {
           {allItems.map((item, idx) => {
             if (item.type === "image") {
               return (
-                <img
+                <ImageWithPlaceholder
                   key={`${item.src}-${idx}`}
                   src={item.src}
+                  placeholder={item.placeholder}
                   alt="carousel-item"
-                  className="masonry-item"
-                  loading="lazy"
-                  decoding="async"
+                  width={item.width}
+                  height={item.height}
                 />
               );
             }
@@ -155,6 +151,44 @@ const Carousel = () => {
           })}
         </div>
       </div>
+    </div>
+  );
+};
+
+const ImageWithPlaceholder = ({
+  src,
+  placeholder,
+  alt,
+  width,
+  height,
+}: {
+  src: string;
+  placeholder?: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div
+      className="masonry-item relative bg-cover bg-center"
+      style={{
+        aspectRatio: width && height ? `${width} / ${height}` : "auto",
+        backgroundImage: `url(${placeholder})`,
+        filter: isLoaded ? "none" : "blur(20px)",
+        transform: isLoaded ? "scale(1)" : "scale(1.1)",
+        transition: "filter 0.2s ease-out, transform 0.2s ease-out",
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className={`transition-opacity duration-500 ease-in-out ${isLoaded ? "opacity-100" : "opacity-0"}`}
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setIsLoaded(true)}
+      />
     </div>
   );
 };
