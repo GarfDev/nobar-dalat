@@ -156,7 +156,11 @@ const Carousel = ({
               <video
                 key={`${item.src}-${idx}`}
                 src={item.src}
-                className="masonry-item cursor-pointer"
+                className={cn(
+                  "masonry-item cursor-pointer h-full w-full object-cover",
+                  isMobile && "pointer-events-none",
+                  "video-zoom",
+                )}
                 playsInline
                 autoPlay
                 muted

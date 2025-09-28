@@ -115,3 +115,7 @@ body {
     color-scheme: dark;
   }
 }
+
+.video-zoom {
+  transform: scale(1.05);
+}
