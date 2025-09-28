@@ -176,7 +176,7 @@ const ImageWithPlaceholder = ({
       style={{
         aspectRatio: width && height ? `${width} / ${height}` : "auto",
         backgroundImage: `url(${placeholder})`,
-        filter: isLoaded ? "none" : "blur(20px)",
+        filter: isLoaded ? "none" : "blur(5px)",
         transform: isLoaded ? "scale(1)" : "scale(1.1)",
         transition: "filter 0.2s ease-out, transform 0.2s ease-out",
       }}
