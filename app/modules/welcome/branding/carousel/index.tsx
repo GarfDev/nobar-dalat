@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import cn from "classnames";
 
 type MediaItem = {
   type: "image" | "video";
@@ -110,7 +111,11 @@ const Carousel = ({
   }, [isMobile]);
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div
+      className={cn("absolute inset-0 overflow-hidden", {
+        "pointer-events-none": isMobile,
+      })}
+    >
       <div ref={containerRef} className="masonry-scroll">
         <div
           ref={contentRef}
