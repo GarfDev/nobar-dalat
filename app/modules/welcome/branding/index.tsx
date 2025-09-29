@@ -85,7 +85,7 @@ export function Branding() {
     <section
       ref={ref}
       className={cn(
-        "relative w-[100vw] bg-white h-[calc(100vh+1px)] overflow-hidden",
+        "relative w-[100vw] bg-white text-white h-[calc(100vh+1px)] overflow-hidden",
       )}
     >
       {/* Carousel background for all breakpoints */}
