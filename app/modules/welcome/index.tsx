@@ -1,8 +1,8 @@
 import { Branding } from "./branding";
 import { Concept } from "./concept";
 import Contact from "./contact";
-import { Map } from "./menu";
-import Menu from "./map";
+import Map from "./map";
+import { Menu } from "./menu";
 import "./style.css";
 import { motion } from "framer-motion";
 import { ReactLenis } from "lenis/react";

@@ -18,21 +18,30 @@ export async function loader({ params, request }: Route.LoaderArgs) {
   }
 
   // Preload translation resources on the server for SSR so first render has correct language
-  let resources: Record<string, any> | undefined;
+  let resources: Record<string, any> | undefined; // eslint-disable-line @typescript-eslint/no-explicit-any
   try {
-    const fileUrl = new URL(`../../public/locales/${lang}/translation.json`, import.meta.url);
+    const fileUrl = new URL(
+      `../../public/locales/${lang}/translation.json`,
+      import.meta.url,
+    );
     const filePath = fileURLToPath(fileUrl);
     const json = await readFile(filePath, "utf-8");
-    resources = JSON.parse(json) as Record<string, any>;
+    resources = JSON.parse(json) as Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
   } catch {
-    // Fallback to fetching from the dev server/static if filesystem read fails
+    // ignore
+  }
+
+  // Fallback to fetching from the dev server/static if filesystem read fails
+  if (!resources) {
     try {
       const url = new URL(`/locales/${lang}/translation.json`, request.url);
       const res = await fetch(url.toString());
       if (res.ok) {
-        resources = (await res.json()) as Record<string, any>;
+        resources = (await res.json()) as Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
       }
-    } catch {}
+    } catch {
+      // ignore
+    }
   }
 
   const t = await i18next.getFixedT(lang);
@@ -52,53 +61,71 @@ export function meta({ data }: Route.MetaArgs) {
       content: "nobar, da lat, restaurant, bar, vietnamese, modern, cuisine",
     },
     // Open Graph tags
-    { property: "og:title", content: data?.title || "Nobar - there nothing inside nothing" },
+    {
+      property: "og:title",
+      content: data?.title || "Nobar - there nothing inside nothing",
+    },
     { property: "og:description", content: data?.description || "from da lat" },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: `https://nobardalat.com/${data?.lang || "en"}` },
-    { property: "og:image", content: "https://nobardalat.com/images/nobar-logo-color.png" },
+    {
+      property: "og:url",
+      content: `https://nobardalat.com/${data?.lang || "en"}`,
+    },
+    {
+      property: "og:image",
+      content: "https://nobardalat.com/images/nobar-logo-color.png",
+    },
     // Twitter Card tags
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: data?.title || "Nobar - there nothing inside nothing" },
-    { name: "twitter:description", content: data?.description || "from da lat" },
-    { name: "twitter:image", content: "https://nobardalat.com/images/nobar-logo-color.png" },
+    {
+      name: "twitter:title",
+      content: data?.title || "Nobar - there nothing inside nothing",
+    },
+    {
+      name: "twitter:description",
+      content: data?.description || "from da lat",
+    },
+    {
+      name: "twitter:image",
+      content: "https://nobardalat.com/images/nobar-logo-color.png",
+    },
     // JSON-LD for Local Business
     {
       "script:ld+json": {
         "@context": "https://schema.org",
         "@type": "Restaurant",
-        "name": "Nobar Đà Lạt",
-        "address": {
+        name: "Nobar Đà Lạt",
+        address: {
           "@type": "PostalAddress",
-          "streetAddress": "23/1 Đống Đa, Phường 3",
-          "addressLocality": "Đà Lạt",
-          "addressRegion": "Lâm Đồng",
-          "postalCode": "670000",
-          "addressCountry": "VN"
+          streetAddress: "23/1 Đống Đa, Phường 3",
+          addressLocality: "Đà Lạt",
+          addressRegion: "Lâm Đồng",
+          postalCode: "670000",
+          addressCountry: "VN",
         },
-        "telephone": "+84 98 247 70 73",
-        "servesCuisine": "Vietnamese",
-        "priceRange": "$$ - $$$$ ",
-        "url": "https://nobardalat.com",
-        "image": "https://nobardalat.com/images/nobar-logo-color.png",
-        "openingHoursSpecification": [
+        telephone: "+84 98 247 70 73",
+        servesCuisine: "Vietnamese",
+        priceRange: "$$ - $$$$ ",
+        url: "https://nobardalat.com",
+        image: "https://nobardalat.com/images/nobar-logo-color.png",
+        openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
+            dayOfWeek: [
               "Monday",
               "Tuesday",
               "Wednesday",
               "Thursday",
               "Friday",
               "Saturday",
-              "Sunday"
+              "Sunday",
             ],
-            "opens": "17:00",
-            "closes": "23:00"
-          }
-        ]
-      }
-    }
+            opens: "17:00",
+            closes: "23:00",
+          },
+        ],
+      },
+    },
   ];
 }
 
@@ -106,12 +133,23 @@ export default function LangRoute() {
   const { lang, resources } = useLoaderData<typeof loader>();
 
   // Create a per-route i18n instance configured to the requested language
-  const i18nForRoute = i18next.cloneInstance({ lng: lang, initImmediate: false });
+  const i18nForRoute = i18next.cloneInstance({
+    lng: lang,
+    initImmediate: false,
+  });
   if (resources) {
     // Ensure SSR has the translation bundle immediately
     try {
-      i18nForRoute.addResourceBundle(lang, "translation", resources, true, true);
-    } catch {}
+      i18nForRoute.addResourceBundle(
+        lang,
+        "translation",
+        resources,
+        true,
+        true,
+      );
+    } catch {
+      // ignore
+    }
   }
 
   // Sync global instance after mount for non-context consumers (defensive)
@@ -120,7 +158,9 @@ export default function LangRoute() {
       void i18next.changeLanguage(lang);
       try {
         window.localStorage.setItem("i18nextLng", lang);
-      } catch {}
+      } catch {
+        // ignore
+      }
     }
   }, [lang]);
 

@@ -1,15 +1,28 @@
 import { motion } from "framer-motion";
-import { memo } from "react";
+import { memo, lazy, Suspense } from "react";
+import { Loader2 } from "lucide-react";
 
-function Menu() {
+// Lazy load the map component to avoid SSR issues with Leaflet
+const ClientMap = lazy(() => import("./client-map"));
+
+function MapComponent() {
   return (
     <motion.section
-      id="concept"
-      className="h-[100vh] w-[100vw] bg-[#e3e3e3da] text-white backdrop-blur-md flex shadow-[0_-25px_50px_-12px_rgb(0,0,0,0.25)] gap-10"
+      id="map"
+      className="h-[100vh] w-[100vw] relative z-0 bg-transparent backdrop-blur-md"
     >
-      Day la cai map
+      <Suspense 
+        fallback={
+          <div className="h-full w-full flex items-center justify-center text-white/20 gap-2">
+            <Loader2 className="w-6 h-6 animate-spin" />
+            <span>Loading Map...</span>
+          </div>
+        }
+      >
+        <ClientMap />
+      </Suspense>
     </motion.section>
   );
 }
 
-export default memo(Menu);
+export default memo(MapComponent);

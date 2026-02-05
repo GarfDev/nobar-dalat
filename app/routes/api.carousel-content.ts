@@ -14,7 +14,10 @@ export async function loader() {
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
-    console.error("[api.carousel-content] Failed to read pre-generated content:", err);
+    console.error(
+      "[api.carousel-content] Failed to read pre-generated content:",
+      err,
+    );
     return new Response(JSON.stringify({ files: [] }), {
       status: 200,
       headers: { "Content-Type": "application/json" },

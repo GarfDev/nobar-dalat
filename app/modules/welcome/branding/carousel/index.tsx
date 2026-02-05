@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import cn from "classnames";
 
-type MediaItem = {
+export type MediaItem = {
   type: "image" | "video";
   src: string;
   placeholder?: string;
@@ -39,7 +39,7 @@ function useAutoTranslate(
   enabled: boolean,
 ) {
   const offsetRef = useRef(0);
-  const lastFrameTimeRef = useRef(performance.now());
+  const lastFrameTimeRef = useRef(0);
 
   useEffect(() => {
     if (!enabled) {
@@ -52,6 +52,9 @@ function useAutoTranslate(
       "(prefers-reduced-motion: reduce)",
     ).matches;
     if (reduceMotion) return;
+
+    // Initialize time reference
+    lastFrameTimeRef.current = performance.now();
 
     let animationFrameId: number;
     const animate = (now: number) => {

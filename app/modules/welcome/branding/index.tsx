@@ -4,7 +4,7 @@ import { BASE_DELAY } from "../constants";
 import { useRef } from "react";
 import { Link } from "react-scroll";
 import { LanguageSwitcher } from "./components/language-switcher";
-import Carousel from "./carousel";
+import Carousel, { type MediaItem } from "./carousel";
 import { useTranslation } from "react-i18next";
 import Lightbox from "./carousel/lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
@@ -39,13 +39,14 @@ export function Branding() {
   const { t } = useTranslation();
   const [isLogoClicked, setIsLogoClicked] = useState(false);
   const [open, setOpen] = useState(false);
-  const [carouselItems, setCarouselItems] = useState<any[]>([]);
+  const [carouselItems, setCarouselItems] = useState<MediaItem[]>([]);
   const [index, setIndex] = useState(0);
   const controls = useAnimation();
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setWindowWidth(window.innerWidth);
 
       const handleResize = () => {
@@ -178,19 +179,23 @@ export function Branding() {
         open={open}
         close={() => setOpen(false)}
         index={index}
-        slides={carouselItems.map((item) => ({
-          type: item.type,
-          sources:
-            item.type === "video"
-              ? [
-                  {
-                    src: item.src,
-                    type: "video/mp4",
-                  },
-                ]
-              : [],
-          src: item.type === "image" ? item.src : undefined,
-        }))}
+        slides={carouselItems.map((item) => {
+          if (item.type === "video") {
+            return {
+              type: "video" as const,
+              sources: [
+                {
+                  src: item.src,
+                  type: "video/mp4",
+                },
+              ],
+            };
+          }
+          return {
+            type: "image" as const,
+            src: item.src,
+          };
+        })}
         plugins={[Video]}
         video={{ autoPlay: true }}
         className="h-screen"

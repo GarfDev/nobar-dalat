@@ -11,7 +11,7 @@ export async function loader({ request }: Route.LoaderArgs) {
   throw redirect(url.toString());
 }
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Nobar - there nothing inside nothing" },
     { name: "description", content: "from da lat" },

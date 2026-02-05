@@ -19,22 +19,19 @@ export function LanguageSwitcher() {
   const location = useLocation();
 
   const [mounted, setMounted] = useState(false);
-  const [current, setCurrent] = useState<LANGUAGES>(LANGUAGES.EN);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
-  // Keep current language in sync with URL first, then i18n as fallback
-  useEffect(() => {
-    const seg = location.pathname.split("/")[1]?.toLowerCase();
-    if (seg === LANGUAGES.EN || seg === LANGUAGES.VI) {
-      setCurrent(seg as LANGUAGES);
-      return;
-    }
-    const init = normalizeLang(i18n.resolvedLanguage || i18n.language);
-    setCurrent(init);
-  }, [location.pathname, i18n.resolvedLanguage, i18n.language]);
+  const seg = location.pathname.split("/")[1]?.toLowerCase();
+  let current = LANGUAGES.EN;
+  if (seg === LANGUAGES.EN || seg === LANGUAGES.VI) {
+    current = seg as LANGUAGES;
+  } else {
+    current = normalizeLang(i18n.resolvedLanguage || i18n.language);
+  }
 
   const handleLanguageChange = (language: LANGUAGES) => {
     // Route drives language; the lang route sets i18n based on the segment.
