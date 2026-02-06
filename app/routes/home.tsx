@@ -4,7 +4,7 @@ import { redirect } from "react-router";
 // Import internal modules
 import { Welcome } from "../modules/welcome";
 
-export async function loader({ request }: Route.LoaderArgs) {
+export async function clientLoader({ request }: Route.ClientLoaderArgs) {
   // For now, default to English when hitting "/" directly
   const url = new URL(request.url);
   url.pathname = "/en";

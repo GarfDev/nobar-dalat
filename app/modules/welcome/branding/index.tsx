@@ -62,7 +62,7 @@ export function Branding() {
   }, []);
 
   useEffect(() => {
-    fetch("/api/carousel-content")
+    fetch("/carousel-content.json")
       .then((res) => res.json())
       .then((data) => setCarouselItems(data.files));
   }, []);

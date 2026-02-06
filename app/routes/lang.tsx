@@ -4,12 +4,10 @@ import { redirect, useLoaderData } from "react-router";
 import i18next from "../i18n";
 import { Welcome } from "../modules/welcome";
 import { I18nextProvider } from "react-i18next";
-import { readFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
 
 const SUPPORTED = new Set(["en", "vi"]);
 
-export async function loader({ params, request }: Route.LoaderArgs) {
+export async function clientLoader({ params, request }: Route.ClientLoaderArgs) {
   const lang = (params.lang || "en").toLowerCase();
   if (!SUPPORTED.has(lang)) {
     const url = new URL(request.url);
@@ -19,17 +17,6 @@ export async function loader({ params, request }: Route.LoaderArgs) {
 
   // Preload translation resources on the server for SSR so first render has correct language
   let resources: Record<string, any> | undefined; // eslint-disable-line @typescript-eslint/no-explicit-any
-  try {
-    const fileUrl = new URL(
-      `../../public/locales/${lang}/translation.json`,
-      import.meta.url,
-    );
-    const filePath = fileURLToPath(fileUrl);
-    const json = await readFile(filePath, "utf-8");
-    resources = JSON.parse(json) as Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
-  } catch {
-    // ignore
-  }
 
   // Fallback to fetching from the dev server/static if filesystem read fails
   if (!resources) {
@@ -44,7 +31,12 @@ export async function loader({ params, request }: Route.LoaderArgs) {
     }
   }
 
-  const t = await i18next.getFixedT(lang);
+  if (resources) {
+    i18next.addResourceBundle(lang, 'translation', resources);
+  }
+  await i18next.changeLanguage(lang);
+
+  const t = i18next.getFixedT(lang);
   const title = t("meta_title", "Nobar - there nothing inside nothing");
   const description = t("meta_description", "from da lat");
 
@@ -129,43 +121,20 @@ export function meta({ data }: Route.MetaArgs) {
   ];
 }
 
-export default function LangRoute() {
-  const { lang, resources } = useLoaderData<typeof loader>();
+export default function Lang() {
+  const { lang, resources } = useLoaderData() as {
+    lang: string;
+    resources: Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
+  };
 
-  // Create a per-route i18n instance configured to the requested language
-  const i18nForRoute = i18next.cloneInstance({
-    lng: lang,
-    initImmediate: false,
-  });
-  if (resources) {
-    // Ensure SSR has the translation bundle immediately
-    try {
-      i18nForRoute.addResourceBundle(
-        lang,
-        "translation",
-        resources,
-        true,
-        true,
-      );
-    } catch {
-      // ignore
-    }
-  }
-
-  // Sync global instance after mount for non-context consumers (defensive)
   useEffect(() => {
     if (i18next.language !== lang) {
-      void i18next.changeLanguage(lang);
-      try {
-        window.localStorage.setItem("i18nextLng", lang);
-      } catch {
-        // ignore
-      }
+      i18next.changeLanguage(lang);
     }
   }, [lang]);
 
   return (
-    <I18nextProvider i18n={i18nForRoute}>
+    <I18nextProvider i18n={i18next}>
       <Welcome />
     </I18nextProvider>
   );
