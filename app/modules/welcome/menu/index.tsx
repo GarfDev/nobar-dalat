@@ -18,6 +18,7 @@ const drinks = [
     tags: "SWEET AND SOUR",
     bgColor: "#fae8ff", // Light Fuchsia
     accentColor: "#a21caf",
+    image: "/images/menu/image_1.png",
   },
   {
     id: "hoi",
@@ -32,6 +33,7 @@ const drinks = [
     tags: "BOOZY - HARD - SPICY",
     bgColor: "#f5f5f4", // Warm Grey
     accentColor: "#57534e",
+    image: "/images/menu/image_2.png",
   },
   {
     id: "nang",
@@ -45,6 +47,7 @@ const drinks = [
     tags: "CREAMY AND BITTER",
     bgColor: "#ffedd5", // Light Orange
     accentColor: "#c2410c",
+    image: "/images/menu/image_3.png",
   },
   {
     id: "huyen",
@@ -59,6 +62,7 @@ const drinks = [
     tags: "SWEET - CREAMY - REFRESHING",
     bgColor: "#fef9c3", // Light Yellow
     accentColor: "#a16207",
+    image: "/images/menu/image_4.png",
   },
   {
     id: "nga",
@@ -72,6 +76,7 @@ const drinks = [
     tags: "SWEET AND SOUR - HERBAL - TEA",
     bgColor: "#dcfce7", // Light Green
     accentColor: "#15803d",
+    image: "/images/menu/image_5.png",
   },
   {
     id: "khong",
@@ -84,6 +89,7 @@ const drinks = [
     tags: "SWEET AND SOUR - CREAMY",
     bgColor: "#e0f2fe", // Light Sky
     accentColor: "#0369a1",
+    image: "/images/menu/image_6.png",
   },
 ];
 
@@ -108,6 +114,43 @@ const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
+
+const DrinkInfo = ({
+  drink,
+  className,
+}: {
+  drink: (typeof drinks)[0];
+  className?: string;
+}) => (
+  <div
+    className={cn(
+      "w-full flex flex-col items-center md:items-end text-center md:text-right pointer-events-none select-none",
+      className,
+    )}
+  >
+    <h2 className="text-6xl md:text-9xl font-[100] tracking-tighter mb-4 md:mb-8 font-sans">
+      {drink.name}
+    </h2>
+
+    <div className="space-y-1 md:space-y-2 mb-4 md:mb-8">
+      {drink.ingredients.map((ing: string, i: number) => (
+        <p
+          key={i}
+          className="text-sm md:text-lg font-light uppercase tracking-widest"
+        >
+          {ing}
+        </p>
+      ))}
+    </div>
+
+    <div
+      className="text-white px-4 py-1 text-xs md:text-sm font-bold uppercase tracking-widest inline-block"
+      style={{ backgroundColor: drink.accentColor }}
+    >
+      {drink.tags}
+    </div>
+  </div>
+);
 
 export function Menu() {
   const { t } = useTranslation();
@@ -198,45 +241,35 @@ export function Menu() {
           className="absolute w-full h-full flex items-center justify-center px-4 pb-24 md:px-24 md:pb-0"
         >
           <div className="w-full max-w-6xl h-full md:h-[60vh] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
-            {/* Text Part */}
-            <div className="w-full md:w-1/2 flex flex-col items-center md:items-end text-center md:text-right z-10 md:-mr-12 pointer-events-none select-none">
-              <h2 className="text-6xl md:text-9xl font-[100] tracking-tighter mb-4 md:mb-8 font-sans">
-                {drink.name}
-              </h2>
-
-              <div className="space-y-1 md:space-y-2 mb-4 md:mb-8">
-                {drink.ingredients.map((ing, i) => (
-                  <p
-                    key={i}
-                    className="text-sm md:text-lg font-light uppercase tracking-widest"
-                  >
-                    {ing}
-                  </p>
-                ))}
-              </div>
-
-              <div
-                className="text-white px-4 py-1 text-xs md:text-sm font-bold uppercase tracking-widest inline-block"
-                style={{ backgroundColor: drink.accentColor }}
-              >
-                {drink.tags}
-              </div>
+            {/* Text Part - Black (Background) */}
+            <div className="w-full md:w-1/2 flex items-center justify-end z-0 md:-mr-12">
+              <DrinkInfo drink={drink} />
             </div>
 
-            {/* Image Part - Placeholder for now as we don't have images */}
-            <div className="w-full md:w-1/2 h-[320px] md:h-full md:aspect-auto flex items-center justify-center relative z-0 md:-ml-12">
+            {/* Image Part */}
+            <div className="w-full md:w-1/2 h-[320px] md:h-full md:aspect-auto flex items-center justify-center relative z-10 md:-ml-12">
               <div
                 className={cn(
-                  "w-[280px] h-[280px] md:w-[450px] md:h-[450px] rounded-full mix-blend-multiply opacity-90 shadow-2xl flex items-center justify-center text-white/50 text-xl font-bold",
+                  "w-[280px] h-[280px] md:w-[450px] md:h-[450px] rounded-full shadow-2xl overflow-hidden flex items-center justify-center relative",
                 )}
                 style={{ backgroundColor: drink.accentColor }}
               >
-                {/* Placeholder for actual image */}
-                <span className="opacity-0">Drink Image</span>
-                {/* If real images exist: <img src={drink.image} className="w-full h-full object-contain" /> */}
+                <img
+                  src={drink.image}
+                  alt={drink.name}
+                  className="w-full h-full object-cover"
+                />
+
+                {/* White Text Overlay - Clipped by Circle */}
+                <div className="hidden md:flex absolute top-0 items-center justify-end h-full pointer-events-none w-[calc(50vw-96px)] min-[1344px]:w-[576px] left-[calc(465px-75vw)] min-[1344px]:left-[-543px]">
+                  <div className="w-full">
+                    {/* Inner container with same padding/structure as Text Part */}
+                    <DrinkInfo drink={drink} className="text-white" />
+                  </div>
+                </div>
               </div>
 
-              {/* Drawing overlay effect (optional, mimicking the sketch style in provided images) */}
+              {/* Drawing overlay effect */}
               <svg
                 className="absolute inset-0 w-full h-full pointer-events-none opacity-20"
                 viewBox="0 0 100 100"
