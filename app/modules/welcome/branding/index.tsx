@@ -159,7 +159,7 @@ export function Branding() {
         className="absolute top-5 left-5 z-10"
       >
         <Link to="concept" smooth duration={500}>
-          <span className="text-2xl">{t("concept")}</span>
+          <span className="cursor-pointer text-2xl">{t("concept")}</span>
         </Link>
       </motion.div>
 
@@ -175,7 +175,7 @@ export function Branding() {
         className="absolute bottom-5 left-5 z-10"
       >
         <Link to="menu" smooth duration={500}>
-          <span className="text-2xl">{t("menu")}</span>
+          <span className="cursor-pointer text-2xl">{t("menu")}</span>
         </Link>
       </motion.div>
 
