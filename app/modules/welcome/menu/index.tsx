@@ -7,7 +7,19 @@ import cn from "classnames";
 
 const drinks = [
   {
+    id: "elo",
+    category: "elo",
+    name: "e lờ",
+    ingredients: ["JASMINE-INFUSED GIN", "LITCHI — LEMON", "EGG WHITE"],
+    tags: "SWEET - SOUR - FLORAL",
+    bgColor: "#fce7f3", // Pink 100
+    accentColor: "#db2777", // Pink 600
+    image: "/images/menu/image_1.png", // Placeholder
+    shape: "blob1",
+  },
+  {
     id: "sac",
+    category: "dau",
     name: "sắc",
     ingredients: [
       "KABUSECHA-INFUSED VODKA",
@@ -19,9 +31,11 @@ const drinks = [
     bgColor: "#fae8ff", // Light Fuchsia
     accentColor: "#a21caf",
     image: "/images/menu/image_1.png",
+    shape: "blob2",
   },
   {
     id: "hoi",
+    category: "dau",
     name: "hỏi",
     ingredients: [
       "MEDIUM ROASTED COCOA BEANS",
@@ -34,9 +48,11 @@ const drinks = [
     bgColor: "#f5f5f4", // Warm Grey
     accentColor: "#57534e",
     image: "/images/menu/image_2.png",
+    shape: "blob3",
   },
   {
     id: "nang",
+    category: "dau",
     name: "nặng",
     ingredients: [
       "CORN-INFUSED BOURBON",
@@ -48,9 +64,11 @@ const drinks = [
     bgColor: "#ffedd5", // Light Orange
     accentColor: "#c2410c",
     image: "/images/menu/image_3.png",
+    shape: "blob1",
   },
   {
     id: "huyen",
+    category: "dau",
     name: "huyền",
     ingredients: [
       "JACKFRUIT",
@@ -63,9 +81,11 @@ const drinks = [
     bgColor: "#fef9c3", // Light Yellow
     accentColor: "#a16207",
     image: "/images/menu/image_4.png",
+    shape: "blob2",
   },
   {
     id: "nga",
+    category: "dau",
     name: "ngã",
     ingredients: [
       "FENNEL SEEDS-INFUSED WHISKEY",
@@ -77,9 +97,11 @@ const drinks = [
     bgColor: "#dcfce7", // Light Green
     accentColor: "#15803d",
     image: "/images/menu/image_5.png",
+    shape: "blob3",
   },
   {
     id: "khong",
+    category: "dau",
     name: "không",
     ingredients: [
       "NUTMEG-INFUSED VODKA",
@@ -90,7 +112,31 @@ const drinks = [
     bgColor: "#e0f2fe", // Light Sky
     accentColor: "#0369a1",
     image: "/images/menu/image_6.png",
+    shape: "blob1",
   },
+  {
+    id: "duongdai",
+    category: "nobar",
+    name: "nobar",
+    ingredients: ["MODERN COCKTAILS", "CLASSIC TWISTS", "SEASONAL SPECIALS"],
+    tags: "CONTEMPORARY",
+    bgColor: "#e5e7eb", // Gray 200
+    accentColor: "#111827", // Gray 900
+    image: "/images/menu/image_1.png", // Placeholder
+    shape: "blob2",
+  },
+];
+
+const shapes = {
+  blob1: "30% 70% 70% 30% / 30% 30% 70% 70%",
+  blob2: "63% 37% 37% 63% / 43% 37% 63% 57%",
+  blob3: "46% 54% 28% 72% / 60% 38% 62% 40%",
+};
+
+const CATEGORIES = [
+  { id: "elo", label: "E LỜ" },
+  { id: "dau", label: "SẮC HUYỀN KHÔNG HỎI NGÃ NẶNG" },
+  { id: "nobar", label: "NOBAR ĐƯƠNG ĐẠI" },
 ];
 
 const textVariants: Variants = {
@@ -192,14 +238,27 @@ const DrinkInfo = ({
 
 export function Menu() {
   const { t } = useTranslation();
+  const [activeCategory, setActiveCategory] = useState("dau");
   const [[page, direction], setPage] = useState([0, 0]);
 
-  // Wrap index
-  const drinkIndex = ((page % drinks.length) + drinks.length) % drinks.length;
-  const drink = drinks[drinkIndex];
+  // Filter drinks by category
+  const filteredDrinks = drinks.filter((d) => d.category === activeCategory);
+
+  // Wrap index based on filtered drinks
+  const drinkIndex =
+    ((page % filteredDrinks.length) + filteredDrinks.length) %
+    filteredDrinks.length;
+  const drink = filteredDrinks[drinkIndex];
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
+  };
+
+  const handleCategoryChange = (categoryId: string) => {
+    if (categoryId !== activeCategory) {
+      setActiveCategory(categoryId);
+      setPage([0, 0]); // Reset to first item of new category
+    }
   };
 
   return (
@@ -209,6 +268,33 @@ export function Menu() {
       transition={{ duration: 0.5 }}
       className="h-[100vh] w-[100vw] text-black relative overflow-hidden flex flex-col justify-center items-center"
     >
+      {/* Category Navigation - Top */}
+      <div className="absolute top-8 md:top-12 z-30 w-full flex justify-center pointer-events-none">
+        <div className="flex gap-2 md:gap-4 overflow-x-auto pb-4 no-scrollbar max-w-full px-4 pointer-events-auto snap-x snap-mandatory items-center">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => handleCategoryChange(cat.id)}
+              className={cn(
+                "relative whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase transition-all duration-300 snap-center shrink-0",
+                activeCategory === cat.id
+                  ? "text-white"
+                  : "text-black/50 hover:text-black/80 hover:bg-black/5",
+              )}
+            >
+              {activeCategory === cat.id && (
+                <motion.div
+                  layoutId="activeCategory"
+                  className="absolute inset-0 bg-black rounded-full"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10">{cat.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Mobile Controls (Grid Layout for Alignment) */}
       <div className="absolute bottom-8 w-full px-4 grid grid-cols-3 md:hidden items-center z-20">
         <div
@@ -219,7 +305,7 @@ export function Menu() {
         </div>
 
         <div className="justify-self-center flex gap-2">
-          {drinks.map((_, i) => (
+          {filteredDrinks.map((_, i) => (
             <div
               key={i}
               className={cn(
@@ -254,7 +340,7 @@ export function Menu() {
 
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
         <div
-          key={page}
+          key={`${activeCategory}-${page}`}
           className="absolute w-full h-full flex items-center justify-center px-4 pb-24 md:px-24 md:pb-0"
         >
           <div className="w-full max-w-6xl h-full md:h-[60vh] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
@@ -286,9 +372,13 @@ export function Menu() {
             >
               <div
                 className={cn(
-                  "w-[450px] h-[450px] shrink-0 rounded-full shadow-2xl overflow-hidden flex items-center justify-center relative",
+                  "w-[450px] h-[450px] shrink-0 shadow-2xl overflow-hidden flex items-center justify-center relative transition-all duration-700 ease-in-out",
                 )}
-                style={{ backgroundColor: drink.accentColor }}
+                style={{
+                  backgroundColor: drink.accentColor,
+                  borderRadius:
+                    shapes[drink.shape as keyof typeof shapes] || "50%",
+                }}
               >
                 <img
                   src={drink.image}
@@ -296,7 +386,7 @@ export function Menu() {
                   className="w-full h-full object-cover"
                 />
 
-                {/* White Text Overlay - Clipped by Circle */}
+                {/* White Text Overlay - Clipped by Shape */}
                 <div
                   className="hidden md:flex absolute top-1/2 left-1/2 pointer-events-none w-[calc(100vw-12rem)] min-[1344px]:w-[72rem] items-center"
                   style={{ transform: "translate(calc(-75% + 6rem), -50%)" }}
@@ -311,15 +401,19 @@ export function Menu() {
                 </div>
               </div>
 
-              {/* Drawing overlay effect */}
+              {/* Drawing overlay effect - morphing SVG */}
               <svg
-                className="absolute inset-0 w-full h-full pointer-events-none opacity-20"
+                className="absolute inset-0 w-full h-full pointer-events-none opacity-20 transition-all duration-700 ease-in-out"
                 viewBox="0 0 100 100"
+                style={{
+                  borderRadius:
+                    shapes[drink.shape as keyof typeof shapes] || "50%",
+                }}
               >
                 <circle
                   cx="50"
                   cy="50"
-                  r="40"
+                  r="48"
                   stroke="black"
                   strokeWidth="0.5"
                   fill="none"
@@ -332,7 +426,7 @@ export function Menu() {
 
       {/* Desktop Pagination Indicators */}
       <div className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 gap-2 z-20">
-        {drinks.map((_, i) => (
+        {filteredDrinks.map((_, i) => (
           <div
             key={i}
             className={cn(
