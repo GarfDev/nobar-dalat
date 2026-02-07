@@ -24,7 +24,7 @@ function Contact() {
           {/* Top Row: Address & Link */}
           <div className="flex flex-col md:flex-row items-end md:items-center gap-1 md:gap-6">
             <a
-              href="https://maps.app.goo.gl/nobardalat"
+              href="https://maps.app.goo.gl/Po186wH5QZzYYD4Y7"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-1 text-[10px] md:text-sm hover:opacity-100 opacity-70 transition-opacity"
