@@ -107,7 +107,10 @@ const Carousel = ({
 
   const allItems = [...items];
 
-  useAutoTranslate(containerRef, contentRef, 14, true);
+  // Increase speed for mobile (20px/s) vs desktop (14px/s)
+  const speed = isMobile ? 20 : 14;
+
+  useAutoTranslate(containerRef, contentRef, speed, true);
 
   useEffect(() => {
     const container = containerRef.current;
