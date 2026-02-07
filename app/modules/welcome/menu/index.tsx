@@ -308,12 +308,14 @@ export function Menu() {
 
       {/* Mobile Controls (Grid Layout for Alignment) */}
       <div className="absolute bottom-8 w-full px-4 grid grid-cols-3 md:hidden items-center z-20">
-        <div
+        <button
+          type="button"
+          aria-label="Previous drink"
           className="justify-self-start cursor-pointer p-2 rounded-full hover:bg-black/5 transition-colors"
           onClick={() => paginate(-1)}
         >
           <ChevronLeft className="w-8 h-8 text-black/80" />
-        </div>
+        </button>
 
         <div className="justify-self-center flex gap-2">
           {filteredDrinks.map((_, i) => (
@@ -327,27 +329,33 @@ export function Menu() {
           ))}
         </div>
 
-        <div
+        <button
+          type="button"
+          aria-label="Next drink"
           className="justify-self-end cursor-pointer p-2 rounded-full hover:bg-black/5 transition-colors"
           onClick={() => paginate(1)}
         >
           <ChevronRight className="w-8 h-8 text-black/80" />
-        </div>
+        </button>
       </div>
 
       {/* Desktop Navigation Buttons */}
-      <div
+      <button
+        type="button"
+        aria-label="Previous drink"
         className="hidden md:block absolute z-20 left-10 top-1/2 -translate-y-1/2 cursor-pointer p-2 rounded-full hover:bg-black/5 transition-colors"
         onClick={() => paginate(-1)}
       >
         <ChevronLeft className="w-12 h-12 text-black/80" />
-      </div>
-      <div
+      </button>
+      <button
+        type="button"
+        aria-label="Next drink"
         className="hidden md:block absolute z-20 right-10 top-1/2 -translate-y-1/2 cursor-pointer p-2 rounded-full hover:bg-black/5 transition-colors"
         onClick={() => paginate(1)}
       >
         <ChevronRight className="w-12 h-12 text-black/80" />
-      </div>
+      </button>
 
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
         <div
