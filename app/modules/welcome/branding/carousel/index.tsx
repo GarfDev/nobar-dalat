@@ -60,16 +60,21 @@ function useAutoTranslate(
     const animate = (now: number) => {
       if (containerRef.current && contentRef.current) {
         const deltaMs = now - lastFrameTimeRef.current;
-        const deltaPx = (deltaMs / 1000) * speedPxPerSec;
+        // Limit deltaMs to prevent large jumps if tab was inactive
+        const safeDeltaMs = Math.min(deltaMs, 50);
+
+        const deltaPx = (safeDeltaMs / 1000) * speedPxPerSec;
         offsetRef.current += deltaPx;
 
-        const singleContentHeight = contentRef.current.scrollHeight / 2;
+        // Ensure we have a valid height before doing modulo arithmetic
+        if (contentRef.current.scrollHeight > 0) {
+          const singleContentHeight = contentRef.current.scrollHeight / 2;
 
-        if (singleContentHeight > 0) {
-          const transformOffset = offsetRef.current % singleContentHeight;
-          contentRef.current.style.transform = `translateY(-${transformOffset}px)`;
-        } else {
-          contentRef.current.style.transform = `translateY(0px)`;
+          if (singleContentHeight > 0) {
+            const transformOffset = offsetRef.current % singleContentHeight;
+            // Use translate3d for hardware acceleration
+            contentRef.current.style.transform = `translate3d(0, -${transformOffset}px, 0)`;
+          }
         }
       }
       lastFrameTimeRef.current = now;
