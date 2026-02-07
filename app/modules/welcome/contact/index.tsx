@@ -1,7 +1,30 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { memo } from "react";
 import { Instagram, ArrowUpRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 function Contact() {
   const { t } = useTranslation();
@@ -11,21 +34,36 @@ function Contact() {
       id="contact"
       className="h-[20vh] w-screen !opacity-100 !bg-black text-white flex items-center justify-center overflow-hidden"
     >
-      <div className="w-full h-full max-w-[1920px] px-6 md:px-12 flex flex-row items-center justify-between">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="w-full h-full max-w-[1920px] px-6 md:px-12 flex flex-row items-center justify-between"
+      >
         {/* Left: Branding */}
         <div className="flex flex-col justify-center h-full">
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter leading-none">
+          <motion.h2
+            variants={itemVariants}
+            className="text-3xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter leading-none"
+          >
             NO BAR
-          </h2>
-          <p className="text-[10px] md:text-sm tracking-widest opacity-60 mt-1 uppercase">
+          </motion.h2>
+          <motion.p
+            variants={itemVariants}
+            className="text-[10px] md:text-sm tracking-widest opacity-60 mt-1 uppercase"
+          >
             {t("contact.tagline")}
-          </p>
+          </motion.p>
         </div>
 
         {/* Right: Info Grid */}
         <div className="flex flex-col items-end gap-2 md:gap-4 text-right">
           {/* Top Row: Address & Link */}
-          <div className="flex flex-col md:flex-row items-end md:items-center gap-1 md:gap-6">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col md:flex-row items-end md:items-center gap-1 md:gap-6"
+          >
             <a
               href="https://maps.app.goo.gl/Po186wH5QZzYYD4Y7"
               target="_blank"
@@ -43,10 +81,11 @@ function Contact() {
               <span className="hidden md:inline text-white/20">|</span>
               <span>{t("contact.hours.wed")}</span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Bottom Row: Social */}
-          <a
+          <motion.a
+            variants={itemVariants}
             href="https://www.instagram.com/nobardalat/"
             target="_blank"
             rel="noopener noreferrer"
@@ -56,9 +95,9 @@ function Contact() {
             <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">
               Instagram
             </span>
-          </a>
+          </motion.a>
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 }
