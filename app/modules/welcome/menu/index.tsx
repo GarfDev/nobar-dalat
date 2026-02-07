@@ -379,11 +379,11 @@ export function Menu() {
                   paginate(-1);
                 }
               }}
-              className="w-full md:w-1/2 h-[450px] md:h-full md:aspect-auto flex items-center justify-center relative z-10 md:-ml-12"
+              className="w-full md:w-1/2 h-[350px] md:h-full md:aspect-auto flex items-center justify-center relative z-10 md:-ml-12"
             >
               <div
                 className={cn(
-                  "w-[450px] h-[450px] shrink-0 shadow-2xl overflow-hidden flex items-center justify-center relative transition-all duration-700 ease-in-out",
+                  "w-[300px] h-[300px] md:w-[450px] md:h-[450px] shrink-0 shadow-2xl overflow-hidden flex items-center justify-center relative transition-all duration-700 ease-in-out",
                 )}
                 style={{
                   backgroundColor: drink.accentColor,
