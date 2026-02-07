@@ -270,7 +270,7 @@ export function Menu() {
     >
       {/* Category Navigation - Top */}
       <div className="absolute top-8 md:top-12 z-30 w-full flex justify-center pointer-events-none">
-        <div className="flex gap-2 md:gap-4 overflow-x-auto pb-4 no-scrollbar max-w-full px-4 pointer-events-auto snap-x snap-mandatory items-center">
+        <div className="flex gap-2 md:gap-4 overflow-x-auto pb-4 no-scrollbar max-w-full px-4 pointer-events-auto snap-x snap-mandatory items-center [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
