@@ -258,6 +258,16 @@ export function Menu() {
     if (categoryId !== activeCategory) {
       setActiveCategory(categoryId);
       setPage([0, 0]); // Reset to first item of new category
+
+      // Auto-scroll to selected category button
+      const element = document.getElementById(`category-${categoryId}`);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
+      }
     }
   };
 
@@ -274,6 +284,7 @@ export function Menu() {
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
+              id={`category-${cat.id}`}
               onClick={() => handleCategoryChange(cat.id)}
               className={cn(
                 "relative whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase transition-all duration-300 snap-center shrink-0",
