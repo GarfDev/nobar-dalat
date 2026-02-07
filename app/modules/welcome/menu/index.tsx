@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -93,20 +93,51 @@ const drinks = [
   },
 ];
 
-const variants = {
+const textVariants: Variants = {
   enter: (direction: number) => ({
-    x: direction > 0 ? 1000 : -1000,
+    x: direction > 0 ? 50 : -50,
     opacity: 0,
   }),
   center: {
-    zIndex: 1,
     x: 0,
     opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.2, // Stagger text after image
+      ease: "easeOut",
+    },
   },
   exit: (direction: number) => ({
-    zIndex: 0,
-    x: direction < 0 ? 1000 : -1000,
+    x: direction < 0 ? 50 : -50,
     opacity: 0,
+    transition: {
+      duration: 0.3,
+    },
+  }),
+};
+
+const imageVariants: Variants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 100 : -100,
+    opacity: 0,
+    scale: 0.8,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1], // Custom spring-like easing
+    },
+  },
+  exit: (direction: number) => ({
+    x: direction < 0 ? 100 : -100,
+    opacity: 0,
+    scale: 0.8,
+    transition: {
+      duration: 0.4,
+    },
   }),
 };
 
@@ -118,11 +149,18 @@ const swipePower = (offset: number, velocity: number) => {
 const DrinkInfo = ({
   drink,
   className,
+  direction,
 }: {
   drink: (typeof drinks)[0];
   className?: string;
+  direction: number;
 }) => (
-  <div
+  <motion.div
+    custom={direction}
+    variants={textVariants}
+    initial="enter"
+    animate="center"
+    exit="exit"
     className={cn(
       "w-full flex flex-col items-center md:items-end text-center md:text-right pointer-events-none select-none",
       className,
@@ -149,7 +187,7 @@ const DrinkInfo = ({
     >
       {drink.tags}
     </div>
-  </div>
+  </motion.div>
 );
 
 export function Menu() {
@@ -215,39 +253,37 @@ export function Menu() {
       </div>
 
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
-        <motion.div
+        <div
           key={page}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.5 },
-          }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
           className="absolute w-full h-full flex items-center justify-center px-4 pb-24 md:px-24 md:pb-0"
         >
           <div className="w-full max-w-6xl h-full md:h-[60vh] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
             {/* Text Part - Black (Background) */}
             <div className="w-full md:w-1/2 flex items-center justify-end z-0 md:-mr-12">
-              <DrinkInfo drink={drink} />
+              <DrinkInfo drink={drink} direction={direction} />
             </div>
 
             {/* Image Part */}
-            <div className="w-full md:w-1/2 h-[450px] md:h-full md:aspect-auto flex items-center justify-center relative z-10 md:-ml-12">
+            <motion.div
+              custom={direction}
+              variants={imageVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={1}
+              onDragEnd={(e, { offset, velocity }) => {
+                const swipe = swipePower(offset.x, velocity.x);
+
+                if (swipe < -swipeConfidenceThreshold) {
+                  paginate(1);
+                } else if (swipe > swipeConfidenceThreshold) {
+                  paginate(-1);
+                }
+              }}
+              className="w-full md:w-1/2 h-[450px] md:h-full md:aspect-auto flex items-center justify-center relative z-10 md:-ml-12"
+            >
               <div
                 className={cn(
                   "w-[450px] h-[450px] shrink-0 rounded-full shadow-2xl overflow-hidden flex items-center justify-center relative",
@@ -266,7 +302,11 @@ export function Menu() {
                   style={{ transform: "translate(calc(-75% + 6rem), -50%)" }}
                 >
                   <div className="w-1/2 flex items-center justify-end md:-mr-12">
-                    <DrinkInfo drink={drink} className="text-white" />
+                    <DrinkInfo
+                      drink={drink}
+                      className="text-white"
+                      direction={direction}
+                    />
                   </div>
                 </div>
               </div>
@@ -285,9 +325,9 @@ export function Menu() {
                   fill="none"
                 />
               </svg>
-            </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </AnimatePresence>
 
       {/* Desktop Pagination Indicators */}
