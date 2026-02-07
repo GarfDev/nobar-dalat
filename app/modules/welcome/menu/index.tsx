@@ -341,7 +341,7 @@ export function Menu() {
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
         <div
           key={`${activeCategory}-${page}`}
-          className="absolute w-full h-full flex items-center justify-center px-4 pb-24 md:px-24 md:pb-0"
+          className="absolute w-full h-full flex items-center justify-center px-4 pb-24 pt-16 md:px-24 md:pb-0 md:pt-0"
         >
           <div className="w-full max-w-6xl h-full md:h-[60vh] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
             {/* Text Part - Black (Background) */}
