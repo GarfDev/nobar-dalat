@@ -27,44 +27,43 @@ export function Welcome() {
   );
   const conceptOpacity = useTransform(conceptProgress, [0, 1], [0, 1]);
 
-  // 2. Map entering (covers Concept)
-  const { scrollYProgress: mapProgress } = useScroll({
-    target: mapRef,
-    offset: ["start end", "start start"],
-  });
-
-  const conceptBlur = useTransform(
-    mapProgress,
-    [0, 1],
-    ["blur(0px)", "blur(20px)"],
-  );
-  const mapOpacity = useTransform(mapProgress, [0, 1], [0, 1]);
-
-  // 3. Menu entering (covers Map)
+  // 2. Menu entering (covers Concept)
   const { scrollYProgress: menuProgress } = useScroll({
     target: menuRef,
     offset: ["start end", "start start"],
   });
 
-  const mapBlur = useTransform(
+  const conceptBlur = useTransform(
     menuProgress,
     [0, 1],
     ["blur(0px)", "blur(20px)"],
   );
   const menuOpacity = useTransform(menuProgress, [0, 1], [0, 1]);
 
-  // 4. Contact entering (covers Menu)
+  // 3. Map entering (covers Menu)
+  const { scrollYProgress: mapProgress } = useScroll({
+    target: mapRef,
+    offset: ["start end", "start start"],
+  });
+
+  const menuBlur = useTransform(
+    mapProgress,
+    [0, 1],
+    ["blur(0px)", "blur(20px)"],
+  );
+  const mapOpacity = useTransform(mapProgress, [0, 1], [0, 1]);
+
+  // 4. Contact entering (covers Map)
   const { scrollYProgress: contactProgress } = useScroll({
     target: contactRef,
     offset: ["start end", "start start"],
   });
 
-  const menuBlur = useTransform(
+  const mapBlur = useTransform(
     contactProgress,
     [0, 1],
     ["blur(0px)", "blur(20px)"],
   );
-  const contactOpacity = useTransform(contactProgress, [0, 1], [0, 1]);
 
   return (
     <ReactLenis root options={{ lerp: 0.05, syncTouch: true }}>
@@ -83,23 +82,23 @@ export function Welcome() {
           <Concept />
         </motion.div>
         <motion.div
-          ref={mapRef}
-          className="card snap-start"
-          style={{ opacity: mapOpacity, filter: mapBlur, zIndex: 3 }}
-        >
-          <Map />
-        </motion.div>
-        <motion.div
           ref={menuRef}
           className="card snap-start"
-          style={{ opacity: menuOpacity, filter: menuBlur, zIndex: 4 }}
+          style={{ opacity: menuOpacity, filter: menuBlur, zIndex: 3 }}
         >
           <Menu />
         </motion.div>
         <motion.div
+          ref={mapRef}
+          className="card snap-start"
+          style={{ opacity: mapOpacity, filter: mapBlur, zIndex: 4 }}
+        >
+          <Map />
+        </motion.div>
+        <motion.div
           ref={contactRef}
           className="card snap-start"
-          style={{ opacity: contactOpacity, zIndex: 5 }}
+          style={{ zIndex: 5 }}
         >
           <Contact />
         </motion.div>

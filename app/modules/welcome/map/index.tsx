@@ -11,7 +11,7 @@ function MapComponent() {
       id="map"
       className="h-[100vh] w-[100vw] relative z-0 bg-transparent backdrop-blur-md"
     >
-      <Suspense 
+      <Suspense
         fallback={
           <div className="h-full w-full flex items-center justify-center text-white/20 gap-2">
             <Loader2 className="w-6 h-6 animate-spin" />

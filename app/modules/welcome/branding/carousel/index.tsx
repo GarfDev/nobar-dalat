@@ -88,12 +88,12 @@ const Carousel = ({
   items,
   setOpen,
   setIndex,
-  isLogoClicked,
+  canInteract,
 }: {
   items: MediaItem[];
   setOpen: (open: boolean) => void;
   setIndex: (index: number) => void;
-  isLogoClicked: boolean;
+  canInteract: boolean;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -124,7 +124,7 @@ const Carousel = ({
       <div
         ref={containerRef}
         className={cn("masonry-scroll", {
-          "pointer-events-none": !isLogoClicked,
+          "pointer-events-none": !canInteract,
         })}
       >
         <div
@@ -152,6 +152,7 @@ const Carousel = ({
                   height={item.height}
                   onClick={handleItemClick}
                   loading={idx < columnCount * 2 ? "eager" : "lazy"}
+                  canInteract={canInteract}
                 />
               );
             }
@@ -161,7 +162,7 @@ const Carousel = ({
                 src={item.src}
                 className={cn(
                   "masonry-item cursor-pointer h-full w-full object-cover",
-                  isMobile && "pointer-events-none",
+                  (isMobile || !canInteract) && "pointer-events-none",
                   "video-zoom",
                 )}
                 playsInline
@@ -187,6 +188,7 @@ const ImageWithPlaceholder = ({
   height,
   onClick,
   loading,
+  canInteract = true,
 }: {
   src: string;
   placeholder?: string;
@@ -195,12 +197,16 @@ const ImageWithPlaceholder = ({
   height?: number;
   onClick: () => void;
   loading?: "eager" | "lazy";
+  canInteract?: boolean;
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div
-      className="masonry-item pointer-events-auto relative cursor-pointer overflow-hidden bg-cover bg-center"
+      className={cn(
+        "masonry-item relative cursor-pointer overflow-hidden bg-cover bg-center",
+        canInteract ? "pointer-events-auto" : "pointer-events-none",
+      )}
       style={{
         aspectRatio: width && height ? `${width} / ${height}` : "auto",
         backgroundImage: `url(${placeholder})`,

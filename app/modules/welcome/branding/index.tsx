@@ -38,6 +38,7 @@ export function Branding() {
   const ref = useRef(null);
   const { t } = useTranslation();
   const [isLogoClicked, setIsLogoClicked] = useState(false);
+  const [canInteract, setCanInteract] = useState(false);
   const [open, setOpen] = useState(false);
   const [carouselItems, setCarouselItems] = useState<MediaItem[]>([]);
   const [index, setIndex] = useState(0);
@@ -69,9 +70,12 @@ export function Branding() {
 
   useEffect(() => {
     if (isLogoClicked) {
-      controls.start("clicked");
+      controls.start("clicked").then(() => {
+        setCanInteract(true);
+      });
     } else {
       controls.start("animate");
+      setCanInteract(false);
     }
   }, [isLogoClicked, controls]);
 
@@ -94,7 +98,7 @@ export function Branding() {
         items={carouselItems}
         setOpen={setOpen}
         setIndex={setIndex}
-        isLogoClicked={isLogoClicked}
+        canInteract={canInteract}
       />
 
       <motion.div
