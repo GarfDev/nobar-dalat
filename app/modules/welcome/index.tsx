@@ -67,38 +67,38 @@ export function Welcome() {
   const contactOpacity = useTransform(contactProgress, [0, 1], [0, 1]);
 
   return (
-    <ReactLenis root>
-      <div className="card-container">
+    <ReactLenis root options={{ lerp: 0.05, syncTouch: true }}>
+      <div className="card-container snap-y snap-mandatory">
         <motion.div
-          className="card"
+          className="card snap-start"
           style={{ filter: brandingBlur, zIndex: 1 }}
         >
           <Branding />
         </motion.div>
         <motion.div
           ref={conceptRef}
-          className="card"
+          className="card snap-start"
           style={{ opacity: conceptOpacity, filter: conceptBlur, zIndex: 2 }}
         >
           <Concept />
         </motion.div>
         <motion.div
           ref={mapRef}
-          className="card"
+          className="card snap-start"
           style={{ opacity: mapOpacity, filter: mapBlur, zIndex: 3 }}
         >
           <Map />
         </motion.div>
         <motion.div
           ref={menuRef}
-          className="card"
+          className="card snap-start"
           style={{ opacity: menuOpacity, filter: menuBlur, zIndex: 4 }}
         >
           <Menu />
         </motion.div>
         <motion.div
           ref={contactRef}
-          className="card"
+          className="card snap-start"
           style={{ opacity: contactOpacity, zIndex: 5 }}
         >
           <Contact />

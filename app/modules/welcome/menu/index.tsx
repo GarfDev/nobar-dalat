@@ -247,10 +247,10 @@ export function Menu() {
             </div>
 
             {/* Image Part */}
-            <div className="w-full md:w-1/2 h-[320px] md:h-full md:aspect-auto flex items-center justify-center relative z-10 md:-ml-12">
+            <div className="w-full md:w-1/2 h-[450px] md:h-full md:aspect-auto flex items-center justify-center relative z-10 md:-ml-12">
               <div
                 className={cn(
-                  "w-[280px] h-[280px] md:w-[450px] md:h-[450px] rounded-full shadow-2xl overflow-hidden flex items-center justify-center relative",
+                  "w-[450px] h-[450px] shrink-0 rounded-full shadow-2xl overflow-hidden flex items-center justify-center relative",
                 )}
                 style={{ backgroundColor: drink.accentColor }}
               >
@@ -261,9 +261,11 @@ export function Menu() {
                 />
 
                 {/* White Text Overlay - Clipped by Circle */}
-                <div className="hidden md:flex absolute top-0 items-center justify-end h-full pointer-events-none w-[calc(50vw-96px)] min-[1344px]:w-[576px] left-[calc(465px-75vw)] min-[1344px]:left-[-543px]">
-                  <div className="w-full">
-                    {/* Inner container with same padding/structure as Text Part */}
+                <div
+                  className="hidden md:flex absolute top-1/2 left-1/2 pointer-events-none w-[calc(100vw-12rem)] min-[1344px]:w-[72rem] items-center"
+                  style={{ transform: "translate(calc(-75% + 6rem), -50%)" }}
+                >
+                  <div className="w-1/2 flex items-center justify-end md:-mr-12">
                     <DrinkInfo drink={drink} className="text-white" />
                   </div>
                 </div>
