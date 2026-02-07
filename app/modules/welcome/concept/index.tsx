@@ -7,30 +7,51 @@ export function Concept() {
   return (
     <motion.section
       id="concept"
-      className="h-[100vh] w-[100vw] bg-[#654b2acb] text-white backdrop-blur-md flex shadow-[0_-25px_50px_-12px_rgb(0,0,0,0.25)] gap-10"
+      className="h-[100vh] w-[100vw] bg-black text-white flex items-center justify-center relative overflow-hidden"
     >
-      <motion.div className="flex-1 flex flex-col items-center justify-center">
-        <div className="max-w-[480px] lg:max-w-[800px] w-full flex flex-col">
-          <div className="text-2xl mb-1 lg:text-5xl font-bold text-center lg:mb-3 uppercase">
+      {/* Background Decorative Text */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.02] select-none z-0">
+        <span className="text-[30vw] font-bold uppercase leading-none whitespace-nowrap">
+          NO BAR
+        </span>
+      </div>
+
+      <div className="max-w-4xl w-full px-6 md:px-8 flex flex-col items-center text-center z-10">
+        {/* Title Group */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-8 md:mb-12 flex flex-col items-center"
+        >
+          <h2 className="text-4xl sm:text-5xl md:text-8xl font-bold uppercase tracking-tighter mb-4 md:mb-6">
             {t("concept.title")}
-          </div>
-          <div className="text-2xl lg:text-5xl font-bold text-center uppercase lg:mb-5 mb-3">
+          </h2>
+          
+          <motion.div 
+            initial={{ height: 0 }}
+            whileInView={{ height: 64 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="w-[1px] bg-white/40 mb-4 md:mb-6 h-8 md:h-16"
+          />
+          
+          <h3 className="text-sm sm:text-lg md:text-2xl font-light uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/80">
             {t("concept.subtitle")}
-          </div>
-          <motion.div
-            initial={{ opacity: 0, transform: "translateY(50px)" }}
-            whileInView={{
-              opacity: 1,
-              transform: "translateY(0)",
-              animationDelay: 0.5,
-            }}
-            transition={{ duration: 0.6 }}
-            className="text-sm lg:text-2xl font-medium text-white text-center"
-          >
+          </h3>
+        </motion.div>
+
+        {/* Description */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="relative"
+        >
+          <p className="text-xs sm:text-sm md:text-lg font-light leading-relaxed md:leading-loose text-white/60 max-w-xl mx-auto px-4 md:px-0">
             {t("concept.description")}
-          </motion.div>
-        </div>
-      </motion.div>
+          </p>
+        </motion.div>
+      </div>
     </motion.section>
   );
 }
