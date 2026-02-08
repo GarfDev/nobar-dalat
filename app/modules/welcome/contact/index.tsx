@@ -32,7 +32,7 @@ function Contact() {
   return (
     <motion.section
       id="contact"
-      className="h-[20vh] w-screen !opacity-100 !bg-black text-white flex items-center justify-center overflow-hidden"
+      className="h-[20vh] w-screen !opacity-100 !bg-#000000 text-white flex items-center justify-center overflow-hidden"
     >
       <motion.div
         variants={containerVariants}
