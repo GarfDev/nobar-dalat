@@ -66,7 +66,7 @@ export function Welcome() {
   );
 
   return (
-    <ReactLenis root options={{ lerp: 0.05, syncTouch: true }}>
+    <ReactLenis root options={{ lerp: 0.1, syncTouch: true }}>
       <div className="card-container snap-y snap-mandatory">
         <motion.div
           className="card snap-start"
@@ -97,7 +97,7 @@ export function Welcome() {
         </motion.div>
         <motion.div
           ref={contactRef}
-          className="card snap-start"
+          className="snap-end h-[20vh] w-full relative"
           style={{ zIndex: 5 }}
         >
           <Contact />
