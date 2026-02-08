@@ -69,35 +69,35 @@ export function Welcome() {
     <ReactLenis root options={{ lerp: 0.1, syncTouch: true }}>
       <div className="card-container snap-y snap-mandatory">
         <motion.div
-          className="card snap-start"
+          className="card snap-start snap-always"
           style={{ filter: brandingBlur, zIndex: 1 }}
         >
           <Branding />
         </motion.div>
         <motion.div
           ref={conceptRef}
-          className="card snap-start"
+          className="card snap-start snap-always"
           style={{ opacity: conceptOpacity, filter: conceptBlur, zIndex: 2 }}
         >
           <Concept />
         </motion.div>
         <motion.div
           ref={menuRef}
-          className="card snap-start"
+          className="card snap-start snap-always"
           style={{ opacity: menuOpacity, filter: menuBlur, zIndex: 3 }}
         >
           <Menu />
         </motion.div>
         <motion.div
           ref={mapRef}
-          className="card snap-start"
+          className="card snap-start snap-always"
           style={{ opacity: mapOpacity, filter: mapBlur, zIndex: 4 }}
         >
           <Map />
         </motion.div>
         <motion.div
           ref={contactRef}
-          className="snap-end h-[20vh] w-full relative"
+          className="snap-end snap-always h-[20vh] w-full relative"
           style={{ zIndex: 5 }}
         >
           <Contact />

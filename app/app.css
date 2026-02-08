@@ -81,7 +81,8 @@ body {
   font-family: "iCiel Novecento sans";
   content-visibility: auto;
 
-  @apply bg-white dark:bg-gray-950;
+  /* Use black background to match the footer for seamless overscroll */
+  @apply bg-black text-white;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
