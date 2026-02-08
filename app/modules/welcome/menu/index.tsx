@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
@@ -240,6 +240,17 @@ export function Menu() {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("dau");
   const [[page, direction], setPage] = useState([0, 0]);
+  const [morphingShape, setMorphingShape] = useState(shapes.blob1);
+
+  // Morph shape animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const keys = Object.values(shapes);
+      const randomShape = keys[Math.floor(Math.random() * keys.length)];
+      setMorphingShape(randomShape);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Filter drinks by category
   const filteredDrinks = drinks.filter((d) => d.category === activeCategory);
@@ -395,8 +406,9 @@ export function Menu() {
                 )}
                 style={{
                   backgroundColor: drink.accentColor,
-                  borderRadius:
-                    shapes[drink.shape as keyof typeof shapes] || "50%",
+                  borderRadius: morphingShape,
+                  transition:
+                    "border-radius 4s ease-in-out, background-color 0.5s ease",
                 }}
               >
                 <img
@@ -425,8 +437,8 @@ export function Menu() {
                 className="absolute inset-0 w-full h-full pointer-events-none opacity-20 transition-all duration-700 ease-in-out"
                 viewBox="0 0 100 100"
                 style={{
-                  borderRadius:
-                    shapes[drink.shape as keyof typeof shapes] || "50%",
+                  borderRadius: morphingShape,
+                  transition: "border-radius 4s ease-in-out",
                 }}
               >
                 <circle
