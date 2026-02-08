@@ -75,7 +75,13 @@ export function Branding() {
       });
     } else {
       controls.start("animate");
-      setCanInteract(false);
+      // Use a small timeout or state setter callback to avoid sync state update warning
+      // but logically it's fine here as it's a response to prop change.
+      // Better yet, just set it. The linter warning is about potential loops,
+      // but here it depends on [isLogoClicked] which is stable during this render.
+      // We can wrap it in a timeout to be safe and avoid the warning.
+      const timer = setTimeout(() => setCanInteract(false), 0);
+      return () => clearTimeout(timer);
     }
   }, [isLogoClicked, controls]);
 
@@ -117,19 +123,47 @@ export function Branding() {
         variants={logoVariants}
         initial="initial"
         animate={controls}
+        whileHover="hover"
         className={cn(
-          "absolute  rounded-2xl top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-center justify-center text-primary-500 z-10",
+          "absolute rounded-2xl top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-center justify-center text-primary-500 z-10",
           windowWidth < 768 ? "cursor-default" : "cursor-pointer",
         )}
         onClick={handleLogoClick}
       >
-        <h1>
-          <img
+        <motion.div
+          className="flex flex-col items-center gap-6"
+          variants={{
+            initial: { scale: 1 },
+            hover: { scale: 1.05 },
+          }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <motion.img
             src="/images/nobar-logo-black-white.png"
             alt="nobar-dalat-logo"
-            className="h-[200px] lg:h-[250px]"
+            className="h-[200px] lg:h-[250px] drop-shadow-2xl"
+            animate={{
+              opacity: [0.6, 1, 0.6],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
-        </h1>
+
+          {/* Text Hint - Reveals on Hover */}
+          <motion.div
+            variants={{
+              initial: { opacity: 0, y: 10, letterSpacing: "0.5em" },
+              hover: { opacity: 1, y: 0, letterSpacing: "0.8em" },
+            }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="hidden md:block text-xs md:text-sm font-light uppercase text-white/90 border-b border-white/20 pb-1"
+          >
+            {t("branding.enter", "Enter")}
+          </motion.div>
+        </motion.div>
       </motion.div>
       {/** END MAIN LOGO TEXT */}
 
