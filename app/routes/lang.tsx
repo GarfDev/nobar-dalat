@@ -7,7 +7,10 @@ import { I18nextProvider } from "react-i18next";
 
 const SUPPORTED = new Set(["en", "vi"]);
 
-export async function clientLoader({ params, request }: Route.ClientLoaderArgs) {
+export async function clientLoader({
+  params,
+  request,
+}: Route.ClientLoaderArgs) {
   const lang = (params.lang || "en").toLowerCase();
   if (!SUPPORTED.has(lang)) {
     const url = new URL(request.url);
@@ -32,25 +35,49 @@ export async function clientLoader({ params, request }: Route.ClientLoaderArgs) 
   }
 
   if (resources) {
-    i18next.addResourceBundle(lang, 'translation', resources);
+    i18next.addResourceBundle(lang, "translation", resources);
   }
   await i18next.changeLanguage(lang);
 
   const t = i18next.getFixedT(lang);
-  const title = t("meta_title", "Nobar - there nothing inside nothing");
-  const description = t("meta_description", "from da lat");
+  const title = t("meta_title", "No Bar - vietnamese identity intact");
+  const description = t("meta_description", "not a bar from da lat");
+  const keywords = t(
+    "meta_keywords",
+    "nobar, da lat, restaurant, bar, vietnamese, modern, cuisine",
+  );
 
-  return { lang, resources, title, description };
+  return { lang, resources, title, description, keywords };
 }
 
 export function meta({ data }: Route.MetaArgs) {
+  const currentLang = data?.lang || "en";
+  const canonicalUrl = `https://nobardalat.com/${currentLang}`;
+
   return [
     { title: data?.title || "Nobar - there nothing inside nothing" },
     { name: "description", content: data?.description || "from da lat" },
-    { name: "og:locale", content: data?.lang === "vi" ? "vi_VN" : "en_US" },
+    { name: "keywords", content: data?.keywords },
+    { name: "og:locale", content: currentLang === "vi" ? "vi_VN" : "en_US" },
+    // Canonical & Hreflang
+    { tagName: "link", rel: "canonical", href: canonicalUrl },
     {
-      name: "keywords",
-      content: "nobar, da lat, restaurant, bar, vietnamese, modern, cuisine",
+      tagName: "link",
+      rel: "alternate",
+      hreflang: "en",
+      href: "https://nobardalat.com/en",
+    },
+    {
+      tagName: "link",
+      rel: "alternate",
+      hreflang: "vi",
+      href: "https://nobardalat.com/vi",
+    },
+    {
+      tagName: "link",
+      rel: "alternate",
+      hreflang: "x-default",
+      href: "https://nobardalat.com/en",
     },
     // Open Graph tags
     {
@@ -61,7 +88,7 @@ export function meta({ data }: Route.MetaArgs) {
     { property: "og:type", content: "website" },
     {
       property: "og:url",
-      content: `https://nobardalat.com/${data?.lang || "en"}`,
+      content: canonicalUrl,
     },
     {
       property: "og:image",
@@ -85,11 +112,12 @@ export function meta({ data }: Route.MetaArgs) {
     {
       "script:ld+json": {
         "@context": "https://schema.org",
-        "@type": "Restaurant",
-        name: "Nobar Đà Lạt",
+        "@type": "Bar",
+        name: "No bar Đà Lạt",
+        description: data?.description,
         address: {
           "@type": "PostalAddress",
-          streetAddress: "23/1 Đống Đa, Phường 3",
+          streetAddress: "61-63 Trương Công Định, Phường 1",
           addressLocality: "Đà Lạt",
           addressRegion: "Lâm Đồng",
           postalCode: "670000",
@@ -97,23 +125,32 @@ export function meta({ data }: Route.MetaArgs) {
         },
         telephone: "+84 98 247 70 73",
         servesCuisine: "Vietnamese",
-        priceRange: "$$ - $$$$ ",
+        priceRange: "$$ - $$$",
         url: "https://nobardalat.com",
         image: "https://nobardalat.com/images/nobar-logo-color.png",
+        sameAs: [
+          "https://www.instagram.com/nobardalat/",
+          "https://www.facebook.com/nobardalat",
+        ],
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: [
               "Monday",
               "Tuesday",
-              "Wednesday",
               "Thursday",
               "Friday",
               "Saturday",
               "Sunday",
             ],
-            opens: "17:00",
-            closes: "23:00",
+            opens: "19:00",
+            closes: "01:30",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Wednesday",
+            opens: "21:00",
+            closes: "01:30",
           },
         ],
       },

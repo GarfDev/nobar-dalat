@@ -13,7 +13,7 @@ export async function clientLoader({ request }: Route.ClientLoaderArgs) {
 
 export function meta() {
   return [
-    { title: "Nobar - there nothing inside nothing" },
+    { title: "Nobar - vietnamese identity intact" },
     { name: "description", content: "from da lat" },
   ];
 }
