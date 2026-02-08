@@ -1,6 +1,55 @@
 {
   "concept": "KHỞI NIỆM",
   "menu": "THỨC UỐNG",
+  "drinkMenu": {
+    "categories": {
+      "elo": "E LỜ",
+      "dau": "SẮC HUYỀN KHÔNG HỎI NGÃ NẶNG",
+      "nobar": "NOBAR ĐƯƠNG ĐẠI"
+    },
+    "items": {
+      "elo": {
+        "name": "e lờ",
+        "ingredients": ["GIN Ủ HOA NHÀI", "VẢI — CHANH", "LÒNG TRẮNG TRỨNG"],
+        "tags": "CHUA NGỌT - HƯƠNG HOA"
+      },
+      "sac": {
+        "name": "sắc",
+        "ingredients": ["VODKA Ủ TRÀ KABUSECHA", "MATCHA — KEM SHERRY", "RƯỢU MARASCHINO", "DÂU TÂY LÊN MEN"],
+        "tags": "CHUA VÀ NGỌT"
+      },
+      "hoi": {
+        "name": "hỏi",
+        "ingredients": ["HẠT CACAO RANG VỪA", "RƯỢU RUM DỪA", "VODKA Ủ MẮC KHÉN", "SỮA ĐẶC LÁ DỨA", "NHỤC ĐẬU KHẤU — TABASCO"],
+        "tags": "NỒNG - MẠNH - CAY"
+      },
+      "nang": {
+        "name": "nặng",
+        "ingredients": ["BOURBON Ủ NGÔ", "MẬT ONG", "WHISKEY KNOB CREEK", "BITTER SÔ CÔ LA — NHỤC ĐẬU KHẤU"],
+        "tags": "BÉO VÀ ĐẮNG"
+      },
+      "huyen": {
+        "name": "huyền",
+        "ingredients": ["MÍT", "WHISKEY SHERRY", "VANI — DỪA", "TRÀ KOMBUCHA", "CO2"],
+        "tags": "NGỌT - BÉO - TƯƠI MÁT"
+      },
+      "nga": {
+        "name": "ngã",
+        "ingredients": ["WHISKEY Ủ HẠT THÌ LÀ", "TRÀ OOLONG — HOA BIA", "GIN Ủ OOLONG", "RƯỢU AMARETTO — ABSINTHE"],
+        "tags": "CHUA NGỌT - THẢO MỘC - TRÀ"
+      },
+      "khong": {
+        "name": "không",
+        "ingredients": ["VODKA Ủ NHỤC ĐẬU KHẤU", "MEZCAL — XOÀI — THÌ LÀ", "KEM SHERRY — HOA BIA"],
+        "tags": "CHUA NGỌT - BÉO"
+      },
+      "duongdai": {
+        "name": "nobar",
+        "ingredients": ["COCKTAIL HIỆN ĐẠI", "BIẾN TẤU CỔ ĐIỂN", "MÓN ĐẶC BIỆT THEO MÙA"],
+        "tags": "ĐƯƠNG ĐẠI"
+      }
+    }
+  },
   "branding.enter": "Xem thêm",
   "concept.title": "Tính Việt Vẹn Nguyên",
   "concept.subtitle": "Giao Thoa Thời Đại",

@@ -24,18 +24,18 @@ export function Concept() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="mb-8 md:mb-12 flex flex-col items-center"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-8xl font-bold uppercase tracking-tighter mb-4 md:mb-6">
+          <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold uppercase tracking-tighter mb-4 md:mb-6">
             {t("concept.title")}
           </h2>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ height: 0 }}
             whileInView={{ height: 64 }}
             transition={{ duration: 1, delay: 0.2 }}
             className="w-[1px] bg-white/40 mb-4 md:mb-6 h-8 md:h-16"
           />
-          
-          <h3 className="text-sm sm:text-lg md:text-2xl font-light uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/80">
+
+          <h3 className="text-sm md:text-xl lg:text-2xl font-light uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/80">
             {t("concept.subtitle")}
           </h3>
         </motion.div>
@@ -47,7 +47,7 @@ export function Concept() {
           transition={{ duration: 1, delay: 0.4 }}
           className="relative"
         >
-          <p className="text-xs sm:text-sm md:text-lg font-light leading-relaxed md:leading-loose text-white/60 max-w-xl mx-auto px-4 md:px-0">
+          <p className="text-xs md:text-base lg:text-lg font-light leading-relaxed md:leading-loose text-white/60 max-w-xl mx-auto px-4 md:px-0">
             {t("concept.description")}
           </p>
         </motion.div>

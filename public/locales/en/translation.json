@@ -1,6 +1,55 @@
 {
   "concept": "CONCEPT",
   "menu": "OUR MENU",
+  "drinkMenu": {
+    "categories": {
+      "elo": "E LỜ",
+      "dau": "SẮC HUYỀN KHÔNG HỎI NGÃ NẶNG",
+      "nobar": "NOBAR CONTEMPORARY"
+    },
+    "items": {
+      "elo": {
+        "name": "e lờ",
+        "ingredients": ["JASMINE-INFUSED GIN", "LITCHI — LEMON", "EGG WHITE"],
+        "tags": "SWEET - SOUR - FLORAL"
+      },
+      "sac": {
+        "name": "sắc",
+        "ingredients": ["KABUSECHA-INFUSED VODKA", "MATCHA — SHERRY CREAM", "MARASCHINO", "FERMENTED STRAWBERRY"],
+        "tags": "SWEET AND SOUR"
+      },
+      "hoi": {
+        "name": "hỏi",
+        "ingredients": ["MEDIUM ROASTED COCOA BEANS", "COCONUT RUM", "MOUNTAIN PEPPER-INFUSED VODKA", "CONDENSED PANDAN", "NUTMEG — TABASCO"],
+        "tags": "BOOZY - HARD - SPICY"
+      },
+      "nang": {
+        "name": "nặng",
+        "ingredients": ["CORN-INFUSED BOURBON", "HONEY", "KNOB CREEK WHISKEY", "CHOCOLATE BITTER — NUTMEG"],
+        "tags": "CREAMY AND BITTER"
+      },
+      "huyen": {
+        "name": "huyền",
+        "ingredients": ["JACKFRUIT", "WHISKEY SHERRY", "VANILLA — COCONUT", "KOMBUCHA TEA", "CO2"],
+        "tags": "SWEET - CREAMY - REFRESHING"
+      },
+      "nga": {
+        "name": "ngã",
+        "ingredients": ["FENNEL SEEDS-INFUSED WHISKEY", "OOLONG TEA — HOPS", "OOLONG-INFUSED GIN", "AMARETO — ABSINTHE"],
+        "tags": "SWEET AND SOUR - HERBAL - TEA"
+      },
+      "khong": {
+        "name": "không",
+        "ingredients": ["NUTMEG-INFUSED VODKA", "MEZCAL — MANGO — DILL", "SHERRY CREAM — HOPS"],
+        "tags": "SWEET AND SOUR - CREAMY"
+      },
+      "duongdai": {
+        "name": "nobar",
+        "ingredients": ["MODERN COCKTAILS", "CLASSIC TWISTS", "SEASONAL SPECIALS"],
+        "tags": "CONTEMPORARY"
+      }
+    }
+  },
   "branding.enter": "See more",
   "concept.title": "Vietnamese Identity Intact",
   "concept.subtitle": "Intersection of Eras",

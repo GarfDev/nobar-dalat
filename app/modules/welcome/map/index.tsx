@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import { memo, lazy, Suspense, useState, useEffect } from "react";
-import { Loader2, Navigation, Copy, MapPin, ArrowUpRight, Check } from "lucide-react";
+import {
+  Loader2,
+  Navigation,
+  Copy,
+  MapPin,
+  ArrowUpRight,
+  Check,
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
@@ -38,7 +45,7 @@ function MapComponent() {
       const now = new Date();
       const utc = now.getTime() + now.getTimezoneOffset() * 60000;
       const vnTime = new Date(utc + 7 * 3600000);
-      
+
       const day = vnTime.getDay(); // 0 is Sunday
       const hours = vnTime.getHours();
       const minutes = vnTime.getMinutes();
@@ -46,7 +53,7 @@ function MapComponent() {
 
       // Regular hours: 19:00 - 01:30 (next day)
       // Wednesday: 21:00 - 01:30 (next day)
-      
+
       const isWednesday = day === 3;
       const openTime = isWednesday ? 21 * 60 : 19 * 60; // 21:00 or 19:00
       const closeTime = 1 * 60 + 30; // 01:30
@@ -54,7 +61,7 @@ function MapComponent() {
       // Logic for spanning past midnight
       // If current time is between openTime and midnight OR between midnight and closeTime
       let isOpenNow = false;
-      
+
       if (currentTime >= openTime) {
         // Evening before midnight
         isOpenNow = true;
@@ -85,16 +92,14 @@ function MapComponent() {
   return (
     <motion.section
       id="map"
-      className="h-screen w-screen bg-black text-white flex items-center justify-center p-6 md:p-12 lg:p-20 overflow-hidden"
+      className="h-screen w-screen bg-black text-white flex items-center justify-center p-4 md:p-8 lg:p-20 overflow-hidden"
     >
-      <div className="w-full h-full max-w-[1800px] grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 border-t border-white/20 pt-6 lg:pt-0 lg:border-none">
-        
+      <div className="w-full h-full max-w-[1800px] grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8 lg:gap-12 border-t border-white/20 pt-4 lg:pt-0 lg:border-none">
         {/* Left Column: Info & Actions */}
         <div className="lg:col-span-4 flex flex-col justify-between order-2 lg:order-1 h-full py-2 lg:py-0">
-          
           {/* Top: Header */}
-          <div className="hidden lg:block space-y-2">
-            <h2 className="text-7xl font-bold uppercase tracking-tighter leading-none -ml-1">
+          <div className="hidden md:block space-y-2">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tighter leading-none -ml-1">
               {t("map.title")}
             </h2>
             <div className="w-full h-px bg-white/20 my-6" />
@@ -102,37 +107,45 @@ function MapComponent() {
 
           {/* Middle: Details */}
           <div className="space-y-8 lg:space-y-12">
-             <div className="space-y-2">
-                <div className="flex items-center gap-2 text-white/50 mb-2">
-                  <MapPin className="w-4 h-4" />
-                  <span className="text-xs uppercase tracking-widest">{t("map.addressLabel")}</span>
-                </div>
-                <p className="text-2xl md:text-3xl font-light leading-tight">
-                  {address}
-                  <span className="block text-white/40">Đà Lạt, Lâm Đồng</span>
-                </p>
-             </div>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-white/50 mb-2">
+                <MapPin className="w-4 h-4" />
+                <span className="text-xs uppercase tracking-widest">
+                  {t("map.addressLabel")}
+                </span>
+              </div>
+              <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight">
+                {address}
+                <span className="block text-white/40">Đà Lạt, Lâm Đồng</span>
+              </p>
+            </div>
 
-             <div className="grid grid-cols-2 gap-8">
-                <div>
-                   <span className="text-xs uppercase tracking-widest text-white/50 block mb-1">{t("map.statusLabel")}</span>
-                   <div className="flex items-center gap-2">
-                     <span className="relative flex h-2 w-2">
-                       <span className={cn(
-                         "animate-ping absolute inline-flex h-full w-full rounded-full opacity-75",
-                         isOpen ? "bg-green-400" : "bg-red-400"
-                       )}></span>
-                       <span className={cn(
-                         "relative inline-flex rounded-full h-2 w-2",
-                         isOpen ? "bg-green-500" : "bg-red-500"
-                       )}></span>
-                     </span>
-                     <p className="font-mono text-sm uppercase">
-                       {isOpen ? t("map.statusOpen") : t("map.statusClosed")}
-                     </p>
-                   </div>
+            <div className="grid grid-cols-2 gap-8">
+              <div>
+                <span className="text-xs uppercase tracking-widest text-white/50 block mb-1">
+                  {t("map.statusLabel")}
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span
+                      className={cn(
+                        "animate-ping absolute inline-flex h-full w-full rounded-full opacity-75",
+                        isOpen ? "bg-green-400" : "bg-red-400",
+                      )}
+                    ></span>
+                    <span
+                      className={cn(
+                        "relative inline-flex rounded-full h-2 w-2",
+                        isOpen ? "bg-green-500" : "bg-red-500",
+                      )}
+                    ></span>
+                  </span>
+                  <p className="font-mono text-sm uppercase">
+                    {isOpen ? t("map.statusOpen") : t("map.statusClosed")}
+                  </p>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
 
           {/* Bottom: Actions */}
@@ -145,7 +158,9 @@ function MapComponent() {
             >
               <div className="flex items-center gap-4">
                 <Navigation className="w-5 h-5" />
-                <span className="text-sm font-bold uppercase tracking-widest">{t("map.getDirections") || "Get Directions"}</span>
+                <span className="text-sm font-bold uppercase tracking-widest">
+                  {t("map.getDirections") || "Get Directions"}
+                </span>
               </div>
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
@@ -156,7 +171,9 @@ function MapComponent() {
             >
               <div className="flex items-center gap-4">
                 <Copy className="w-5 h-5" />
-                <span className="text-sm font-bold uppercase tracking-widest">{copied ? t("map.copied") : t("map.copyAddress")}</span>
+                <span className="text-sm font-bold uppercase tracking-widest">
+                  {copied ? t("map.copied") : t("map.copyAddress")}
+                </span>
               </div>
               {copied && <Check className="w-5 h-5 text-green-500" />}
             </button>
@@ -164,16 +181,15 @@ function MapComponent() {
         </div>
 
         {/* Right Column: Map */}
-        <div className="lg:col-span-8 order-1 lg:order-2 h-[50vh] lg:h-full w-full relative flex items-center justify-center">
-          
-          <div 
-             className="w-full h-full md:w-[90%] md:h-[90%] bg-zinc-900 grayscale hover:grayscale-0 transition-all duration-[3000ms] ease-in-out relative overflow-hidden shadow-2xl"
-             style={{ 
-               borderRadius: currentShape,
-               transition: "border-radius 5s ease-in-out, filter 0.5s ease"
-             }}
+        <div className="lg:col-span-8 order-1 lg:order-2 h-[35vh] md:h-[40vh] lg:h-full w-full relative flex items-center justify-center">
+          <div
+            className="w-full h-full md:w-[90%] md:h-[90%] bg-zinc-900 grayscale hover:grayscale-0 transition-all duration-[3000ms] ease-in-out relative overflow-hidden shadow-2xl"
+            style={{
+              borderRadius: currentShape,
+              transition: "border-radius 5s ease-in-out, filter 0.5s ease",
+            }}
           >
-             <Suspense
+            <Suspense
               fallback={
                 <div className="h-full w-full flex items-center justify-center text-white/20 gap-3 bg-zinc-900">
                   <Loader2 className="w-6 h-6 animate-spin" />
@@ -184,16 +200,15 @@ function MapComponent() {
             </Suspense>
 
             {/* Overlay Ring to emphasize shape */}
-             <div 
-                className="absolute inset-0 pointer-events-none border-[1px] border-white/20 z-20"
-                style={{ 
-                   borderRadius: currentShape,
-                   transition: "border-radius 5s ease-in-out" 
-                }}
-             />
+            <div
+              className="absolute inset-0 pointer-events-none border-[1px] border-white/20 z-20"
+              style={{
+                borderRadius: currentShape,
+                transition: "border-radius 5s ease-in-out",
+              }}
+            />
           </div>
         </div>
-
       </div>
     </motion.section>
   );

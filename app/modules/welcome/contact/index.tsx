@@ -39,10 +39,10 @@ function Contact() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="w-full h-full max-w-[1920px] px-6 md:px-12 flex flex-row items-center justify-between"
+        className="w-full h-full max-w-[1920px] px-6 md:px-12 lg:px-20 flex flex-row items-center justify-between"
       >
         {/* Left: Branding */}
-        <div className="flex flex-col justify-center h-full">
+        <div className="flex flex-col items-start justify-center text-left">
           <motion.h2
             variants={itemVariants}
             className="text-3xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter leading-none"
@@ -62,7 +62,7 @@ function Contact() {
           {/* Top Row: Address & Link */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col md:flex-row items-end md:items-center gap-1 md:gap-6"
+            className="flex flex-col md:flex-row items-center gap-1 md:gap-6"
           >
             <a
               href="https://maps.app.goo.gl/Po186wH5QZzYYD4Y7"

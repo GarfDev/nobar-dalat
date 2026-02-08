@@ -9,9 +9,6 @@ const drinks = [
   {
     id: "elo",
     category: "elo",
-    name: "e lờ",
-    ingredients: ["JASMINE-INFUSED GIN", "LITCHI — LEMON", "EGG WHITE"],
-    tags: "SWEET - SOUR - FLORAL",
     bgColor: "#fce7f3", // Pink 100
     accentColor: "#db2777", // Pink 600
     image: "/images/menu/image_1.png", // Placeholder
@@ -20,14 +17,6 @@ const drinks = [
   {
     id: "sac",
     category: "dau",
-    name: "sắc",
-    ingredients: [
-      "KABUSECHA-INFUSED VODKA",
-      "MATCHA — SHERRY CREAM",
-      "MARASCHINO",
-      "FERMENTED STRAWBERRY",
-    ],
-    tags: "SWEET AND SOUR",
     bgColor: "#fae8ff", // Light Fuchsia
     accentColor: "#a21caf",
     image: "/images/menu/image_1.png",
@@ -36,15 +25,6 @@ const drinks = [
   {
     id: "hoi",
     category: "dau",
-    name: "hỏi",
-    ingredients: [
-      "MEDIUM ROASTED COCOA BEANS",
-      "COCONUT RUM",
-      "MOUNTAIN PEPPER-INFUSED VODKA",
-      "CONDENSED PANDAN",
-      "NUTMEG — TABASCO",
-    ],
-    tags: "BOOZY - HARD - SPICY",
     bgColor: "#f5f5f4", // Warm Grey
     accentColor: "#57534e",
     image: "/images/menu/image_2.png",
@@ -53,14 +33,6 @@ const drinks = [
   {
     id: "nang",
     category: "dau",
-    name: "nặng",
-    ingredients: [
-      "CORN-INFUSED BOURBON",
-      "HONEY",
-      "KNOB CREEK WHISKEY",
-      "CHOCOLATE BITTER — NUTMEG",
-    ],
-    tags: "CREAMY AND BITTER",
     bgColor: "#ffedd5", // Light Orange
     accentColor: "#c2410c",
     image: "/images/menu/image_3.png",
@@ -69,15 +41,6 @@ const drinks = [
   {
     id: "huyen",
     category: "dau",
-    name: "huyền",
-    ingredients: [
-      "JACKFRUIT",
-      "WHISKEY SHERRY",
-      "VANILLA — COCONUT",
-      "KOMBUCHA TEA",
-      "CO2",
-    ],
-    tags: "SWEET - CREAMY - REFRESHING",
     bgColor: "#fef9c3", // Light Yellow
     accentColor: "#a16207",
     image: "/images/menu/image_4.png",
@@ -86,14 +49,6 @@ const drinks = [
   {
     id: "nga",
     category: "dau",
-    name: "ngã",
-    ingredients: [
-      "FENNEL SEEDS-INFUSED WHISKEY",
-      "OOLONG TEA — HOPS",
-      "OOLONG-INFUSED GIN",
-      "AMARETO — ABSINTHE",
-    ],
-    tags: "SWEET AND SOUR - HERBAL - TEA",
     bgColor: "#dcfce7", // Light Green
     accentColor: "#15803d",
     image: "/images/menu/image_5.png",
@@ -102,13 +57,6 @@ const drinks = [
   {
     id: "khong",
     category: "dau",
-    name: "không",
-    ingredients: [
-      "NUTMEG-INFUSED VODKA",
-      "MEZCAL — MANGO — DILL",
-      "SHERRY CREAM — HOPS",
-    ],
-    tags: "SWEET AND SOUR - CREAMY",
     bgColor: "#e0f2fe", // Light Sky
     accentColor: "#0369a1",
     image: "/images/menu/image_6.png",
@@ -117,9 +65,6 @@ const drinks = [
   {
     id: "duongdai",
     category: "nobar",
-    name: "nobar",
-    ingredients: ["MODERN COCKTAILS", "CLASSIC TWISTS", "SEASONAL SPECIALS"],
-    tags: "CONTEMPORARY",
     bgColor: "#e5e7eb", // Gray 200
     accentColor: "#111827", // Gray 900
     image: "/images/menu/image_1.png", // Placeholder
@@ -133,11 +78,7 @@ const shapes = {
   blob3: "46% 54% 28% 72% / 60% 38% 62% 40%",
 };
 
-const CATEGORIES = [
-  { id: "elo", label: "E LỜ" },
-  { id: "dau", label: "SẮC HUYỀN KHÔNG HỎI NGÃ NẶNG" },
-  { id: "nobar", label: "NOBAR ĐƯƠNG ĐẠI" },
-];
+const CATEGORIES = [{ id: "elo" }, { id: "dau" }, { id: "nobar" }];
 
 const textVariants: Variants = {
   enter: (direction: number) => ({
@@ -200,57 +141,132 @@ const DrinkInfo = ({
   drink: (typeof drinks)[0];
   className?: string;
   direction: number;
-}) => (
-  <motion.div
-    custom={direction}
-    variants={textVariants}
-    initial="enter"
-    animate="center"
-    exit="exit"
-    className={cn(
-      "w-full flex flex-col items-center md:items-end text-center md:text-right pointer-events-none select-none",
-      className,
-    )}
-  >
-    <h2 className="text-6xl md:text-9xl font-[100] tracking-tighter mb-4 md:mb-8 font-sans">
-      {drink.name}
-    </h2>
+}) => {
+  const { t } = useTranslation();
+  const name = t(`drinkMenu.items.${drink.id}.name`);
+  const ingredients = t(`drinkMenu.items.${drink.id}.ingredients`, {
+    returnObjects: true,
+  }) as string[];
+  const tags = t(`drinkMenu.items.${drink.id}.tags`);
 
-    <div className="space-y-1 md:space-y-2 mb-4 md:mb-8">
-      {drink.ingredients.map((ing: string, i: number) => (
-        <p
-          key={i}
-          className="text-sm md:text-lg font-light uppercase tracking-widest"
-        >
-          {ing}
-        </p>
-      ))}
-    </div>
-
-    <div
-      className="text-white px-4 py-1 text-xs md:text-sm font-bold uppercase tracking-widest inline-block"
-      style={{ backgroundColor: drink.accentColor }}
+  return (
+    <motion.div
+      custom={direction}
+      variants={textVariants}
+      initial="enter"
+      animate="center"
+      exit="exit"
+      className={cn(
+        "w-full flex flex-col items-center md:items-end text-center md:text-right pointer-events-none select-none",
+        className,
+      )}
     >
-      {drink.tags}
-    </div>
-  </motion.div>
-);
+      <h2 className="text-6xl md:text-7xl lg:text-9xl font-[100] tracking-tighter mb-4 md:mb-8 font-sans">
+        {name}
+      </h2>
+
+      <div className="space-y-1 md:space-y-2 mb-4 md:mb-8">
+        {ingredients.map((ing: string, i: number) => (
+          <p
+            key={i}
+            className="text-sm md:text-base lg:text-lg font-light uppercase tracking-widest"
+          >
+            {ing}
+          </p>
+        ))}
+      </div>
+
+      <div
+        className="text-white px-4 py-1 text-xs md:text-sm font-bold uppercase tracking-widest inline-block"
+        style={{ backgroundColor: drink.accentColor }}
+      >
+        {tags}
+      </div>
+    </motion.div>
+  );
+};
+
+const MorphingImage = ({
+  drink,
+  direction,
+}: {
+  drink: (typeof drinks)[0];
+  direction: number;
+}) => {
+  const { t } = useTranslation();
+  const [shape, setShape] = useState(
+    shapes[drink.shape as keyof typeof shapes],
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const keys = Object.values(shapes);
+      const randomShape = keys[Math.floor(Math.random() * keys.length)];
+      setShape(randomShape);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      <div
+        className={cn(
+          "w-[320px] h-[320px] md:w-[380px] md:h-[380px] lg:w-[450px] lg:h-[450px] shrink-0 shadow-2xl overflow-hidden flex items-center justify-center relative transition-all duration-700 ease-in-out",
+        )}
+        style={{
+          backgroundColor: drink.accentColor,
+          borderRadius: shape,
+          transition:
+            "border-radius 4s ease-in-out, background-color 0.5s ease",
+        }}
+      >
+        <img
+          src={drink.image}
+          alt={t(`drinkMenu.items.${drink.id}.name`)}
+          className="w-full h-full object-cover"
+        />
+
+        {/* White Text Overlay - Clipped by Shape */}
+        <div
+          className="hidden md:flex absolute top-1/2 left-1/2 pointer-events-none w-[calc(100vw-12rem)] min-[1344px]:w-[72rem] items-center"
+          style={{ transform: "translate(calc(-75% + 6rem), -50%)" }}
+        >
+          <div className="w-1/2 flex items-center justify-end md:-mr-12">
+            <DrinkInfo
+              drink={drink}
+              className="text-white"
+              direction={direction}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Drawing overlay effect - morphing SVG */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none opacity-20 transition-all duration-700 ease-in-out"
+        viewBox="0 0 100 100"
+        style={{
+          borderRadius: shape,
+          transition: "border-radius 4s ease-in-out",
+        }}
+      >
+        <circle
+          cx="50"
+          cy="50"
+          r="48"
+          stroke="black"
+          strokeWidth="0.5"
+          fill="none"
+        />
+      </svg>
+    </>
+  );
+};
 
 export function Menu() {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("dau");
   const [[page, direction], setPage] = useState([0, 0]);
-  const [morphingShape, setMorphingShape] = useState(shapes.blob1);
-
-  // Morph shape animation
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const keys = Object.values(shapes);
-      const randomShape = keys[Math.floor(Math.random() * keys.length)];
-      setMorphingShape(randomShape);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   // Filter drinks by category
   const filteredDrinks = drinks.filter((d) => d.category === activeCategory);
@@ -311,7 +327,9 @@ export function Menu() {
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
-              <span className="relative z-10">{cat.label}</span>
+              <span className="relative z-10">
+                {t(`drinkMenu.categories.${cat.id}`)}
+              </span>
             </button>
           ))}
         </div>
@@ -373,7 +391,7 @@ export function Menu() {
           key={`${activeCategory}-${page}`}
           className="absolute w-full h-full flex items-center justify-center px-4 pb-24 pt-16 md:px-24 md:pb-0 md:pt-0"
         >
-          <div className="w-full max-w-6xl h-full md:h-[60vh] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
+          <div className="w-full max-w-6xl h-full md:h-[60vh] lg:h-[70vh] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
             {/* Text Part - Black (Background) */}
             <div className="w-full md:w-1/2 flex items-center justify-end z-0 md:-mr-12">
               <DrinkInfo drink={drink} direction={direction} />
@@ -400,56 +418,11 @@ export function Menu() {
               }}
               className="w-full md:w-1/2 h-[370px] md:h-full md:aspect-auto flex items-center justify-center relative z-10 md:-ml-12"
             >
-              <div
-                className={cn(
-                  "w-[320px] h-[320px] md:w-[450px] md:h-[450px] shrink-0 shadow-2xl overflow-hidden flex items-center justify-center relative transition-all duration-700 ease-in-out",
-                )}
-                style={{
-                  backgroundColor: drink.accentColor,
-                  borderRadius: morphingShape,
-                  transition:
-                    "border-radius 4s ease-in-out, background-color 0.5s ease",
-                }}
-              >
-                <img
-                  src={drink.image}
-                  alt={drink.name}
-                  className="w-full h-full object-cover"
-                />
-
-                {/* White Text Overlay - Clipped by Shape */}
-                <div
-                  className="hidden md:flex absolute top-1/2 left-1/2 pointer-events-none w-[calc(100vw-12rem)] min-[1344px]:w-[72rem] items-center"
-                  style={{ transform: "translate(calc(-75% + 6rem), -50%)" }}
-                >
-                  <div className="w-1/2 flex items-center justify-end md:-mr-12">
-                    <DrinkInfo
-                      drink={drink}
-                      className="text-white"
-                      direction={direction}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Drawing overlay effect - morphing SVG */}
-              <svg
-                className="absolute inset-0 w-full h-full pointer-events-none opacity-20 transition-all duration-700 ease-in-out"
-                viewBox="0 0 100 100"
-                style={{
-                  borderRadius: morphingShape,
-                  transition: "border-radius 4s ease-in-out",
-                }}
-              >
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="48"
-                  stroke="black"
-                  strokeWidth="0.5"
-                  fill="none"
-                />
-              </svg>
+              <MorphingImage
+                key={drink.id}
+                drink={drink}
+                direction={direction}
+              />
             </motion.div>
           </div>
         </div>

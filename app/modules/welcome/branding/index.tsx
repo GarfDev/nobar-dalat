@@ -141,7 +141,7 @@ export function Branding() {
           <motion.img
             src="/images/nobar-logo-black-white.png"
             alt="nobar-dalat-logo"
-            className="h-[200px] lg:h-[250px] drop-shadow-2xl"
+            className="h-[180px] md:h-[220px] lg:h-[250px] drop-shadow-2xl"
             animate={{
               opacity: [0.6, 1, 0.6],
             }}
@@ -159,7 +159,7 @@ export function Branding() {
               hover: { opacity: 1, y: 0, letterSpacing: "0.8em" },
             }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="hidden md:block text-xs md:text-sm font-light uppercase text-white/90 border-b border-white/20 pb-1"
+            className="hidden md:block text-xs md:text-sm lg:text-base font-light uppercase text-white/90 border-b border-white/20 pb-1"
           >
             {t("branding.enter", "Enter")}
           </motion.div>
