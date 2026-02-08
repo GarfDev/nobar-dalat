@@ -96,34 +96,8 @@ function ClientMap() {
         </Marker>
       </MapContainer>
 
-      {/* Minimal Overlay */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-[1000] pointer-events-none">
-        <a
-          href="https://www.google.com/maps/dir/?api=1&origin=Rạp+Hòa+Bình+Đà+Lạt&destination=NO+bar+-+a+modern+cocktails+in+Da+Lat"
-          target="_blank"
-          rel="noreferrer"
-          className="pointer-events-auto group flex items-center gap-3 bg-black/40 backdrop-blur-md border border-white/20 pl-4 pr-2 py-2 rounded-full hover:bg-black/60 transition-all duration-300 hover:scale-105 hover:border-white/40 shadow-lg"
-        >
-          <div className="flex flex-col items-start">
-            <span className="text-[10px] uppercase tracking-widest text-white/60 font-medium">
-              {t("map.navigation")}
-            </span>
-            <span className="text-sm font-bold text-white tracking-wide">
-              {t("map.getDirections")}
-            </span>
-          </div>
-          <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-300 shadow-sm">
-            <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-          </div>
-        </a>
-      </div>
-
-      {/* Global Styles */}
       <style>{`
-        .leaflet-container {
-            background: transparent !important;
-        }
-        
+        /* Minimal Overlay */
         .map-road-tiles {
             filter: invert(100%) contrast(150%);
             mix-blend-mode: screen;
