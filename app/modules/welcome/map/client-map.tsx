@@ -4,7 +4,6 @@ import {
   TileLayer,
   Marker,
   Popup,
-  ZoomControl,
   Polyline,
   Tooltip,
 } from "react-leaflet";
@@ -65,6 +64,11 @@ function ClientMap() {
         center={[11.9436, 108.4355]}
         zoom={17}
         scrollWheelZoom={false}
+        dragging={false}
+        touchZoom={false}
+        doubleClickZoom={false}
+        boxZoom={false}
+        keyboard={false}
         className="h-full w-full outline-none bg-transparent font-sans"
         zoomControl={false}
         attributionControl={false}
@@ -82,8 +86,6 @@ function ClientMap() {
           className="map-labels-tiles"
           opacity={1}
         />
-
-        <ZoomControl position="bottomright" />
 
         {/* End Marker */}
         <Marker position={NO_BAR_COORDS} icon={endIcon}>
