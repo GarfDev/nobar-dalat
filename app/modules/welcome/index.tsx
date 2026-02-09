@@ -22,10 +22,10 @@ export function Welcome() {
 
   const brandingBlur = useTransform(
     conceptProgress,
-    [0, 0.3, 1],
+    [0, 0.4, 1],
     ["blur(0px)", "blur(0px)", "blur(20px)"],
   );
-  const conceptOpacity = useTransform(conceptProgress, [0, 0.3, 1], [0, 0, 1]);
+  const conceptOpacity = useTransform(conceptProgress, [0, 0.4, 1], [0, 0, 1]);
 
   // 2. Menu entering (covers Concept)
   const { scrollYProgress: menuProgress } = useScroll({
@@ -35,10 +35,10 @@ export function Welcome() {
 
   const conceptBlur = useTransform(
     menuProgress,
-    [0, 0.3, 1],
+    [0, 0.4, 1],
     ["blur(0px)", "blur(0px)", "blur(20px)"],
   );
-  const menuOpacity = useTransform(menuProgress, [0, 0.3, 1], [0, 0, 1]);
+  const menuOpacity = useTransform(menuProgress, [0, 0.4, 1], [0, 0, 1]);
 
   // 3. Map entering (covers Menu)
   const { scrollYProgress: mapProgress } = useScroll({
@@ -48,10 +48,10 @@ export function Welcome() {
 
   const menuBlur = useTransform(
     mapProgress,
-    [0, 0.3, 1],
+    [0, 0.4, 1],
     ["blur(0px)", "blur(0px)", "blur(20px)"],
   );
-  const mapOpacity = useTransform(mapProgress, [0, 0.3, 1], [0, 0, 1]);
+  const mapOpacity = useTransform(mapProgress, [0, 0.4, 1], [0, 0, 1]);
 
   // 4. Contact entering (covers Map)
   const { scrollYProgress: contactProgress } = useScroll({

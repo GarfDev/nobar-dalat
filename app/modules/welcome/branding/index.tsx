@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import { BASE_DELAY } from "../constants";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
@@ -42,6 +42,15 @@ export function Branding() {
   const [index, setIndex] = useState(0);
   const controls = useAnimation();
   const [windowWidth, setWindowWidth] = useState(0);
+
+  const { scrollY } = useScroll();
+  const parallaxY = useTransform(scrollY, [0, 500], [0, -200]);
+  const parallaxOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const parallaxBlur = useTransform(
+    scrollY,
+    [0, 300],
+    ["blur(0px)", "blur(10px)"],
+  );
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -122,6 +131,7 @@ export function Branding() {
         initial="initial"
         animate={controls}
         whileHover="hover"
+        style={{ y: parallaxY, opacity: parallaxOpacity, filter: parallaxBlur }}
         className={cn(
           "absolute rounded-2xl top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-center justify-center text-primary-500 z-10",
           windowWidth < 768 ? "cursor-default" : "cursor-pointer",
