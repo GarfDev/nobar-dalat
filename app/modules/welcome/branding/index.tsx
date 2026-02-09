@@ -1,15 +1,13 @@
 import cn from "classnames";
 import { motion, useAnimation } from "framer-motion";
 import { BASE_DELAY } from "../constants";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 import { LanguageSwitcher } from "./components/language-switcher";
 import Carousel, { type MediaItem } from "./carousel";
 import { useTranslation } from "react-i18next";
 import Lightbox from "./carousel/lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
-
-import { useEffect, useState } from "react";
 
 export const LOGO_DELAY = 0.5;
 
@@ -35,7 +33,7 @@ const logoVariants = {
 };
 
 export function Branding() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const { t } = useTranslation();
   const [isLogoClicked, setIsLogoClicked] = useState(false);
   const [canInteract, setCanInteract] = useState(false);

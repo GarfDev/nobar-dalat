@@ -9,10 +9,10 @@ import { ReactLenis } from "lenis/react";
 import { useRef } from "react";
 
 export function Welcome() {
-  const conceptRef = useRef(null);
-  const mapRef = useRef(null);
-  const menuRef = useRef(null);
-  const contactRef = useRef(null);
+  const conceptRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   // 1. Concept entering (covers Branding)
   const { scrollYProgress: conceptProgress } = useScroll({
