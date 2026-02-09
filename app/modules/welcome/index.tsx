@@ -5,8 +5,8 @@ import Map from "./map";
 import { Menu } from "./menu";
 import "./style.css";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ReactLenis } from "lenis/react";
-import { useRef } from "react";
+import { ReactLenis, useLenis } from "lenis/react";
+import { useRef, useEffect, type ElementRef } from "react";
 
 export function Welcome() {
   const conceptRef = useRef<HTMLDivElement>(null);
@@ -65,9 +65,60 @@ export function Welcome() {
     ["blur(0px)", "blur(20px)"],
   );
 
+  // Better approach: Get the instance and set up a listener
+  const lenisRef = useRef<ElementRef<typeof ReactLenis>>(null);
+
+  useEffect(() => {
+    const lenis = lenisRef.current?.lenis;
+    if (!lenis) return;
+
+    let timeout: NodeJS.Timeout;
+
+    const onScroll = () => {
+      clearTimeout(timeout);
+      // Wait for scroll to stop
+      timeout = setTimeout(() => {
+        const vh = window.innerHeight;
+        const current = lenis.scroll;
+        const target = Math.round(current / vh) * vh;
+
+        // Only snap if we are not already close enough (avoid micro-jitters)
+        if (Math.abs(current - target) > 5) {
+          lenis.scrollTo(target, {
+            duration: 1.5,
+            lock: true,
+            onComplete: () => {
+              lenis.stop();
+              setTimeout(() => {
+                lenis.start();
+              }, 500);
+            },
+          });
+        }
+      }, 150); // Adjust delay as needed
+    };
+
+    lenis.on("scroll", onScroll);
+
+    return () => {
+      lenis.off("scroll", onScroll);
+      clearTimeout(timeout);
+    };
+  }, []);
+
   return (
-    <ReactLenis root options={{ lerp: 0.1, syncTouch: true }}>
-      <div className="card-container snap-y snap-mandatory">
+    <ReactLenis
+      ref={lenisRef}
+      root
+      options={{
+        lerp: 0.1,
+        duration: 1.5,
+        smoothWheel: true,
+        syncTouch: true,
+        touchMultiplier: 1.5,
+      }}
+    >
+      <div className="card-container">
         <motion.div
           className="card snap-start snap-always"
           style={{ filter: brandingBlur, zIndex: 1 }}
