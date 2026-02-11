@@ -100,12 +100,18 @@ export function Branding({ carouselItems }: { carouselItems: MediaItem[] }) {
       )}
     >
       {/* Carousel background for all breakpoints */}
-      <Carousel
-        items={carouselItems}
-        setOpen={setOpen}
-        setIndex={setIndex}
-        canInteract={canInteract}
-      />
+      <motion.div
+        initial={{ filter: "blur(20px)" }}
+        animate={{ filter: "blur(0px)" }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <Carousel
+          items={carouselItems}
+          setOpen={setOpen}
+          setIndex={setIndex}
+          canInteract={canInteract}
+        />
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }}
