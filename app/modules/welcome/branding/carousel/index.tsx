@@ -170,7 +170,7 @@ const Carousel = ({
                 key={`${item.src}-${idx}`}
                 src={item.src}
                 className={cn(
-                  "masonry-item cursor-pointer w-full object-cover",
+                  "masonry-item cursor-pointer w-full object-cover break-inside-avoid mb-0 block",
                   (isMobile || !canInteract) && "pointer-events-none",
                   "video-zoom",
                 )}
@@ -213,7 +213,7 @@ const ImageWithPlaceholder = ({
   return (
     <div
       className={cn(
-        "masonry-item relative cursor-pointer overflow-hidden bg-cover bg-center",
+        "masonry-item relative cursor-pointer overflow-hidden bg-cover bg-center break-inside-avoid mb-0 block",
         canInteract ? "pointer-events-auto" : "pointer-events-none",
       )}
       style={{
