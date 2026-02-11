@@ -177,6 +177,7 @@ const Carousel = ({
                 <video
                   src={item.src}
                   className="w-full h-auto object-cover video-zoom block"
+                  style={{ width: "100%", display: "block" }}
                   playsInline
                   autoPlay
                   muted
@@ -220,6 +221,8 @@ const ImageWithPlaceholder = ({
         canInteract ? "pointer-events-auto" : "pointer-events-none",
       )}
       style={{
+        width: "100%",
+        display: "block",
         aspectRatio: width && height ? `${width} / ${height}` : "auto",
         backgroundImage: `url(${placeholder})`,
       }}
