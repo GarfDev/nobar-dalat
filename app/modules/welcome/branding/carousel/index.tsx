@@ -170,7 +170,7 @@ const Carousel = ({
                 key={`${item.src}-${idx}`}
                 src={item.src}
                 className={cn(
-                  "masonry-item cursor-pointer h-full w-full object-cover",
+                  "masonry-item cursor-pointer w-full object-cover",
                   (isMobile || !canInteract) && "pointer-events-none",
                   "video-zoom",
                 )}
