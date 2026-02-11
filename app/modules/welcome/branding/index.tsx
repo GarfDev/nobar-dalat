@@ -232,7 +232,7 @@ export function Branding({ carouselItems }: { carouselItems: MediaItem[] }) {
           }
           return {
             type: "image" as const,
-            src: item.src,
+            src: item.originalSrc || item.src,
           };
         })}
         plugins={[Video]}

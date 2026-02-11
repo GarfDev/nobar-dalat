@@ -4,6 +4,7 @@ import cn from "classnames";
 export type MediaItem = {
   type: "image" | "video";
   src: string;
+  originalSrc?: string;
   placeholder?: string;
   width?: number;
   height?: number;

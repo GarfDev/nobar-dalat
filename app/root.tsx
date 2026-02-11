@@ -25,32 +25,32 @@ export const links: Route.LinksFunction = () => [
   {
     rel: "preload",
     as: "image",
-    href: "/images/menu/image_1.png",
+    href: "/images/menu-optimized/image_1.webp",
   },
   {
     rel: "preload",
     as: "image",
-    href: "/images/menu/image_2.png",
+    href: "/images/menu-optimized/image_2.webp",
   },
   {
     rel: "preload",
     as: "image",
-    href: "/images/menu/image_3.png",
+    href: "/images/menu-optimized/image_3.webp",
   },
   {
     rel: "preload",
     as: "image",
-    href: "/images/menu/image_4.png",
+    href: "/images/menu-optimized/image_4.webp",
   },
   {
     rel: "preload",
     as: "image",
-    href: "/images/menu/image_5.png",
+    href: "/images/menu-optimized/image_5.webp",
   },
   {
     rel: "preload",
     as: "image",
-    href: "/images/menu/image_6.png",
+    href: "/images/menu-optimized/image_6.webp",
   },
   { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
   {

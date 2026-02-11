@@ -11,7 +11,7 @@ const drinks = [
     category: "elo",
     bgColor: "#fce7f3", // Pink 100
     accentColor: "#db2777", // Pink 600
-    image: "/images/menu/image_1.png", // Placeholder
+    image: "/images/menu-optimized/image_1.webp", // Placeholder
     shape: "blob1",
   },
   {
@@ -19,7 +19,7 @@ const drinks = [
     category: "dau",
     bgColor: "#fae8ff", // Light Fuchsia
     accentColor: "#a21caf",
-    image: "/images/menu/image_1.png",
+    image: "/images/menu-optimized/image_1.webp",
     shape: "blob2",
   },
   {
@@ -27,7 +27,7 @@ const drinks = [
     category: "dau",
     bgColor: "#f5f5f4", // Warm Grey
     accentColor: "#57534e",
-    image: "/images/menu/image_2.png",
+    image: "/images/menu-optimized/image_2.webp",
     shape: "blob3",
   },
   {
@@ -35,7 +35,7 @@ const drinks = [
     category: "dau",
     bgColor: "#ffedd5", // Light Orange
     accentColor: "#c2410c",
-    image: "/images/menu/image_3.png",
+    image: "/images/menu-optimized/image_3.webp",
     shape: "blob1",
   },
   {
@@ -43,7 +43,7 @@ const drinks = [
     category: "dau",
     bgColor: "#fef9c3", // Light Yellow
     accentColor: "#a16207",
-    image: "/images/menu/image_4.png",
+    image: "/images/menu-optimized/image_4.webp",
     shape: "blob2",
   },
   {
@@ -51,7 +51,7 @@ const drinks = [
     category: "dau",
     bgColor: "#dcfce7", // Light Green
     accentColor: "#15803d",
-    image: "/images/menu/image_5.png",
+    image: "/images/menu-optimized/image_5.webp",
     shape: "blob3",
   },
   {
@@ -59,7 +59,7 @@ const drinks = [
     category: "dau",
     bgColor: "#e0f2fe", // Light Sky
     accentColor: "#0369a1",
-    image: "/images/menu/image_6.png",
+    image: "/images/menu-optimized/image_6.webp",
     shape: "blob1",
   },
   {
@@ -67,7 +67,7 @@ const drinks = [
     category: "nobar",
     bgColor: "#e5e7eb", // Gray 200
     accentColor: "#111827", // Gray 900
-    image: "/images/menu/image_1.png", // Placeholder
+    image: "/images/menu-optimized/image_1.webp", // Placeholder
     shape: "blob2",
   },
 ];
