@@ -68,10 +68,13 @@ export function Branding({ carouselItems }: { carouselItems: MediaItem[] }) {
     }
   }, []);
 
+  const [isLogoHidden, setIsLogoHidden] = useState(false);
+
   useEffect(() => {
     if (isLogoClicked) {
       controls.start("clicked").then(() => {
         setCanInteract(true);
+        setIsLogoHidden(true);
       });
     } else {
       controls.start("animate");
@@ -122,53 +125,62 @@ export function Branding({ carouselItems }: { carouselItems: MediaItem[] }) {
         className="absolute top-0 left-0 w-full h-full bg-black pointer-events-none"
       />
       {/** MAIN LOGO TEXT */}
-      <motion.div
-        variants={logoVariants}
-        initial="initial"
-        animate={controls}
-        whileHover="hover"
-        style={{ y: parallaxY, opacity: parallaxOpacity, filter: parallaxBlur }}
-        className={cn(
-          "absolute rounded-2xl top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-center justify-center text-primary-500 z-10",
-          windowWidth < 768 ? "cursor-default" : "cursor-pointer",
-        )}
-        onClick={handleLogoClick}
-      >
+      {!isLogoHidden && (
         <motion.div
-          className="flex flex-col items-center gap-6"
-          variants={{
-            initial: { scale: 1 },
-            hover: { scale: 1.05 },
+          variants={logoVariants}
+          initial="initial"
+          animate={controls}
+          whileHover={isLogoClicked ? undefined : "hover"}
+          style={{
+            y: parallaxY,
+            opacity: parallaxOpacity,
+            filter: parallaxBlur,
           }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className={cn(
+            "absolute rounded-2xl top-0 bottom-0 left-0 right-0 m-[auto] w-fit h-fit flex flex-col items-center justify-center text-primary-500 z-10",
+            windowWidth < 768 || isLogoClicked
+              ? "cursor-default"
+              : "cursor-pointer",
+            isLogoClicked && "pointer-events-none",
+          )}
+          onClick={handleLogoClick}
         >
-          <motion.img
-            src="/images/nobar-logo-black-white.png"
-            alt="nobar-dalat-logo"
-            className="h-[180px] md:h-[220px] lg:h-[250px] drop-shadow-2xl"
-            animate={{
-              opacity: [0.6, 1, 0.6],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          {/* Text Hint - Reveals on Hover */}
           <motion.div
+            className="flex flex-col items-center gap-6"
             variants={{
-              initial: { opacity: 0, y: 10, letterSpacing: "0.5em" },
-              hover: { opacity: 1, y: 0, letterSpacing: "0.8em" },
+              initial: { scale: 1 },
+              hover: { scale: 1.05 },
             }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="hidden md:block text-xs md:text-sm lg:text-base font-light uppercase text-white/90 border-b border-white/20 pb-1"
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            {t("branding.enter", "Enter")}
+            <motion.img
+              src="/images/nobar-logo-black-white.png"
+              alt="nobar-dalat-logo"
+              className="h-[180px] md:h-[220px] lg:h-[250px] drop-shadow-2xl"
+              animate={{
+                opacity: [0.6, 1, 0.6],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Text Hint - Reveals on Hover */}
+            <motion.div
+              variants={{
+                initial: { opacity: 0, y: 10, letterSpacing: "0.5em" },
+                hover: { opacity: 1, y: 0, letterSpacing: "0.8em" },
+              }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="hidden md:block text-xs md:text-sm lg:text-base font-light uppercase text-white/90 border-b border-white/20 pb-1"
+            >
+              {t("branding.enter", "Enter")}
+            </motion.div>
           </motion.div>
         </motion.div>
-      </motion.div>
+      )}
       {/** END MAIN LOGO TEXT */}
 
       <motion.div
