@@ -7,8 +7,9 @@ import "./style.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ReactLenis, useLenis } from "lenis/react";
 import { useRef, useEffect, type ElementRef } from "react";
+import type { MediaItem } from "./branding/carousel";
 
-export function Welcome() {
+export function Welcome({ carouselItems }: { carouselItems: MediaItem[] }) {
   const conceptRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -123,7 +124,7 @@ export function Welcome() {
           className="card snap-start snap-always"
           style={{ filter: brandingBlur, zIndex: 1 }}
         >
-          <Branding />
+          <Branding carouselItems={carouselItems} />
         </motion.div>
         <motion.div
           ref={conceptRef}

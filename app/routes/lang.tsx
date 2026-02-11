@@ -4,6 +4,7 @@ import { redirect, useLoaderData } from "react-router";
 import i18next from "../i18n";
 import { Welcome } from "../modules/welcome";
 import { I18nextProvider } from "react-i18next";
+import carouselData from "../data/carousel-content.json";
 
 const SUPPORTED = new Set(["en", "vi"]);
 
@@ -47,7 +48,14 @@ export async function clientLoader({
     "nobar, da lat, restaurant, bar, Vietnamese, modern, cuisine",
   );
 
-  return { lang, resources, title, description, keywords };
+  return {
+    lang,
+    resources,
+    title,
+    description,
+    keywords,
+    carouselItems: carouselData.files,
+  };
 }
 
 export function meta({ data }: Route.MetaArgs) {
@@ -159,20 +167,16 @@ export function meta({ data }: Route.MetaArgs) {
 }
 
 export default function Lang() {
-  const { lang, resources } = useLoaderData() as {
-    lang: string;
-    resources: Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
-  };
+  const { lang, carouselItems } = useLoaderData<typeof clientLoader>();
 
+  // Ensure language is set on client side mount
   useEffect(() => {
-    if (i18next.language !== lang) {
-      i18next.changeLanguage(lang);
-    }
+    i18next.changeLanguage(lang);
   }, [lang]);
 
   return (
     <I18nextProvider i18n={i18next}>
-      <Welcome />
+      <Welcome carouselItems={carouselItems} />
     </I18nextProvider>
   );
 }

@@ -32,13 +32,12 @@ const logoVariants = {
   },
 };
 
-export function Branding() {
+export function Branding({ carouselItems }: { carouselItems: MediaItem[] }) {
   const ref = useRef<HTMLElement>(null);
   const { t } = useTranslation();
   const [isLogoClicked, setIsLogoClicked] = useState(false);
   const [canInteract, setCanInteract] = useState(false);
   const [open, setOpen] = useState(false);
-  const [carouselItems, setCarouselItems] = useState<MediaItem[]>([]);
   const [index, setIndex] = useState(0);
   const controls = useAnimation();
   const [windowWidth, setWindowWidth] = useState(0);
@@ -67,12 +66,6 @@ export function Branding() {
         window.removeEventListener("resize", handleResize);
       };
     }
-  }, []);
-
-  useEffect(() => {
-    fetch("/carousel-content.json")
-      .then((res) => res.json())
-      .then((data) => setCarouselItems(data.files));
   }, []);
 
   useEffect(() => {

@@ -15,6 +15,43 @@ import i18next from "./i18n";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "preload",
+    href: "/fonts/icel-novecentosans/iCielNovecentosans-Normal.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "preload",
+    as: "image",
+    href: "/images/menu/image_1.png",
+  },
+  {
+    rel: "preload",
+    as: "image",
+    href: "/images/menu/image_2.png",
+  },
+  {
+    rel: "preload",
+    as: "image",
+    href: "/images/menu/image_3.png",
+  },
+  {
+    rel: "preload",
+    as: "image",
+    href: "/images/menu/image_4.png",
+  },
+  {
+    rel: "preload",
+    as: "image",
+    href: "/images/menu/image_5.png",
+  },
+  {
+    rel: "preload",
+    as: "image",
+    href: "/images/menu/image_6.png",
+  },
   { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
   {
     rel: "icon",
