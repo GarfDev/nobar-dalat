@@ -6,6 +6,8 @@ import { Welcome } from "../modules/welcome";
 import { I18nextProvider } from "react-i18next";
 import carouselData from "../data/carousel-content.json";
 
+import type { MediaItem } from "../modules/welcome/branding/carousel";
+
 const SUPPORTED = new Set(["en", "vi"]);
 
 export async function clientLoader({
@@ -41,11 +43,14 @@ export async function clientLoader({
   await i18next.changeLanguage(lang);
 
   const t = i18next.getFixedT(lang);
-  const title = t("meta_title", "No Bar - Vietnamese identity intact");
-  const description = t("meta_description", "not a bar from da lat");
+  const title = t("meta_title", "No Bar Dalat - Vietnamese Identity Intact");
+  const description = t(
+    "meta_description",
+    "No Bar Dalat - A modern cocktail bar & pub in Da Lat where Vietnamese heritage meets contemporary spirit. Enjoy unique cocktails, absinthe, and wine in a nostalgic atmosphere.",
+  );
   const keywords = t(
     "meta_keywords",
-    "nobar, da lat, restaurant, bar, Vietnamese, modern, cuisine",
+    "nobar, no bar, nobar dalat, cocktail bar dalat, da lat bar, bars in da lat, pub dalat, wine bar near me, absinthe, bar đà lạt, Vietnamese, quiet bar, night life",
   );
 
   return {
@@ -54,7 +59,7 @@ export async function clientLoader({
     title,
     description,
     keywords,
-    carouselItems: carouselData.files,
+    carouselItems: carouselData.files as MediaItem[],
   };
 }
 
