@@ -93,7 +93,10 @@ export function Branding({ carouselItems }: { carouselItems: MediaItem[] }) {
   };
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, filter: "blur(20px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ duration: 1, ease: "easeOut" }}
       ref={ref}
       className={cn(
         "relative w-[100vw] bg-white text-white h-[calc(100vh+1px)] overflow-hidden",
@@ -239,6 +242,6 @@ export function Branding({ carouselItems }: { carouselItems: MediaItem[] }) {
         video={{ autoPlay: true }}
         className="h-screen"
       />
-    </section>
+    </motion.section>
   );
 }
