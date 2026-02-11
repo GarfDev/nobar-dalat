@@ -40,11 +40,11 @@ export async function clientLoader({
   await i18next.changeLanguage(lang);
 
   const t = i18next.getFixedT(lang);
-  const title = t("meta_title", "No Bar - vietnamese identity intact");
+  const title = t("meta_title", "No Bar - Vietnamese identity intact");
   const description = t("meta_description", "not a bar from da lat");
   const keywords = t(
     "meta_keywords",
-    "nobar, da lat, restaurant, bar, vietnamese, modern, cuisine",
+    "nobar, da lat, restaurant, bar, Vietnamese, modern, cuisine",
   );
 
   return { lang, resources, title, description, keywords };
