@@ -166,21 +166,24 @@ const Carousel = ({
               );
             }
             return (
-              <video
+              <div
                 key={`${item.src}-${idx}`}
-                src={item.src}
                 className={cn(
-                  "masonry-item cursor-pointer w-full object-cover break-inside-avoid mb-0 block",
+                  "masonry-item relative cursor-pointer break-inside-avoid mb-0 block",
                   (isMobile || !canInteract) && "pointer-events-none",
-                  "video-zoom",
                 )}
-                playsInline
-                autoPlay
-                muted
-                loop
-                preload="metadata"
                 onClick={handleItemClick}
-              />
+              >
+                <video
+                  src={item.src}
+                  className="w-full h-auto object-cover video-zoom block"
+                  playsInline
+                  autoPlay
+                  muted
+                  loop
+                  preload="metadata"
+                />
+              </div>
             );
           })}
         </div>
