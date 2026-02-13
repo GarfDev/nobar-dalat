@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
+import { trackEvent } from "~/lib/utils";
 
 // Lazy load the map component to avoid SSR issues with Leaflet
 const ClientMap = lazy(() => import("./client-map"));
@@ -155,6 +156,12 @@ function MapComponent() {
               target="_blank"
               rel="noopener noreferrer"
               className="group w-full flex items-center justify-between p-6 border border-white/20 hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+              onClick={() => {
+                trackEvent("get_direction", {
+                  event_category: "map",
+                  event_label: "google_maps",
+                });
+              }}
             >
               <div className="flex items-center gap-4">
                 <Navigation className="w-5 h-5" />

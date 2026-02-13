@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import cn from "classnames";
+import { trackEvent } from "~/lib/utils";
 
 const drinks = [
   {
@@ -279,11 +280,20 @@ export function Menu() {
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
+    trackEvent("slide_menu", {
+      event_category: "menu",
+      event_label: activeCategory,
+      direction: newDirection > 0 ? "next" : "prev",
+    });
   };
 
   const handleCategoryChange = (categoryId: string) => {
     if (categoryId !== activeCategory) {
       setActiveCategory(categoryId);
+      trackEvent("change_category", {
+        event_category: "menu",
+        event_label: categoryId,
+      });
       setPage([0, 0]); // Reset to first item of new category
 
       // Auto-scroll to selected category button
