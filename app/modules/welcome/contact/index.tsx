@@ -1,7 +1,8 @@
 import { motion, type Variants } from "framer-motion";
 import { memo } from "react";
-import { Instagram, ArrowUpRight } from "lucide-react";
+import { Instagram, ArrowUpRight, Users } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useMatchStore } from "../match/store";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -28,6 +29,7 @@ const itemVariants: Variants = {
 
 function Contact() {
   const { t } = useTranslation();
+  const { setIsOpen } = useMatchStore();
 
   return (
     <motion.section
@@ -83,19 +85,33 @@ function Contact() {
             </div>
           </motion.div>
 
-          {/* Bottom Row: Social */}
-          <motion.a
+          {/* Bottom Row: Social & Match */}
+          <motion.div
             variants={itemVariants}
-            href="https://www.instagram.com/nobardalat/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-white text-black px-3 py-1.5 md:px-5 md:py-2 rounded-full hover:bg-white/90 transition-colors mt-1"
+            className="flex items-center gap-2 mt-1"
           >
-            <Instagram className="w-3 h-3 md:w-4 md:h-4" />
-            <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">
-              Instagram
-            </span>
-          </motion.a>
+            <button
+              onClick={() => setIsOpen(true)}
+              className="flex items-center gap-2 bg-white text-black px-3 py-1.5 md:px-5 md:py-2 rounded-full hover:bg-gray-200 transition-colors"
+            >
+              <Users className="w-3 h-3 md:w-4 md:h-4" />
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">
+                Find Buddy
+              </span>
+            </button>
+
+            <a
+              href="https://www.instagram.com/nobardalat/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-white/10 text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full hover:bg-white/20 transition-colors"
+            >
+              <Instagram className="w-3 h-3 md:w-4 md:h-4" />
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">
+                Instagram
+              </span>
+            </a>
+          </motion.div>
         </div>
       </motion.div>
     </motion.section>

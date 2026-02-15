@@ -79,7 +79,6 @@
 html,
 body {
   font-family: "iCiel Novecento sans";
-  content-visibility: auto;
 
   /* Use black background to match the footer for seamless overscroll */
   @apply bg-black text-white;

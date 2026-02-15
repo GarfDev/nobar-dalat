@@ -2,6 +2,7 @@ import { Branding } from "./branding";
 import { Concept } from "./concept";
 import Contact from "./contact";
 import Map from "./map";
+import { MatchFeature } from "./match";
 import { Menu } from "./menu";
 import "./style.css";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -155,6 +156,7 @@ export function Welcome({ carouselItems }: { carouselItems: MediaItem[] }) {
           <Contact />
         </motion.div>
       </div>
+      <MatchFeature />
     </ReactLenis>
   );
 }

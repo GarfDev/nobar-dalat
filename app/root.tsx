@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
+import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import type { Route } from "./+types/root";
@@ -153,6 +153,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 export default function App() {
+  useEffect(() => {
+    // Register Service Worker
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((registration) => {
+            console.log(
+              "ServiceWorker registration successful with scope: ",
+              registration.scope,
+            );
+          })
+          .catch((err) => {
+            console.log("ServiceWorker registration failed: ", err);
+          });
+      });
+    }
+  }, []);
+
   // Client-only: after hydration, switch to user's preferred language to avoid hydration mismatch.
   if (typeof window !== "undefined") {
     // If user is at root ("/"), push them to their language-prefixed path.
