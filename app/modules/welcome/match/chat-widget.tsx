@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next";
 import { useMatchStore } from "./store";
 import cn from "classnames";
 
+const SYSTEM_MSG_DISCONNECT = "SYSTEM_MSG:DISCONNECT";
+
 export function ChatWidget() {
   const {
     matchStatus,
@@ -15,6 +17,8 @@ export function ChatWidget() {
     chatOpen,
     setChatOpen,
     reset,
+    disconnect,
+    findNewMatch,
   } = useMatchStore();
   const { t } = useTranslation();
 
@@ -69,7 +73,8 @@ export function ChatWidget() {
           )}
 
           {/* Matched / Chat State */}
-          {matchStatus === "matched" && (
+          {(matchStatus === "matched" ||
+            matchStatus === "partner_disconnected") && (
             <motion.div
               initial={{ y: 20, opacity: 0, scale: 0.9 }}
               animate={{
@@ -103,13 +108,23 @@ export function ChatWidget() {
                     </h3>
                     {chatOpen && (
                       <p className="text-[10px] text-white/50 uppercase tracking-wider flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 bg-white rounded-none animate-pulse"></span>{" "}
-                        {t("match.online")}
+                        {matchStatus === "partner_disconnected" ? (
+                          <span className="text-red-500 font-bold">
+                            {t("match.status.disconnected")}
+                          </span>
+                        ) : (
+                          <>
+                            <span className="w-1.5 h-1.5 bg-white rounded-none animate-pulse"></span>{" "}
+                            {t("match.online")}
+                          </>
+                        )}
                       </p>
                     )}
                     {!chatOpen && (
                       <p className="text-[10px] text-white/50 uppercase tracking-wider">
-                        {t("match.matchFound")}
+                        {matchStatus === "partner_disconnected"
+                          ? t("match.status.disconnectedTitle")
+                          : t("match.matchFound")}
                       </p>
                     )}
                   </div>
@@ -129,7 +144,11 @@ export function ChatWidget() {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        reset();
+                        if (matchStatus === "partner_disconnected") {
+                          reset();
+                        } else {
+                          disconnect();
+                        }
                       }}
                       className="text-white/60 hover:text-white transition-colors"
                     >
@@ -142,27 +161,53 @@ export function ChatWidget() {
               {/* Chat Area */}
               {chatOpen && (
                 <>
-                  <div className="flex-1 h-[330px] overflow-y-auto p-4 space-y-4 bg-black">
-                    {messages.map((msg) => (
-                      <div
-                        key={msg.id}
-                        className={cn(
-                          "flex w-full",
-                          msg.sender === "me" ? "justify-end" : "justify-start",
-                        )}
-                      >
+                  <div className="flex-1 h-[330px] overflow-y-auto p-4 space-y-4 bg-black relative">
+                    {messages.map((msg) => {
+                      if (msg.text === SYSTEM_MSG_DISCONNECT) {
+                        return (
+                          <div
+                            key={msg.id}
+                            className="flex justify-center py-2"
+                          >
+                            <span className="text-[10px] text-white/40 uppercase tracking-widest border border-white/10 px-2 py-1">
+                              {t("match.partnerLeft")}
+                            </span>
+                          </div>
+                        );
+                      }
+
+                      return (
                         <div
+                          key={msg.id}
                           className={cn(
-                            "max-w-[85%] px-4 py-3 text-xs leading-relaxed uppercase tracking-wide border",
+                            "flex w-full",
                             msg.sender === "me"
-                              ? "bg-white text-black border-white"
-                              : "bg-transparent text-white border-white/30",
+                              ? "justify-end"
+                              : "justify-start",
                           )}
                         >
-                          {msg.text}
+                          <div
+                            className={cn(
+                              "max-w-[85%] px-4 py-3 text-xs leading-relaxed uppercase tracking-wide border",
+                              msg.sender === "me"
+                                ? "bg-white text-black border-white"
+                                : "bg-transparent text-white border-white/30",
+                            )}
+                          >
+                            {msg.text}
+                          </div>
                         </div>
+                      );
+                    })}
+
+                    {matchStatus === "partner_disconnected" && (
+                      <div className="flex justify-center py-4">
+                        <p className="text-xs text-white/40 uppercase tracking-wider">
+                          {t("match.partnerLeft")}
+                        </p>
                       </div>
-                    ))}
+                    )}
+
                     <div ref={messagesEndRef} />
                   </div>
 
@@ -171,20 +216,32 @@ export function ChatWidget() {
                     onSubmit={handleSend}
                     className="p-4 border-t border-white/20 bg-black flex gap-3"
                   >
-                    <input
-                      type="text"
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      placeholder={t("match.inputPlaceholder")}
-                      className="flex-1 bg-transparent text-xs text-white placeholder:text-white/30 focus:outline-none uppercase tracking-wide font-['iCiel_Novecento_sans']"
-                    />
-                    <button
-                      type="submit"
-                      disabled={!input.trim()}
-                      className="text-white hover:text-white/60 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                    >
-                      <Send size={16} />
-                    </button>
+                    {matchStatus === "partner_disconnected" ? (
+                      <button
+                        type="button"
+                        onClick={() => findNewMatch()}
+                        className="w-full bg-white text-black font-bold text-xs uppercase tracking-[0.2em] py-3 hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 rounded-none"
+                      >
+                        {t("match.findNew")}
+                      </button>
+                    ) : (
+                      <>
+                        <input
+                          type="text"
+                          value={input}
+                          onChange={(e) => setInput(e.target.value)}
+                          placeholder={t("match.inputPlaceholder")}
+                          className="flex-1 bg-transparent text-xs text-white placeholder:text-white/30 focus:outline-none uppercase tracking-wide font-['iCiel_Novecento_sans']"
+                        />
+                        <button
+                          type="submit"
+                          disabled={!input.trim()}
+                          className="text-white hover:text-white/60 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                        >
+                          <Send size={16} />
+                        </button>
+                      </>
+                    )}
                   </form>
                 </>
               )}

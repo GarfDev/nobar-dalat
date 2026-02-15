@@ -100,5 +100,10 @@
   "match.eula.content.4": "4. Hành vi bị cấm: Bạn đồng ý không sử dụng Dịch vụ cho bất kỳ mục đích bất hợp pháp nào hoặc để quấy rối, lạm dụng hoặc làm hại người khác. Chúng tôi bảo lưu quyền chấm dứt quyền truy cập của bạn vào Dịch vụ nếu bạn vi phạm các điều khoản này.",
   "match.eula.content.5": "5. Quyền riêng tư: Việc bạn sử dụng Dịch vụ cũng chịu sự điều chỉnh của Chính sách quyền riêng tư của chúng tôi. Chúng tôi thu thập thông tin tối thiểu cần thiết để cung cấp Dịch vụ (Tên, Email, Ngôn ngữ) và không chia sẻ thông tin đó với bên thứ ba mà không có sự đồng ý của bạn.",
   "match.eula.content.6": "6. Không chịu trách nhiệm pháp lý: Trong mọi trường hợp, No Bar Dalat sẽ không chịu trách nhiệm pháp lý đối với bất kỳ thiệt hại nào, dù là trực tiếp, gián tiếp, chung, đặc biệt, bồi thường, do hậu quả và/hoặc ngẫu nhiên, phát sinh từ hoặc liên quan đến hành vi của bạn hoặc bất kỳ ai khác liên quan đến việc sử dụng Dịch vụ.",
-  "match.eula.agree": "Tôi Đồng Ý"
+  "match.eula.agree": "Tôi Đồng Ý",
+  "match.status.disconnected": "ĐÃ NGẮT KẾT NỐI",
+  "match.status.disconnectedTitle": "Đã ngắt kết nối",
+  "match.partnerLeft": "Đối phương đã rời khỏi cuộc trò chuyện",
+  "match.findNew": "Tìm Người Mới",
+  "match.newMessage": "Tin nhắn mới"
 }

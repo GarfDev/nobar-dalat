@@ -100,5 +100,10 @@
   "match.eula.content.4": "4. Prohibited Conduct: You agree not to use the Service for any unlawful purpose or to harass, abuse, or harm another person. We reserve the right to terminate your access to the Service if you violate these terms.",
   "match.eula.content.5": "5. Privacy: Your use of the Service is also governed by our Privacy Policy. We collect minimal information necessary to provide the Service (Name, Email, Languages) and do not share it with third parties without your consent.",
   "match.eula.content.6": "6. No Liability: In no event shall No Bar Dalat be liable for any damages whatsoever, whether direct, indirect, general, special, compensatory, consequential, and/or incidental, arising out of or relating to the conduct of you or anyone else in connection with the use of the Service.",
-  "match.eula.agree": "I Agree"
+  "match.eula.agree": "I Agree",
+  "match.status.disconnected": "DISCONNECTED",
+  "match.status.disconnectedTitle": "Disconnected",
+  "match.partnerLeft": "Partner has left the chat",
+  "match.findNew": "Find New Match",
+  "match.newMessage": "New Message"
 }

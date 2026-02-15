@@ -5,6 +5,7 @@ import {
   requestNotificationPermission,
   sendNotification,
 } from "~/lib/notification";
+import i18next from "~/i18n";
 
 export interface UserProfile {
   id?: string;
@@ -24,8 +25,10 @@ interface MatchState {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 
-  matchStatus: "idle" | "searching" | "matched";
-  setMatchStatus: (status: "idle" | "searching" | "matched") => void;
+  matchStatus: "idle" | "searching" | "matched" | "partner_disconnected";
+  setMatchStatus: (
+    status: "idle" | "searching" | "matched" | "partner_disconnected",
+  ) => void;
 
   userProfile: UserProfile;
   setUserProfile: (profile: Partial<UserProfile>) => void;
@@ -41,6 +44,8 @@ interface MatchState {
 
   startSearching: () => Promise<void>;
   sendMessage: (text: string) => Promise<void>;
+  disconnect: () => Promise<void>;
+  findNewMatch: () => Promise<void>;
   rehydrate: () => void;
   reset: () => void;
 }
@@ -58,6 +63,8 @@ function urlBase64ToUint8Array(base64String: string) {
   }
   return outputArray;
 }
+
+const SYSTEM_MSG_DISCONNECT = "SYSTEM_MSG:DISCONNECT";
 
 export const useMatchStore = create<MatchState>()(
   persist(
@@ -280,6 +287,48 @@ export const useMatchStore = create<MatchState>()(
         }
       },
 
+      disconnect: async () => {
+        const { userProfile, matchedUser } = get();
+
+        // 1. Update backend status
+        if (userProfile.id) {
+          try {
+            await supabase
+              .from("match_pool")
+              .update({
+                status: "disconnected",
+                matched_with_id: null,
+              })
+              .eq("id", userProfile.id);
+
+            // Also notify the other user by sending a system message (optional, but handled via realtime usually)
+            // Or rely on realtime update on match_pool if we were listening to partner's status
+            // For now, let's just send a "system" message to the chat
+            if (matchedUser?.id) {
+              await supabase.from("messages").insert([
+                {
+                  sender_id: userProfile.id,
+                  receiver_id: matchedUser.id,
+                  content: SYSTEM_MSG_DISCONNECT,
+                },
+              ]);
+            }
+          } catch (err) {
+            console.error("Error disconnecting:", err);
+          }
+        }
+
+        // 2. Reset local state
+        get().reset();
+      },
+
+      findNewMatch: async () => {
+        // Reset state but keep profile
+        get().reset();
+        // Start searching immediately
+        await get().startSearching();
+      },
+
       rehydrate: () => {
         const state = get();
         const { userProfile, matchStatus, matchedUser } = state;
@@ -426,9 +475,30 @@ async function subscribeToMessages(
 
           // Send notification if chat is not open or window is blurred
           if (document.hidden || !get().chatOpen) {
-            sendNotification("New Message", {
-              body: payload.new.content,
-            });
+            // Check if it's a system message
+            if (payload.new.content === SYSTEM_MSG_DISCONNECT) {
+              sendNotification(i18next.t("match.status.disconnectedTitle"), {
+                body: i18next.t("match.partnerLeft"),
+              });
+              // Reset state for the receiver as well
+              // Instead of resetting completely, we mark as partner_disconnected
+              set((state: MatchState) => ({
+                matchStatus: "partner_disconnected",
+                // We keep matchedUser and messages to show the history
+                chatOpen: true,
+              }));
+            } else {
+              sendNotification(i18next.t("match.newMessage"), {
+                body: payload.new.content,
+              });
+            }
+          } else if (payload.new.content === SYSTEM_MSG_DISCONNECT) {
+            // If chat IS open, still handle the disconnect logic
+            // Don't alert, just update UI
+            set((state: MatchState) => ({
+              matchStatus: "partner_disconnected",
+              chatOpen: true,
+            }));
           }
         }
       },
