@@ -46,21 +46,22 @@ export function ChatWidget() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
-              className="bg-black/90 text-white p-4 rounded-2xl shadow-2xl border border-white/10 w-72 flex items-center gap-4"
+              className="bg-black text-white p-6 rounded-none shadow-[0_0_30px_rgba(255,255,255,0.1)] border border-white w-72 flex items-center gap-4"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-20"></div>
-                <Loader2 className="animate-spin text-blue-400" size={24} />
+                <Loader2 className="animate-spin text-white" size={20} />
               </div>
               <div>
-                <h3 className="font-bold text-sm">{t("match.searching")}</h3>
-                <p className="text-xs text-white/50">
+                <h3 className="font-bold text-xs uppercase tracking-wider font-['iCiel_Novecento_sans']">
+                  {t("match.searching")}
+                </h3>
+                <p className="text-[10px] text-white/50 uppercase tracking-wide">
                   {t("match.searchingDesc")}
                 </p>
               </div>
               <button
                 onClick={() => reset()}
-                className="ml-auto text-white/40 hover:text-white"
+                className="ml-auto text-white/40 hover:text-white transition-colors"
               >
                 <X size={16} />
               </button>
@@ -78,9 +79,9 @@ export function ChatWidget() {
                 height: chatOpen ? "auto" : "60px",
               }}
               className={cn(
-                "bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300",
+                "bg-black border border-white rounded-none shadow-[0_0_30px_rgba(255,255,255,0.1)] overflow-hidden transition-all duration-300",
                 chatOpen
-                  ? "w-80 h-[400px]"
+                  ? "w-80 h-[450px]"
                   : "w-72 h-16 flex items-center px-4 cursor-pointer hover:bg-white/5",
               )}
               onClick={() => !chatOpen && setChatOpen(true)}
@@ -88,26 +89,26 @@ export function ChatWidget() {
               {/* Header */}
               <div
                 className={cn(
-                  "bg-black/50 p-3 flex items-center justify-between border-b border-white/5",
+                  "bg-black p-4 flex items-center justify-between border-b border-white/20",
                   !chatOpen && "bg-transparent border-none w-full p-0",
                 )}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xs">
-                    {matchedUser?.name.charAt(0)}
+                  <div className="w-8 h-8 bg-white flex items-center justify-center text-black font-bold text-xs rounded-none">
+                    {matchedUser?.name.charAt(0).toUpperCase()}
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm text-white">
+                    <h3 className="font-bold text-xs text-white uppercase tracking-widest font-['iCiel_Novecento_sans']">
                       {matchedUser?.name}
                     </h3>
                     {chatOpen && (
-                      <p className="text-[10px] text-green-400 flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>{" "}
+                      <p className="text-[10px] text-white/50 uppercase tracking-wider flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 bg-white rounded-none animate-pulse"></span>{" "}
                         {t("match.online")}
                       </p>
                     )}
                     {!chatOpen && (
-                      <p className="text-xs text-green-400">
+                      <p className="text-[10px] text-white/50 uppercase tracking-wider">
                         {t("match.matchFound")}
                       </p>
                     )}
@@ -115,24 +116,24 @@ export function ChatWidget() {
                 </div>
 
                 {chatOpen && (
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-2">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         setChatOpen(false);
                       }}
-                      className="p-1.5 hover:bg-white/10 rounded-full text-white/60 hover:text-white"
+                      className="text-white/60 hover:text-white transition-colors"
                     >
-                      <Minimize2 size={14} />
+                      <Minimize2 size={16} />
                     </button>
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         reset();
                       }}
-                      className="p-1.5 hover:bg-white/10 rounded-full text-white/60 hover:text-white"
+                      className="text-white/60 hover:text-white transition-colors"
                     >
-                      <X size={14} />
+                      <X size={16} />
                     </button>
                   </div>
                 )}
@@ -141,7 +142,7 @@ export function ChatWidget() {
               {/* Chat Area */}
               {chatOpen && (
                 <>
-                  <div className="flex-1 h-[280px] overflow-y-auto p-4 space-y-3 bg-black/20">
+                  <div className="flex-1 h-[330px] overflow-y-auto p-4 space-y-4 bg-black">
                     {messages.map((msg) => (
                       <div
                         key={msg.id}
@@ -152,10 +153,10 @@ export function ChatWidget() {
                       >
                         <div
                           className={cn(
-                            "max-w-[80%] px-3 py-2 rounded-2xl text-sm break-words",
+                            "max-w-[85%] px-4 py-3 text-xs leading-relaxed uppercase tracking-wide border",
                             msg.sender === "me"
-                              ? "bg-blue-600 text-white rounded-br-none"
-                              : "bg-white/10 text-white rounded-bl-none",
+                              ? "bg-white text-black border-white"
+                              : "bg-transparent text-white border-white/30",
                           )}
                         >
                           {msg.text}
@@ -168,21 +169,21 @@ export function ChatWidget() {
                   {/* Input Area */}
                   <form
                     onSubmit={handleSend}
-                    className="p-3 border-t border-white/10 bg-black/40 flex gap-2"
+                    className="p-4 border-t border-white/20 bg-black flex gap-3"
                   >
                     <input
                       type="text"
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
                       placeholder={t("match.inputPlaceholder")}
-                      className="flex-1 bg-transparent text-sm text-white placeholder:text-white/30 focus:outline-none"
+                      className="flex-1 bg-transparent text-xs text-white placeholder:text-white/30 focus:outline-none uppercase tracking-wide font-['iCiel_Novecento_sans']"
                     />
                     <button
                       type="submit"
                       disabled={!input.trim()}
-                      className="text-blue-500 hover:text-blue-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="text-white hover:text-white/60 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                     >
-                      <Send size={18} />
+                      <Send size={16} />
                     </button>
                   </form>
                 </>

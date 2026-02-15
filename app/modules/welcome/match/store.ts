@@ -45,6 +45,20 @@ interface MatchState {
   reset: () => void;
 }
 
+// Helper to convert VAPID key
+function urlBase64ToUint8Array(base64String: string) {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
+
 export const useMatchStore = create<MatchState>()(
   persist(
     (set, get) => ({
@@ -107,22 +121,18 @@ export const useMatchStore = create<MatchState>()(
             navigator.serviceWorker.ready.then(async (registration) => {
               try {
                 // Check for existing subscription
-                const subscription =
+                let subscription =
                   await registration.pushManager.getSubscription();
 
                 // If not subscribed, subscribe
                 if (!subscription) {
                   // Note: In a real app, you need a VAPID public key here
-                  // const publicKey = "YOUR_VAPID_PUBLIC_KEY";
-                  // subscription = await registration.pushManager.subscribe({
-                  //   userVisibleOnly: true,
-                  //   applicationServerKey: urlBase64ToUint8Array(publicKey)
-                  // });
-
-                  // For now, we just log that we would subscribe here
-                  console.log(
-                    "Would subscribe to push notifications here if VAPID key was provided",
-                  );
+                  const publicKey =
+                    "BF-kzb6E-XKMXt9dWNi5QvCh-vSXypL_NgdPdgcRmmnfGpyHDHksjXA01tjGSslsOWjDMidgwfC-VWmOkZ8vYPI";
+                  subscription = await registration.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: urlBase64ToUint8Array(publicKey),
+                  });
                 }
 
                 if (subscription) {
@@ -362,13 +372,33 @@ export const useMatchStore = create<MatchState>()(
 );
 
 // Helper function to subscribe to messages
-function subscribeToMessages(
+async function subscribeToMessages(
   myId: string,
   partnerId: string,
   get: StoreApi<MatchState>["getState"],
   set: StoreApi<MatchState>["setState"],
 ) {
-  // Subscribe to incoming messages
+  // 1. Fetch full history first
+  const { data: history, error } = await supabase
+    .from("messages")
+    .select("*")
+    .or(
+      `and(sender_id.eq.${myId},receiver_id.eq.${partnerId}),and(sender_id.eq.${partnerId},receiver_id.eq.${myId})`,
+    )
+    .order("created_at", { ascending: true });
+
+  if (!error && history) {
+    set({
+      messages: history.map((msg) => ({
+        id: msg.id,
+        sender: msg.sender_id === myId ? "me" : "them",
+        text: msg.content,
+        timestamp: new Date(msg.created_at).getTime(),
+      })),
+    });
+  }
+
+  // 2. Subscribe to incoming messages
   const channel = supabase
     .channel(`messages:${myId}:${partnerId}`)
     .on(
