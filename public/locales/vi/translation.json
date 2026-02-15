@@ -105,5 +105,16 @@
   "match.status.disconnectedTitle": "Đã ngắt kết nối",
   "match.partnerLeft": "Đối phương đã rời khỏi cuộc trò chuyện",
   "match.findNew": "Tìm Người Mới",
-  "match.newMessage": "Tin nhắn mới"
+  "match.newMessage": "Tin nhắn mới",
+  "match.error.search": "Không thể bắt đầu tìm kiếm. Vui lòng thử lại.",
+  "match.privacy.text": "Tôi đồng ý cho phép xử lý dữ liệu cá nhân của mình cho mục đích tìm bạn nhậu.",
+  "match.privacy.link": "Thông báo quyền riêng tư",
+  "match.privacy.alert": "Vui lòng đồng ý với Chính sách quyền riêng tư để tiếp tục.",
+  "match.privacy.modalTitle": "Thông báo quyền riêng tư",
+  "match.privacy.content.1": "1. Chúng tôi thu thập gì: Chúng tôi thu thập Tên và Email của bạn chỉ nhằm mục đích cung cấp dịch vụ kết đôi.",
+  "match.privacy.content.2": "2. Mục đích thu thập: Dữ liệu của bạn được sử dụng độc quyền để tìm bạn uống và cho phép liên lạc tạm thời.",
+  "match.privacy.content.3": "3. Lưu trữ dữ liệu: Dữ liệu cá nhân của bạn sẽ tự động bị xóa khỏi hệ thống của chúng tôi sau 7 ngày hoặc theo yêu cầu của bạn, tùy điều kiện nào đến trước.",
+  "match.privacy.content.4": "4. Kiểm soát truy cập: Chỉ quản trị viên được ủy quyền mới có quyền truy cập dữ liệu của bạn. Chúng tôi không chia sẻ dữ liệu của bạn với bên thứ ba.",
+  "match.privacy.content.5": "5. Quyền của bạn: Bạn có quyền yêu cầu xóa dữ liệu của mình bất cứ lúc nào (Quyền được lãng quên). Liên hệ với chúng tôi để rút lại sự đồng thuận ngay lập tức.",
+  "match.privacy.agree": "Tôi Hiểu & Đồng Ý"
 }

@@ -105,5 +105,16 @@
   "match.status.disconnectedTitle": "Disconnected",
   "match.partnerLeft": "Partner has left the chat",
   "match.findNew": "Find New Match",
-  "match.newMessage": "New Message"
+  "match.newMessage": "New Message",
+  "match.error.search": "Failed to start searching. Please try again.",
+  "match.privacy.text": "I agree to the processing of my personal data for the purpose of the match function.",
+  "match.privacy.link": "Privacy Notice",
+  "match.privacy.alert": "Please agree to the Privacy Policy to continue.",
+  "match.privacy.modalTitle": "Privacy Notice",
+  "match.privacy.content.1": "1. What We Collect: We collect your Name and Email address solely for the purpose of facilitating the matching service.",
+  "match.privacy.content.2": "2. Purpose of Collection: Your data is used exclusively to find you a drinking buddy and enable temporary communication.",
+  "match.privacy.content.3": "3. Data Retention: Your personal data will be automatically deleted from our systems after 7 days or upon your request, whichever comes first.",
+  "match.privacy.content.4": "4. Access Control: Only authorized administrators have access to your data. We do not share your data with third parties.",
+  "match.privacy.content.5": "5. Your Rights: You have the right to request the deletion of your data at any time (Right to be Forgotten). Contact us to withdraw your consent immediately.",
+  "match.privacy.agree": "I Understand & Agree"
 }

@@ -251,7 +251,7 @@ export const useMatchStore = create<MatchState>()(
         } catch (error) {
           console.error("Error searching for match:", error);
           set({ matchStatus: "idle" });
-          alert("Failed to start searching. Please try again.");
+          alert(i18next.t("match.error.search"));
         }
       },
 
