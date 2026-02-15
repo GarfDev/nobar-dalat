@@ -41,8 +41,8 @@ export function ChatWidget() {
   if (matchStatus === "idle") return null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-[95] flex flex-col items-end pointer-events-none">
-      <div className="pointer-events-auto">
+    <div className="fixed bottom-0 right-0 z-[95] flex flex-col items-end pointer-events-none w-full sm:w-auto sm:bottom-4 sm:right-4">
+      <div className="pointer-events-auto w-full sm:w-auto">
         <AnimatePresence mode="wait">
           {/* Searching State */}
           {matchStatus === "searching" && (
@@ -50,7 +50,7 @@ export function ChatWidget() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
-              className="bg-black text-white p-6 rounded-none shadow-[0_0_30px_rgba(255,255,255,0.1)] border border-white w-72 flex items-center gap-4"
+              className="bg-black text-white p-6 rounded-none sm:shadow-[0_0_30px_rgba(255,255,255,0.1)] border-t sm:border border-white w-full sm:w-72 flex items-center gap-4 h-24 sm:h-auto"
             >
               <div className="relative">
                 <Loader2 className="animate-spin text-white" size={20} />
@@ -65,9 +65,9 @@ export function ChatWidget() {
               </div>
               <button
                 onClick={() => reset()}
-                className="ml-auto text-white/40 hover:text-white transition-colors"
+                className="ml-auto text-white/40 hover:text-white transition-colors p-2"
               >
-                <X size={16} />
+                <X size={20} />
               </button>
             </motion.div>
           )}
@@ -81,20 +81,20 @@ export function ChatWidget() {
                 y: chatOpen ? 0 : 0,
                 opacity: 1,
                 scale: 1,
-                height: chatOpen ? "auto" : "60px",
+                height: chatOpen ? "100%" : "60px", // Full height on mobile when open
               }}
               className={cn(
-                "bg-black border border-white rounded-none shadow-[0_0_30px_rgba(255,255,255,0.1)] overflow-hidden transition-all duration-300",
+                "bg-black border-t sm:border border-white rounded-none sm:shadow-[0_0_30px_rgba(255,255,255,0.1)] overflow-hidden transition-all duration-300",
                 chatOpen
-                  ? "w-80 h-[450px]"
-                  : "w-72 h-16 flex items-center px-4 cursor-pointer hover:bg-white/5",
+                  ? "w-full h-[100dvh] sm:w-80 sm:h-[450px] fixed sm:relative bottom-0 left-0 sm:inset-auto" // Fullscreen mobile
+                  : "w-full sm:w-72 h-16 flex items-center px-4 cursor-pointer hover:bg-white/5",
               )}
               onClick={() => !chatOpen && setChatOpen(true)}
             >
               {/* Header */}
               <div
                 className={cn(
-                  "bg-black p-4 flex items-center justify-between border-b border-white/20",
+                  "bg-black p-4 flex items-center justify-between border-b border-white/20 shrink-0",
                   !chatOpen && "bg-transparent border-none w-full p-0",
                 )}
               >
@@ -131,15 +131,15 @@ export function ChatWidget() {
                 </div>
 
                 {chatOpen && (
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-4 sm:gap-2">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         setChatOpen(false);
                       }}
-                      className="text-white/60 hover:text-white transition-colors"
+                      className="text-white/60 hover:text-white transition-colors p-2 sm:p-0"
                     >
-                      <Minimize2 size={16} />
+                      <Minimize2 size={20} className="sm:w-4 sm:h-4" />
                     </button>
                     <button
                       onClick={(e) => {
@@ -150,9 +150,9 @@ export function ChatWidget() {
                           disconnect();
                         }
                       }}
-                      className="text-white/60 hover:text-white transition-colors"
+                      className="text-white/60 hover:text-white transition-colors p-2 sm:p-0"
                     >
-                      <X size={16} />
+                      <X size={20} className="sm:w-4 sm:h-4" />
                     </button>
                   </div>
                 )}
@@ -161,7 +161,7 @@ export function ChatWidget() {
               {/* Chat Area */}
               {chatOpen && (
                 <>
-                  <div className="flex-1 h-[330px] overflow-y-auto p-4 space-y-4 bg-black relative">
+                  <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-black relative h-full">
                     {messages.map((msg) => {
                       if (msg.text === SYSTEM_MSG_DISCONNECT) {
                         return (
@@ -214,13 +214,13 @@ export function ChatWidget() {
                   {/* Input Area */}
                   <form
                     onSubmit={handleSend}
-                    className="p-4 border-t border-white/20 bg-black flex gap-3"
+                    className="p-4 border-t border-white/20 bg-black flex gap-3 shrink-0 mb-safe"
                   >
                     {matchStatus === "partner_disconnected" ? (
                       <button
                         type="button"
                         onClick={() => findNewMatch()}
-                        className="w-full bg-white text-black font-bold text-xs uppercase tracking-[0.2em] py-3 hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 rounded-none"
+                        className="w-full bg-white text-black font-bold text-xs uppercase tracking-[0.2em] py-4 hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 rounded-none min-h-[44px]"
                       >
                         {t("match.findNew")}
                       </button>
@@ -231,14 +231,14 @@ export function ChatWidget() {
                           value={input}
                           onChange={(e) => setInput(e.target.value)}
                           placeholder={t("match.inputPlaceholder")}
-                          className="flex-1 bg-transparent text-xs text-white placeholder:text-white/30 focus:outline-none uppercase tracking-wide font-['iCiel_Novecento_sans']"
+                          className="flex-1 bg-transparent text-xs text-white placeholder:text-white/30 focus:outline-none uppercase tracking-wide font-['iCiel_Novecento_sans'] min-h-[44px]"
                         />
                         <button
                           type="submit"
                           disabled={!input.trim()}
-                          className="text-white hover:text-white/60 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                          className="text-white hover:text-white/60 disabled:opacity-30 disabled:cursor-not-allowed transition-colors p-2"
                         >
-                          <Send size={16} />
+                          <Send size={20} />
                         </button>
                       </>
                     )}
