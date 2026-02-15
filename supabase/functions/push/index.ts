@@ -25,12 +25,6 @@ serve(async (req) => {
       return new Response("Not an INSERT event", { headers: corsHeaders });
     }
 
-    // Configure Web Push with VAPID keys
-    // You need to set these secrets in your Supabase project:
-    // supabase secrets set VAPID_PUBLIC_KEY="BF-kzb6E-XKMXt9dWNi5QvCh-vSXypL_NgdPdgcRmmnfGpyHDHksjXA01tjGSslsOWjDMidgwfC-VWmOkZ8vYPI"
-    // supabase secrets set VAPID_PRIVATE_KEY="ex7Y_aa9JNYJ5sImQq_tjRCY53ZFZlx11MVSApJWkGw"
-    // supabase secrets set VAPID_SUBJECT="mailto:admin@nobardalat.com"
-
     webpush.setVapidDetails(
       Deno.env.get("VAPID_SUBJECT") || "mailto:admin@nobardalat.com",
       Deno.env.get("VAPID_PUBLIC_KEY")!,
