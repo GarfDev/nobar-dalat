@@ -116,5 +116,11 @@
   "match.privacy.content.3": "3. Lưu trữ dữ liệu: Dữ liệu cá nhân của bạn sẽ tự động bị xóa khỏi hệ thống của chúng tôi sau 7 ngày hoặc theo yêu cầu của bạn, tùy điều kiện nào đến trước.",
   "match.privacy.content.4": "4. Kiểm soát truy cập: Chỉ quản trị viên được ủy quyền mới có quyền truy cập dữ liệu của bạn. Chúng tôi không chia sẻ dữ liệu của bạn với bên thứ ba.",
   "match.privacy.content.5": "5. Quyền của bạn: Bạn có quyền yêu cầu xóa dữ liệu của mình bất cứ lúc nào (Quyền được lãng quên). Liên hệ với chúng tôi để rút lại sự đồng thuận ngay lập tức.",
-  "match.privacy.agree": "Tôi Hiểu & Đồng Ý"
+  "match.privacy.agree": "Tôi Hiểu & Đồng Ý",
+  "age.title": "Xác Minh Độ Tuổi",
+  "age.subtitle": "Chào mừng đến với No Bar Dalat",
+  "age.checkbox": "Tôi xác nhận tôi đã đủ 18 tuổi",
+  "age.warning": "Uống rượu, bia có thể gây tai nạn giao thông. Uống rượu, bia có thể ảnh hưởng đến sức khỏe thai nhi. Người dưới 18 tuổi không được uống rượu, bia.",
+  "age.submit": "Vào Trang Web",
+  "age.alert": "Bạn phải đủ 18 tuổi để vào trang web."
 }

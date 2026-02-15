@@ -116,5 +116,11 @@
   "match.privacy.content.3": "3. Data Retention: Your personal data will be automatically deleted from our systems after 7 days or upon your request, whichever comes first.",
   "match.privacy.content.4": "4. Access Control: Only authorized administrators have access to your data. We do not share your data with third parties.",
   "match.privacy.content.5": "5. Your Rights: You have the right to request the deletion of your data at any time (Right to be Forgotten). Contact us to withdraw your consent immediately.",
-  "match.privacy.agree": "I Understand & Agree"
+  "match.privacy.agree": "I Understand & Agree",
+  "age.title": "Age Verification",
+  "age.subtitle": "Welcome to No Bar Dalat",
+  "age.checkbox": "I confirm I am 18+ years old",
+  "age.warning": "Drinking alcohol can cause traffic accidents. Drinking alcohol can affect fetal health. Persons under the age of 18 are not allowed to drink alcoholic beverages.",
+  "age.submit": "Enter Site",
+  "age.alert": "You must be 18+ to enter."
 }

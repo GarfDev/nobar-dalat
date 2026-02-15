@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import type { Route } from "./+types/root";
+import { AgeVerificationModal } from "./modules/welcome/match/age-verification-modal";
 import "./app.css";
 import i18next from "./i18n";
 
@@ -196,6 +197,7 @@ export default function App() {
   return (
     <>
       <Outlet />
+      <AgeVerificationModal />
     </>
   );
 }
