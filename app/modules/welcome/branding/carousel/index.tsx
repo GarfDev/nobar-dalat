@@ -155,7 +155,7 @@ const Carousel = ({
                   placeholder={item.placeholder}
                   alt={
                     item.alt ||
-                    "A photo from the Nobar Đà Lạt restaurant and bar"
+                    "A photo from the No Bar Đà Lạt restaurant and bar"
                   }
                   width={item.width}
                   height={item.height}

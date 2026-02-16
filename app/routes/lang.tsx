@@ -43,10 +43,10 @@ export async function clientLoader({
   await i18next.changeLanguage(lang);
 
   const t = i18next.getFixedT(lang);
-  const title = t("meta_title", "No Bar Dalat - Vietnamese Identity Intact");
+  const title = t("meta_title", "No Bar - Vietnamese Identity Intact");
   const description = t(
     "meta_description",
-    "No Bar Dalat - A modern cocktail bar & pub in Da Lat where Vietnamese heritage meets contemporary spirit. Enjoy unique cocktails, absinthe, and wine in a nostalgic atmosphere.",
+    "No Bar - A modern cocktail bar & pub in Da Lat where Vietnamese heritage meets contemporary spirit. Enjoy unique cocktails, absinthe, and wine in a nostalgic atmosphere.",
   );
   const keywords = t(
     "meta_keywords",
@@ -68,7 +68,7 @@ export function meta({ data }: Route.MetaArgs) {
   const canonicalUrl = `https://nobardalat.com/${currentLang}`;
 
   return [
-    { title: data?.title || "Nobar - there nothing inside nothing" },
+    { title: data?.title || "No Bar - Vietnamese Identity Intact" },
     { name: "description", content: data?.description || "from da lat" },
     { name: "keywords", content: data?.keywords },
     { name: "og:locale", content: currentLang === "vi" ? "vi_VN" : "en_US" },
@@ -95,7 +95,7 @@ export function meta({ data }: Route.MetaArgs) {
     // Open Graph tags
     {
       property: "og:title",
-      content: data?.title || "Nobar - there nothing inside nothing",
+      content: data?.title || "No Bar - Vietnamese Identity Intact",
     },
     { property: "og:description", content: data?.description || "from da lat" },
     { property: "og:type", content: "website" },
@@ -111,7 +111,7 @@ export function meta({ data }: Route.MetaArgs) {
     { name: "twitter:card", content: "summary_large_image" },
     {
       name: "twitter:title",
-      content: data?.title || "Nobar - there nothing inside nothing",
+      content: data?.title || "No Bar - Vietnamese Identity Intact",
     },
     {
       name: "twitter:description",
