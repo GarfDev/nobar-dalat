@@ -12,6 +12,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import type { Route } from "./+types/root";
 import "./app.css";
 import i18next from "./i18n";
+import { CursorSync } from "~/components/cursor-sync";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -143,6 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
 
         {children}
+        <CursorSync />
         <ScrollRestoration />
         <Scripts />
         <Analytics />

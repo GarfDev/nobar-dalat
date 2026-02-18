@@ -9,7 +9,7 @@ const endIcon = L.divIcon({
   html: `
     <div class="relative w-full h-full flex items-center justify-center">
       <div class="w-12 h-12 bg-[#1a1a1a] p-2 rounded-full border-[3px] border-white shadow-2xl flex items-center justify-center overflow-hidden">
-        <img src="/images/nobar-logo-black-white.png" class="w-full h-full object-contain p-1.5 block" alt="No Bar Logo" />
+        <img src="/images/nobar-logo-black-white.png" class="w-full h-full object-contain p-1.5 block" alt="No Bar Đà Lạt Logo" />
       </div>
     </div>
   `,

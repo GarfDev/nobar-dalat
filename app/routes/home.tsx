@@ -2,7 +2,6 @@ import type { Route } from "./+types/home";
 import { redirect } from "react-router";
 
 // Import internal modules
-import { Welcome } from "../modules/welcome";
 
 export async function clientLoader({ request }: Route.ClientLoaderArgs) {
   const url = new URL(request.url);
@@ -22,11 +21,11 @@ export async function clientLoader({ request }: Route.ClientLoaderArgs) {
 
 export function meta() {
   return [
-    { title: "No Bar - Vietnamese identity intact" },
+    { title: "No Bar Đà Lạt - Vietnamese identity intact" },
     { name: "description", content: "from da lat" },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return null;
 }

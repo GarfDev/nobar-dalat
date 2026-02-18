@@ -43,10 +43,10 @@ export async function clientLoader({
   await i18next.changeLanguage(lang);
 
   const t = i18next.getFixedT(lang);
-  const title = t("meta_title", "No Bar - Vietnamese Identity Intact");
+  const title = t("meta_title", "No Bar Đà Lạt - Vietnamese Identity Intact");
   const description = t(
     "meta_description",
-    "No Bar - A modern cocktail bar & pub in Da Lat where Vietnamese heritage meets contemporary spirit. Enjoy unique cocktails, absinthe, and wine in a nostalgic atmosphere.",
+    "No Bar Đà Lạt - A modern cocktail bar & pub in Da Lat where Vietnamese heritage meets contemporary spirit. Enjoy unique cocktails, absinthe, and wine in a nostalgic atmosphere.",
   );
   const keywords = t(
     "meta_keywords",
@@ -68,7 +68,7 @@ export function meta({ data }: Route.MetaArgs) {
   const canonicalUrl = `https://nobardalat.com/${currentLang}`;
 
   return [
-    { title: data?.title || "No Bar - Vietnamese Identity Intact" },
+    { title: data?.title || "No Bar Đà Lạt - Vietnamese Identity Intact" },
     { name: "description", content: data?.description || "from da lat" },
     { name: "keywords", content: data?.keywords },
     { name: "og:locale", content: currentLang === "vi" ? "vi_VN" : "en_US" },
@@ -95,7 +95,7 @@ export function meta({ data }: Route.MetaArgs) {
     // Open Graph tags
     {
       property: "og:title",
-      content: data?.title || "No Bar - Vietnamese Identity Intact",
+      content: data?.title || "No Bar Đà Lạt - Vietnamese Identity Intact",
     },
     { property: "og:description", content: data?.description || "from da lat" },
     { property: "og:type", content: "website" },
@@ -111,7 +111,7 @@ export function meta({ data }: Route.MetaArgs) {
     { name: "twitter:card", content: "summary_large_image" },
     {
       name: "twitter:title",
-      content: data?.title || "No Bar - Vietnamese Identity Intact",
+      content: data?.title || "No Bar Đà Lạt - Vietnamese Identity Intact",
     },
     {
       name: "twitter:description",
@@ -136,11 +136,19 @@ export function meta({ data }: Route.MetaArgs) {
           postalCode: "670000",
           addressCountry: "VN",
         },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 11.9441271,
+          longitude: 108.434335,
+        },
         telephone: "+84 98 247 70 73",
         servesCuisine: "Vietnamese",
-        priceRange: "$$ - $$$",
+        priceRange: "$$",
         url: "https://nobardalat.com",
-        image: "https://nobardalat.com/images/nobar-logo-color.png",
+        image: [
+          "https://nobardalat.com/images/nobar-logo-color.png",
+          "https://nobardalat.com/images/menu-optimized/image_1.webp",
+        ],
         sameAs: [
           "https://www.instagram.com/nobardalat/",
           "https://www.facebook.com/nobardalat",
