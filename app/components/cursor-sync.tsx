@@ -169,9 +169,33 @@ export function CursorSync() {
       if (channelRef.current) {
         // Only track if we are subscribed?
         // track() is async but we don't await it here for performance
+
+        // Calculate relative position based on scroll
+        const scrollX = window.scrollX || window.pageXOffset;
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        // Use document coordinates (including scroll)
+        // Normalize against document size instead of window size for better sync across different scroll positions
+        const docWidth = Math.max(
+          document.body.scrollWidth,
+          document.documentElement.scrollWidth,
+          document.body.offsetWidth,
+          document.documentElement.offsetWidth,
+          document.body.clientWidth,
+          document.documentElement.clientWidth,
+        );
+        const docHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.offsetHeight,
+          document.body.clientHeight,
+          document.documentElement.clientHeight,
+        );
+
         channelRef.current.track({
-          x: x / window.innerWidth, // Normalize to 0-1
-          y: y / window.innerHeight, // Normalize to 0-1
+          x: (x + scrollX) / docWidth,
+          y: (y + scrollY) / docHeight,
           deviceType: myDeviceType,
           userId,
           color,
@@ -181,6 +205,7 @@ export function CursorSync() {
     }, 50);
 
     const handleMouseMove = (e: MouseEvent) => {
+      // clientX/Y are relative to viewport
       updateCursor(e.clientX, e.clientY);
     };
 
@@ -201,40 +226,70 @@ export function CursorSync() {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
-      {Object.entries(cursors).map(([id, cursor]) => (
-        <div
-          key={id}
-          className="absolute transition-all duration-100 ease-linear"
-          style={{
-            left: `${cursor.x * 100}%`,
-            top: `${cursor.y * 100}%`,
-            display: cursor.x < 0 || cursor.y < 0 ? "none" : "block", // Hide if off-screen
-          }}
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ color: cursor.color }}
-            className="drop-shadow-md"
-          >
-            <path
-              d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19179L17.9416 17.4697L7.53113 17.4697L7.40059 17.5886L5.65376 12.3673Z"
-              fill="currentColor"
-              stroke="white"
-              strokeWidth="1"
-            />
-          </svg>
+      {Object.entries(cursors).map(([id, cursor]) => {
+        // Convert normalized document coordinates back to viewport coordinates
+        // We need to account for the current user's scroll position
+        const docWidth = Math.max(
+          document.body.scrollWidth,
+          document.documentElement.scrollWidth,
+          document.body.offsetWidth,
+          document.documentElement.offsetWidth,
+          document.body.clientWidth,
+          document.documentElement.clientWidth,
+        );
+        const docHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.offsetHeight,
+          document.body.clientHeight,
+          document.documentElement.clientHeight,
+        );
+
+        const absoluteX = cursor.x * docWidth;
+        const absoluteY = cursor.y * docHeight;
+
+        const scrollX = window.scrollX || window.pageXOffset;
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        const viewportX = absoluteX - scrollX;
+        const viewportY = absoluteY - scrollY;
+
+        return (
           <div
-            className="absolute left-4 top-4 rounded px-2 py-1 text-xs text-white font-bold whitespace-nowrap"
-            style={{ backgroundColor: cursor.color }}
+            key={id}
+            className="absolute transition-all duration-100 ease-linear"
+            style={{
+              left: `${viewportX}px`,
+              top: `${viewportY}px`,
+              display: cursor.x < 0 || cursor.y < 0 ? "none" : "block", // Hide if off-screen
+            }}
           >
-            User {id.substring(0, 4)}
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ color: cursor.color }}
+              className="drop-shadow-md"
+            >
+              <path
+                d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19179L17.9416 17.4697L7.53113 17.4697L7.40059 17.5886L5.65376 12.3673Z"
+                fill="currentColor"
+                stroke="white"
+                strokeWidth="1"
+              />
+            </svg>
+            <div
+              className="absolute left-4 top-4 rounded px-2 py-1 text-xs text-white font-bold whitespace-nowrap"
+              style={{ backgroundColor: cursor.color }}
+            >
+              User {id.substring(0, 4)}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
