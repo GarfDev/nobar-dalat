@@ -62,6 +62,29 @@ export function CursorSync() {
 
   const channelRef = useRef<RealtimeChannel | null>(null);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [session, setSession] = useState<any>(null);
+
+  // Auto anonymous login
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      if (!session) {
+        supabase.auth.signInAnonymously().then(({ data: { session } }) => {
+          setSession(session);
+        });
+      }
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   // Initialize device type on mount
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -77,9 +100,10 @@ export function CursorSync() {
   }, []);
 
   useEffect(() => {
-    if (!userId) return;
+    if (!userId || !session) return;
 
-    const channel = supabase.channel("online-users", {
+    // Use a single channel name for all users
+    const channel = supabase.channel("room_01", {
       config: {
         presence: {
           key: userId,
@@ -92,15 +116,15 @@ export function CursorSync() {
     channel
       .on("presence", { event: "sync" }, () => {
         const newState = channel.presenceState<CursorPosition>();
+        // console.log("Sync state:", newState);
         const newCursors: Record<string, CursorPosition> = {};
-
-        // console.log("Presence sync:", newState);
 
         Object.entries(newState).forEach(([key, value]) => {
           if (key === userId) return; // Skip my own cursor
 
           // value is an array of presence objects for this key
-          const presence = value[0];
+          // We take the last one as it's the most recent
+          const presence = value[value.length - 1];
 
           if (presence && presence.deviceType === myDeviceType) {
             newCursors[key] = presence;
@@ -119,11 +143,11 @@ export function CursorSync() {
 
         setCursors(limitedCursors);
       })
+      // Track cursor for current user immediately when subscribed
       .subscribe(async (status) => {
         if (status === "SUBSCRIBED") {
-          // Initial track
           await channel.track({
-            x: -1, // Initial position off-screen
+            x: -1, // Initial position
             y: -1,
             deviceType: myDeviceType,
             userId,
@@ -136,7 +160,7 @@ export function CursorSync() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [userId, myDeviceType, color]); // Re-subscribe if device type changes to ensure correct metadata
+  }, [userId, myDeviceType, color, onlineAt, session]);
 
   useEffect(() => {
     if (!channelRef.current) return;
