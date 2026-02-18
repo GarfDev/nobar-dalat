@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { supabase } from "~/lib/supabase";
 import { RealtimeChannel } from "@supabase/supabase-js";
+import { motion, useSpring } from "framer-motion";
 
 type DeviceType = "mobile" | "tablet" | "desktop";
 
@@ -53,6 +54,81 @@ function throttle<T extends (...args: any[]) => any>(
     }
   };
 }
+
+const Cursor = ({ cursor, id }: { cursor: CursorPosition; id: string }) => {
+  const x = useSpring(0, { stiffness: 500, damping: 28 });
+  const y = useSpring(0, { stiffness: 500, damping: 28 });
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    // Convert normalized document coordinates back to viewport coordinates
+    // We need to account for the current user's scroll position
+    const updatePosition = () => {
+      const docWidth = Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.body.clientWidth,
+        document.documentElement.clientWidth,
+      );
+      const docHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.body.clientHeight,
+        document.documentElement.clientHeight,
+      );
+
+      const absoluteX = cursor.x * docWidth;
+      const absoluteY = cursor.y * docHeight;
+
+      const scrollX = window.scrollX || window.pageXOffset;
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      const viewportX = absoluteX - scrollX;
+      const viewportY = absoluteY - scrollY;
+
+      x.set(viewportX);
+      y.set(viewportY);
+
+      setVisible(cursor.x >= 0 && cursor.y >= 0);
+    };
+
+    updatePosition();
+    window.addEventListener("scroll", updatePosition);
+    window.addEventListener("resize", updatePosition);
+
+    return () => {
+      window.removeEventListener("scroll", updatePosition);
+      window.removeEventListener("resize", updatePosition);
+    };
+  }, [cursor.x, cursor.y, x, y]);
+
+  return (
+    <motion.div
+      key={id}
+      className="absolute top-0 left-0 pointer-events-none"
+      style={{
+        x,
+        y,
+        display: visible ? "block" : "none",
+        zIndex: 9999,
+      }}
+    >
+      <div
+        className="w-4 h-4 rounded-full opacity-60 animate-pulse"
+        style={{
+          backgroundColor: cursor.color,
+          borderRadius: cursor.shape,
+          transform: "translate(-50%, -50%)",
+          boxShadow: `0 0 10px ${cursor.color}`,
+        }}
+      />
+    </motion.div>
+  );
+};
 
 export function CursorSync() {
   const [cursors, setCursors] = useState<Record<string, CursorPosition>>({});
@@ -174,7 +250,16 @@ export function CursorSync() {
   useEffect(() => {
     if (!channelRef.current) return;
 
-    const updateCursor = throttle((x: number, y: number) => {
+    // Use requestAnimationFrame for smoother updates
+    let rafId: number;
+    let lastUpdate = 0;
+    const THROTTLE_MS = 20; // Increase frequency (50fps)
+
+    const updateCursor = (x: number, y: number) => {
+      const now = Date.now();
+      if (now - lastUpdate < THROTTLE_MS) return;
+      lastUpdate = now;
+
       if (channelRef.current) {
         // Only track if we are subscribed?
         // track() is async but we don't await it here for performance
@@ -212,16 +297,19 @@ export function CursorSync() {
           onlineAt,
         });
       }
-    }, 50);
+    };
 
     const handleMouseMove = (e: MouseEvent) => {
-      // clientX/Y are relative to viewport
-      updateCursor(e.clientX, e.clientY);
+      rafId = requestAnimationFrame(() => {
+        updateCursor(e.clientX, e.clientY);
+      });
     };
 
     const handleTouchMove = (e: TouchEvent) => {
       if (e.touches.length > 0) {
-        updateCursor(e.touches[0].clientX, e.touches[0].clientY);
+        rafId = requestAnimationFrame(() => {
+          updateCursor(e.touches[0].clientX, e.touches[0].clientY);
+        });
       }
     };
 
@@ -231,62 +319,15 @@ export function CursorSync() {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("touchmove", handleTouchMove);
+      cancelAnimationFrame(rafId);
     };
   }, [myDeviceType, userId, color, shape, onlineAt, session]); // Add session dependency to re-bind events if needed
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
-      {Object.entries(cursors).map(([id, cursor]) => {
-        // Convert normalized document coordinates back to viewport coordinates
-        // We need to account for the current user's scroll position
-        const docWidth = Math.max(
-          document.body.scrollWidth,
-          document.documentElement.scrollWidth,
-          document.body.offsetWidth,
-          document.documentElement.offsetWidth,
-          document.body.clientWidth,
-          document.documentElement.clientWidth,
-        );
-        const docHeight = Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight,
-          document.body.offsetHeight,
-          document.documentElement.offsetHeight,
-          document.body.clientHeight,
-          document.documentElement.clientHeight,
-        );
-
-        const absoluteX = cursor.x * docWidth;
-        const absoluteY = cursor.y * docHeight;
-
-        const scrollX = window.scrollX || window.pageXOffset;
-        const scrollY = window.scrollY || window.pageYOffset;
-
-        const viewportX = absoluteX - scrollX;
-        const viewportY = absoluteY - scrollY;
-
-        return (
-          <div
-            key={id}
-            className="absolute transition-all duration-300 ease-out"
-            style={{
-              left: `${viewportX}px`,
-              top: `${viewportY}px`,
-              display: cursor.x < 0 || cursor.y < 0 ? "none" : "block", // Hide if off-screen
-            }}
-          >
-            <div
-              className="w-4 h-4 rounded-full opacity-60 animate-pulse"
-              style={{
-                backgroundColor: cursor.color,
-                borderRadius: cursor.shape,
-                transform: "translate(-50%, -50%)",
-                boxShadow: `0 0 10px ${cursor.color}`,
-              }}
-            />
-          </div>
-        );
-      })}
+      {Object.entries(cursors).map(([id, cursor]) => (
+        <Cursor key={id} cursor={cursor} id={id} />
+      ))}
     </div>
   );
 }
