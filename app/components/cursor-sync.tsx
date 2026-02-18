@@ -113,52 +113,52 @@ export function CursorSync() {
 
     channelRef.current = channel;
 
-    channel
-      .on("presence", { event: "sync" }, () => {
-        const newState = channel.presenceState<CursorPosition>();
-        // console.log("Sync state:", newState);
-        const newCursors: Record<string, CursorPosition> = {};
+    channel.on("presence", { event: "sync" }, () => {
+      const newState = channel.presenceState<CursorPosition>();
+      // console.log("Sync state:", newState);
+      const newCursors: Record<string, CursorPosition> = {};
 
-        Object.entries(newState).forEach(([key, value]) => {
-          if (key === userId) return; // Skip my own cursor
+      Object.entries(newState).forEach(([key, value]) => {
+        if (key === userId) return; // Skip my own cursor
 
-          // value is an array of presence objects for this key
-          // We take the last one as it's the most recent
-          const presence = value[value.length - 1];
+        // value is an array of presence objects for this key
+        // We take the last one as it's the most recent
+        const presence = value[value.length - 1];
 
-          if (presence && presence.deviceType === myDeviceType) {
-            newCursors[key] = presence;
-          }
-        });
-
-        // Limit to 10 cursors
-        const limitedCursors: Record<string, CursorPosition> = {};
-        const sortedKeys = Object.keys(newCursors)
-          .sort((a, b) => newCursors[a].onlineAt - newCursors[b].onlineAt)
-          .slice(0, 10);
-
-        sortedKeys.forEach((key) => {
-          limitedCursors[key] = newCursors[key];
-        });
-
-        setCursors(limitedCursors);
-      })
-      // Track cursor for current user immediately when subscribed
-      .subscribe(async (status) => {
-        if (status === "SUBSCRIBED") {
-          await channel.track({
-            x: -1, // Initial position
-            y: -1,
-            deviceType: myDeviceType,
-            userId,
-            color,
-            onlineAt,
-          });
+        if (presence && presence.deviceType === myDeviceType) {
+          newCursors[key] = presence;
         }
       });
 
+      // Limit to 10 cursors
+      const limitedCursors: Record<string, CursorPosition> = {};
+      const sortedKeys = Object.keys(newCursors)
+        .sort((a, b) => newCursors[a].onlineAt - newCursors[b].onlineAt)
+        .slice(0, 10);
+
+      sortedKeys.forEach((key) => {
+        limitedCursors[key] = newCursors[key];
+      });
+
+      setCursors(limitedCursors);
+    });
+    // Track cursor for current user immediately when subscribed
+    channel.subscribe(async (status) => {
+      if (status === "SUBSCRIBED") {
+        await channel.track({
+          x: -1, // Initial position
+          y: -1,
+          deviceType: myDeviceType,
+          userId,
+          color,
+          onlineAt,
+        });
+      }
+    });
+
     return () => {
       supabase.removeChannel(channel);
+      channelRef.current = null;
     };
   }, [userId, myDeviceType, color, onlineAt, session]);
 
@@ -197,7 +197,7 @@ export function CursorSync() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("touchmove", handleTouchMove);
     };
-  }, [myDeviceType, userId, color]);
+  }, [myDeviceType, userId, color, onlineAt, session]); // Add session dependency to re-bind events if needed
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
