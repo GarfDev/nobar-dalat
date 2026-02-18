@@ -10,20 +10,25 @@ interface CursorPosition {
   deviceType: DeviceType;
   userId: string;
   color: string;
+  shape: string;
   onlineAt: number;
 }
 
 const COLORS = [
-  "#FF5733",
-  "#33FF57",
-  "#3357FF",
-  "#F333FF",
-  "#33FFF5",
-  "#FF33A8",
-  "#FF8F33",
-  "#8F33FF",
-  "#33FF8F",
-  "#FF3333",
+  "#db2777", // Pink 600
+  "#a21caf", // Purple
+  "#57534e", // Warm Grey
+  "#c2410c", // Orange
+  "#a16207", // Yellow
+  "#15803d", // Green
+  "#0369a1", // Sky
+  "#111827", // Gray 900
+];
+
+const SHAPES = [
+  "30% 70% 70% 30% / 30% 30% 70% 70%",
+  "63% 37% 37% 63% / 43% 37% 63% 57%",
+  "46% 54% 28% 72% / 60% 38% 62% 40%",
 ];
 
 const getDeviceType = (width: number): DeviceType => {
@@ -57,6 +62,9 @@ export function CursorSync() {
   const [userId] = useState(() => Math.random().toString(36).substring(2, 15));
   const [color] = useState(
     () => COLORS[Math.floor(Math.random() * COLORS.length)],
+  );
+  const [shape] = useState(
+    () => SHAPES[Math.floor(Math.random() * SHAPES.length)],
   );
   const [onlineAt] = useState(() => Date.now());
 
@@ -151,6 +159,7 @@ export function CursorSync() {
           deviceType: myDeviceType,
           userId,
           color,
+          shape,
           onlineAt,
         });
       }
@@ -160,7 +169,7 @@ export function CursorSync() {
       supabase.removeChannel(channel);
       channelRef.current = null;
     };
-  }, [userId, myDeviceType, color, onlineAt, session]);
+  }, [userId, myDeviceType, color, shape, onlineAt, session]);
 
   useEffect(() => {
     if (!channelRef.current) return;
@@ -199,6 +208,7 @@ export function CursorSync() {
           deviceType: myDeviceType,
           userId,
           color,
+          shape,
           onlineAt,
         });
       }
@@ -222,7 +232,7 @@ export function CursorSync() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("touchmove", handleTouchMove);
     };
-  }, [myDeviceType, userId, color, onlineAt, session]); // Add session dependency to re-bind events if needed
+  }, [myDeviceType, userId, color, shape, onlineAt, session]); // Add session dependency to re-bind events if needed
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
@@ -258,35 +268,22 @@ export function CursorSync() {
         return (
           <div
             key={id}
-            className="absolute transition-all duration-100 ease-linear"
+            className="absolute transition-all duration-300 ease-out"
             style={{
               left: `${viewportX}px`,
               top: `${viewportY}px`,
               display: cursor.x < 0 || cursor.y < 0 ? "none" : "block", // Hide if off-screen
             }}
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ color: cursor.color }}
-              className="drop-shadow-md"
-            >
-              <path
-                d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19179L17.9416 17.4697L7.53113 17.4697L7.40059 17.5886L5.65376 12.3673Z"
-                fill="currentColor"
-                stroke="white"
-                strokeWidth="1"
-              />
-            </svg>
             <div
-              className="absolute left-4 top-4 rounded px-2 py-1 text-xs text-white font-bold whitespace-nowrap"
-              style={{ backgroundColor: cursor.color }}
-            >
-              User {id.substring(0, 4)}
-            </div>
+              className="w-4 h-4 rounded-full opacity-60 animate-pulse"
+              style={{
+                backgroundColor: cursor.color,
+                borderRadius: cursor.shape,
+                transform: "translate(-50%, -50%)",
+                boxShadow: `0 0 10px ${cursor.color}`,
+              }}
+            />
           </div>
         );
       })}
