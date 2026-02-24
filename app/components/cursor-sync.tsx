@@ -56,55 +56,103 @@ function throttle<T extends (...args: any[]) => any>(
 }
 
 const Cursor = ({ cursor, id }: { cursor: CursorPosition; id: string }) => {
-  const x = useSpring(0, { stiffness: 500, damping: 28 });
-  const y = useSpring(0, { stiffness: 500, damping: 28 });
+  // Increase damping slightly to reduce oscillation when moving quickly
+  const x = useSpring(0, { stiffness: 400, damping: 35 });
+  const y = useSpring(0, { stiffness: 400, damping: 35 });
   const [visible, setVisible] = useState(false);
 
+  // Queue to store incoming positions
+  const positionQueue = useRef<{ x: number; y: number }[]>([]);
+  const processingRef = useRef(false);
+
+  const updateSprings = (targetX: number, targetY: number) => {
+    const docWidth = Math.max(
+      document.body.scrollWidth,
+      document.documentElement.scrollWidth,
+      document.body.offsetWidth,
+      document.documentElement.offsetWidth,
+      document.body.clientWidth,
+      document.documentElement.clientWidth,
+    );
+    const docHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.body.clientHeight,
+      document.documentElement.clientHeight,
+    );
+
+    const absoluteX = targetX * docWidth;
+    const absoluteY = targetY * docHeight;
+
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    const viewportX = absoluteX - scrollX;
+    const viewportY = absoluteY - scrollY;
+
+    x.set(viewportX);
+    y.set(viewportY);
+    setVisible(targetX >= 0 && targetY >= 0);
+  };
+
+  const processQueue = () => {
+    if (positionQueue.current.length === 0) {
+      processingRef.current = false;
+      return;
+    }
+
+    processingRef.current = true;
+    const nextPos = positionQueue.current.shift();
+
+    if (nextPos) {
+      updateSprings(nextPos.x, nextPos.y);
+    }
+
+    // Process next item after a delay matching the sender's throttle rate (20ms)
+    // If queue is backing up, speed up slightly
+    const delay = positionQueue.current.length > 5 ? 10 : 20;
+    setTimeout(processQueue, delay);
+  };
+
+  // Add new position to queue when cursor prop updates
   useEffect(() => {
-    // Convert normalized document coordinates back to viewport coordinates
-    // We need to account for the current user's scroll position
-    const updatePosition = () => {
-      const docWidth = Math.max(
-        document.body.scrollWidth,
-        document.documentElement.scrollWidth,
-        document.body.offsetWidth,
-        document.documentElement.offsetWidth,
-        document.body.clientWidth,
-        document.documentElement.clientWidth,
-      );
-      const docHeight = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight,
-        document.body.clientHeight,
-        document.documentElement.clientHeight,
-      );
+    positionQueue.current.push({ x: cursor.x, y: cursor.y });
 
-      const absoluteX = cursor.x * docWidth;
-      const absoluteY = cursor.y * docHeight;
+    // If not already processing, start the loop
+    if (!processingRef.current) {
+      processQueue();
+    }
+  }, [cursor.x, cursor.y]);
 
-      const scrollX = window.scrollX || window.pageXOffset;
-      const scrollY = window.scrollY || window.pageYOffset;
+  // Handle scroll/resize updates for CURRENT position
+  useEffect(() => {
+    const handleLayoutChange = () => {
+      // We use the current spring values as base, but need to re-project them?
+      // Actually, springs contain viewport coordinates.
+      // If user scrolls, the viewport coordinates of the TARGET should change.
+      // But since we are processing a queue, the "current target" is transient.
 
-      const viewportX = absoluteX - scrollX;
-      const viewportY = absoluteY - scrollY;
+      // Simpler approach: Just re-process the current cursor prop as a "refresh"
+      // But that might add a jump.
+      // Ideally, we just update the springs to shift by scroll delta?
 
-      x.set(viewportX);
-      y.set(viewportY);
-
-      setVisible(cursor.x >= 0 && cursor.y >= 0);
+      // For simplicity, let's just let the next queue item correct it,
+      // or if queue is empty, re-set to current cursor prop.
+      if (positionQueue.current.length === 0) {
+        updateSprings(cursor.x, cursor.y);
+      }
     };
 
-    updatePosition();
-    window.addEventListener("scroll", updatePosition);
-    window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", handleLayoutChange);
+    window.addEventListener("resize", handleLayoutChange);
 
     return () => {
-      window.removeEventListener("scroll", updatePosition);
-      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", handleLayoutChange);
+      window.removeEventListener("resize", handleLayoutChange);
     };
-  }, [cursor.x, cursor.y, x, y]);
+  }, [cursor.x, cursor.y]); // Re-bind when cursor changes so we have latest ref
 
   return (
     <motion.div
@@ -197,49 +245,55 @@ export function CursorSync() {
 
     channelRef.current = channel;
 
-    channel.on("presence", { event: "sync" }, () => {
-      const newState = channel.presenceState<CursorPosition>();
-      // console.log("Sync state:", newState);
-      const newCursors: Record<string, CursorPosition> = {};
+    // Handle initial state from Presence
+    channel
+      .on("presence", { event: "sync" }, () => {
+        const newState = channel.presenceState<CursorPosition>();
+        const newCursors: Record<string, CursorPosition> = { ...cursors };
 
-      Object.entries(newState).forEach(([key, value]) => {
-        if (key === userId) return; // Skip my own cursor
+        Object.entries(newState).forEach(([key, value]) => {
+          if (key === userId) return;
 
-        // value is an array of presence objects for this key
-        // We take the last one as it's the most recent
-        const presence = value[value.length - 1];
+          const presence = value[value.length - 1];
+          if (presence && presence.deviceType === myDeviceType) {
+            newCursors[key] = presence;
+          }
+        });
 
-        if (presence && presence.deviceType === myDeviceType) {
-          newCursors[key] = presence;
+        setCursors(newCursors);
+      })
+      // Listen for direct broadcast events for high-frequency updates
+      .on("broadcast", { event: "cursor-move" }, ({ payload }) => {
+        // payload: { userId, x, y }
+        if (payload.userId === userId) return;
+
+        setCursors((prev) => {
+          const userCursor = prev[payload.userId];
+          if (!userCursor) return prev; // Wait for presence to establish base state
+
+          return {
+            ...prev,
+            [payload.userId]: {
+              ...userCursor,
+              x: payload.x,
+              y: payload.y,
+            },
+          };
+        });
+      })
+      .subscribe(async (status) => {
+        if (status === "SUBSCRIBED") {
+          await channel.track({
+            x: -1,
+            y: -1,
+            deviceType: myDeviceType,
+            userId,
+            color,
+            shape,
+            onlineAt,
+          });
         }
       });
-
-      // Limit to 10 cursors
-      const limitedCursors: Record<string, CursorPosition> = {};
-      const sortedKeys = Object.keys(newCursors)
-        .sort((a, b) => newCursors[a].onlineAt - newCursors[b].onlineAt)
-        .slice(0, 10);
-
-      sortedKeys.forEach((key) => {
-        limitedCursors[key] = newCursors[key];
-      });
-
-      setCursors(limitedCursors);
-    });
-    // Track cursor for current user immediately when subscribed
-    channel.subscribe(async (status) => {
-      if (status === "SUBSCRIBED") {
-        await channel.track({
-          x: -1, // Initial position
-          y: -1,
-          deviceType: myDeviceType,
-          userId,
-          color,
-          shape,
-          onlineAt,
-        });
-      }
-    });
 
     return () => {
       supabase.removeChannel(channel);
@@ -261,9 +315,6 @@ export function CursorSync() {
       lastUpdate = now;
 
       if (channelRef.current) {
-        // Only track if we are subscribed?
-        // track() is async but we don't await it here for performance
-
         // Calculate relative position based on scroll
         const scrollX = window.scrollX || window.pageXOffset;
         const scrollY = window.scrollY || window.pageYOffset;
@@ -287,15 +338,33 @@ export function CursorSync() {
           document.documentElement.clientHeight,
         );
 
-        channelRef.current.track({
-          x: (x + scrollX) / docWidth,
-          y: (y + scrollY) / docHeight,
-          deviceType: myDeviceType,
-          userId,
-          color,
-          shape,
-          onlineAt,
+        const normalizedX = (x + scrollX) / docWidth;
+        const normalizedY = (y + scrollY) / docHeight;
+
+        // Broadcast movement directly (faster than Presence)
+        channelRef.current.send({
+          type: "broadcast",
+          event: "cursor-move",
+          payload: {
+            userId,
+            x: normalizedX,
+            y: normalizedY,
+          },
         });
+
+        // Optionally update Presence occasionally for late joiners (less frequent)
+        if (Math.random() < 0.05) {
+          // ~1 in 20 updates
+          channelRef.current.track({
+            x: normalizedX,
+            y: normalizedY,
+            deviceType: myDeviceType,
+            userId,
+            color,
+            shape,
+            onlineAt,
+          });
+        }
       }
     };
 
