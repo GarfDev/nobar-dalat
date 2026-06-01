@@ -50,6 +50,7 @@ async function generateCarouselContent() {
               const optimizedSrc = `/carousel-content-optimized/${encodeURIComponent(optimizedName)}`;
 
               await image
+                .rotate()
                 .resize(640, null, { withoutEnlargement: true })
                 .webp({ quality: 80 })
                 .toFile(optimizedPath);
@@ -130,6 +131,7 @@ async function generateCarouselContent() {
         // Check if file already exists to avoid re-processing (optional, but good for speed)
         // For now, overwrite to ensure latest settings
         await sharp(inputPath)
+          .rotate()
           .resize(600, null, { withoutEnlargement: true })
           .webp({ quality: 80 })
           .toFile(outputPath);
