@@ -20,14 +20,16 @@ const logoVariants = {
     opacity: 1,
     filter: "blur(0px)",
     transition: {
-      duration: 1,
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1] as const,
     },
   },
   clicked: {
     opacity: 0,
-    filter: "blur(10px)",
+    filter: "blur(8px)",
     transition: {
       duration: 0.3,
+      ease: [0.16, 1, 0.3, 1] as const,
     },
   },
 };
@@ -99,7 +101,7 @@ export function Branding({ carouselItems }: { carouselItems: MediaItem[] }) {
     <motion.section
       initial={{ opacity: 0, filter: "blur(20px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       ref={ref}
       className={cn(
         "relative w-[100vw] bg-white text-white h-[calc(100vh+1px)] overflow-hidden",
@@ -151,7 +153,7 @@ export function Branding({ carouselItems }: { carouselItems: MediaItem[] }) {
               initial: { scale: 1 },
               hover: { scale: 1.05 },
             }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <motion.img
               src="/images/nobar-logo-black-white.png"
@@ -173,7 +175,7 @@ export function Branding({ carouselItems }: { carouselItems: MediaItem[] }) {
                 initial: { opacity: 0, y: 10, letterSpacing: "0.5em" },
                 hover: { opacity: 1, y: 0, letterSpacing: "0.8em" },
               }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="hidden md:block text-xs md:text-sm lg:text-base font-light uppercase text-white/90 border-b border-white/20 pb-1"
             >
               {t("branding.enter", "Enter")}

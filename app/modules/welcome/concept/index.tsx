@@ -21,7 +21,7 @@ export function Concept() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-8 md:mb-12 flex flex-col items-center"
         >
           <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold uppercase tracking-tighter mb-4 md:mb-6">
@@ -31,7 +31,7 @@ export function Concept() {
           <motion.div
             initial={{ height: 0 }}
             whileInView={{ height: 64 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="w-[1px] bg-white/40 mb-4 md:mb-6 h-8 md:h-16"
           />
 
@@ -44,10 +44,10 @@ export function Concept() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="relative"
         >
-          <p className="text-xs md:text-base lg:text-lg font-light leading-relaxed md:leading-loose text-white/60 max-w-xl mx-auto px-4 md:px-0">
+          <p className="text-sm md:text-base lg:text-lg font-light leading-relaxed md:leading-loose text-white/70 max-w-xl mx-auto px-4 md:px-0">
             {t("concept.description")}
           </p>
         </motion.div>
