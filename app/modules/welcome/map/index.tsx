@@ -93,14 +93,14 @@ function MapComponent() {
   return (
     <motion.section
       id="map"
-      className="h-screen w-screen bg-black text-white flex items-center justify-center p-4 md:p-8 lg:p-20 overflow-hidden"
+      className="h-screen w-screen bg-black text-white flex items-center justify-center px-6 py-4 md:px-12 md:py-8 lg:px-20 lg:py-20 overflow-hidden"
     >
       <div className="w-full h-full max-w-[1800px] grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8 lg:gap-12 border-t border-white/20 pt-4 lg:pt-0 lg:border-none">
         {/* Left Column: Info & Actions */}
         <div className="lg:col-span-4 flex flex-col justify-between order-2 lg:order-1 h-full py-2 lg:py-0">
           {/* Top: Header */}
           <div className="hidden md:block space-y-2">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tighter leading-none -ml-1">
+            <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold uppercase tracking-tighter leading-none -ml-1">
               {t("map.title")}
             </h2>
             <div className="w-full h-px bg-white/20 my-6" />
@@ -109,7 +109,7 @@ function MapComponent() {
           {/* Middle: Details */}
           <div className="space-y-8 lg:space-y-12">
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-white/50 mb-2">
+              <div className="flex items-center gap-2 text-white/60 mb-2">
                 <MapPin className="w-4 h-4" />
                 <span className="text-xs uppercase tracking-widest">
                   {t("map.addressLabel")}
@@ -123,7 +123,7 @@ function MapComponent() {
 
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <span className="text-xs uppercase tracking-widest text-white/50 block mb-1">
+                <span className="text-xs uppercase tracking-[0.18em] text-white/60 block mb-1">
                   {t("map.statusLabel")}
                 </span>
                 <div className="flex items-center gap-2">

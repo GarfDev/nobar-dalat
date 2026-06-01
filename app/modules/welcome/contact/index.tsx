@@ -8,8 +8,8 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
+      staggerChildren: 0.05,
+      delayChildren: 0.05,
     },
   },
 };
@@ -21,7 +21,7 @@ const itemVariants: Variants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: [0.16, 1, 0.3, 1],
     },
   },
 };
@@ -45,13 +45,13 @@ function Contact() {
         <div className="flex flex-col items-start justify-center text-left">
           <motion.h2
             variants={itemVariants}
-            className="text-3xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter leading-none"
+            className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase tracking-tighter leading-none"
           >
             NO BAR
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-[10px] md:text-sm tracking-widest opacity-60 mt-1 uppercase"
+            className="text-xs md:text-sm tracking-[0.18em] opacity-70 mt-1 uppercase"
           >
             {t("contact.tagline")}
           </motion.p>
@@ -68,7 +68,7 @@ function Contact() {
               href="https://maps.app.goo.gl/Po186wH5QZzYYD4Y7"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-1 text-[10px] md:text-sm hover:opacity-100 opacity-70 transition-opacity"
+              className="group flex items-center gap-1 text-xs md:text-sm hover:opacity-100 opacity-75 transition-opacity"
             >
               <span>{t("contact.address")}</span>
               <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -76,7 +76,7 @@ function Contact() {
 
             <div className="hidden md:block w-px h-3 bg-white/20"></div>
 
-            <div className="flex flex-col md:flex-row items-end md:items-center gap-1 md:gap-6 text-[10px] md:text-sm opacity-70">
+            <div className="flex flex-col md:flex-row items-end md:items-center gap-1 md:gap-6 text-xs md:text-sm opacity-75">
               <span>{t("contact.hours.daily")}</span>
               <span className="hidden md:inline text-white/20">|</span>
               <span>{t("contact.hours.wed")}</span>
