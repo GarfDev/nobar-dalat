@@ -4,74 +4,10 @@ import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import cn from "classnames";
+import menuData from "~/data/menu.json";
 import { trackEvent } from "~/lib/utils";
 
-const drinks = [
-  {
-    id: "elo",
-    category: "elo",
-    bgColor: "#fce7f3", // Pink 100
-    accentColor: "#db2777", // Pink 600
-    image: "/images/menu-optimized/image_1.webp", // Placeholder
-    shape: "blob1",
-  },
-  {
-    id: "sac",
-    category: "dau",
-    bgColor: "#fae8ff", // Light Fuchsia
-    accentColor: "#a21caf",
-    image: "/images/menu-optimized/image_1.webp",
-    shape: "blob2",
-  },
-  {
-    id: "hoi",
-    category: "dau",
-    bgColor: "#f5f5f4", // Warm Grey
-    accentColor: "#57534e",
-    image: "/images/menu-optimized/image_2.webp",
-    shape: "blob3",
-  },
-  {
-    id: "nang",
-    category: "dau",
-    bgColor: "#ffedd5", // Light Orange
-    accentColor: "#c2410c",
-    image: "/images/menu-optimized/image_3.webp",
-    shape: "blob1",
-  },
-  {
-    id: "huyen",
-    category: "dau",
-    bgColor: "#fef9c3", // Light Yellow
-    accentColor: "#a16207",
-    image: "/images/menu-optimized/image_4.webp",
-    shape: "blob2",
-  },
-  {
-    id: "nga",
-    category: "dau",
-    bgColor: "#dcfce7", // Light Green
-    accentColor: "#15803d",
-    image: "/images/menu-optimized/image_5.webp",
-    shape: "blob3",
-  },
-  {
-    id: "khong",
-    category: "dau",
-    bgColor: "#e0f2fe", // Light Sky
-    accentColor: "#0369a1",
-    image: "/images/menu-optimized/image_6.webp",
-    shape: "blob1",
-  },
-  {
-    id: "duongdai",
-    category: "nobar",
-    bgColor: "#e5e7eb", // Gray 200
-    accentColor: "#111827", // Gray 900
-    image: "/images/menu-optimized/image_1.webp", // Placeholder
-    shape: "blob2",
-  },
-];
+const drinks = menuData.items;
 
 const shapes = {
   blob1: "30% 70% 70% 30% / 30% 30% 70% 70%",
@@ -79,7 +15,7 @@ const shapes = {
   blob3: "46% 54% 28% 72% / 60% 38% 62% 40%",
 };
 
-const CATEGORIES = [{ id: "elo" }, { id: "dau" }, { id: "nobar" }];
+const CATEGORIES = menuData.categories;
 
 const textVariants: Variants = {
   enter: (direction: number) => ({
@@ -91,8 +27,8 @@ const textVariants: Variants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      delay: 0.2, // Stagger text after image
-      ease: "easeOut",
+      delay: 0.1,
+      ease: [0.16, 1, 0.3, 1],
     },
   },
   exit: (direction: number) => ({
@@ -100,6 +36,7 @@ const textVariants: Variants = {
     opacity: 0,
     transition: {
       duration: 0.3,
+      ease: [0.16, 1, 0.3, 1],
     },
   }),
 };
@@ -124,7 +61,8 @@ const imageVariants: Variants = {
     opacity: 0,
     scale: 0.8,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
+      ease: [0.16, 1, 0.3, 1],
     },
   }),
 };
@@ -162,15 +100,15 @@ const DrinkInfo = ({
         className,
       )}
     >
-      <h2 className="text-6xl md:text-7xl lg:text-9xl font-[100] tracking-tighter mb-4 md:mb-8 font-sans">
+      <h2 className="text-5xl md:text-7xl lg:text-8xl font-[100] tracking-tighter mb-4 md:mb-6 font-sans leading-none">
         {name}
       </h2>
 
-      <div className="space-y-1 md:space-y-2 mb-4 md:mb-8">
+      <div className="space-y-1.5 md:space-y-2 mb-4 md:mb-6">
         {ingredients.map((ing: string, i: number) => (
           <p
             key={i}
-            className="text-sm md:text-base lg:text-lg font-light uppercase tracking-widest"
+            className="text-sm md:text-base lg:text-lg font-normal uppercase tracking-[0.14em] md:tracking-[0.18em]"
           >
             {ing}
           </p>
@@ -399,7 +337,7 @@ export function Menu() {
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
         <div
           key={`${activeCategory}-${page}`}
-          className="absolute w-full h-full flex items-center justify-center px-4 pb-24 pt-16 md:px-24 md:pb-0 md:pt-0"
+          className="absolute w-full h-full flex items-center justify-center px-6 pb-24 pt-16 md:px-12 lg:px-20 md:pb-0 md:pt-0"
         >
           <div className="w-full max-w-6xl h-full md:h-[60vh] lg:h-[70vh] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
             {/* Text Part - Black (Background) */}
