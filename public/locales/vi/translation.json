@@ -8,10 +8,20 @@
       "nobar": "NOBAR ĐƯƠNG ĐẠI"
     },
     "items": {
-      "elo": {
-        "name": "e lờ",
-        "ingredients": ["GIN Ủ HOA NHÀI", "VẢI — CHANH", "LÒNG TRẮNG TRỨNG"],
-        "tags": "CHUA NGỌT - HƯƠNG HOA"
+      "lan-man": {
+        "name": "lan man",
+        "ingredients": ["MÍT — RUM", "BỌT MATCHA", "KEM — MATCHA — FRANGELICO"],
+        "tags": "CHUA NGỌT, BÉO"
+      },
+      "loang-choang": {
+        "name": "loang choang",
+        "ingredients": ["ME — CÀ PHÊ", "YUZU — CHANH", "TINCTURE ỚT — RUM ĐEN", "RUM CHUỐI — MICHELIA TONKINENSIS"],
+        "tags": "CHUA NGỌT, CAY"
+      },
+      "lon-xon": {
+        "name": "lộn xộn",
+        "ingredients": ["SẦU RIÊNG — DỪA", "MILK PUNCH — DỨA", "NGHỆ — GIN KHÔ", "RUM TRẮNG"],
+        "tags": "BÉO, LẠ"
       },
       "sac": {
         "name": "sắc",

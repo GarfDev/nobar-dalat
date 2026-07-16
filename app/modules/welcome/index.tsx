@@ -60,6 +60,11 @@ export function Welcome({ carouselItems }: { carouselItems: MediaItem[] }) {
     ["blur(0px)", "blur(0px)", "blur(8px)"],
   );
   const mapOpacity = useTransform(mapProgress, OPACITY_INPUT_RANGE, [0, 0, 1]);
+  const mapPointerEvents = useTransform(
+    mapProgress,
+    [0, 0.8, 0.8001],
+    ["none", "none", "auto"],
+  );
 
   // 4. Contact entering (covers Map)
   const { scrollYProgress: contactProgress } = useScroll({
@@ -150,7 +155,13 @@ export function Welcome({ carouselItems }: { carouselItems: MediaItem[] }) {
         <motion.div
           ref={mapRef}
           className="card snap-start snap-always"
-          style={{ opacity: mapOpacity, filter: mapBlur, willChange: "filter, opacity", zIndex: 4 }}
+          style={{
+            opacity: mapOpacity,
+            filter: mapBlur,
+            pointerEvents: mapPointerEvents,
+            willChange: "filter, opacity",
+            zIndex: 4,
+          }}
         >
           <Map />
         </motion.div>

@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { supabase } from "~/lib/supabase";
-import { RealtimeChannel } from "@supabase/supabase-js";
+import type { RealtimeChannel, SupabaseClient } from "@supabase/supabase-js";
 import { motion, useSpring } from "framer-motion";
 
 type DeviceType = "mobile" | "tablet" | "desktop";
@@ -179,6 +179,13 @@ const Cursor = ({ cursor, id }: { cursor: CursorPosition; id: string }) => {
 };
 
 export function CursorSync() {
+  // Realtime cursors are optional when Supabase credentials are unavailable.
+  if (!supabase) return null;
+
+  return <ConfiguredCursorSync supabase={supabase} />;
+}
+
+function ConfiguredCursorSync({ supabase }: { supabase: SupabaseClient }) {
   const [cursors, setCursors] = useState<Record<string, CursorPosition>>({});
   const [myDeviceType, setMyDeviceType] = useState<DeviceType>("desktop");
 

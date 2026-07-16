@@ -1,0 +1,258 @@
+{
+  "categories": [
+    {
+      "id": "elo",
+      "order": 0,
+      "en": "E LỜ",
+      "vi": "E LỜ"
+    },
+    {
+      "id": "dau",
+      "order": 1,
+      "en": "SẮC HUYỀN KHÔNG HỎI NGÃ NẶNG",
+      "vi": "SẮC HUYỀN KHÔNG HỎI NGÃ NẶNG"
+    }
+  ],
+  "items": [
+    {
+      "id": "nang",
+      "category": "dau",
+      "order": 2,
+      "bgColor": "#ffedd5",
+      "accentColor": "#c2410c",
+      "image": "/images/menu-optimized/image_3.webp",
+      "shape": "blob1",
+      "en": {
+        "name": "nặng",
+        "ingredients": [
+          "CORN-INFUSED BOURBON",
+          "HONEY",
+          "KNOB CREEK WHISKEY",
+          "CHOCOLATE BITTER — NUTMEG"
+        ],
+        "tags": "CREAMY AND BITTER"
+      },
+      "vi": {
+        "name": "nặng",
+        "ingredients": [
+          "BOURBON Ủ NGÔ",
+          "MẬT ONG",
+          "WHISKEY KNOB CREEK",
+          "BITTER SÔ CÔ LA — NHỤC ĐẬU KHẤU"
+        ],
+        "tags": "BÉO VÀ ĐẮNG"
+      },
+      "backgroundType": "color",
+      "backgroundImage": ""
+    },
+    {
+      "id": "huyen",
+      "category": "dau",
+      "order": 3,
+      "bgColor": "#fef9c3",
+      "accentColor": "#a16207",
+      "image": "/images/menu-optimized/image_4.webp",
+      "shape": "blob2",
+      "en": {
+        "name": "huyền",
+        "ingredients": [
+          "JACKFRUIT",
+          "WHISKEY SHERRY",
+          "VANILLA — COCONUT",
+          "KOMBUCHA TEA",
+          "CO2"
+        ],
+        "tags": "SWEET - CREAMY - REFRESHING"
+      },
+      "vi": {
+        "name": "huyền",
+        "ingredients": [
+          "MÍT",
+          "WHISKEY SHERRY",
+          "VANI — DỪA",
+          "TRÀ KOMBUCHA",
+          "CO2"
+        ],
+        "tags": "NGỌT - BÉO - TƯƠI MÁT"
+      },
+      "backgroundType": "color",
+      "backgroundImage": ""
+    },
+    {
+      "id": "nga",
+      "category": "dau",
+      "order": 4,
+      "bgColor": "#dcfce7",
+      "accentColor": "#15803d",
+      "image": "/images/menu-optimized/image_5.webp",
+      "shape": "blob3",
+      "en": {
+        "name": "ngã",
+        "ingredients": [
+          "FENNEL SEEDS-INFUSED WHISKEY",
+          "OOLONG TEA — HOPS",
+          "OOLONG-INFUSED GIN",
+          "AMARETO — ABSINTHE"
+        ],
+        "tags": "SWEET AND SOUR - HERBAL - TEA"
+      },
+      "vi": {
+        "name": "ngã",
+        "ingredients": [
+          "WHISKEY Ủ HẠT THÌ LÀ",
+          "TRÀ OOLONG — HOA BIA",
+          "GIN Ủ OOLONG",
+          "RƯỢU AMARETTO — ABSINTHE"
+        ],
+        "tags": "CHUA NGỌT - THẢO MỘC - TRÀ"
+      },
+      "backgroundType": "color",
+      "backgroundImage": ""
+    },
+    {
+      "id": "khong",
+      "category": "dau",
+      "order": 5,
+      "bgColor": "#e0f2fe",
+      "accentColor": "#0369a1",
+      "image": "/images/menu-optimized/image_6.webp",
+      "shape": "blob1",
+      "en": {
+        "name": "không",
+        "ingredients": [
+          "NUTMEG-INFUSED VODKA",
+          "MEZCAL — MANGO — DILL",
+          "SHERRY CREAM — HOPS"
+        ],
+        "tags": "SWEET AND SOUR - CREAMY"
+      },
+      "vi": {
+        "name": "không",
+        "ingredients": [
+          "VODKA Ủ NHỤC ĐẬU KHẤU",
+          "MEZCAL — XOÀI — THÌ LÀ",
+          "KEM SHERRY — HOA BIA"
+        ],
+        "tags": "CHUA NGỌT - BÉO"
+      },
+      "backgroundType": "color",
+      "backgroundImage": ""
+    },
+    {
+      "id": "upload-test-3",
+      "category": "dau",
+      "order": 6,
+      "bgColor": "#f5f5f4",
+      "accentColor": "#57534e",
+      "image": "/images/menu-optimized/upload-test-3.webp",
+      "backgroundType": "image",
+      "backgroundImage": "/images/menu-backgrounds-optimized/upload-test-3.webp",
+      "shape": "blob3",
+      "en": {
+        "name": "Upload Test 3",
+        "ingredients": [
+          "THREE"
+        ],
+        "tags": "TEST"
+      },
+      "vi": {
+        "name": "Upload Test 3",
+        "ingredients": [
+          "BA"
+        ],
+        "tags": "TEST"
+      }
+    },
+    {
+      "id": "lan-man",
+      "category": "elo",
+      "order": 0,
+      "bgColor": "#dfe5ba",
+      "accentColor": "#6f7f32",
+      "image": "/images/menu-optimized/lan-man.webp",
+      "backgroundType": "color",
+      "backgroundImage": "",
+      "shape": "blob2",
+      "en": {
+        "name": "lan man",
+        "ingredients": [
+          "Jackfruit — rum",
+          "Matcha foam",
+          "Cream — matcha — Frangelico"
+        ],
+        "tags": "Sweet & sour, creamy"
+      },
+      "vi": {
+        "name": "lan man",
+        "ingredients": [
+          "Mít — rum",
+          "Bọt matcha",
+          "Kem — matcha — Frangelico"
+        ],
+        "tags": "Chua ngọt, béo"
+      }
+    },
+    {
+      "id": "loang-choang",
+      "category": "elo",
+      "order": 1,
+      "bgColor": "#e3ad75",
+      "accentColor": "#79311a",
+      "image": "/images/menu-optimized/loang-choang.webp",
+      "backgroundType": "color",
+      "backgroundImage": "",
+      "shape": "blob1",
+      "en": {
+        "name": "loang choang",
+        "ingredients": [
+          "Tamarind — coffee",
+          "Yuzu — lemon",
+          "Chili tincture — dark rum",
+          "Banana rum — Michelia tonkinensis"
+        ],
+        "tags": "Sweet & sour, spicy"
+      },
+      "vi": {
+        "name": "loang choang",
+        "ingredients": [
+          "Me — cà phê",
+          "Yuzu — chanh",
+          "Tincture ớt — rum đen",
+          "Rum chuối — Michelia tonkinensis"
+        ],
+        "tags": "Chua ngọt, cay"
+      }
+    },
+    {
+      "id": "lon-xon",
+      "category": "elo",
+      "order": 2,
+      "bgColor": "#f0ead8",
+      "accentColor": "#d99219",
+      "image": "/images/menu-optimized/lon-xon.webp",
+      "backgroundType": "color",
+      "backgroundImage": "",
+      "shape": "blob3",
+      "en": {
+        "name": "lộn xộn",
+        "ingredients": [
+          "Durian — coconut",
+          "Milk punch — pineapple",
+          "Turmeric — dry gin",
+          "Light rum"
+        ],
+        "tags": "Creamy & strange"
+      },
+      "vi": {
+        "name": "lộn xộn",
+        "ingredients": [
+          "Sầu riêng — dừa",
+          "Milk punch — dứa",
+          "Nghệ — gin khô",
+          "Rum trắng"
+        ],
+        "tags": "Béo, lạ"
+      }
+    }
+  ]
+}

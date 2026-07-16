@@ -8,10 +8,20 @@
       "nobar": "NOBAR CONTEMPORARY"
     },
     "items": {
-      "elo": {
-        "name": "e lờ",
-        "ingredients": ["JASMINE-INFUSED GIN", "LITCHI — LEMON", "EGG WHITE"],
-        "tags": "SWEET - SOUR - FLORAL"
+      "lan-man": {
+        "name": "lan man",
+        "ingredients": ["JACKFRUIT — RUM", "MATCHA FOAM", "CREAM — MATCHA — FRANGELICO"],
+        "tags": "SWEET & SOUR, CREAMY"
+      },
+      "loang-choang": {
+        "name": "loang choang",
+        "ingredients": ["TAMARIND — COFFEE", "YUZU — LEMON", "CHILI TINCTURE — DARK RUM", "BANANA RUM — MICHELIA TONKINENSIS"],
+        "tags": "SWEET & SOUR, SPICY"
+      },
+      "lon-xon": {
+        "name": "lộn xộn",
+        "ingredients": ["DURIAN — COCONUT", "MILK PUNCH — PINEAPPLE", "TURMERIC — DRY GIN", "LIGHT RUM"],
+        "tags": "CREAMY & STRANGE"
       },
       "sac": {
         "name": "sắc",
