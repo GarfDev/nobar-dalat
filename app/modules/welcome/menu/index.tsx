@@ -217,7 +217,7 @@ export function Menu() {
   const drink = filteredDrinks[drinkIndex];
 
   const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
+    setPage(([currentPage]) => [currentPage + newDirection, newDirection]);
     trackEvent("slide_menu", {
       event_category: "menu",
       event_label: activeCategory,

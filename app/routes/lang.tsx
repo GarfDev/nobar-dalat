@@ -77,19 +77,19 @@ export function meta({ data }: Route.MetaArgs) {
     {
       tagName: "link",
       rel: "alternate",
-      hreflang: "en",
+      hrefLang: "en",
       href: "https://nobardalat.com/en",
     },
     {
       tagName: "link",
       rel: "alternate",
-      hreflang: "vi",
+      hrefLang: "vi",
       href: "https://nobardalat.com/vi",
     },
     {
       tagName: "link",
       rel: "alternate",
-      hreflang: "x-default",
+      hrefLang: "x-default",
       href: "https://nobardalat.com/en",
     },
     // Open Graph tags

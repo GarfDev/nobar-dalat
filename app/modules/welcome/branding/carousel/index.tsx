@@ -160,7 +160,6 @@ const Carousel = ({
                   width={item.width}
                   height={item.height}
                   onClick={handleItemClick}
-                  loading={idx < columnCount * 2 ? "eager" : "lazy"}
                   canInteract={canInteract}
                 />
               );
@@ -200,7 +199,6 @@ const ImageWithPlaceholder = ({
   width,
   height,
   onClick,
-  loading,
   canInteract = true,
 }: {
   src: string;
@@ -209,7 +207,6 @@ const ImageWithPlaceholder = ({
   width?: number;
   height?: number;
   onClick: () => void;
-  loading?: "eager" | "lazy";
   canInteract?: boolean;
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -217,24 +214,42 @@ const ImageWithPlaceholder = ({
   return (
     <div
       className={cn(
-        "masonry-item relative cursor-pointer overflow-hidden bg-cover bg-center break-inside-avoid mb-0 block",
+        "masonry-item relative cursor-pointer overflow-hidden bg-neutral-400 break-inside-avoid mb-0 block",
         canInteract ? "pointer-events-auto" : "pointer-events-none",
       )}
       style={{
         width: "100%",
         display: "block",
         aspectRatio: width && height ? `${width} / ${height}` : "auto",
-        backgroundImage: `url(${placeholder})`,
       }}
       onClick={onClick}
     >
+      {placeholder && (
+        <img
+          src={placeholder}
+          alt=""
+          aria-hidden="true"
+          draggable={false}
+          className={cn(
+            "absolute inset-0 h-full w-full object-cover transition-[opacity,filter,transform] duration-700 ease-out",
+            isLoaded
+              ? "scale-100 opacity-0 blur-sm"
+              : "scale-110 opacity-100 blur-xl",
+          )}
+          data-placeholder="true"
+        />
+      )}
       <img
         src={src}
         alt={alt}
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        loading={loading || "lazy"}
+        className={cn(
+          "absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-700 ease-out",
+          isLoaded ? "scale-100 opacity-100" : "scale-[1.02] opacity-0",
+        )}
+        loading="lazy"
         decoding="async"
         onLoad={() => setIsLoaded(true)}
+        onError={() => setIsLoaded(false)}
         data-loaded={isLoaded}
       />
     </div>
