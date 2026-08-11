@@ -193,7 +193,7 @@ const MorphingImage = ({
           cx="50"
           cy="50"
           r="48"
-          stroke="black"
+          stroke="currentColor"
           strokeWidth="0.5"
           fill="none"
         />
@@ -251,7 +251,7 @@ export function Menu() {
       id="menu"
       animate={{ backgroundColor: drink.bgColor }}
       transition={{ duration: 0.5 }}
-      className="h-[100vh] w-[100vw] text-black relative overflow-hidden flex flex-col justify-center items-center"
+      className="h-[100vh] w-[100vw] text-white relative overflow-hidden flex flex-col justify-center items-center"
     >
       {/* Category Navigation - Top */}
       <div className="absolute top-8 md:top-12 z-30 w-full flex justify-center pointer-events-none">
@@ -264,14 +264,14 @@ export function Menu() {
               className={cn(
                 "relative whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase transition-all duration-300 snap-center shrink-0",
                 activeCategory === cat.id
-                  ? "text-white"
-                  : "text-black/50 hover:text-black/80 hover:bg-black/5",
+                  ? "text-black"
+                  : "text-white/60 hover:text-white hover:bg-white/10",
               )}
             >
               {activeCategory === cat.id && (
                 <motion.div
                   layoutId="activeCategory"
-                  className="absolute inset-0 bg-black rounded-full"
+                  className="absolute inset-0 bg-white rounded-full"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -288,10 +288,10 @@ export function Menu() {
         <button
           type="button"
           aria-label="Previous drink"
-          className="justify-self-start cursor-pointer p-2 rounded-full hover:bg-black/5 transition-colors"
+          className="justify-self-start cursor-pointer p-2 rounded-full hover:bg-white/10 transition-colors"
           onClick={() => paginate(-1)}
         >
-          <ChevronLeft className="w-8 h-8 text-black/80" />
+          <ChevronLeft className="w-8 h-8 text-white/80" />
         </button>
 
         <div className="justify-self-center flex gap-2">
@@ -300,7 +300,7 @@ export function Menu() {
               key={i}
               className={cn(
                 "w-2 h-2 rounded-full transition-all duration-300",
-                i === drinkIndex ? "bg-black w-8" : "bg-black/20",
+                i === drinkIndex ? "bg-white w-8" : "bg-white/25",
               )}
             />
           ))}
@@ -309,10 +309,10 @@ export function Menu() {
         <button
           type="button"
           aria-label="Next drink"
-          className="justify-self-end cursor-pointer p-2 rounded-full hover:bg-black/5 transition-colors"
+          className="justify-self-end cursor-pointer p-2 rounded-full hover:bg-white/10 transition-colors"
           onClick={() => paginate(1)}
         >
-          <ChevronRight className="w-8 h-8 text-black/80" />
+          <ChevronRight className="w-8 h-8 text-white/80" />
         </button>
       </div>
 
@@ -320,18 +320,18 @@ export function Menu() {
       <button
         type="button"
         aria-label="Previous drink"
-        className="hidden md:block absolute z-20 left-10 top-1/2 -translate-y-1/2 cursor-pointer p-2 rounded-full hover:bg-black/5 transition-colors"
+        className="hidden md:block absolute z-20 left-10 top-1/2 -translate-y-1/2 cursor-pointer p-2 rounded-full hover:bg-white/10 transition-colors"
         onClick={() => paginate(-1)}
       >
-        <ChevronLeft className="w-12 h-12 text-black/80" />
+        <ChevronLeft className="w-12 h-12 text-white/80" />
       </button>
       <button
         type="button"
         aria-label="Next drink"
-        className="hidden md:block absolute z-20 right-10 top-1/2 -translate-y-1/2 cursor-pointer p-2 rounded-full hover:bg-black/5 transition-colors"
+        className="hidden md:block absolute z-20 right-10 top-1/2 -translate-y-1/2 cursor-pointer p-2 rounded-full hover:bg-white/10 transition-colors"
         onClick={() => paginate(1)}
       >
-        <ChevronRight className="w-12 h-12 text-black/80" />
+        <ChevronRight className="w-12 h-12 text-white/80" />
       </button>
 
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
@@ -340,7 +340,7 @@ export function Menu() {
           className="absolute w-full h-full flex items-center justify-center px-6 pb-24 pt-16 md:px-12 lg:px-20 md:pb-0 md:pt-0"
         >
           <div className="w-full max-w-6xl h-full md:h-[60vh] lg:h-[70vh] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
-            {/* Text Part - Black (Background) */}
+            {/* Text Part - Light text on dark background */}
             <div className="w-full md:w-1/2 flex items-center justify-end z-0 md:-mr-12">
               <DrinkInfo drink={drink} direction={direction} />
             </div>
@@ -384,7 +384,7 @@ export function Menu() {
             key={i}
             className={cn(
               "w-2 h-2 rounded-full transition-all duration-300",
-              i === drinkIndex ? "bg-black w-8" : "bg-black/20",
+              i === drinkIndex ? "bg-white w-8" : "bg-white/25",
             )}
           />
         ))}
