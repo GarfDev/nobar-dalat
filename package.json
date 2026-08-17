@@ -8,6 +8,7 @@
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint .",
+    "validate:carousel": "tsx ./scripts/validate-carousel.ts",
     "validate:menu": "tsx ./scripts/validate-menu.ts",
     "format": "prettier --write ."
   },
