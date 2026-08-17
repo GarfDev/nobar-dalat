@@ -5,17 +5,18 @@
     "categories": {
       "elo": "E LỜ",
       "dau": "SẮC HUYỀN KHÔNG HỎI NGÃ NẶNG",
+      "old-fashioned": "OLD FASHIONED",
       "nobar": "NOBAR ĐƯƠNG ĐẠI"
     },
     "items": {
       "lan-man": {
         "name": "lan man",
-        "ingredients": ["MÍT — RUM", "BỌT MATCHA", "KEM — MATCHA — FRANGELICO"],
+        "ingredients": ["MÍT — RUM", "MATCHA", "KEM — FRANGELICO"],
         "tags": "CHUA NGỌT, BÉO"
       },
       "loang-choang": {
         "name": "loang choang",
-        "ingredients": ["ME — CÀ PHÊ", "YUZU — CHANH", "TINCTURE ỚT — RUM ĐEN", "RUM CHUỐI — MICHELIA TONKINENSIS"],
+        "ingredients": ["ME — CÀ PHÊ", "YUZU — CHANH", "CỒN ỚT — RUM ĐEN", "RUM CHUỐI — HẠT DỔI"],
         "tags": "CHUA NGỌT, CAY"
       },
       "lon-xon": {
@@ -25,17 +26,17 @@
       },
       "sac": {
         "name": "sắc",
-        "ingredients": ["VODKA Ủ TRÀ KABUSECHA", "MATCHA — KEM SHERRY", "RƯỢU MARASCHINO", "DÂU TÂY LÊN MEN"],
+        "ingredients": ["VODKA Ủ TRÀ KABUSECHA", "MATCHA — SHERRY CREAM", "MARASCHINO", "DÂU TÂY LÊN MEN"],
         "tags": "CHUA VÀ NGỌT"
       },
       "hoi": {
         "name": "hỏi",
-        "ingredients": ["HẠT CACAO RANG VỪA", "RƯỢU RUM DỪA", "VODKA Ủ MẮC KHÉN", "SỮA ĐẶC LÁ DỨA", "NHỤC ĐẬU KHẤU — TABASCO"],
+        "ingredients": ["HẠT CACAO RANG VỪA", "RUM DỪA", "VODKA Ủ MẮC KHÉN", "SỮA ĐẶC LÁ DỨA", "NHỤC ĐẬU KHẤU — TABASCO"],
         "tags": "NỒNG - MẠNH - CAY"
       },
       "nang": {
         "name": "nặng",
-        "ingredients": ["BOURBON Ủ NGÔ", "MẬT ONG", "WHISKEY KNOB CREEK", "BITTER SÔ CÔ LA — NHỤC ĐẬU KHẤU"],
+        "ingredients": ["BOURBON Ủ NGÔ", "MẬT ONG", "WHISKEY KNOB CREEK", "BITTER CACAO — NHỤC ĐẬU KHẤU"],
         "tags": "BÉO VÀ ĐẮNG"
       },
       "huyen": {
@@ -45,13 +46,43 @@
       },
       "nga": {
         "name": "ngã",
-        "ingredients": ["WHISKEY Ủ HẠT THÌ LÀ", "TRÀ OOLONG — HOA BIA", "GIN Ủ OOLONG", "RƯỢU AMARETTO — ABSINTHE"],
+        "ingredients": ["WHISKEY Ủ HẠT THÌ LÀ", "TRÀ Ô LONG — HOA BIA", "GIN Ủ TRÀ Ô LONG", "AMARETTO — ABSINTHE"],
         "tags": "CHUA NGỌT - THẢO MỘC - TRÀ"
       },
       "khong": {
         "name": "không",
-        "ingredients": ["VODKA Ủ NHỤC ĐẬU KHẤU", "MEZCAL — XOÀI — THÌ LÀ", "KEM SHERRY — HOA BIA"],
+        "ingredients": ["VODKA Ủ NHỤC ĐẬU KHẤU", "MEZCAL — XOÀI — THÌ LÀ", "SHERRY CREAM — HOA BIA"],
         "tags": "CHUA NGỌT - BÉO"
+      },
+      "old-fashioned": {
+        "name": "old fashioned",
+        "ingredients": ["BOURBON HOẶC RYE", "ĐƯỜNG — BITTER", "NƯỚC — VỎ CAM"],
+        "tags": "NỒNG — ĐẮNG NGỌT — HƯƠNG CAM"
+      },
+      "negroni": {
+        "name": "negroni",
+        "ingredients": ["GIN", "CAMPARI", "VERMOUTH NGỌT — VỎ CAM"],
+        "tags": "ĐẮNG — THẢO MỘC — HƯƠNG CAM"
+      },
+      "margarita": {
+        "name": "margarita",
+        "ingredients": ["TEQUILA", "RƯỢU CAM", "CHANH XANH — MUỐI"],
+        "tags": "TƯƠI — CHUA — MẶN NHẸ"
+      },
+      "dry-martini": {
+        "name": "dry martini",
+        "ingredients": ["GIN", "VERMOUTH KHÔ", "VỎ CHANH HOẶC Ô-LIU"],
+        "tags": "KHÔ — SẮC NÉT — THẢO MỘC"
+      },
+      "espresso-martini": {
+        "name": "espresso martini",
+        "ingredients": ["VODKA", "RƯỢU CÀ PHÊ", "ESPRESSO — SYRUP ĐƯỜNG"],
+        "tags": "ĐẬM — RANG THƠM — NGỌT ĐẮNG"
+      },
+      "daiquiri": {
+        "name": "daiquiri",
+        "ingredients": ["RUM TRẮNG", "CHANH XANH", "SYRUP ĐƯỜNG"],
+        "tags": "TƯƠI — CHUA — THANH"
       },
       "duongdai": {
         "name": "nobar",

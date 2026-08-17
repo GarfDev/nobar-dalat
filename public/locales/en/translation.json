@@ -5,12 +5,13 @@
     "categories": {
       "elo": "E LỜ",
       "dau": "SẮC HUYỀN KHÔNG HỎI NGÃ NẶNG",
+      "old-fashioned": "OLD FASHIONED",
       "nobar": "NOBAR CONTEMPORARY"
     },
     "items": {
       "lan-man": {
         "name": "lan man",
-        "ingredients": ["JACKFRUIT — RUM", "MATCHA FOAM", "CREAM — MATCHA — FRANGELICO"],
+        "ingredients": ["JACKFRUIT — RUM", "MATCHA", "CREAM — FRANGELICO"],
         "tags": "SWEET & SOUR, CREAMY"
       },
       "loang-choang": {
@@ -45,13 +46,43 @@
       },
       "nga": {
         "name": "ngã",
-        "ingredients": ["FENNEL SEEDS-INFUSED WHISKEY", "OOLONG TEA — HOPS", "OOLONG-INFUSED GIN", "AMARETO — ABSINTHE"],
+        "ingredients": ["FENNEL SEEDS-INFUSED WHISKEY", "OOLONG TEA — HOPS", "OOLONG-INFUSED GIN", "AMARETTO — ABSINTHE"],
         "tags": "SWEET AND SOUR - HERBAL - TEA"
       },
       "khong": {
         "name": "không",
         "ingredients": ["NUTMEG-INFUSED VODKA", "MEZCAL — MANGO — DILL", "SHERRY CREAM — HOPS"],
         "tags": "SWEET AND SOUR - CREAMY"
+      },
+      "old-fashioned": {
+        "name": "old fashioned",
+        "ingredients": ["BOURBON OR RYE WHISKEY", "SUGAR — AROMATIC BITTERS", "WATER — ORANGE PEEL"],
+        "tags": "SPIRIT-FORWARD — BITTERSWEET — CITRUS"
+      },
+      "negroni": {
+        "name": "negroni",
+        "ingredients": ["GIN", "CAMPARI", "SWEET VERMOUTH — ORANGE"],
+        "tags": "BITTER — HERBAL — CITRUS"
+      },
+      "margarita": {
+        "name": "margarita",
+        "ingredients": ["TEQUILA", "ORANGE LIQUEUR", "FRESH LIME — SALT"],
+        "tags": "BRIGHT — TART — SALINE"
+      },
+      "dry-martini": {
+        "name": "dry martini",
+        "ingredients": ["GIN", "DRY VERMOUTH", "LEMON PEEL OR OLIVE"],
+        "tags": "DRY — CRISP — BOTANICAL"
+      },
+      "espresso-martini": {
+        "name": "espresso martini",
+        "ingredients": ["VODKA", "COFFEE LIQUEUR", "ESPRESSO — SUGAR SYRUP"],
+        "tags": "RICH — ROASTED — BITTERSWEET"
+      },
+      "daiquiri": {
+        "name": "daiquiri",
+        "ingredients": ["WHITE RUM", "FRESH LIME", "SUGAR SYRUP"],
+        "tags": "BRIGHT — TART — CLEAN"
       },
       "duongdai": {
         "name": "nobar",
