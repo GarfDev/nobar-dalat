@@ -3,11 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsx ./scripts/prebuild-carousel.ts && react-router build",
+    "build": "tsx ./scripts/prebuild-carousel.ts && npm run validate:menu && react-router build",
     "dev": "tsx ./scripts/prebuild-carousel.ts && react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint .",
+    "validate:menu": "tsx ./scripts/validate-menu.ts",
     "format": "prettier --write ."
   },
   "dependencies": {
