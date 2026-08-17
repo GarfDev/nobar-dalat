@@ -1,9 +1,12 @@
 import path from "node:path";
-import { readdir, writeFile, mkdir } from "node:fs/promises";
+import { writeFile, mkdir } from "node:fs/promises";
 import sharp from "sharp";
 import { optimizeMenuImages } from "./menu-images";
+import {
+  loadCarouselManifest,
+  validateCarouselManifest,
+} from "./carousel-curation";
 
-const supportedImageExtensions = /\.(jpe?g|png|gif|webp)$/i;
 const supportedVideoExtensions = /\.(mp4|webm)$/i;
 
 async function generateCarouselContent() {
@@ -18,18 +21,19 @@ async function generateCarouselContent() {
     // Ensure optimized directory exists
     await mkdir(optimizedDir, { recursive: true });
 
-    const entries = await readdir(dir, { withFileTypes: true });
+    const manifestPath = path.join(
+      process.cwd(),
+      "app",
+      "data",
+      "carousel-curation.json",
+    );
+    const manifest = await loadCarouselManifest(manifestPath);
+    await validateCarouselManifest(manifest, dir);
 
     const files = (
       await Promise.all(
-        entries
-          .filter((e) => e.isFile())
-          .map((e) => e.name)
-          .filter(
-            (name) =>
-              supportedImageExtensions.test(name) ||
-              supportedVideoExtensions.test(name),
-          )
+        manifest.items
+          .map(({ file }) => file)
           .map(async (name) => {
             try {
               const lower = name.toLowerCase();
@@ -88,13 +92,6 @@ async function generateCarouselContent() {
       )
     ).filter(Boolean);
 
-    // Randomize order using Fisher-Yates shuffle
-    const shuffled = files.slice();
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-
     const outputPath = path.join(
       process.cwd(),
       "app",
@@ -104,7 +101,7 @@ async function generateCarouselContent() {
     // Ensure app/data exists
     await mkdir(path.dirname(outputPath), { recursive: true });
 
-    await writeFile(outputPath, JSON.stringify({ files: shuffled }), "utf-8");
+    await writeFile(outputPath, JSON.stringify({ files }), "utf-8");
 
     console.log(
       `[prebuild-carousel] Generated carousel content to ${outputPath}`,
