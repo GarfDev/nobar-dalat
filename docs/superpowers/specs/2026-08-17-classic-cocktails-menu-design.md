@@ -61,6 +61,19 @@ Use concise, recognizable recipes based on official IBA specifications where ava
 
 The final locale strings will use the existing uppercase menu style.
 
+## Translation Style
+
+Use concise ingredient labels rather than literal process descriptions. Keep familiar bar and product terms such as rum, gin, whiskey, bitter, milk punch, vermouth, Campari, matcha, kombucha, and absinthe. Translate ordinary flavor ingredients naturally and remove repetition across adjacent lines.
+
+Examples:
+
+- Use `MATCHA`, not `BỌT MATCHA`.
+- Use `KEM — FRANGELICO`, not `KEM — MATCHA — FRANGELICO` immediately after a separate matcha line.
+- Use `CỒN ỚT`, not the mixed-language `TINCTURE ỚT`.
+- Use `HẠT DỔI`, not the botanical Latin `MICHELIA TONKINENSIS`, in Vietnamese.
+- Use `SHERRY CREAM`, not the misleading literal translation `KEM SHERRY`.
+- Keep Vietnamese lines compact enough to fit the existing mobile menu layout.
+
 ## Image Sourcing
 
 Use searched photography rather than generated imagery.

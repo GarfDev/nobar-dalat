@@ -12,6 +12,7 @@
 
 - Preserve the clean committed UI; do not restore the discarded pre-conversation page redesign.
 - Keep all nine No Bar drinks and their verified photo assignments.
+- Use concise Vietnamese ingredient labels; avoid literal translations and repeated ingredients across adjacent lines.
 - Add exactly six classics: Old Fashioned, Negroni, Margarita, Dry Martini, Espresso Martini, and Daiquiri.
 - Use searched free-to-use photography; do not generate images or use premium/watermarked files.
 - Store classic sources under `public/images/menu/classics/` and WebP outputs under `public/images/menu-optimized/classics/`.
@@ -273,6 +274,8 @@ git commit -m "test: validate complete menu catalogue"
 
 **Files:**
 - Modify: `app/data/menu.json`
+- Modify: `public/locales/en/translation.json`
+- Modify: `public/locales/vi/translation.json`
 
 **Interfaces:**
 - Produces: ordered `dau` items `[sac, huyen, khong, hoi, nga, nang]`
@@ -280,21 +283,37 @@ git commit -m "test: validate complete menu catalogue"
 
 - [ ] **Step 1: Add Sắc and Hỏi and normalize six-tone ordering**
 
-Add `sac` with order `0`, image `/images/menu-optimized/image_1.webp`, colors `#173F2B` and `#277C4A`, and shape `blob2`. Add `hoi` with order `3`, image `/images/menu-optimized/image_2.webp`, colors `#33241B` and `#8B5A2B`, and shape `blob3`. Use their exact existing English/Vietnamese ingredients and tags from the locale files.
+Add `sac` with order `0`, image `/images/menu-optimized/image_1.webp`, colors `#173F2B` and `#277C4A`, and shape `blob2`. Add `hoi` with order `3`, image `/images/menu-optimized/image_2.webp`, colors `#33241B` and `#8B5A2B`, and shape `blob3`. Use their existing English/Vietnamese ingredients and tags from the locale files.
 
 Set `huyen.order` to `1`, `khong.order` to `2`, `nga.order` to `4`, and `nang.order` to `5`. Reorder the JSON objects to match the display order.
 
-- [ ] **Step 2: Run the validator**
+- [ ] **Step 2: Simplify and normalize house-menu copy**
+
+Apply these exact changes to both locale files and the matching embedded `en`/`vi` objects in `app/data/menu.json`:
+
+| Drink | Locale | Ingredients |
+|---|---|---|
+| Lan Man | English | `JACKFRUIT — RUM`; `MATCHA`; `CREAM — FRANGELICO` |
+| Lan Man | Vietnamese | `MÍT — RUM`; `MATCHA`; `KEM — FRANGELICO` |
+| Loạng Choạng | Vietnamese | `ME — CÀ PHÊ`; `YUZU — CHANH`; `CỒN ỚT — RUM ĐEN`; `RUM CHUỐI — HẠT DỔI` |
+| Nặng | Vietnamese | `BOURBON Ủ NGÔ`; `MẬT ONG`; `WHISKEY KNOB CREEK`; `BITTER CACAO — NHỤC ĐẬU KHẤU` |
+| Ngã | English | `FENNEL SEEDS-INFUSED WHISKEY`; `OOLONG TEA — HOPS`; `OOLONG-INFUSED GIN`; `AMARETTO — ABSINTHE` |
+| Ngã | Vietnamese | `WHISKEY Ủ HẠT THÌ LÀ`; `TRÀ Ô LONG — HOA BIA`; `GIN Ủ TRÀ Ô LONG`; `AMARETTO — ABSINTHE` |
+| Không | Vietnamese | `VODKA Ủ NHỤC ĐẬU KHẤU`; `MEZCAL — XOÀI — THÌ LÀ`; `SHERRY CREAM — HOA BIA` |
+
+Keep all unlisted house-menu ingredient and tag strings unchanged.
+
+- [ ] **Step 3: Run the validator**
 
 Run: `npm run validate:menu`
 
 Expected: still FAIL only for the missing `old-fashioned` category and its six items; `sac` and `hoi` must no longer appear in the failure output.
 
-- [ ] **Step 3: Commit the house-menu restoration**
+- [ ] **Step 4: Commit the house-menu restoration and copy cleanup**
 
 ```bash
-git add app/data/menu.json
-git commit -m "feat: restore complete six-tone menu"
+git add app/data/menu.json public/locales/en/translation.json public/locales/vi/translation.json
+git commit -m "feat: restore and refine house menus"
 ```
 
 ---
@@ -355,12 +374,12 @@ Add category key `"old-fashioned": "OLD FASHIONED"`.
 - [ ] **Step 4: Add exact Vietnamese locale copy**
 
 ```json
-"old-fashioned": {"name":"old fashioned","ingredients":["BOURBON HOẶC RYE WHISKEY","ĐƯỜNG — BITTER THẢO MỘC","NƯỚC — VỎ CAM"],"tags":"ĐẬM RƯỢU — NGỌT ĐẮNG — HƯƠNG CAM"},
-"negroni": {"name":"negroni","ingredients":["GIN","CAMPARI","VERMOUTH NGỌT — CAM"],"tags":"ĐẮNG — THẢO MỘC — HƯƠNG CAM"},
-"margarita": {"name":"margarita","ingredients":["TEQUILA","RƯỢU MÙI CAM","CHANH XANH TƯƠI — MUỐI"],"tags":"TƯƠI — CHUA — MẶN NHẸ"},
+"old-fashioned": {"name":"old fashioned","ingredients":["BOURBON HOẶC RYE","ĐƯỜNG — BITTER","NƯỚC — VỎ CAM"],"tags":"NỒNG — ĐẮNG NGỌT — HƯƠNG CAM"},
+"negroni": {"name":"negroni","ingredients":["GIN","CAMPARI","VERMOUTH NGỌT — VỎ CAM"],"tags":"ĐẮNG — THẢO MỘC — HƯƠNG CAM"},
+"margarita": {"name":"margarita","ingredients":["TEQUILA","RƯỢU CAM","CHANH XANH — MUỐI"],"tags":"TƯƠI — CHUA — MẶN NHẸ"},
 "dry-martini": {"name":"dry martini","ingredients":["GIN","VERMOUTH KHÔ","VỎ CHANH HOẶC Ô-LIU"],"tags":"KHÔ — SẮC NÉT — THẢO MỘC"},
-"espresso-martini": {"name":"espresso martini","ingredients":["VODKA","RƯỢU MÙI CÀ PHÊ","ESPRESSO — SYRUP ĐƯỜNG"],"tags":"ĐẬM — RANG THƠM — NGỌT ĐẮNG"},
-"daiquiri": {"name":"daiquiri","ingredients":["RUM TRẮNG","CHANH XANH TƯƠI","SYRUP ĐƯỜNG"],"tags":"TƯƠI — CHUA — THANH"}
+"espresso-martini": {"name":"espresso martini","ingredients":["VODKA","RƯỢU CÀ PHÊ","ESPRESSO — SYRUP ĐƯỜNG"],"tags":"ĐẬM — RANG THƠM — NGỌT ĐẮNG"},
+"daiquiri": {"name":"daiquiri","ingredients":["RUM TRẮNG","CHANH XANH","SYRUP ĐƯỜNG"],"tags":"TƯƠI — CHUA — THANH"}
 ```
 
 Add category key `"old-fashioned": "OLD FASHIONED"`.
