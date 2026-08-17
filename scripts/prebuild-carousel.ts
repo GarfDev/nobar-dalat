@@ -47,7 +47,6 @@ async function generateCarouselContent() {
               // For images, generate optimized WebP and placeholder
               const imagePath = path.join(dir, name);
               const image = sharp(imagePath);
-              const metadata = await image.metadata();
 
               // Generate optimized version (max width 640px)
               const optimizedName = `${path.parse(name).name}.webp`;
