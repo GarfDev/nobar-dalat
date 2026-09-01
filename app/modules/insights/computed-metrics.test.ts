@@ -5,6 +5,7 @@ import {
   buildDataReadiness,
   computeOperationalMetrics,
   computePlatformEfficiency,
+  computeWeekdayPerformance,
 } from "./computed-metrics";
 import { insightData } from "./data";
 import type { RevenueDay, SocialDay } from "./types";
@@ -34,6 +35,22 @@ test("uses only comparable social rows for rate denominators", () => {
     engagementRate: 0.05,
     clickThroughRate: 0.02,
     followPerThousandViews: 10,
+  });
+});
+
+test("summarizes weekday demand using active days and paid orders", () => {
+  const rows: RevenueDay[] = [
+    { date: "2026-08-21", grossRevenue: 1_000, refunds: 0, discounts: 0, netRevenue: 1_000, tax: 0, orders: 2, cogs: null },
+    { date: "2026-08-28", grossRevenue: 3_000, refunds: 0, discounts: 0, netRevenue: 3_000, tax: 0, orders: 3, cogs: null },
+    { date: "2026-08-29", grossRevenue: 4_000, refunds: 0, discounts: 0, netRevenue: 4_000, tax: 0, orders: 2, cogs: null },
+  ];
+  const friday = computeWeekdayPerformance(rows).find((item) => item.weekday === 5);
+  assert.deepEqual(friday, {
+    weekday: 5,
+    activeDays: 2,
+    ordersPerActiveDay: 2.5,
+    averageOrderValue: 800,
+    netRevenue: 4_000,
   });
 });
 

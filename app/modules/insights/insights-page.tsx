@@ -16,13 +16,13 @@ import { insightData } from "./data";
 import { formatCompact, formatDate, formatDecimal, formatNumber, formatPercent, formatVND } from "./format";
 import { correlationDecision, correlationLabel, roasLabel } from "./interpretation";
 import { buildManagementFindings } from "./insight-rules";
-import { buildDataReadiness, computeOperationalMetrics, computePlatformEfficiency } from "./computed-metrics";
+import { buildDataReadiness, computeOperationalMetrics, computePlatformEfficiency, computeWeekdayPerformance } from "./computed-metrics";
 import { buildReport, clampRange, laggedCorrelation, type MetricPoint } from "./reporting";
 import { aggregateProductRanking } from "./product-ranking";
 import type { DateRange, ISODate } from "./types";
 import { KpiCard } from "./components/kpi-card";
 import { DualTrendChart } from "./components/dual-trend-chart";
-import { OrderValueScatter } from "./components/order-value-scatter";
+import { WeekdayPerformanceChart } from "./components/weekday-performance-chart";
 import { SocialFunnelChart } from "./components/social-funnel-chart";
 import { InsightsNavigation } from "./insights-navigation";
 import { RangeControls, type ReportMode } from "./range-controls";
@@ -30,8 +30,6 @@ import { RangeControls, type ReportMode } from "./range-controls";
 const COVERAGE: DateRange = { start: "2024-09-01", end: "2026-08-31" };
 const DEFAULT_RANGE: DateRange = { start: "2026-06-03", end: "2026-08-31" };
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
-
-const weekdayLabels = ["Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"];
 
 function readRange(params: URLSearchParams): DateRange {
   const start = params.get("from");
@@ -103,17 +101,7 @@ export function InsightsPage() {
     primary: item.netRevenue,
     secondary: item.orders,
   }));
-  const orderValueScatter = selectedRevenueRows
-    .filter((row) => row.orders > 0)
-    .map((row) => {
-      const weekday = new Date(`${row.date}T00:00:00Z`).getUTCDay();
-      return {
-        date: row.date,
-        orders: row.orders,
-        averageOrderValue: row.netRevenue / row.orders,
-        weekend: weekday === 0 || weekday >= 5,
-      };
-    });
+  const weekdayPerformance = computeWeekdayPerformance(selectedRevenueRows);
   const bestDays = [...insightData.revenue]
     .filter((row) => row.date >= range.start && row.date <= range.end)
     .sort((a, b) => b.netRevenue - a.netRevenue)
@@ -212,21 +200,12 @@ export function InsightsPage() {
             </div>
             {mode === "detailed" && (
               <>
-                <OrderValueScatter data={orderValueScatter} />
-                <div className="two-column">
-                  <div className="table-panel">
-                    <h3>5 ngày doanh thu cao nhất</h3>
-                    <div className="table-scroll"><table><thead><tr><th scope="col">Ngày</th><th scope="col">Đơn</th><th scope="col">Doanh thu thuần</th><th scope="col">TB / đơn</th></tr></thead><tbody>
-                      {bestDays.map((row) => <tr key={row.date}><td>{formatDate(row.date)}</td><td>{formatNumber(row.orders)}</td><td>{formatVND(row.netRevenue)}</td><td>{formatVND(row.orders ? row.netRevenue / row.orders : null)}</td></tr>)}
-                    </tbody></table></div>
-                  </div>
-                  <div className="weekday-panel">
-                    <h3>Nhịp theo thứ</h3>
-                    {report.weekdayRevenue.map((row) => {
-                      const max = Math.max(...report.weekdayRevenue.map((day) => day.netRevenue), 1);
-                      return <div className="bar-row" key={row.weekday}><span>{weekdayLabels[row.weekday]}</span><i style={{ width: `${(row.netRevenue / max) * 100}%` }} /><strong>{formatCompact(row.netRevenue)}</strong></div>;
-                    })}
-                  </div>
+                <WeekdayPerformanceChart data={weekdayPerformance} />
+                <div className="table-panel top-days-table">
+                  <h3>5 ngày doanh thu cao nhất</h3>
+                  <div className="table-scroll"><table><thead><tr><th scope="col">Ngày</th><th scope="col">Đơn</th><th scope="col">Doanh thu thuần</th><th scope="col">TB / đơn</th></tr></thead><tbody>
+                    {bestDays.map((row) => <tr key={row.date}><td>{formatDate(row.date)}</td><td>{formatNumber(row.orders)}</td><td>{formatVND(row.netRevenue)}</td><td>{formatVND(row.orders ? row.netRevenue / row.orders : null)}</td></tr>)}
+                  </tbody></table></div>
                 </div>
               </>
             )}

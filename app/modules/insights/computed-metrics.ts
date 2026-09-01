@@ -18,6 +18,14 @@ export type PlatformEfficiency = {
   followPerThousandViews: number | null;
 };
 
+export type WeekdayPerformance = {
+  weekday: number;
+  activeDays: number;
+  ordersPerActiveDay: number | null;
+  averageOrderValue: number | null;
+  netRevenue: number;
+};
+
 export type ReadinessDimension = {
   code: string;
   label: string;
@@ -91,6 +99,23 @@ export function computePlatformEfficiency(rows: SocialDay[], platform: Platform)
     followPerThousandViews:
       followViews === 0 ? null : (follows / followViews) * 1_000,
   };
+}
+
+export function computeWeekdayPerformance(rows: RevenueDay[]): WeekdayPerformance[] {
+  return Array.from({ length: 7 }, (_, weekday) => {
+    const activeRows = rows.filter(
+      (row) => row.orders > 0 && new Date(`${row.date}T00:00:00Z`).getUTCDay() === weekday,
+    );
+    const orders = activeRows.reduce((sum, row) => sum + row.orders, 0);
+    const netRevenue = activeRows.reduce((sum, row) => sum + row.netRevenue, 0);
+    return {
+      weekday,
+      activeDays: activeRows.length,
+      ordersPerActiveDay: safeDivide(orders, activeRows.length),
+      averageOrderValue: safeDivide(netRevenue, orders),
+      netRevenue,
+    };
+  });
 }
 
 export function buildDataReadiness(data: InsightData): DataReadiness {
