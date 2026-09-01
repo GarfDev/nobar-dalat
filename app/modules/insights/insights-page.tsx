@@ -15,7 +15,8 @@ import { formatCompact, formatDate, formatNumber, formatPercent, formatVND } fro
 import { correlationLabel, roasLabel } from "./interpretation";
 import { buildManagementFindings } from "./insight-rules";
 import { buildReport, clampRange, laggedCorrelation, type MetricPoint } from "./reporting";
-import type { DateRange, ISODate, ProductPerformance } from "./types";
+import { aggregateProductRanking } from "./product-ranking";
+import type { DateRange, ISODate } from "./types";
 import { KpiCard } from "./components/kpi-card";
 import { TrendChart } from "./components/trend-chart";
 import { InsightsNavigation } from "./insights-navigation";
@@ -41,17 +42,6 @@ function SectionTitle({ index, kicker, title, note }: { index: string; kicker: s
       <div><p>{kicker}</p><h2>{title}</h2>{note && <small>{note}</small>}</div>
     </header>
   );
-}
-
-function aggregateProducts(rows: ProductPerformance[]) {
-  const products = new Map<string, { product: string; quantity: number; revenue: number }>();
-  for (const row of rows) {
-    const current = products.get(row.product) ?? { product: row.product, quantity: 0, revenue: 0 };
-    current.quantity += row.quantity;
-    current.revenue += row.revenue;
-    products.set(row.product, current);
-  }
-  return [...products.values()].sort((a, b) => b.revenue - a.revenue);
 }
 
 function sourceTag(label: string) {
@@ -99,7 +89,7 @@ export function InsightsPage() {
     .filter((row) => row.date >= range.start && row.date <= range.end)
     .sort((a, b) => b.netRevenue - a.netRevenue)
     .slice(0, 5);
-  const productRanking = aggregateProducts(report.products).slice(0, 10);
+  const productRanking = aggregateProductRanking(report.products).slice(0, 10);
   const contentRanking = [...report.content].sort((a, b) => (b.views ?? 0) - (a.views ?? 0));
   const dailyMarketing = new Map<string, number>();
   for (const row of insightData.social.filter((item) => item.date >= range.start && item.date <= range.end)) {
