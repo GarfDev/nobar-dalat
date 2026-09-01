@@ -14,7 +14,7 @@ import {
 
 import { insightData } from "./data";
 import { formatCompact, formatDate, formatDecimal, formatNumber, formatPercent, formatVND } from "./format";
-import { correlationDecision, correlationLabel, roasLabel } from "./interpretation";
+import { correlationLagSummary, roasLabel } from "./interpretation";
 import { buildManagementFindings } from "./insight-rules";
 import { buildAttributionPlan, buildDataReadiness, buildSocialEfficiencyRows, computeOperationalMetrics, computePlatformEfficiency, computeWeekdayPerformance } from "./computed-metrics";
 import { buildReport, clampRange, laggedCorrelation, type MetricPoint } from "./reporting";
@@ -26,6 +26,8 @@ import { WeekdayPerformanceChart } from "./components/weekday-performance-chart"
 import { SocialEfficiencyChart } from "./components/social-efficiency-chart";
 import { InsightsNavigation } from "./insights-navigation";
 import { RangeControls, type ReportMode } from "./range-controls";
+import { cleanContentLabel } from "./content-label";
+import { CorrelationLagChart } from "./components/correlation-lag-chart";
 
 const COVERAGE: DateRange = { start: "2024-09-01", end: "2026-08-31" };
 const DEFAULT_RANGE: DateRange = { start: "2026-06-03", end: "2026-08-31" };
@@ -109,7 +111,9 @@ export function InsightsPage() {
     .sort((a, b) => b.netRevenue - a.netRevenue)
     .slice(0, 5);
   const productRanking = aggregateProductRanking(report.products).slice(0, 10);
-  const contentRanking = [...report.content].sort((a, b) => (b.views ?? 0) - (a.views ?? 0));
+  const contentRanking = [...report.content]
+    .sort((a, b) => (b.views ?? 0) - (a.views ?? 0))
+    .map((item) => ({ ...item, displayLabel: cleanContentLabel(item.label).replace(/\s+/g, " ") }));
   const dailyMarketing = new Map<string, number>();
   for (const row of insightData.social.filter((item) => item.date >= range.start && item.date <= range.end)) {
     dailyMarketing.set(row.date, (dailyMarketing.get(row.date) ?? 0) + (row.interactions ?? 0));
@@ -119,18 +123,7 @@ export function InsightsPage() {
     lag,
     ...laggedCorrelation(marketingSeries, report.dailyRevenue, lag),
   }));
-  const strongest = correlationRows
-    .filter((item) => item.correlation !== null)
-    .sort((a, b) => Math.abs(b.correlation ?? 0) - Math.abs(a.correlation ?? 0))[0];
-  const strongestLevel = !strongest || strongest.correlation === null
-    ? null
-    : Math.abs(strongest.correlation) < 0.2
-      ? "rất yếu"
-      : Math.abs(strongest.correlation) < 0.4
-        ? "yếu"
-        : Math.abs(strongest.correlation) < 0.7
-          ? "đáng chú ý"
-          : "mạnh";
+  const lagSummary = correlationLagSummary(correlationRows);
 
   return (
     <main className="insights-page">
@@ -248,7 +241,7 @@ export function InsightsPage() {
               <SectionTitle index="05" kicker="Creative performance" title="Nội dung nổi bật" note="Danh sách top 10 đã xác minh từ Meta, không phải toàn bộ bài đăng" />
               {contentRanking.length ? <div className="content-grid">{contentRanking.map((item, index) => <article key={item.id}>
                 <div><span>#{index + 1} · {item.platform}</span><time>{formatDate(item.date)}</time></div>
-                <h3>{item.label.replace(/\s+/g, " ").slice(0, 112)}{item.label.length > 112 ? "…" : ""}</h3>
+                <h3>{item.displayLabel.slice(0, 112)}{item.displayLabel.length > 112 ? "…" : ""}</h3>
                 <dl><div><dt>Lượt xem</dt><dd>{formatNumber(item.views)}</dd></div><div><dt>Tương tác</dt><dd>{formatNumber(item.interactions)}</dd></div><div><dt>Paid views</dt><dd>{formatNumber(item.paidViews)}</dd></div></dl>
                 <footer><span>{item.format}</span>{item.paidViews && item.views ? <em>{formatPercent(item.paidViews / item.views)} paid</em> : <em>organic / chưa tách</em>}</footer>
               </article>)}</div> : <div className="empty-panel">Không có nội dung top đã xác minh trong khoảng này.</div>}
@@ -267,13 +260,11 @@ export function InsightsPage() {
               <SectionTitle index="07" kicker="Câu hỏi kinh doanh" title="Tương tác Meta có đi cùng doanh thu?" note="So sánh lượng tương tác mỗi ngày với doanh thu cùng ngày và 1–3 ngày sau" />
               <article className="relationship-summary">
                 <span>Kết luận ngắn</span>
-                <h3>{correlationDecision(strongest?.correlation ?? null)}</h3>
-                <p>{strongest ? `Tín hiệu cao nhất xuất hiện ${strongest.lag === 0 ? "ngay trong ngày" : `sau ${strongest.lag} ngày`}, ở mức ${strongestLevel} (r = ${strongest.correlation?.toFixed(2)}).` : "Khoảng chọn chưa có đủ ngày để thực hiện phép so sánh."}</p>
+                <h3>{lagSummary.title}</h3>
+                <p>{lagSummary.detail}</p>
               </article>
-              <div className="correlation-grid">
-                {correlationRows.map((item) => <article key={item.lag}><span>{item.lag === 0 ? "Cùng ngày" : `Sau ${item.lag} ngày`}</span><small className="correlation-code">Mức liên hệ (r)</small><strong>{item.correlation === null ? "—" : item.correlation.toFixed(2)}</strong><p>{correlationLabel(item.correlation)}</p><small>Dựa trên {formatNumber(item.pairs)} ngày có đủ dữ liệu</small></article>)}
-              </div>
-              <div className="interpretation-panel"><BadgeInfo /><div><strong>Cách đọc “hệ số r”</strong><p>Con số này chạy từ −1 đến +1. Càng gần 0 thì hai chỉ số càng ít đi cùng nhau; càng gần 1 hoặc −1 thì mối liên hệ càng rõ. <strong>Đây không phải bằng chứng rằng marketing làm doanh thu tăng hoặc giảm.</strong></p></div></div>
+              <CorrelationLagChart data={correlationRows} />
+              <div className="interpretation-panel"><BadgeInfo /><div><strong>Điều quan trọng cần nhớ</strong><p>Biểu đồ chỉ cho biết hai chỉ số có hay tăng giảm cùng nhau hay không. <strong>Nó không chứng minh marketing làm doanh thu tăng.</strong></p></div></div>
               <div className="attribution-playbook">
                 <header className="attribution-heading">
                   <div>

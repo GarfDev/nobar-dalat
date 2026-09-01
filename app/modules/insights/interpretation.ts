@@ -19,6 +19,28 @@ export function correlationDecision(value: number | null): string {
   return "Tương tác và doanh thu đi cùng nhau khá rõ trong kỳ; vẫn cần nối chiến dịch với đơn hàng trước khi đánh giá hiệu quả.";
 }
 
+export function correlationLagSummary(rows: Array<{ lag: number; correlation: number | null }>): { title: string; detail: string } {
+  const values = rows.flatMap((row) => row.correlation === null ? [] : [row.correlation]);
+  if (values.length < 2) {
+    return {
+      title: "Chưa đủ dữ liệu để so sánh thời điểm",
+      detail: "Cần thêm ngày có đủ cả tương tác Meta và doanh thu.",
+    };
+  }
+  const spread = Math.max(...values) - Math.min(...values);
+  const strongest = Math.max(...values.map(Math.abs));
+  if (spread <= 0.05 && strongest < 0.4) {
+    return {
+      title: "Không thấy khoảng thời gian nào nổi bật",
+      detail: "Cả bốn kết quả đều yếu và gần như giống nhau. Chưa thể nói khách thường mua sau 2 hay 3 ngày.",
+    };
+  }
+  return {
+    title: "Có khác biệt giữa các khoảng thời gian",
+    detail: "Xem các thanh bên dưới để nhận biết thời điểm có mối liên hệ cao hơn; đây vẫn chưa phải bằng chứng marketing tạo ra doanh thu.",
+  };
+}
+
 export function roasLabel(attributedRevenue: number | null): string {
   return attributedRevenue === null
     ? "Chưa có dữ liệu doanh thu quy thuộc"
