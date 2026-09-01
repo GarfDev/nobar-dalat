@@ -21,7 +21,9 @@ import { buildReport, clampRange, laggedCorrelation, type MetricPoint } from "./
 import { aggregateProductRanking } from "./product-ranking";
 import type { DateRange, ISODate } from "./types";
 import { KpiCard } from "./components/kpi-card";
-import { TrendChart } from "./components/trend-chart";
+import { DualTrendChart } from "./components/dual-trend-chart";
+import { OrderValueScatter } from "./components/order-value-scatter";
+import { SocialFunnelChart } from "./components/social-funnel-chart";
 import { InsightsNavigation } from "./insights-navigation";
 import { RangeControls, type ReportMode } from "./range-controls";
 
@@ -98,8 +100,20 @@ export function InsightsPage() {
   const readiness = buildDataReadiness(insightData);
   const trendData = report.monthlyRevenue.map((item) => ({
     label: item.month,
-    value: item.netRevenue,
+    primary: item.netRevenue,
+    secondary: item.orders,
   }));
+  const orderValueScatter = selectedRevenueRows
+    .filter((row) => row.orders > 0)
+    .map((row) => {
+      const weekday = new Date(`${row.date}T00:00:00Z`).getUTCDay();
+      return {
+        date: row.date,
+        orders: row.orders,
+        averageOrderValue: row.netRevenue / row.orders,
+        weekend: weekday === 0 || weekday >= 5,
+      };
+    });
   const bestDays = [...insightData.revenue]
     .filter((row) => row.date >= range.start && row.date <= range.end)
     .sort((a, b) => b.netRevenue - a.netRevenue)
@@ -178,7 +192,7 @@ export function InsightsPage() {
           <section id="revenue" className="report-section">
             <SectionTitle index="02" kicker="PosApp · vận hành" title="Doanh thu & đơn hàng" note="Doanh thu theo ngày thanh toán, múi giờ Asia/Ho_Chi_Minh" />
             <div className="section-toolbar">{sourceTag("POSAPP · 730 NGÀY")}<span>{report.revenue.days} ngày trong lựa chọn</span></div>
-            <TrendChart data={trendData} label="Xu hướng doanh thu thuần theo tháng" />
+            <DualTrendChart data={trendData} />
             <div className="metric-strip">
               <div><span>Doanh thu gộp</span><strong>{formatVND(report.revenue.grossRevenue)}</strong></div>
               <ArrowRight aria-hidden="true" />
@@ -188,21 +202,24 @@ export function InsightsPage() {
               <div><span>Tỷ lệ giảm giá</span><strong>{formatPercent(report.revenue.discountRate)}</strong></div>
             </div>
             {mode === "detailed" && (
-              <div className="two-column">
-                <div className="table-panel">
-                  <h3>5 ngày doanh thu cao nhất</h3>
-                  <div className="table-scroll"><table><thead><tr><th scope="col">Ngày</th><th scope="col">Đơn</th><th scope="col">Doanh thu thuần</th><th scope="col">TB / đơn</th></tr></thead><tbody>
-                    {bestDays.map((row) => <tr key={row.date}><td>{formatDate(row.date)}</td><td>{formatNumber(row.orders)}</td><td>{formatVND(row.netRevenue)}</td><td>{formatVND(row.orders ? row.netRevenue / row.orders : null)}</td></tr>)}
-                  </tbody></table></div>
+              <>
+                <OrderValueScatter data={orderValueScatter} />
+                <div className="two-column">
+                  <div className="table-panel">
+                    <h3>5 ngày doanh thu cao nhất</h3>
+                    <div className="table-scroll"><table><thead><tr><th scope="col">Ngày</th><th scope="col">Đơn</th><th scope="col">Doanh thu thuần</th><th scope="col">TB / đơn</th></tr></thead><tbody>
+                      {bestDays.map((row) => <tr key={row.date}><td>{formatDate(row.date)}</td><td>{formatNumber(row.orders)}</td><td>{formatVND(row.netRevenue)}</td><td>{formatVND(row.orders ? row.netRevenue / row.orders : null)}</td></tr>)}
+                    </tbody></table></div>
+                  </div>
+                  <div className="weekday-panel">
+                    <h3>Nhịp theo thứ</h3>
+                    {report.weekdayRevenue.map((row) => {
+                      const max = Math.max(...report.weekdayRevenue.map((day) => day.netRevenue), 1);
+                      return <div className="bar-row" key={row.weekday}><span>{weekdayLabels[row.weekday]}</span><i style={{ width: `${(row.netRevenue / max) * 100}%` }} /><strong>{formatCompact(row.netRevenue)}</strong></div>;
+                    })}
+                  </div>
                 </div>
-                <div className="weekday-panel">
-                  <h3>Nhịp theo thứ</h3>
-                  {report.weekdayRevenue.map((row) => {
-                    const max = Math.max(...report.weekdayRevenue.map((day) => day.netRevenue), 1);
-                    return <div className="bar-row" key={row.weekday}><span>{weekdayLabels[row.weekday]}</span><i style={{ width: `${(row.netRevenue / max) * 100}%` }} /><strong>{formatCompact(row.netRevenue)}</strong></div>;
-                  })}
-                </div>
-              </div>
+              </>
             )}
           </section>
 
@@ -236,6 +253,14 @@ export function InsightsPage() {
                   <div><dt>Mẫu so sánh được</dt><dd>{formatNumber(efficiency.comparableDays)} ngày</dd></div>
                 </dl>
               </article>})}
+            </div>
+            <div className="social-funnel-grid">
+              {report.social.map((platform) => <SocialFunnelChart key={platform.platform} platform={platform.platform} data={[
+                { label: "Lượt xem", value: platform.views },
+                { label: "Tương tác", value: platform.interactions },
+                { label: "Nhấp link", value: platform.linkClicks },
+                { label: "Theo dõi", value: platform.follows },
+              ]} />)}
             </div>
             <p className="footnote">Facebook views/viewers chỉ có từ 01.08.2025. Instagram visits không được nguồn cung cấp; follows chỉ có từ 27.08.2025 đến 30.08.2026.</p>
           </section>
