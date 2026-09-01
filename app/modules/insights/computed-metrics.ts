@@ -1,4 +1,4 @@
-import type { InsightData, Platform, RevenueDay, SocialDay } from "./types";
+import type { ContentItem, InsightData, Platform, RevenueDay, SocialDay } from "./types";
 
 export type OperationalMetrics = {
   calendarDays: number;
@@ -30,6 +30,20 @@ export type WeekdayPerformance = {
   ordersPerActiveDay: number | null;
   averageOrderValue: number | null;
   netRevenue: number;
+};
+
+export type CommunityQuality = {
+  samplePosts: number;
+  views: number;
+  likes: number;
+  comments: number;
+  shares: number;
+  saves: number;
+  follows: number;
+  highIntentActions: number;
+  highIntentPerThousandViews: number | null;
+  conversationPerThousandViews: number | null;
+  followPerThousandViews: number | null;
 };
 
 export type ReadinessDimension = {
@@ -143,6 +157,31 @@ export function buildAttributionPlan(data: InsightData): AttributionPlan {
   };
 }
 
+export function computeCommunityQuality(rows: ContentItem[]): CommunityQuality {
+  const total = (key: "views" | "likes" | "comments" | "shares" | "saves" | "follows") =>
+    rows.reduce((sum, row) => sum + (row[key] ?? 0), 0);
+  const views = total("views");
+  const likes = total("likes");
+  const comments = total("comments");
+  const shares = total("shares");
+  const saves = total("saves");
+  const follows = total("follows");
+  const highIntentActions = shares + saves;
+  return {
+    samplePosts: rows.length,
+    views,
+    likes,
+    comments,
+    shares,
+    saves,
+    follows,
+    highIntentActions,
+    highIntentPerThousandViews: views ? (highIntentActions / views) * 1_000 : null,
+    conversationPerThousandViews: views ? (comments / views) * 1_000 : null,
+    followPerThousandViews: views ? (follows / views) * 1_000 : null,
+  };
+}
+
 export function computeOperationalMetrics(rows: RevenueDay[]): OperationalMetrics {
   const tradingRows = rows.filter((row) => row.netRevenue > 0 || row.orders > 0);
   const netRevenue = rows.reduce((sum, row) => sum + row.netRevenue, 0);
@@ -253,10 +292,16 @@ export function buildDataReadiness(data: InsightData): DataReadiness {
       collectionPlan: "Dùng ID ổn định, tên chuẩn và nhóm menu bắt buộc.", owner: "Bar manager", cadence: "Khi tạo/sửa món",
     },
     {
-      code: "social-coverage", label: "Độ phủ social", status: data.social.length ? "partial" : "missing", priority: "high", weight: 10,
+      code: "social-coverage", label: "Độ phủ social", status: data.social.length ? "partial" : "missing", priority: "high", weight: 5,
       impact: "Metric có cửa sổ khác nhau nên tỷ lệ dài hạn không hoàn toàn đồng nhất.",
       missingFields: ["metric_coverage_start", "organic_views", "paid_views", "post_id"],
       collectionPlan: "Lưu snapshot theo ngày với ID nội dung và cờ organic/paid.", owner: "Marketing", cadence: "Hàng tuần",
+    },
+    {
+      code: "community-signals", label: "Story, hội thoại & UGC", status: data.content.some((item) => item.comments !== null || item.shares !== null || item.saves !== null) ? "partial" : "missing", priority: "high", weight: 5,
+      impact: "Chưa biết nội dung nào tạo hội thoại, truyền miệng, lượt khách tag quán hoặc yêu cầu cần phản hồi.",
+      missingFields: ["story_replies", "story_link_taps", "mentions", "tags", "reposts", "dm_starts", "response_minutes", "sentiment"],
+      collectionPlan: "Chụp số liệu Story hàng tuần; tổng hợp mention/tag/repost và log thời gian phản hồi inbox, không lưu nội dung riêng tư của khách.", owner: "Marketing + Community", cadence: "Hàng ngày / hàng tuần",
     },
     {
       code: "ad-conversion", label: "Chuyển đổi quảng cáo", status: unavailable.has("attributedRevenue") ? "missing" : "partial", priority: "high", weight: 5,

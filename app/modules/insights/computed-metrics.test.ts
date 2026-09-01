@@ -4,13 +4,14 @@ import test from "node:test";
 import {
   buildAttributionPlan,
   buildDataReadiness,
+  computeCommunityQuality,
   computeOperationalMetrics,
   computePlatformEfficiency,
   buildSocialEfficiencyRows,
   computeWeekdayPerformance,
 } from "./computed-metrics";
 import { insightData } from "./data";
-import type { RevenueDay, SocialDay } from "./types";
+import type { ContentItem, RevenueDay, SocialDay } from "./types";
 
 test("computes operating-day efficiency without treating closed days as service days", () => {
   const rows: RevenueDay[] = [
@@ -85,4 +86,48 @@ test("builds an actionable Meta to PosApp attribution plan from current data gap
     plan.requiredFields.map((field) => field.key),
     ["order_id", "paid_at", "net_revenue", "promo_code", "campaign_id", "customer_match"],
   );
+});
+
+test("separates high-intent community actions from lightweight likes", () => {
+  const base = {
+    date: "2026-08-28",
+    platform: "instagram",
+    format: "reel",
+    audience: null,
+    interactions: null,
+    averageWatchSeconds: null,
+    paidViews: null,
+  } as const;
+  const rows: ContentItem[] = [
+    { ...base, id: "one", label: "One", views: 1_000, likes: 80, comments: 5, shares: 20, saves: 30, follows: 10 },
+    { ...base, id: "two", label: "Two", views: 500, likes: null, comments: null, shares: 5, saves: null, follows: 5 },
+  ];
+  assert.deepEqual(computeCommunityQuality(rows), {
+    samplePosts: 2,
+    views: 1_500,
+    likes: 80,
+    comments: 5,
+    shares: 25,
+    saves: 30,
+    follows: 15,
+    highIntentActions: 55,
+    highIntentPerThousandViews: 55 / 1.5,
+    conversationPerThousandViews: 5 / 1.5,
+    followPerThousandViews: 10,
+  });
+});
+
+test("flags story, UGC, repost and inbox signals as a partial collection gap", () => {
+  const dimension = buildDataReadiness(insightData).dimensions.find((item) => item.code === "community-signals");
+  assert.equal(dimension?.status, "partial");
+  assert.deepEqual(dimension?.missingFields, [
+    "story_replies",
+    "story_link_taps",
+    "mentions",
+    "tags",
+    "reposts",
+    "dm_starts",
+    "response_minutes",
+    "sentiment",
+  ]);
 });

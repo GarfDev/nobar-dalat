@@ -16,7 +16,7 @@ import { insightData } from "./data";
 import { formatCompact, formatDate, formatDecimal, formatNumber, formatPercent, formatVND } from "./format";
 import { correlationLagSummary, roasLabel } from "./interpretation";
 import { buildManagementFindings } from "./insight-rules";
-import { buildAttributionPlan, buildDataReadiness, buildSocialEfficiencyRows, computeOperationalMetrics, computePlatformEfficiency, computeWeekdayPerformance } from "./computed-metrics";
+import { buildAttributionPlan, buildDataReadiness, buildSocialEfficiencyRows, computeCommunityQuality, computeOperationalMetrics, computePlatformEfficiency, computeWeekdayPerformance } from "./computed-metrics";
 import { buildReport, clampRange, laggedCorrelation, type MetricPoint } from "./reporting";
 import { aggregateProductRanking } from "./product-ranking";
 import type { DateRange, ISODate } from "./types";
@@ -28,6 +28,7 @@ import { InsightsNavigation } from "./insights-navigation";
 import { RangeControls, type ReportMode } from "./range-controls";
 import { cleanContentLabel } from "./content-label";
 import { CorrelationLagChart } from "./components/correlation-lag-chart";
+import { CommunityQualityPanel } from "./components/community-quality-panel";
 
 const COVERAGE: DateRange = { start: "2024-09-01", end: "2026-08-31" };
 const DEFAULT_RANGE: DateRange = { start: "2026-06-03", end: "2026-08-31" };
@@ -114,6 +115,7 @@ export function InsightsPage() {
   const contentRanking = [...report.content]
     .sort((a, b) => (b.views ?? 0) - (a.views ?? 0))
     .map((item) => ({ ...item, displayLabel: cleanContentLabel(item.label).replace(/\s+/g, " ") }));
+  const communityQuality = computeCommunityQuality(report.content);
   const dailyMarketing = new Map<string, number>();
   for (const row of insightData.social.filter((item) => item.date >= range.start && item.date <= range.end)) {
     dailyMarketing.set(row.date, (dailyMarketing.get(row.date) ?? 0) + (row.interactions ?? 0));
@@ -245,6 +247,7 @@ export function InsightsPage() {
                 <dl><div><dt>Lượt xem</dt><dd>{formatNumber(item.views)}</dd></div><div><dt>Tương tác</dt><dd>{formatNumber(item.interactions)}</dd></div><div><dt>Paid views</dt><dd>{formatNumber(item.paidViews)}</dd></div></dl>
                 <footer><span>{item.format}</span>{item.paidViews && item.views ? <em>{formatPercent(item.paidViews / item.views)} paid</em> : <em>organic / chưa tách</em>}</footer>
               </article>)}</div> : <div className="empty-panel">Không có nội dung top đã xác minh trong khoảng này.</div>}
+              <CommunityQualityPanel metrics={communityQuality} />
             </section>
 
             <section id="advertising" className="report-section">
