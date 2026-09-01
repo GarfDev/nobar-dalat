@@ -129,10 +129,14 @@ test("does not publish profit while COGS is unavailable", () => {
   );
 });
 
-test("keeps the exact count of invoices with a payment timestamp", () => {
+test("keeps the reconciled PosApp order count", () => {
   assert.equal(
     insightData.revenue.reduce((sum, row) => sum + row.orders, 0),
-    3_888,
+    4_278,
+  );
+  assert.equal(
+    insightData.revenue.find((row) => row.date === "2026-07-26")?.orders,
+    16,
   );
 });
 

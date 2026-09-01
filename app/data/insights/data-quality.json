@@ -2,7 +2,8 @@
   "generatedAt": "2026-09-01",
   "notes": [
     "PosApp revenue contains 668 trading days; 62 missing calendar days are normalized as verified zero-sales days.",
-    "Order count represents completed invoice rows, not unique guests or physical table turns.",
+    "Order count represents PosApp orders, not unique guests or physical table turns.",
+    "The invoice export omitted counts on 58 revenue days; 390 orders on those dates were reconciled against the daily PosApp 'Số đơn hàng' KPI.",
     "Twenty-four invoice rows without a payment timestamp are excluded from date-based order counts.",
     "PosApp COGS is zero throughout the source report and is normalized to null.",
     "Meta metrics use the platform reporting boundary and may not align perfectly with Asia/Ho_Chi_Minh trading dates.",
@@ -22,6 +23,7 @@
     "grossMargin",
     "attributedRevenue",
     "roas",
-    "uniqueGuests"
+    "uniqueGuests",
+    "physicalTableTurns"
   ]
 }

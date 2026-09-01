@@ -72,6 +72,16 @@ test("calculates AOV and discount rate from aggregates", () => {
   assert.equal(report.revenue.cogsAvailable, false);
 });
 
+test("does not compare against an incomplete preceding period", () => {
+  const report = buildReport(fixture, {
+    start: "2026-08-28",
+    end: "2026-08-31",
+  });
+  assert.equal(report.comparisonComplete, false);
+  assert.equal(report.revenueGrowth, null);
+  assert.equal(report.orderGrowth, null);
+});
+
 test("calculates perfect positive and negative Pearson correlation", () => {
   assert.equal(pearsonCorrelation([1, 2, 3], [2, 4, 6]), 1);
   assert.equal(pearsonCorrelation([1, 2, 3], [6, 4, 2]), -1);

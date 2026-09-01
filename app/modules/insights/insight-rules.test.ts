@@ -8,6 +8,7 @@ function reportFixture(): InsightsReport {
   return {
     range: { start: "2026-08-01", end: "2026-08-31" },
     comparisonRange: { start: "2026-07-01", end: "2026-07-31" },
+    comparisonComplete: true,
     revenue: { days: 31, grossRevenue: 100, refunds: 0, discounts: 0, netRevenue: 100, tax: 0, orders: 2, averageOrderValue: 50, discountRate: 0, cogs: null, cogsAvailable: false },
     comparisonRevenue: { days: 31, grossRevenue: 90, refunds: 0, discounts: 0, netRevenue: 90, tax: 0, orders: 2, averageOrderValue: 45, discountRate: 0, cogs: null, cogsAvailable: false },
     revenueGrowth: 1 / 9,

@@ -139,7 +139,7 @@ export function InsightsPage() {
         <InsightsNavigation />
         <div className="report-body">
           <section id="overview" className="report-section overview-section">
-            <SectionTitle index="01" kicker="Báo cáo sơ bộ" title="Tín hiệu chính của kỳ" note={`So sánh với ${formatDate(report.comparisonRange.start)}–${formatDate(report.comparisonRange.end)}`} />
+            <SectionTitle index="01" kicker="Báo cáo sơ bộ" title="Tín hiệu chính của kỳ" note={report.comparisonComplete ? `So sánh với ${formatDate(report.comparisonRange.start)}–${formatDate(report.comparisonRange.end)}` : "Kỳ trước nằm ngoài độ phủ; không tính mức tăng trưởng."} />
             <div className="kpi-grid">
               <KpiCard eyebrow="Doanh thu thuần" value={formatVND(report.revenue.netRevenue)} delta={report.revenueGrowth} source="POSAPP" accent="brass" />
               <KpiCard eyebrow="Đơn hoàn tất" value={formatNumber(report.revenue.orders)} delta={report.orderGrowth} source="POSAPP" accent="teal" note="Chỉ số gần nhất với lượt bàn; không phải số khách hay vòng quay bàn." />
@@ -154,7 +154,7 @@ export function InsightsPage() {
               </article>
               <div className="alert-stack">
                 {findings.slice(0, 2).map((finding) => <article key={finding.code}><AlertTriangle /><div><strong>{finding.summary}</strong><p>{finding.action}</p></div></article>)}
-                <article><BadgeInfo /><div><strong>“Lượt bàn” là số đơn</strong><p>3.888 hóa đơn có thời điểm thanh toán trong toàn kỳ; 24 hóa đơn thiếu thời điểm bị loại.</p></div></article>
+                <article><BadgeInfo /><div><strong>“Lượt bàn” là số đơn</strong><p>4.278 đơn trong toàn kỳ sau đối chiếu; không phải số khách hay vòng quay bàn vật lý.</p></div></article>
               </div>
             </div>
           </section>
@@ -258,7 +258,7 @@ export function InsightsPage() {
 
           <section id="data-notes" className="report-section data-notes">
             <SectionTitle index={mode === "detailed" ? "09" : "06"} kicker="Audit trail" title="Phạm vi & giới hạn dữ liệu" />
-            <div className="notes-grid"><div><ReceiptText /><h3>PosApp</h3><p>01.09.2024–31.08.2026 · 730 ngày lịch · 668 ngày bán · 3.888 hóa đơn hợp lệ.</p></div><div><Megaphone /><h3>Meta</h3><p>Facebook và Instagram theo múi giờ báo cáo nền tảng; độ phủ từng metric khác nhau.</p></div><div><Database /><h3>Thiếu dữ liệu</h3><p>Giá vốn, lợi nhuận, biên gộp, doanh thu quy thuộc, ROAS, khách duy nhất và vòng quay bàn.</p></div></div>
+            <div className="notes-grid"><div><ReceiptText /><h3>PosApp</h3><p>01.09.2024–31.08.2026 · 730 ngày lịch · 668 ngày bán · 4.278 đơn sau đối chiếu.</p></div><div><Megaphone /><h3>Meta</h3><p>Facebook và Instagram theo múi giờ báo cáo nền tảng; độ phủ từng metric khác nhau.</p></div><div><Database /><h3>Thiếu dữ liệu</h3><p>Giá vốn, lợi nhuận, biên gộp, doanh thu quy thuộc, ROAS, khách duy nhất và vòng quay bàn.</p></div></div>
             <details><summary>Xem toàn bộ ghi chú nguồn</summary><ul>{insightData.quality.notes.map((note) => <li key={note}>{note}</li>)}</ul></details>
             <p className="snapshot-stamp">STATIC SNAPSHOT · GENERATED {insightData.quality.generatedAt} · RANGE {COVERAGE.start}—{COVERAGE.end}</p>
           </section>

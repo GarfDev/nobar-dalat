@@ -39,6 +39,7 @@ export type SocialSummary = {
 export type InsightsReport = {
   range: DateRange;
   comparisonRange: DateRange;
+  comparisonComplete: boolean;
   revenue: RevenueSummary;
   comparisonRevenue: RevenueSummary;
   revenueGrowth: number | null;
@@ -182,6 +183,7 @@ export function buildReport(data: InsightData, range: DateRange): InsightsReport
   const comparisonRows = data.revenue.filter((row) => isWithin(row.date, comparisonRange));
   const revenue = summarizeRevenue(revenueRows);
   const comparisonRevenue = summarizeRevenue(comparisonRows);
+  const comparisonComplete = comparisonRows.length === revenueRows.length;
   const socialRows = data.social.filter((row) => isWithin(row.date, range));
 
   const monthly = new Map<string, { netRevenue: number; orders: number }>();
@@ -217,10 +219,15 @@ export function buildReport(data: InsightData, range: DateRange): InsightsReport
   return {
     range,
     comparisonRange,
+    comparisonComplete,
     revenue,
     comparisonRevenue,
-    revenueGrowth: growthRate(revenue.netRevenue, comparisonRevenue.netRevenue),
-    orderGrowth: growthRate(revenue.orders, comparisonRevenue.orders),
+    revenueGrowth: comparisonComplete
+      ? growthRate(revenue.netRevenue, comparisonRevenue.netRevenue)
+      : null,
+    orderGrowth: comparisonComplete
+      ? growthRate(revenue.orders, comparisonRevenue.orders)
+      : null,
     dailyRevenue: revenueRows.map((row) => ({ date: row.date, value: row.netRevenue })),
     monthlyRevenue: [...monthly].map(([month, values]) => ({ month, ...values })),
     weekdayRevenue: weekdays,

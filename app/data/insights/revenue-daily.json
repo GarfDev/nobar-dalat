@@ -766,7 +766,7 @@
     "discounts": 0,
     "netRevenue": 710000,
     "tax": 0,
-    "orders": 0,
+    "orders": 2,
     "cogs": null
   },
   {
@@ -776,7 +776,7 @@
     "discounts": 0,
     "netRevenue": 430000,
     "tax": 0,
-    "orders": 0,
+    "orders": 2,
     "cogs": null
   },
   {
@@ -786,7 +786,7 @@
     "discounts": 0,
     "netRevenue": 1610000,
     "tax": 0,
-    "orders": 0,
+    "orders": 4,
     "cogs": null
   },
   {
@@ -796,7 +796,7 @@
     "discounts": 44000,
     "netRevenue": 2896000,
     "tax": 0,
-    "orders": 0,
+    "orders": 3,
     "cogs": null
   },
   {
@@ -816,7 +816,7 @@
     "discounts": 0,
     "netRevenue": 1510000,
     "tax": 0,
-    "orders": 0,
+    "orders": 3,
     "cogs": null
   },
   {
@@ -826,7 +826,7 @@
     "discounts": 0,
     "netRevenue": 1210000,
     "tax": 0,
-    "orders": 0,
+    "orders": 4,
     "cogs": null
   },
   {
@@ -836,7 +836,7 @@
     "discounts": 0,
     "netRevenue": 1690000,
     "tax": 0,
-    "orders": 0,
+    "orders": 5,
     "cogs": null
   },
   {
@@ -846,7 +846,7 @@
     "discounts": 0,
     "netRevenue": 1220000,
     "tax": 0,
-    "orders": 0,
+    "orders": 3,
     "cogs": null
   },
   {
@@ -856,7 +856,7 @@
     "discounts": 0,
     "netRevenue": 1240000,
     "tax": 0,
-    "orders": 0,
+    "orders": 3,
     "cogs": null
   },
   {
@@ -866,7 +866,7 @@
     "discounts": 65000,
     "netRevenue": 1835000,
     "tax": 0,
-    "orders": 0,
+    "orders": 6,
     "cogs": null
   },
   {
@@ -886,7 +886,7 @@
     "discounts": 0,
     "netRevenue": 680000,
     "tax": 0,
-    "orders": 0,
+    "orders": 2,
     "cogs": null
   },
   {
@@ -896,7 +896,7 @@
     "discounts": 143000,
     "netRevenue": 2617000,
     "tax": 0,
-    "orders": 0,
+    "orders": 4,
     "cogs": null
   },
   {
@@ -906,7 +906,7 @@
     "discounts": 0,
     "netRevenue": 870000,
     "tax": 0,
-    "orders": 0,
+    "orders": 1,
     "cogs": null
   },
   {
@@ -916,7 +916,7 @@
     "discounts": 43000,
     "netRevenue": 1957000,
     "tax": 0,
-    "orders": 0,
+    "orders": 3,
     "cogs": null
   },
   {
@@ -926,7 +926,7 @@
     "discounts": 0,
     "netRevenue": 870000,
     "tax": 0,
-    "orders": 0,
+    "orders": 2,
     "cogs": null
   },
   {
@@ -936,7 +936,7 @@
     "discounts": 0,
     "netRevenue": 880000,
     "tax": 0,
-    "orders": 0,
+    "orders": 3,
     "cogs": null
   },
   {
@@ -966,7 +966,7 @@
     "discounts": 0,
     "netRevenue": 660000,
     "tax": 0,
-    "orders": 0,
+    "orders": 1,
     "cogs": null
   },
   {
@@ -976,7 +976,7 @@
     "discounts": 0,
     "netRevenue": 230000,
     "tax": 0,
-    "orders": 0,
+    "orders": 1,
     "cogs": null
   },
   {
@@ -986,7 +986,7 @@
     "discounts": 0,
     "netRevenue": 2340000,
     "tax": 0,
-    "orders": 0,
+    "orders": 4,
     "cogs": null
   },
   {
@@ -996,7 +996,7 @@
     "discounts": 162000,
     "netRevenue": 1658000,
     "tax": 0,
-    "orders": 0,
+    "orders": 5,
     "cogs": null
   },
   {
@@ -1006,7 +1006,7 @@
     "discounts": 0,
     "netRevenue": 590000,
     "tax": 0,
-    "orders": 0,
+    "orders": 2,
     "cogs": null
   },
   {
@@ -1016,7 +1016,7 @@
     "discounts": 43500,
     "netRevenue": 1386500,
     "tax": 0,
-    "orders": 0,
+    "orders": 2,
     "cogs": null
   },
   {
@@ -1026,7 +1026,7 @@
     "discounts": 0,
     "netRevenue": 1290000,
     "tax": 0,
-    "orders": 0,
+    "orders": 1,
     "cogs": null
   },
   {
@@ -1036,7 +1036,7 @@
     "discounts": 128000,
     "netRevenue": 2532000,
     "tax": 0,
-    "orders": 0,
+    "orders": 5,
     "cogs": null
   },
   {
@@ -1046,7 +1046,7 @@
     "discounts": 0,
     "netRevenue": 230000,
     "tax": 0,
-    "orders": 0,
+    "orders": 1,
     "cogs": null
   },
   {
@@ -1056,7 +1056,7 @@
     "discounts": 0,
     "netRevenue": 1990000,
     "tax": 0,
-    "orders": 0,
+    "orders": 4,
     "cogs": null
   },
   {
@@ -1066,7 +1066,7 @@
     "discounts": 47500,
     "netRevenue": 1132500,
     "tax": 0,
-    "orders": 0,
+    "orders": 2,
     "cogs": null
   },
   {
@@ -1076,7 +1076,7 @@
     "discounts": 0,
     "netRevenue": 1270000,
     "tax": 0,
-    "orders": 0,
+    "orders": 3,
     "cogs": null
   },
   {
@@ -1086,7 +1086,7 @@
     "discounts": 0,
     "netRevenue": 1350000,
     "tax": 0,
-    "orders": 0,
+    "orders": 3,
     "cogs": null
   },
   {
@@ -1096,7 +1096,7 @@
     "discounts": 0,
     "netRevenue": 460000,
     "tax": 0,
-    "orders": 0,
+    "orders": 1,
     "cogs": null
   },
   {
@@ -1116,7 +1116,7 @@
     "discounts": 0,
     "netRevenue": 1920000,
     "tax": 0,
-    "orders": 0,
+    "orders": 4,
     "cogs": null
   },
   {
@@ -1126,7 +1126,7 @@
     "discounts": 0,
     "netRevenue": 4210000,
     "tax": 0,
-    "orders": 0,
+    "orders": 4,
     "cogs": null
   },
   {
@@ -6886,7 +6886,7 @@
     "discounts": 507500,
     "netRevenue": 3863750,
     "tax": 351250,
-    "orders": 0,
+    "orders": 6,
     "cogs": null
   },
   {
@@ -6896,7 +6896,7 @@
     "discounts": 25000,
     "netRevenue": 5472500,
     "tax": 497500,
-    "orders": 0,
+    "orders": 9,
     "cogs": null
   },
   {
@@ -6906,7 +6906,7 @@
     "discounts": 312000,
     "netRevenue": 5442800,
     "tax": 494800,
-    "orders": 0,
+    "orders": 8,
     "cogs": null
   },
   {
@@ -6916,7 +6916,7 @@
     "discounts": 549000,
     "netRevenue": 7239100,
     "tax": 658100,
-    "orders": 0,
+    "orders": 13,
     "cogs": null
   },
   {
@@ -6926,7 +6926,7 @@
     "discounts": 51000,
     "netRevenue": 5322900,
     "tax": 483900,
-    "orders": 0,
+    "orders": 9,
     "cogs": null
   },
   {
@@ -6936,7 +6936,7 @@
     "discounts": 211000,
     "netRevenue": 11493900,
     "tax": 1044900,
-    "orders": 0,
+    "orders": 16,
     "cogs": null
   },
   {
@@ -6946,7 +6946,7 @@
     "discounts": 249500,
     "netRevenue": 5390550,
     "tax": 490050,
-    "orders": 0,
+    "orders": 9,
     "cogs": null
   },
   {
@@ -6956,7 +6956,7 @@
     "discounts": 27000,
     "netRevenue": 1719300,
     "tax": 156300,
-    "orders": 0,
+    "orders": 5,
     "cogs": null
   },
   {
@@ -6966,7 +6966,7 @@
     "discounts": 117000,
     "netRevenue": 4766300,
     "tax": 433300,
-    "orders": 0,
+    "orders": 7,
     "cogs": null
   },
   {
@@ -6976,7 +6976,7 @@
     "discounts": 660500,
     "netRevenue": 8106450,
     "tax": 736950,
-    "orders": 0,
+    "orders": 18,
     "cogs": null
   },
   {
@@ -6986,7 +6986,7 @@
     "discounts": 571000,
     "netRevenue": 8375400,
     "tax": 761400,
-    "orders": 0,
+    "orders": 17,
     "cogs": null
   },
   {
@@ -6996,7 +6996,7 @@
     "discounts": 311500,
     "netRevenue": 6719350,
     "tax": 610850,
-    "orders": 0,
+    "orders": 13,
     "cogs": null
   },
   {
@@ -7006,7 +7006,7 @@
     "discounts": 430500,
     "netRevenue": 5081450,
     "tax": 461950,
-    "orders": 0,
+    "orders": 12,
     "cogs": null
   },
   {
@@ -7016,7 +7016,7 @@
     "discounts": 436000,
     "netRevenue": 8826400,
     "tax": 802400,
-    "orders": 0,
+    "orders": 13,
     "cogs": null
   },
   {
@@ -7026,7 +7026,7 @@
     "discounts": 178500,
     "netRevenue": 2317150,
     "tax": 210650,
-    "orders": 0,
+    "orders": 6,
     "cogs": null
   },
   {
@@ -7036,7 +7036,7 @@
     "discounts": 46000,
     "netRevenue": 7951900,
     "tax": 722900,
-    "orders": 0,
+    "orders": 11,
     "cogs": null
   },
   {
@@ -7046,7 +7046,7 @@
     "discounts": 619500,
     "netRevenue": 4301550,
     "tax": 391050,
-    "orders": 0,
+    "orders": 10,
     "cogs": null
   },
   {
@@ -7056,7 +7056,7 @@
     "discounts": 555000,
     "netRevenue": 6451500,
     "tax": 586500,
-    "orders": 0,
+    "orders": 12,
     "cogs": null
   },
   {
@@ -7066,7 +7066,7 @@
     "discounts": 521500,
     "netRevenue": 6840350,
     "tax": 621850,
-    "orders": 0,
+    "orders": 14,
     "cogs": null
   },
   {
@@ -7076,7 +7076,7 @@
     "discounts": 171500,
     "netRevenue": 5003350,
     "tax": 454850,
-    "orders": 0,
+    "orders": 7,
     "cogs": null
   },
   {
@@ -7086,7 +7086,7 @@
     "discounts": 350000,
     "netRevenue": 5747500,
     "tax": 522500,
-    "orders": 0,
+    "orders": 11,
     "cogs": null
   },
   {
@@ -7096,7 +7096,7 @@
     "discounts": 226500,
     "netRevenue": 6862350,
     "tax": 623850,
-    "orders": 0,
+    "orders": 13,
     "cogs": null
   },
   {
@@ -7106,7 +7106,7 @@
     "discounts": 92000,
     "netRevenue": 7257800,
     "tax": 659800,
-    "orders": 0,
+    "orders": 13,
     "cogs": null
   },
   {
@@ -7116,7 +7116,7 @@
     "discounts": 273500,
     "netRevenue": 9445150,
     "tax": 858650,
-    "orders": 0,
+    "orders": 11,
     "cogs": null
   },
   {
@@ -7126,7 +7126,7 @@
     "discounts": 206500,
     "netRevenue": 9810350,
     "tax": 891850,
-    "orders": 0,
+    "orders": 16,
     "cogs": null
   },
   {
@@ -7136,7 +7136,7 @@
     "discounts": 931000,
     "netRevenue": 10998900,
     "tax": 999900,
-    "orders": 0,
+    "orders": 18,
     "cogs": null
   },
   {

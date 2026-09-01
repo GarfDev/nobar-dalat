@@ -60,6 +60,8 @@
   backdrop-filter: blur(16px);
 }
 .preset-strip, .mode-switch { display: flex; align-items: center; gap: 4px; }
+.preset-strip, .insights-nav, .insights-controls { scrollbar-width: none; }
+.preset-strip::-webkit-scrollbar, .insights-nav::-webkit-scrollbar, .insights-controls::-webkit-scrollbar { display: none; }
 .preset-strip button, .mode-switch button { border: 1px solid transparent; background: transparent; color: var(--paper-dim); padding: 8px 10px; font-size: .73rem; cursor: pointer; border-radius: 2px; }
 .preset-strip button:hover, .preset-strip button:focus-visible, .mode-switch button:hover, .mode-switch button:focus-visible { color: var(--paper); border-color: var(--line); outline: none; }
 .preset-strip button.is-active, .mode-switch button.is-active { color: var(--ink); background: var(--brass); }
