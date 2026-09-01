@@ -7,7 +7,7 @@ const links = [
   ["advertising", "Quảng cáo"],
   ["relationship", "Liên hệ dữ liệu"],
   ["actions", "Kế hoạch"],
-  ["data-notes", "Ghi chú dữ liệu"],
+  ["data-notes", "Data readiness"],
 ];
 
 export function InsightsNavigation() {

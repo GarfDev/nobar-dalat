@@ -17,6 +17,11 @@ export function formatCompact(value: number | null): string {
   return `${new Intl.NumberFormat("vi-VN", { maximumFractionDigits: 1 }).format(value / 1_000_000)} Tr`;
 }
 
+export function formatDecimal(value: number | null, maximumFractionDigits = 1): string {
+  if (value === null || !Number.isFinite(value)) return "Chưa đủ dữ liệu";
+  return new Intl.NumberFormat("vi-VN", { maximumFractionDigits }).format(value);
+}
+
 export function formatPercent(value: number | null, signed = false): string {
   if (value === null || !Number.isFinite(value)) return "Chưa đủ dữ liệu";
   const formatted = new Intl.NumberFormat("vi-VN", {

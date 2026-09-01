@@ -5,15 +5,18 @@ import {
   BadgeInfo,
   CircleDollarSign,
   Database,
+  Gauge,
   Megaphone,
   ReceiptText,
+  ShieldAlert,
   Sparkles,
 } from "lucide-react";
 
 import { insightData } from "./data";
-import { formatCompact, formatDate, formatNumber, formatPercent, formatVND } from "./format";
+import { formatCompact, formatDate, formatDecimal, formatNumber, formatPercent, formatVND } from "./format";
 import { correlationLabel, roasLabel } from "./interpretation";
 import { buildManagementFindings } from "./insight-rules";
+import { buildDataReadiness, computeOperationalMetrics, computePlatformEfficiency } from "./computed-metrics";
 import { buildReport, clampRange, laggedCorrelation, type MetricPoint } from "./reporting";
 import { aggregateProductRanking } from "./product-ranking";
 import type { DateRange, ISODate } from "./types";
@@ -81,6 +84,18 @@ export function InsightsPage() {
     }),
     { views: 0, interactions: 0, clicks: 0 },
   );
+  const selectedRevenueRows = insightData.revenue.filter(
+    (row) => row.date >= range.start && row.date <= range.end,
+  );
+  const selectedSocialRows = insightData.social.filter(
+    (row) => row.date >= range.start && row.date <= range.end,
+  );
+  const operating = computeOperationalMetrics(selectedRevenueRows);
+  const platformEfficiency = {
+    instagram: computePlatformEfficiency(selectedSocialRows, "instagram"),
+    facebook: computePlatformEfficiency(selectedSocialRows, "facebook"),
+  };
+  const readiness = buildDataReadiness(insightData);
   const trendData = report.monthlyRevenue.map((item) => ({
     label: item.month,
     value: item.netRevenue,
@@ -135,6 +150,17 @@ export function InsightsPage() {
               <KpiCard eyebrow="Đơn hoàn tất" value={formatNumber(report.revenue.orders)} delta={report.orderGrowth} source="POSAPP" accent="teal" note="Chỉ số gần nhất với lượt bàn; không phải số khách hay vòng quay bàn." />
               <KpiCard eyebrow="Giá trị TB / đơn" value={formatVND(report.revenue.averageOrderValue)} source="POSAPP" accent="brass" />
               <KpiCard eyebrow="Tương tác social" value={formatCompact(socialTotals.interactions)} source="META" accent="red" note={`${formatCompact(socialTotals.views)} lượt xem có dữ liệu`} />
+            </div>
+            <div className="computed-block">
+              <header><Gauge size={17} /><span>Computed decision metrics</span><small>Tính từ nguồn đã chuẩn hóa trong kỳ chọn</small></header>
+              <div className="computed-grid">
+                <article><span>Doanh thu / ngày mở cửa</span><strong>{formatVND(operating.revenuePerTradingDay)}</strong><small>Net revenue ÷ {operating.tradingDays} ngày có bán</small></article>
+                <article><span>Đơn / ngày mở cửa</span><strong>{formatDecimal(operating.ordersPerTradingDay)}</strong><small>{formatNumber(report.revenue.orders)} đơn ÷ {operating.tradingDays} ngày có bán</small></article>
+                <article><span>Tỷ lệ ngày hoạt động</span><strong>{formatPercent(operating.activeDayRate)}</strong><small>{operating.tradingDays}/{operating.calendarDays} ngày lịch</small></article>
+                <article><span>Độ biến động doanh thu</span><strong>{formatPercent(operating.revenueCoefficientOfVariation)}</strong><small>CV trên ngày có bán · {operating.revenueCoefficientOfVariation !== null && operating.revenueCoefficientOfVariation < .5 ? "tương đối ổn định" : "cần theo dõi biến động"}</small></article>
+                <article><span>Tỷ trọng T6–CN</span><strong>{formatPercent(operating.weekendRevenueShare)}</strong><small>Doanh thu cuối tuần ÷ doanh thu kỳ</small></article>
+                <article><span>Giảm giá / đơn</span><strong>{formatVND(operating.discountPerOrder)}</strong><small>Tổng giảm giá ÷ đơn hoàn tất</small></article>
+              </div>
             </div>
             <div className="executive-grid">
               <article className="summary-card">
@@ -194,7 +220,9 @@ export function InsightsPage() {
           <section id="marketing" className="report-section">
             <SectionTitle index="04" kicker="Meta · organic" title="Sức khỏe mạng xã hội" note="Không cộng Facebook viewers với Instagram reach thành một chỉ số khán giả duy nhất" />
             <div className="platform-grid">
-              {report.social.map((platform) => <article key={platform.platform} className={`platform-card ${platform.platform}`}>
+              {report.social.map((platform) => {
+                const efficiency = platformEfficiency[platform.platform];
+                return <article key={platform.platform} className={`platform-card ${platform.platform}`}>
                 <div className="platform-heading"><span>{platform.platform === "instagram" ? "IG" : "FB"}</span><div><p>{platform.platform}</p><h3>{formatCompact(platform.views)} lượt xem</h3></div></div>
                 <dl>
                   <div><dt>{platform.platform === "instagram" ? "Reach theo ngày" : "Viewers theo ngày"}</dt><dd>{formatCompact(platform.audience)}</dd></div>
@@ -202,8 +230,12 @@ export function InsightsPage() {
                   <div><dt>Nhấp link</dt><dd>{formatCompact(platform.linkClicks)}</dd></div>
                   <div><dt>Theo dõi mới</dt><dd>{formatCompact(platform.follows)}</dd></div>
                   <div><dt>Lượt thăm</dt><dd>{platform.visits === null ? "Không có" : formatCompact(platform.visits)}</dd></div>
+                  <div><dt>Interaction / view</dt><dd>{formatPercent(efficiency.engagementRate)}</dd></div>
+                  <div><dt>Click-through / view</dt><dd>{formatPercent(efficiency.clickThroughRate)}</dd></div>
+                  <div><dt>Follow / 1.000 views</dt><dd>{formatDecimal(efficiency.followPerThousandViews)}</dd></div>
+                  <div><dt>Mẫu so sánh được</dt><dd>{formatNumber(efficiency.comparableDays)} ngày</dd></div>
                 </dl>
-              </article>)}
+              </article>})}
             </div>
             <p className="footnote">Facebook views/viewers chỉ có từ 01.08.2025. Instagram visits không được nguồn cung cấp; follows chỉ có từ 27.08.2025 đến 30.08.2026.</p>
           </section>
@@ -247,7 +279,23 @@ export function InsightsPage() {
           </section>
 
           <section id="data-notes" className="report-section data-notes">
-            <SectionTitle index={mode === "detailed" ? "09" : "06"} kicker="Audit trail" title="Phạm vi & giới hạn dữ liệu" />
+            <SectionTitle index={mode === "detailed" ? "09" : "06"} kicker="Data readiness audit" title="Chúng ta đang thiếu dữ liệu gì?" note="Điểm readiness đo khả năng ra quyết định, không đánh giá hiệu suất đội ngũ" />
+            <div className="readiness-hero">
+              <div className="readiness-score"><span>{readiness.score}</span><small>/100</small></div>
+              <div className="readiness-copy"><p>Khả năng đo lường hiện tại</p><h3>Đủ nhìn xu hướng, chưa đủ quản trị lợi nhuận và tăng trưởng.</h3><p>Nguồn hiện có trả lời tốt “đã bán bao nhiêu”, nhưng chưa trả lời đáng tin cậy “lãi bao nhiêu”, “marketing tạo ra đơn nào”, “mỗi bàn/khách hiệu quả ra sao”.</p></div>
+              <div className="readiness-legend"><span><i className="ready" /> Sẵn sàng {readiness.readyWeight}%</span><span><i className="partial" /> Một phần {readiness.partialWeight}%</span><span><i className="missing" /> Thiếu {readiness.missingWeight}%</span></div>
+            </div>
+            <div className="readiness-list">
+              {readiness.dimensions.map((dimension, index) => <article key={dimension.code}>
+                <div className="readiness-rank">{String(index + 1).padStart(2, "0")}</div>
+                <div className="readiness-main"><div><h3>{dimension.label}</h3><span className={`readiness-status ${dimension.status}`}>{dimension.status === "ready" ? "Sẵn sàng" : dimension.status === "partial" ? "Một phần" : "Đang thiếu"}</span><span className={`priority-${dimension.priority}`}>{dimension.priority}</span></div><p>{dimension.impact}</p><small><strong>Cần thu:</strong> {dimension.missingFields.length ? dimension.missingFields.join(" · ") : "Không bổ sung trường mới"}</small></div>
+                <div className="readiness-action"><p>{dimension.collectionPlan}</p><small>{dimension.owner} · {dimension.cadence}</small></div>
+              </article>)}
+            </div>
+            <div className="collection-priority">
+              <ShieldAlert />
+              <div><span>Ba việc nên làm trước</span><ol><li>Chuẩn hóa recipe + giá vốn nguyên liệu theo món.</li><li>Bắt buộc table ID, số khách, giờ mở/đóng và nguồn đơn.</li><li>Nối campaign/content → UTM hoặc promo code → order ID.</li></ol></div>
+            </div>
             <div className="notes-grid"><div><ReceiptText /><h3>PosApp</h3><p>01.09.2024–31.08.2026 · 730 ngày lịch · 668 ngày bán · 4.278 đơn sau đối chiếu.</p></div><div><Megaphone /><h3>Meta</h3><p>Facebook và Instagram theo múi giờ báo cáo nền tảng; độ phủ từng metric khác nhau.</p></div><div><Database /><h3>Thiếu dữ liệu</h3><p>Giá vốn, lợi nhuận, biên gộp, doanh thu quy thuộc, ROAS, khách duy nhất và vòng quay bàn.</p></div></div>
             <details><summary>Xem toàn bộ ghi chú nguồn</summary><ul>{insightData.quality.notes.map((note) => <li key={note}>{note}</li>)}</ul></details>
             <p className="snapshot-stamp">STATIC SNAPSHOT · GENERATED {insightData.quality.generatedAt} · RANGE {COVERAGE.start}—{COVERAGE.end}</p>

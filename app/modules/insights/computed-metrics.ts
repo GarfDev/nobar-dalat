@@ -1,0 +1,168 @@
+import type { InsightData, Platform, RevenueDay, SocialDay } from "./types";
+
+export type OperationalMetrics = {
+  calendarDays: number;
+  tradingDays: number;
+  revenuePerTradingDay: number | null;
+  ordersPerTradingDay: number | null;
+  activeDayRate: number | null;
+  revenueCoefficientOfVariation: number | null;
+  weekendRevenueShare: number | null;
+  discountPerOrder: number | null;
+};
+
+export type PlatformEfficiency = {
+  comparableDays: number;
+  engagementRate: number | null;
+  clickThroughRate: number | null;
+  followPerThousandViews: number | null;
+};
+
+export type ReadinessDimension = {
+  code: string;
+  label: string;
+  status: "ready" | "partial" | "missing";
+  priority: "critical" | "high" | "medium";
+  weight: number;
+  impact: string;
+  missingFields: string[];
+  collectionPlan: string;
+  owner: string;
+  cadence: string;
+};
+
+export type DataReadiness = {
+  score: number;
+  dimensions: ReadinessDimension[];
+  readyWeight: number;
+  partialWeight: number;
+  missingWeight: number;
+};
+
+function safeDivide(numerator: number, denominator: number): number | null {
+  return denominator === 0 ? null : numerator / denominator;
+}
+
+export function computeOperationalMetrics(rows: RevenueDay[]): OperationalMetrics {
+  const tradingRows = rows.filter((row) => row.netRevenue > 0 || row.orders > 0);
+  const netRevenue = rows.reduce((sum, row) => sum + row.netRevenue, 0);
+  const orders = rows.reduce((sum, row) => sum + row.orders, 0);
+  const discounts = rows.reduce((sum, row) => sum + row.discounts, 0);
+  const mean = safeDivide(netRevenue, tradingRows.length);
+  const standardDeviation = mean === null
+    ? null
+    : Math.sqrt(
+        tradingRows.reduce((sum, row) => sum + (row.netRevenue - mean) ** 2, 0) /
+          tradingRows.length,
+      );
+  const weekendRevenue = rows
+    .filter((row) => [0, 5, 6].includes(new Date(`${row.date}T00:00:00Z`).getUTCDay()))
+    .reduce((sum, row) => sum + row.netRevenue, 0);
+
+  return {
+    calendarDays: rows.length,
+    tradingDays: tradingRows.length,
+    revenuePerTradingDay: safeDivide(netRevenue, tradingRows.length),
+    ordersPerTradingDay: safeDivide(orders, tradingRows.length),
+    activeDayRate: safeDivide(tradingRows.length, rows.length),
+    revenueCoefficientOfVariation:
+      mean === null || standardDeviation === null ? null : safeDivide(standardDeviation, mean),
+    weekendRevenueShare: safeDivide(weekendRevenue, netRevenue),
+    discountPerOrder: safeDivide(discounts, orders),
+  };
+}
+
+export function computePlatformEfficiency(rows: SocialDay[], platform: Platform): PlatformEfficiency {
+  const platformRows = rows.filter((row) => row.platform === platform && (row.views ?? 0) > 0);
+  const comparable = platformRows.filter((row) => row.interactions !== null);
+  const comparableViews = comparable.reduce((sum, row) => sum + (row.views ?? 0), 0);
+  const interactions = comparable.reduce((sum, row) => sum + (row.interactions ?? 0), 0);
+  const clickRows = platformRows.filter((row) => row.linkClicks !== null);
+  const clickViews = clickRows.reduce((sum, row) => sum + (row.views ?? 0), 0);
+  const clicks = clickRows.reduce((sum, row) => sum + (row.linkClicks ?? 0), 0);
+  const followRows = platformRows.filter((row) => row.follows !== null);
+  const followViews = followRows.reduce((sum, row) => sum + (row.views ?? 0), 0);
+  const follows = followRows.reduce((sum, row) => sum + (row.follows ?? 0), 0);
+
+  return {
+    comparableDays: comparable.length,
+    engagementRate: safeDivide(interactions, comparableViews),
+    clickThroughRate: safeDivide(clicks, clickViews),
+    followPerThousandViews:
+      followViews === 0 ? null : (follows / followViews) * 1_000,
+  };
+}
+
+export function buildDataReadiness(data: InsightData): DataReadiness {
+  const unavailable = new Set(data.quality.unavailableFields ?? []);
+  const dimensions: ReadinessDimension[] = [
+    {
+      code: "unit-economics", label: "Giá vốn & biên món", status: unavailable.has("cogs") ? "missing" : "ready", priority: "critical", weight: 15,
+      impact: "Không biết món nào thật sự tạo lợi nhuận hoặc nên điều chỉnh giá.",
+      missingFields: ["recipe_id", "ingredient_cost", "waste_cost", "gross_margin"],
+      collectionPlan: "Chuẩn hóa công thức và giá nhập; đẩy giá vốn món vào PosApp.", owner: "Bar + Kế toán", cadence: "Mỗi lần đổi giá nhập",
+    },
+    {
+      code: "attribution", label: "Marketing → đơn hàng", status: unavailable.has("attributedRevenue") ? "missing" : "partial", priority: "critical", weight: 15,
+      impact: "Không tính được CAC, doanh thu quy thuộc hay hiệu quả ngân sách.",
+      missingFields: ["utm_campaign", "content_id", "promo_code", "order_source"],
+      collectionPlan: "Dùng UTM/mã ưu đãi riêng và bắt buộc chọn nguồn trên đơn.", owner: "Marketing + Thu ngân", cadence: "Mỗi chiến dịch / mỗi đơn",
+    },
+    {
+      code: "guest-table", label: "Khách & vòng quay bàn", status: unavailable.has("physicalTableTurns") ? "missing" : "partial", priority: "critical", weight: 10,
+      impact: "Không biết khách/bàn, thời gian sử dụng bàn và doanh thu trên ghế.",
+      missingFields: ["table_id", "party_size", "seat_count", "opened_at", "closed_at"],
+      collectionPlan: "Bắt buộc chọn bàn, số khách và giữ thời điểm mở/đóng bill.", owner: "Vận hành", cadence: "Mỗi đơn",
+    },
+    {
+      code: "order-integrity", label: "Tính toàn vẹn đơn", status: data.revenue.length ? "partial" : "missing", priority: "high", weight: 10,
+      impact: "Một số ngày phải đối chiếu thủ công; AOV theo ngày dễ sai nếu thiếu timestamp.",
+      missingFields: ["created_at", "paid_at", "order_status", "channel"],
+      collectionPlan: "Xuất order-level cố định với ID và kiểm tra created/paid timestamp.", owner: "Vận hành + Data", cadence: "Hàng ngày",
+    },
+    {
+      code: "product-taxonomy", label: "Danh mục sản phẩm", status: data.products.length ? "partial" : "missing", priority: "high", weight: 10,
+      impact: "Tên trùng/khác hoa thường làm phân mảnh doanh thu sản phẩm.",
+      missingFields: ["product_id", "canonical_name", "category", "recipe_id"],
+      collectionPlan: "Dùng ID ổn định, tên chuẩn và nhóm menu bắt buộc.", owner: "Bar manager", cadence: "Khi tạo/sửa món",
+    },
+    {
+      code: "social-coverage", label: "Độ phủ social", status: data.social.length ? "partial" : "missing", priority: "high", weight: 10,
+      impact: "Metric có cửa sổ khác nhau nên tỷ lệ dài hạn không hoàn toàn đồng nhất.",
+      missingFields: ["metric_coverage_start", "organic_views", "paid_views", "post_id"],
+      collectionPlan: "Lưu snapshot theo ngày với ID nội dung và cờ organic/paid.", owner: "Marketing", cadence: "Hàng tuần",
+    },
+    {
+      code: "ad-conversion", label: "Chuyển đổi quảng cáo", status: unavailable.has("attributedRevenue") ? "missing" : "partial", priority: "high", weight: 5,
+      impact: "Chỉ có spend/result; chưa có purchase và attributed revenue.",
+      missingFields: ["campaign_id", "ad_id", "purchase", "attributed_revenue"],
+      collectionPlan: "Thiết kế conversion offline hoặc map mã ưu đãi về campaign.", owner: "Marketing", cadence: "Mỗi chiến dịch",
+    },
+    {
+      code: "customer", label: "Khách quay lại", status: unavailable.has("uniqueGuests") ? "missing" : "partial", priority: "medium", weight: 5,
+      impact: "Không tính được repeat rate, tần suất ghé hay LTV.",
+      missingFields: ["customer_id", "first_visit", "visit_count", "consent"],
+      collectionPlan: "Thu số điện thoại/ID có đồng ý và nối vào hóa đơn.", owner: "CRM + Vận hành", cadence: "Mỗi khách đồng ý",
+    },
+    {
+      code: "labor-inventory", label: "Nhân sự & hao hụt", status: "missing", priority: "medium", weight: 5,
+      impact: "Không đo được doanh thu/giờ công, waste và hiệu quả tồn kho.",
+      missingFields: ["labor_hours", "labor_cost", "waste_qty", "stock_variance"],
+      collectionPlan: "Kết nối lịch ca với chấm công; ghi waste và kiểm kê định kỳ.", owner: "Quản lý ca + Kho", cadence: "Theo ca / hàng tuần",
+    },
+    {
+      code: "revenue", label: "Doanh thu theo ngày", status: data.revenue.length ? "ready" : "missing", priority: "medium", weight: 15,
+      impact: "Đủ để theo dõi xu hướng doanh thu, giảm giá và ngày bán.",
+      missingFields: [], collectionPlan: "Duy trì snapshot và checksum hiện tại.", owner: "Kế toán", cadence: "Hàng ngày",
+    },
+  ];
+  const statusValue = { ready: 1, partial: 0.5, missing: 0 } as const;
+  const score = dimensions.reduce((sum, item) => sum + item.weight * statusValue[item.status], 0);
+  return {
+    score,
+    dimensions,
+    readyWeight: dimensions.filter((item) => item.status === "ready").reduce((sum, item) => sum + item.weight, 0),
+    partialWeight: dimensions.filter((item) => item.status === "partial").reduce((sum, item) => sum + item.weight, 0),
+    missingWeight: dimensions.filter((item) => item.status === "missing").reduce((sum, item) => sum + item.weight, 0),
+  };
+}
