@@ -1,0 +1,7302 @@
+[
+  {
+    "date": "2024-09-01",
+    "grossRevenue": 2660000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2660000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-02",
+    "grossRevenue": 2430000,
+    "refunds": 0,
+    "discounts": 90000,
+    "netRevenue": 2340000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-03",
+    "grossRevenue": 1370000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1370000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-04",
+    "grossRevenue": 450000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 450000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-05",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-06",
+    "grossRevenue": 2825000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2825000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-07",
+    "grossRevenue": 1660000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1660000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-08",
+    "grossRevenue": 820000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 820000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-09",
+    "grossRevenue": 1820000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1820000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-10",
+    "grossRevenue": 230000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 230000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-11",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-12",
+    "grossRevenue": 315000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 315000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-13",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-14",
+    "grossRevenue": 665000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 665000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-15",
+    "grossRevenue": 190000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 190000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-16",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-17",
+    "grossRevenue": 1260000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1260000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-18",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-19",
+    "grossRevenue": 380000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 380000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-20",
+    "grossRevenue": 3070000,
+    "refunds": 0,
+    "discounts": 57000,
+    "netRevenue": 3013000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-21",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-22",
+    "grossRevenue": 890000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 890000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-23",
+    "grossRevenue": 1360000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1360000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-24",
+    "grossRevenue": 1780000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1780000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-25",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-26",
+    "grossRevenue": 470000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 470000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-27",
+    "grossRevenue": 170000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 170000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-28",
+    "grossRevenue": 580000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 580000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-29",
+    "grossRevenue": 1220000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1220000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-09-30",
+    "grossRevenue": 190000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 190000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-01",
+    "grossRevenue": 660000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 660000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-02",
+    "grossRevenue": 380000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 380000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-03",
+    "grossRevenue": 1660000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1660000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-04",
+    "grossRevenue": 1420000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1420000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-05",
+    "grossRevenue": 2580000,
+    "refunds": 0,
+    "discounts": 51000,
+    "netRevenue": 2529000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-06",
+    "grossRevenue": 1710000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1710000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-07",
+    "grossRevenue": 1770000,
+    "refunds": 0,
+    "discounts": 115000,
+    "netRevenue": 1655000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-08",
+    "grossRevenue": 190000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 190000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-09",
+    "grossRevenue": 400000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 400000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-10",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-11",
+    "grossRevenue": 1190000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1190000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-12",
+    "grossRevenue": 2010000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2010000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-13",
+    "grossRevenue": 2700000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2700000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-14",
+    "grossRevenue": 1090000,
+    "refunds": 0,
+    "discounts": 55000,
+    "netRevenue": 1035000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-15",
+    "grossRevenue": 1150000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1150000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-16",
+    "grossRevenue": 190000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 190000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-17",
+    "grossRevenue": 670000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 670000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-18",
+    "grossRevenue": 90000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 90000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-19",
+    "grossRevenue": 1900000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1900000,
+    "tax": 0,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-20",
+    "grossRevenue": 810000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 810000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-21",
+    "grossRevenue": 1940000,
+    "refunds": 0,
+    "discounts": 18000,
+    "netRevenue": 1922000,
+    "tax": 0,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-22",
+    "grossRevenue": 820000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 820000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-23",
+    "grossRevenue": 930000,
+    "refunds": 0,
+    "discounts": 139500,
+    "netRevenue": 790500,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-24",
+    "grossRevenue": 3490000,
+    "refunds": 0,
+    "discounts": 45000,
+    "netRevenue": 3445000,
+    "tax": 0,
+    "orders": 14,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-25",
+    "grossRevenue": 750000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 750000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-26",
+    "grossRevenue": 380000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 380000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-27",
+    "grossRevenue": 1200000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1200000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-28",
+    "grossRevenue": 610000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 610000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-29",
+    "grossRevenue": 1420000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1420000,
+    "tax": 0,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-30",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-10-31",
+    "grossRevenue": 1340000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1340000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-01",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-02",
+    "grossRevenue": 5490000,
+    "refunds": 0,
+    "discounts": 191000,
+    "netRevenue": 5299000,
+    "tax": 0,
+    "orders": 16,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-03",
+    "grossRevenue": 3400000,
+    "refunds": 0,
+    "discounts": 40500,
+    "netRevenue": 3359500,
+    "tax": 0,
+    "orders": 16,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-04",
+    "grossRevenue": 2550000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2550000,
+    "tax": 0,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-05",
+    "grossRevenue": 1540000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1540000,
+    "tax": 0,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-06",
+    "grossRevenue": 620000,
+    "refunds": 0,
+    "discounts": 62000,
+    "netRevenue": 558000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-07",
+    "grossRevenue": 950000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 950000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-08",
+    "grossRevenue": 3120000,
+    "refunds": 0,
+    "discounts": 156000,
+    "netRevenue": 2964000,
+    "tax": 0,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-09",
+    "grossRevenue": 3480000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3480000,
+    "tax": 0,
+    "orders": 18,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-10",
+    "grossRevenue": 1350000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1350000,
+    "tax": 0,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-11",
+    "grossRevenue": 190000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 190000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-12",
+    "grossRevenue": 2460000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2460000,
+    "tax": 0,
+    "orders": 14,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-13",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-14",
+    "grossRevenue": 230000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 230000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-15",
+    "grossRevenue": 3440000,
+    "refunds": 0,
+    "discounts": 144000,
+    "netRevenue": 3296000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-16",
+    "grossRevenue": 710000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 710000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-17",
+    "grossRevenue": 430000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 430000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-18",
+    "grossRevenue": 1610000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1610000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-19",
+    "grossRevenue": 2940000,
+    "refunds": 0,
+    "discounts": 44000,
+    "netRevenue": 2896000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-20",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-21",
+    "grossRevenue": 1510000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1510000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-22",
+    "grossRevenue": 1210000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1210000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-23",
+    "grossRevenue": 1690000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1690000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-24",
+    "grossRevenue": 1220000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1220000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-25",
+    "grossRevenue": 1240000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1240000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-26",
+    "grossRevenue": 1900000,
+    "refunds": 0,
+    "discounts": 65000,
+    "netRevenue": 1835000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-27",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-28",
+    "grossRevenue": 680000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 680000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-29",
+    "grossRevenue": 2760000,
+    "refunds": 0,
+    "discounts": 143000,
+    "netRevenue": 2617000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-11-30",
+    "grossRevenue": 870000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 870000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-01",
+    "grossRevenue": 2000000,
+    "refunds": 0,
+    "discounts": 43000,
+    "netRevenue": 1957000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-02",
+    "grossRevenue": 870000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 870000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-03",
+    "grossRevenue": 880000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 880000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-04",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-05",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-06",
+    "grossRevenue": 660000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 660000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-07",
+    "grossRevenue": 230000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 230000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-08",
+    "grossRevenue": 2340000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2340000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-09",
+    "grossRevenue": 1820000,
+    "refunds": 0,
+    "discounts": 162000,
+    "netRevenue": 1658000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-10",
+    "grossRevenue": 590000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 590000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-11",
+    "grossRevenue": 1430000,
+    "refunds": 0,
+    "discounts": 43500,
+    "netRevenue": 1386500,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-12",
+    "grossRevenue": 1290000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1290000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-13",
+    "grossRevenue": 2660000,
+    "refunds": 0,
+    "discounts": 128000,
+    "netRevenue": 2532000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-14",
+    "grossRevenue": 230000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 230000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-15",
+    "grossRevenue": 1990000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1990000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-16",
+    "grossRevenue": 1180000,
+    "refunds": 0,
+    "discounts": 47500,
+    "netRevenue": 1132500,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-17",
+    "grossRevenue": 1270000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1270000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-18",
+    "grossRevenue": 1350000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1350000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-19",
+    "grossRevenue": 460000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 460000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-20",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-21",
+    "grossRevenue": 1920000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1920000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-22",
+    "grossRevenue": 4210000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4210000,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-23",
+    "grossRevenue": 1830000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1830000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-24",
+    "grossRevenue": 1760000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1760000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-25",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-26",
+    "grossRevenue": 3250000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3250000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-27",
+    "grossRevenue": 4860000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4860000,
+    "tax": 0,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-28",
+    "grossRevenue": 2630000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2630000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-29",
+    "grossRevenue": 1100000,
+    "refunds": 0,
+    "discounts": 47500,
+    "netRevenue": 1052500,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-30",
+    "grossRevenue": 4830000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4830000,
+    "tax": 0,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2024-12-31",
+    "grossRevenue": 7020000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 7020000,
+    "tax": 0,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-01",
+    "grossRevenue": 3130000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3130000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-02",
+    "grossRevenue": 410000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 410000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-03",
+    "grossRevenue": 470000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 470000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-04",
+    "grossRevenue": 1770000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1770000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-05",
+    "grossRevenue": 1940000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1940000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-06",
+    "grossRevenue": 1280000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1280000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-07",
+    "grossRevenue": 1740000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1740000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-08",
+    "grossRevenue": 1290000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1290000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-09",
+    "grossRevenue": 3000000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3000000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-10",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-11",
+    "grossRevenue": 1450000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1450000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-12",
+    "grossRevenue": 1610000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1610000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-13",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-14",
+    "grossRevenue": 850000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 850000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-15",
+    "grossRevenue": 370000,
+    "refunds": 0,
+    "discounts": 45000,
+    "netRevenue": 325000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-16",
+    "grossRevenue": 1090000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1090000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-17",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-18",
+    "grossRevenue": 1070000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1070000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-19",
+    "grossRevenue": 1510000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1510000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-20",
+    "grossRevenue": 1910000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1910000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-21",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-22",
+    "grossRevenue": 270000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 270000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-23",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-24",
+    "grossRevenue": 230000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 230000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-25",
+    "grossRevenue": 1280000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1280000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-26",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-27",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-28",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-29",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-30",
+    "grossRevenue": 10373000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 10373000,
+    "tax": 0,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2025-01-31",
+    "grossRevenue": 9246000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 9246000,
+    "tax": 0,
+    "orders": 20,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-01",
+    "grossRevenue": 5345000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5345000,
+    "tax": 0,
+    "orders": 14,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-02",
+    "grossRevenue": 3442750,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3442750,
+    "tax": 0,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-03",
+    "grossRevenue": 6618000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 6618000,
+    "tax": 0,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-04",
+    "grossRevenue": 2150000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2150000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-05",
+    "grossRevenue": 2563000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2563000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-06",
+    "grossRevenue": 2772000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2772000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-07",
+    "grossRevenue": 1770000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1770000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-08",
+    "grossRevenue": 8625000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 8625000,
+    "tax": 0,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-09",
+    "grossRevenue": 3870000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3870000,
+    "tax": 0,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-10",
+    "grossRevenue": 1140000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1140000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-11",
+    "grossRevenue": 1560000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1560000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-12",
+    "grossRevenue": 1810000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1810000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-13",
+    "grossRevenue": 3690000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3690000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-14",
+    "grossRevenue": 7510000,
+    "refunds": 0,
+    "discounts": 58000,
+    "netRevenue": 7452000,
+    "tax": 0,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-15",
+    "grossRevenue": 4670000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4670000,
+    "tax": 0,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-16",
+    "grossRevenue": 3170000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3170000,
+    "tax": 0,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-17",
+    "grossRevenue": 2960000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2960000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-18",
+    "grossRevenue": 2960000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2960000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-19",
+    "grossRevenue": 2060000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2060000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-20",
+    "grossRevenue": 1750000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1750000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-21",
+    "grossRevenue": 1380000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1380000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-22",
+    "grossRevenue": 4510000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4510000,
+    "tax": 0,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-23",
+    "grossRevenue": 5610000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5610000,
+    "tax": 0,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-24",
+    "grossRevenue": 550000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 550000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-25",
+    "grossRevenue": 2440000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2440000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-26",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-27",
+    "grossRevenue": 2365000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2365000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-02-28",
+    "grossRevenue": 5690000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5690000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-01",
+    "grossRevenue": 7855000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 7855000,
+    "tax": 0,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-02",
+    "grossRevenue": 1050000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1050000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-03",
+    "grossRevenue": 500000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 500000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-04",
+    "grossRevenue": 620000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 620000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-05",
+    "grossRevenue": 240000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 240000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-06",
+    "grossRevenue": 700000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 700000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-07",
+    "grossRevenue": 1785000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1785000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-08",
+    "grossRevenue": 860000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 860000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-09",
+    "grossRevenue": 2250000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2250000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-10",
+    "grossRevenue": 3310000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3310000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-11",
+    "grossRevenue": 3990000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3990000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-12",
+    "grossRevenue": 640000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 640000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-13",
+    "grossRevenue": 1790000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1790000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-14",
+    "grossRevenue": 2490000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2490000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-15",
+    "grossRevenue": 3760000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3760000,
+    "tax": 0,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-16",
+    "grossRevenue": 5680000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5680000,
+    "tax": 0,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-17",
+    "grossRevenue": 190000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 190000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-18",
+    "grossRevenue": 2270000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2270000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-19",
+    "grossRevenue": 1390000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1390000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-20",
+    "grossRevenue": 1690000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1690000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-21",
+    "grossRevenue": 390000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 390000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-22",
+    "grossRevenue": 770000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 770000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-23",
+    "grossRevenue": 3840000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3840000,
+    "tax": 0,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-24",
+    "grossRevenue": 4710000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4710000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-25",
+    "grossRevenue": 870000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 870000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-26",
+    "grossRevenue": 1850000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1850000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-27",
+    "grossRevenue": 190000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 190000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-28",
+    "grossRevenue": 1610000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1610000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-29",
+    "grossRevenue": 4735000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4735000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-30",
+    "grossRevenue": 4000000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4000000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-03-31",
+    "grossRevenue": 2430000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2430000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-01",
+    "grossRevenue": 1210000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1210000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-02",
+    "grossRevenue": 1450000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1450000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-03",
+    "grossRevenue": 470000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 470000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-04",
+    "grossRevenue": 3340000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3340000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-05",
+    "grossRevenue": 2030000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2030000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-06",
+    "grossRevenue": 3730000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3730000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-07",
+    "grossRevenue": 1980000,
+    "refunds": 0,
+    "discounts": 154000,
+    "netRevenue": 1826000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-08",
+    "grossRevenue": 1290000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1290000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-09",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-10",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-11",
+    "grossRevenue": 470000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 470000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-12",
+    "grossRevenue": 2640000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2640000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-13",
+    "grossRevenue": 2150000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2150000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-14",
+    "grossRevenue": 2890000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2890000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-15",
+    "grossRevenue": 2430000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2430000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-16",
+    "grossRevenue": 1450000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1450000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-17",
+    "grossRevenue": 2430000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2430000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-18",
+    "grossRevenue": 1760000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1760000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-19",
+    "grossRevenue": 240000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 240000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-20",
+    "grossRevenue": 380000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 380000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-21",
+    "grossRevenue": 3140000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3140000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-22",
+    "grossRevenue": 620000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 620000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-23",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-24",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-25",
+    "grossRevenue": 550000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 550000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-26",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-27",
+    "grossRevenue": 2630000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2630000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-28",
+    "grossRevenue": 580000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 580000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-29",
+    "grossRevenue": 1980000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1980000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-04-30",
+    "grossRevenue": 470000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 470000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-01",
+    "grossRevenue": 2700000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2700000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-02",
+    "grossRevenue": 3560000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3560000,
+    "tax": 0,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-03",
+    "grossRevenue": 2620000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2620000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-04",
+    "grossRevenue": 1950000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1950000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-05",
+    "grossRevenue": 1030000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1030000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-06",
+    "grossRevenue": 800000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 800000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-07",
+    "grossRevenue": 560000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 560000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-08",
+    "grossRevenue": 660000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 660000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-09",
+    "grossRevenue": 1320000,
+    "refunds": 0,
+    "discounts": 190000,
+    "netRevenue": 1130000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-10",
+    "grossRevenue": 4250000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4250000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-11",
+    "grossRevenue": 3970000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3970000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-12",
+    "grossRevenue": 1740000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1740000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-13",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-14",
+    "grossRevenue": 900000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 900000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-15",
+    "grossRevenue": 220000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 220000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-16",
+    "grossRevenue": 2560000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2560000,
+    "tax": 0,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-17",
+    "grossRevenue": 2590000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2590000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-18",
+    "grossRevenue": 1640000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1640000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-19",
+    "grossRevenue": 920000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 920000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-20",
+    "grossRevenue": 430000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 430000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-21",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-22",
+    "grossRevenue": 1380000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1380000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-23",
+    "grossRevenue": 1830000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1830000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-24",
+    "grossRevenue": 1060000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1060000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-25",
+    "grossRevenue": 1300000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1300000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-26",
+    "grossRevenue": 1330000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1330000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-27",
+    "grossRevenue": 710000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 710000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-28",
+    "grossRevenue": 430000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 430000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-29",
+    "grossRevenue": 680000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 680000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-30",
+    "grossRevenue": 2340000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2340000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-05-31",
+    "grossRevenue": 2170000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2170000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-01",
+    "grossRevenue": 5520000,
+    "refunds": 0,
+    "discounts": 1050000,
+    "netRevenue": 4470000,
+    "tax": 0,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-02",
+    "grossRevenue": 1070000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1070000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-03",
+    "grossRevenue": 1230000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1230000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-04",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-05",
+    "grossRevenue": 1690000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1690000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-06",
+    "grossRevenue": 3650000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3650000,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-07",
+    "grossRevenue": 2990000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2990000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-08",
+    "grossRevenue": 1120000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1120000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-09",
+    "grossRevenue": 1400000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1400000,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-10",
+    "grossRevenue": 1150000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1150000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-11",
+    "grossRevenue": 1580000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1580000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-12",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-13",
+    "grossRevenue": 2930000,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 2681500,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-14",
+    "grossRevenue": 2280000,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 2196000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-15",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-16",
+    "grossRevenue": 880000,
+    "refunds": 0,
+    "discounts": 147000,
+    "netRevenue": 733000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-17",
+    "grossRevenue": 1460000,
+    "refunds": 0,
+    "discounts": 367500,
+    "netRevenue": 1092500,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-18",
+    "grossRevenue": 1000000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1000000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-19",
+    "grossRevenue": 1690000,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 1606000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-20",
+    "grossRevenue": 190000,
+    "refunds": 0,
+    "discounts": 66500,
+    "netRevenue": 123500,
+    "tax": 0,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-21",
+    "grossRevenue": 2910000,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 2826000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-22",
+    "grossRevenue": 1830000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1830000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-23",
+    "grossRevenue": 1940000,
+    "refunds": 0,
+    "discounts": 234500,
+    "netRevenue": 1705500,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-24",
+    "grossRevenue": 1050000,
+    "refunds": 0,
+    "discounts": 231000,
+    "netRevenue": 819000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-25",
+    "grossRevenue": 2180000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2180000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-26",
+    "grossRevenue": 2100000,
+    "refunds": 0,
+    "discounts": 147000,
+    "netRevenue": 1953000,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-27",
+    "grossRevenue": 4920000,
+    "refunds": 0,
+    "discounts": 395500,
+    "netRevenue": 4524500,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-28",
+    "grossRevenue": 2750000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2750000,
+    "tax": 0,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-29",
+    "grossRevenue": 4780000,
+    "refunds": 0,
+    "discounts": 374500,
+    "netRevenue": 4405500,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-06-30",
+    "grossRevenue": 2930000,
+    "refunds": 0,
+    "discounts": 234500,
+    "netRevenue": 2695500,
+    "tax": 0,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-01",
+    "grossRevenue": 1760000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1760000,
+    "tax": 0,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-02",
+    "grossRevenue": 1530000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1530000,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-03",
+    "grossRevenue": 3470000,
+    "refunds": 0,
+    "discounts": 206500,
+    "netRevenue": 3263500,
+    "tax": 0,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-04",
+    "grossRevenue": 1030000,
+    "refunds": 0,
+    "discounts": 87500,
+    "netRevenue": 942500,
+    "tax": 0,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-05",
+    "grossRevenue": 2716200,
+    "refunds": 0,
+    "discounts": 245000,
+    "netRevenue": 2471200,
+    "tax": 85000,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-06",
+    "grossRevenue": 1817600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 1733600,
+    "tax": 157600,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-07",
+    "grossRevenue": 2046000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2046000,
+    "tax": 186000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-08",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-09",
+    "grossRevenue": 1416400,
+    "refunds": 0,
+    "discounts": 136000,
+    "netRevenue": 1280400,
+    "tax": 116400,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-10",
+    "grossRevenue": 3986350,
+    "refunds": 0,
+    "discounts": 66500,
+    "netRevenue": 3919850,
+    "tax": 356350,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-11",
+    "grossRevenue": 2607450,
+    "refunds": 0,
+    "discounts": 325500,
+    "netRevenue": 2281950,
+    "tax": 207450,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-12",
+    "grossRevenue": 7611150,
+    "refunds": 0,
+    "discounts": 668500,
+    "netRevenue": 6942650,
+    "tax": 631150,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-13",
+    "grossRevenue": 4614550,
+    "refunds": 0,
+    "discounts": 164500,
+    "netRevenue": 4450050,
+    "tax": 404550,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-14",
+    "grossRevenue": 1562000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1562000,
+    "tax": 142000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-15",
+    "grossRevenue": 6427250,
+    "refunds": 0,
+    "discounts": 297500,
+    "netRevenue": 6129750,
+    "tax": 557250,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-16",
+    "grossRevenue": 528000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 528000,
+    "tax": 48000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-17",
+    "grossRevenue": 4802950,
+    "refunds": 0,
+    "discounts": 150500,
+    "netRevenue": 4652450,
+    "tax": 422950,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-18",
+    "grossRevenue": 2101000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2101000,
+    "tax": 191000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-19",
+    "grossRevenue": 2733900,
+    "refunds": 0,
+    "discounts": 161000,
+    "netRevenue": 2572900,
+    "tax": 233900,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-20",
+    "grossRevenue": 3003000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3003000,
+    "tax": 273000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-21",
+    "grossRevenue": 1713700,
+    "refunds": 0,
+    "discounts": 133000,
+    "netRevenue": 1580700,
+    "tax": 143700,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-22",
+    "grossRevenue": 2029900,
+    "refunds": 0,
+    "discounts": 161000,
+    "netRevenue": 1868900,
+    "tax": 169900,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-23",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-24",
+    "grossRevenue": 1177000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1177000,
+    "tax": 107000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-25",
+    "grossRevenue": 5044600,
+    "refunds": 0,
+    "discounts": 154000,
+    "netRevenue": 4890600,
+    "tax": 444600,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-26",
+    "grossRevenue": 924000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 924000,
+    "tax": 84000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-27",
+    "grossRevenue": 1014600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 930600,
+    "tax": 84600,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-28",
+    "grossRevenue": 2984400,
+    "refunds": 0,
+    "discounts": 406000,
+    "netRevenue": 2578400,
+    "tax": 234400,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-29",
+    "grossRevenue": 3278000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3278000,
+    "tax": 298000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-30",
+    "grossRevenue": 1408000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1408000,
+    "tax": 128000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-07-31",
+    "grossRevenue": 2684000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2684000,
+    "tax": 244000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-01",
+    "grossRevenue": 2684000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2684000,
+    "tax": 244000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-02",
+    "grossRevenue": 3346450,
+    "refunds": 0,
+    "discounts": 140500,
+    "netRevenue": 3205950,
+    "tax": 291450,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-03",
+    "grossRevenue": 1111000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1111000,
+    "tax": 101000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-04",
+    "grossRevenue": 2945450,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 2864950,
+    "tax": 260450,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-05",
+    "grossRevenue": 1577350,
+    "refunds": 0,
+    "discounts": 66500,
+    "netRevenue": 1510850,
+    "tax": 137350,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-06",
+    "grossRevenue": 1716000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1716000,
+    "tax": 156000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-07",
+    "grossRevenue": 3290150,
+    "refunds": 0,
+    "discounts": 318500,
+    "netRevenue": 2971650,
+    "tax": 270150,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-08",
+    "grossRevenue": 1457550,
+    "refunds": 0,
+    "discounts": 164500,
+    "netRevenue": 1293050,
+    "tax": 117550,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-09",
+    "grossRevenue": 3564100,
+    "refunds": 0,
+    "discounts": 329000,
+    "netRevenue": 3235100,
+    "tax": 294100,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-10",
+    "grossRevenue": 4202000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4202000,
+    "tax": 382000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-11",
+    "grossRevenue": 3663850,
+    "refunds": 0,
+    "discounts": 211500,
+    "netRevenue": 3452350,
+    "tax": 313850,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-12",
+    "grossRevenue": 2797650,
+    "refunds": 0,
+    "discounts": 73500,
+    "netRevenue": 2724150,
+    "tax": 247650,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-13",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-14",
+    "grossRevenue": 1784950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 1704450,
+    "tax": 154950,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-15",
+    "grossRevenue": 5455700,
+    "refunds": 0,
+    "discounts": 168000,
+    "netRevenue": 5287700,
+    "tax": 480700,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-16",
+    "grossRevenue": 5470550,
+    "refunds": 0,
+    "discounts": 459500,
+    "netRevenue": 5011050,
+    "tax": 455550,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-17",
+    "grossRevenue": 3088600,
+    "refunds": 0,
+    "discounts": 134000,
+    "netRevenue": 2954600,
+    "tax": 268600,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-18",
+    "grossRevenue": 3501000,
+    "refunds": 0,
+    "discounts": 245000,
+    "netRevenue": 3256000,
+    "tax": 296000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-19",
+    "grossRevenue": 2524500,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2524500,
+    "tax": 229500,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-20",
+    "grossRevenue": 1710500,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1710500,
+    "tax": 155500,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-21",
+    "grossRevenue": 2147950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 2067450,
+    "tax": 187950,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-22",
+    "grossRevenue": 4482500,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4482500,
+    "tax": 407500,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-23",
+    "grossRevenue": 1347500,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1347500,
+    "tax": 122500,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-24",
+    "grossRevenue": 1790450,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 1709950,
+    "tax": 155450,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-25",
+    "grossRevenue": 2739000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2739000,
+    "tax": 249000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-26",
+    "grossRevenue": 3858150,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 3609650,
+    "tax": 328150,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-27",
+    "grossRevenue": 792000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 792000,
+    "tax": 72000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-28",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-29",
+    "grossRevenue": 5038000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5038000,
+    "tax": 458000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-30",
+    "grossRevenue": 3984950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 3904450,
+    "tax": 354950,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2025-08-31",
+    "grossRevenue": 4968400,
+    "refunds": 0,
+    "discounts": 476000,
+    "netRevenue": 4492400,
+    "tax": 408400,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-01",
+    "grossRevenue": 5189150,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 4940650,
+    "tax": 449150,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-02",
+    "grossRevenue": 957000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 957000,
+    "tax": 87000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-03",
+    "grossRevenue": 2497000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2497000,
+    "tax": 227000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-04",
+    "grossRevenue": 1443950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 1363450,
+    "tax": 123950,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-05",
+    "grossRevenue": 781000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 781000,
+    "tax": 71000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-06",
+    "grossRevenue": 2521950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 2441450,
+    "tax": 221950,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-07",
+    "grossRevenue": 1826000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1826000,
+    "tax": 166000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-08",
+    "grossRevenue": 2112000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2112000,
+    "tax": 192000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-09",
+    "grossRevenue": 4360450,
+    "refunds": 0,
+    "discounts": 395500,
+    "netRevenue": 3964950,
+    "tax": 360450,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-10",
+    "grossRevenue": 253000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 253000,
+    "tax": 23000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-11",
+    "grossRevenue": 1174150,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 925650,
+    "tax": 84150,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-12",
+    "grossRevenue": 1776900,
+    "refunds": 0,
+    "discounts": 161000,
+    "netRevenue": 1615900,
+    "tax": 146900,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-13",
+    "grossRevenue": 3758500,
+    "refunds": 0,
+    "discounts": 255000,
+    "netRevenue": 3503500,
+    "tax": 318500,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-14",
+    "grossRevenue": 2598950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 2518450,
+    "tax": 228950,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-15",
+    "grossRevenue": 2244000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2244000,
+    "tax": 204000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-16",
+    "grossRevenue": 2204700,
+    "refunds": 0,
+    "discounts": 63000,
+    "netRevenue": 2141700,
+    "tax": 194700,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-17",
+    "grossRevenue": 1413500,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1413500,
+    "tax": 128500,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-18",
+    "grossRevenue": 2054150,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 1805650,
+    "tax": 164150,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-19",
+    "grossRevenue": 1520950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 1440450,
+    "tax": 130950,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-20",
+    "grossRevenue": 2959000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2959000,
+    "tax": 269000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-21",
+    "grossRevenue": 4826150,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 4577650,
+    "tax": 416150,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-22",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-23",
+    "grossRevenue": 2265750,
+    "refunds": 0,
+    "discounts": 332500,
+    "netRevenue": 1933250,
+    "tax": 175750,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-24",
+    "grossRevenue": 1738000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1738000,
+    "tax": 158000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-25",
+    "grossRevenue": 1903000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1903000,
+    "tax": 173000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-26",
+    "grossRevenue": 244950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 164450,
+    "tax": 14950,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-27",
+    "grossRevenue": 3026150,
+    "refunds": 0,
+    "discounts": 318500,
+    "netRevenue": 2707650,
+    "tax": 246150,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-28",
+    "grossRevenue": 1793000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1793000,
+    "tax": 163000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-29",
+    "grossRevenue": 1219900,
+    "refunds": 0,
+    "discounts": 231000,
+    "netRevenue": 988900,
+    "tax": 89900,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-09-30",
+    "grossRevenue": 1474000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1474000,
+    "tax": 134000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-01",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-02",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-03",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-04",
+    "grossRevenue": 1708300,
+    "refunds": 0,
+    "discounts": 77000,
+    "netRevenue": 1631300,
+    "tax": 148300,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-05",
+    "grossRevenue": 1111000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1111000,
+    "tax": 101000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-06",
+    "grossRevenue": 3995950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 3915450,
+    "tax": 355950,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-07",
+    "grossRevenue": 1180650,
+    "refunds": 0,
+    "discounts": 73500,
+    "netRevenue": 1107150,
+    "tax": 100650,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-08",
+    "grossRevenue": 1551000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1551000,
+    "tax": 141000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-09",
+    "grossRevenue": 1760000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1760000,
+    "tax": 160000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-10",
+    "grossRevenue": 2178000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2178000,
+    "tax": 198000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-11",
+    "grossRevenue": 1839950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 1759450,
+    "tax": 159950,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-12",
+    "grossRevenue": 785500,
+    "refunds": 0,
+    "discounts": 175000,
+    "netRevenue": 610500,
+    "tax": 55500,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-13",
+    "grossRevenue": 1067000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1067000,
+    "tax": 97000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-14",
+    "grossRevenue": 2271500,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2271500,
+    "tax": 206500,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-15",
+    "grossRevenue": 255600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 171600,
+    "tax": 15600,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-16",
+    "grossRevenue": 2068000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2068000,
+    "tax": 188000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-17",
+    "grossRevenue": 2742400,
+    "refunds": 0,
+    "discounts": 131000,
+    "netRevenue": 2611400,
+    "tax": 237400,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-18",
+    "grossRevenue": 1289950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 1209450,
+    "tax": 109950,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-19",
+    "grossRevenue": 7750700,
+    "refunds": 0,
+    "discounts": 318000,
+    "netRevenue": 7432700,
+    "tax": 675700,
+    "orders": 15,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-20",
+    "grossRevenue": 3596650,
+    "refunds": 0,
+    "discounts": 388500,
+    "netRevenue": 3208150,
+    "tax": 291650,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-21",
+    "grossRevenue": 1690300,
+    "refunds": 0,
+    "discounts": 147000,
+    "netRevenue": 1543300,
+    "tax": 140300,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-22",
+    "grossRevenue": 3005600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 2921600,
+    "tax": 265600,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-23",
+    "grossRevenue": 4885850,
+    "refunds": 0,
+    "discounts": 311500,
+    "netRevenue": 4574350,
+    "tax": 415850,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-24",
+    "grossRevenue": 4450600,
+    "refunds": 0,
+    "discounts": 154000,
+    "netRevenue": 4296600,
+    "tax": 390600,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-25",
+    "grossRevenue": 2528350,
+    "refunds": 0,
+    "discounts": 346500,
+    "netRevenue": 2181850,
+    "tax": 198350,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-26",
+    "grossRevenue": 1562000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1562000,
+    "tax": 142000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-27",
+    "grossRevenue": 255600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 171600,
+    "tax": 15600,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-28",
+    "grossRevenue": 1738000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1738000,
+    "tax": 158000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-29",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-30",
+    "grossRevenue": 1760000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1760000,
+    "tax": 160000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-10-31",
+    "grossRevenue": 4729700,
+    "refunds": 0,
+    "discounts": 168000,
+    "netRevenue": 4561700,
+    "tax": 414700,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-01",
+    "grossRevenue": 1943500,
+    "refunds": 0,
+    "discounts": 420000,
+    "netRevenue": 1523500,
+    "tax": 138500,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-02",
+    "grossRevenue": 4400750,
+    "refunds": 0,
+    "discounts": 542500,
+    "netRevenue": 3858250,
+    "tax": 350750,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-03",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-04",
+    "grossRevenue": 2494100,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 2410100,
+    "tax": 219100,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-05",
+    "grossRevenue": 506000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 506000,
+    "tax": 46000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-06",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-07",
+    "grossRevenue": 1536800,
+    "refunds": 0,
+    "discounts": 252000,
+    "netRevenue": 1284800,
+    "tax": 116800,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-08",
+    "grossRevenue": 726000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 726000,
+    "tax": 66000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-09",
+    "grossRevenue": 2387050,
+    "refunds": 0,
+    "discounts": 164500,
+    "netRevenue": 2222550,
+    "tax": 202050,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-10",
+    "grossRevenue": 3443000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3443000,
+    "tax": 313000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-11",
+    "grossRevenue": 3836150,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 3587650,
+    "tax": 326150,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-12",
+    "grossRevenue": 759000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 759000,
+    "tax": 69000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-13",
+    "grossRevenue": 1814400,
+    "refunds": 0,
+    "discounts": 336000,
+    "netRevenue": 1478400,
+    "tax": 134400,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-14",
+    "grossRevenue": 1501200,
+    "refunds": 0,
+    "discounts": 168000,
+    "netRevenue": 1333200,
+    "tax": 121200,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-15",
+    "grossRevenue": 946000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 946000,
+    "tax": 86000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-16",
+    "grossRevenue": 517000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 517000,
+    "tax": 47000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-17",
+    "grossRevenue": 4229200,
+    "refunds": 0,
+    "discounts": 168000,
+    "netRevenue": 4061200,
+    "tax": 369200,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-18",
+    "grossRevenue": 1487950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 1407450,
+    "tax": 127950,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-19",
+    "grossRevenue": 1749000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1749000,
+    "tax": 159000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-20",
+    "grossRevenue": 1299400,
+    "refunds": 0,
+    "discounts": 96000,
+    "netRevenue": 1203400,
+    "tax": 109400,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-21",
+    "grossRevenue": 979400,
+    "refunds": 0,
+    "discounts": 216000,
+    "netRevenue": 763400,
+    "tax": 69400,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-22",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-23",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-24",
+    "grossRevenue": 5379000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5379000,
+    "tax": 489000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-25",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-26",
+    "grossRevenue": 770000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 770000,
+    "tax": 70000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-27",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-28",
+    "grossRevenue": 1012000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1012000,
+    "tax": 92000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-29",
+    "grossRevenue": 2948000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2948000,
+    "tax": 268000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-11-30",
+    "grossRevenue": 2860000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2860000,
+    "tax": 260000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-01",
+    "grossRevenue": 2475000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2475000,
+    "tax": 225000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-02",
+    "grossRevenue": 4100250,
+    "refunds": 0,
+    "discounts": 577500,
+    "netRevenue": 3522750,
+    "tax": 320250,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-03",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-04",
+    "grossRevenue": 2224200,
+    "refunds": 0,
+    "discounts": 308000,
+    "netRevenue": 1916200,
+    "tax": 174200,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-05",
+    "grossRevenue": 3126600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 3042600,
+    "tax": 276600,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-06",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-07",
+    "grossRevenue": 1570800,
+    "refunds": 0,
+    "discounts": 462000,
+    "netRevenue": 1108800,
+    "tax": 100800,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-08",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-09",
+    "grossRevenue": 2068000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2068000,
+    "tax": 188000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-10",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-11",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-12",
+    "grossRevenue": 781000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 781000,
+    "tax": 71000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-13",
+    "grossRevenue": 2175700,
+    "refunds": 0,
+    "discounts": 133000,
+    "netRevenue": 2042700,
+    "tax": 185700,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-14",
+    "grossRevenue": 2815400,
+    "refunds": 0,
+    "discounts": 336000,
+    "netRevenue": 2479400,
+    "tax": 225400,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-15",
+    "grossRevenue": 209000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 209000,
+    "tax": 19000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-16",
+    "grossRevenue": 1793000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1793000,
+    "tax": 163000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-17",
+    "grossRevenue": 3102000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3102000,
+    "tax": 282000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-18",
+    "grossRevenue": 2695000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2695000,
+    "tax": 245000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-19",
+    "grossRevenue": 3230400,
+    "refunds": 0,
+    "discounts": 476000,
+    "netRevenue": 2754400,
+    "tax": 250400,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-20",
+    "grossRevenue": 3964550,
+    "refunds": 0,
+    "discounts": 284500,
+    "netRevenue": 3680050,
+    "tax": 334550,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-21",
+    "grossRevenue": 2848750,
+    "refunds": 0,
+    "discounts": 332500,
+    "netRevenue": 2516250,
+    "tax": 228750,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-22",
+    "grossRevenue": 6768800,
+    "refunds": 0,
+    "discounts": 182000,
+    "netRevenue": 6586800,
+    "tax": 598800,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-23",
+    "grossRevenue": 5126000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5126000,
+    "tax": 466000,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-24",
+    "grossRevenue": 2343000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2343000,
+    "tax": 213000,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-25",
+    "grossRevenue": 10041200,
+    "refunds": 0,
+    "discounts": 238000,
+    "netRevenue": 9803200,
+    "tax": 891200,
+    "orders": 16,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-26",
+    "grossRevenue": 4622600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 4538600,
+    "tax": 412600,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-27",
+    "grossRevenue": 6296950,
+    "refunds": 0,
+    "discounts": 500500,
+    "netRevenue": 5796450,
+    "tax": 526950,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-28",
+    "grossRevenue": 3572150,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 3323650,
+    "tax": 302150,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-29",
+    "grossRevenue": 4452150,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 4203650,
+    "tax": 382150,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-30",
+    "grossRevenue": 6438850,
+    "refunds": 0,
+    "discounts": 731500,
+    "netRevenue": 5707350,
+    "tax": 518850,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2025-12-31",
+    "grossRevenue": 5579000,
+    "refunds": 0,
+    "discounts": 90000,
+    "netRevenue": 5489000,
+    "tax": 499000,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-01",
+    "grossRevenue": 6711700,
+    "refunds": 0,
+    "discounts": 643000,
+    "netRevenue": 6068700,
+    "tax": 551700,
+    "orders": 51,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-02",
+    "grossRevenue": 7855750,
+    "refunds": 0,
+    "discounts": 752500,
+    "netRevenue": 7103250,
+    "tax": 645750,
+    "orders": 39,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-03",
+    "grossRevenue": 7506750,
+    "refunds": 0,
+    "discounts": 282500,
+    "netRevenue": 7224250,
+    "tax": 656750,
+    "orders": 33,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-04",
+    "grossRevenue": 5711950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 5631450,
+    "tax": 511950,
+    "orders": 21,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-05",
+    "grossRevenue": 2027400,
+    "refunds": 0,
+    "discounts": 406000,
+    "netRevenue": 1621400,
+    "tax": 147400,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-06",
+    "grossRevenue": 3586100,
+    "refunds": 0,
+    "discounts": 329000,
+    "netRevenue": 3257100,
+    "tax": 296100,
+    "orders": 15,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-07",
+    "grossRevenue": 2266000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2266000,
+    "tax": 206000,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-08",
+    "grossRevenue": 8805250,
+    "refunds": 0,
+    "discounts": 717500,
+    "netRevenue": 8087750,
+    "tax": 735250,
+    "orders": 42,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-09",
+    "grossRevenue": 5495900,
+    "refunds": 0,
+    "discounts": 371000,
+    "netRevenue": 5124900,
+    "tax": 465900,
+    "orders": 33,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-10",
+    "grossRevenue": 8269600,
+    "refunds": 0,
+    "discounts": 244000,
+    "netRevenue": 8025600,
+    "tax": 729600,
+    "orders": 43,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-11",
+    "grossRevenue": 2882000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2882000,
+    "tax": 262000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-12",
+    "grossRevenue": 3234000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3234000,
+    "tax": 294000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-13",
+    "grossRevenue": 5632450,
+    "refunds": 0,
+    "discounts": 325500,
+    "netRevenue": 5306950,
+    "tax": 482450,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-14",
+    "grossRevenue": 1408000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1408000,
+    "tax": 128000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-15",
+    "grossRevenue": 1201600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 1117600,
+    "tax": 101600,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-16",
+    "grossRevenue": 6737200,
+    "refunds": 0,
+    "discounts": 168000,
+    "netRevenue": 6569200,
+    "tax": 597200,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-17",
+    "grossRevenue": 7315000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 7315000,
+    "tax": 665000,
+    "orders": 15,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-18",
+    "grossRevenue": 3003000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3003000,
+    "tax": 273000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-19",
+    "grossRevenue": 6304350,
+    "refunds": 0,
+    "discounts": 206500,
+    "netRevenue": 6097850,
+    "tax": 554350,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-20",
+    "grossRevenue": 4254150,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 4005650,
+    "tax": 364150,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-21",
+    "grossRevenue": 330000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 330000,
+    "tax": 30000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-22",
+    "grossRevenue": 713550,
+    "refunds": 0,
+    "discounts": 234500,
+    "netRevenue": 479050,
+    "tax": 43550,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-23",
+    "grossRevenue": 2134000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2134000,
+    "tax": 194000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-24",
+    "grossRevenue": 7864800,
+    "refunds": 0,
+    "discounts": 552000,
+    "netRevenue": 7312800,
+    "tax": 664800,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-25",
+    "grossRevenue": 4540950,
+    "refunds": 0,
+    "discounts": 570500,
+    "netRevenue": 3970450,
+    "tax": 360950,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-26",
+    "grossRevenue": 4320850,
+    "refunds": 0,
+    "discounts": 241500,
+    "netRevenue": 4079350,
+    "tax": 370850,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-27",
+    "grossRevenue": 3068400,
+    "refunds": 0,
+    "discounts": 336000,
+    "netRevenue": 2732400,
+    "tax": 248400,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-28",
+    "grossRevenue": 1034000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1034000,
+    "tax": 94000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-29",
+    "grossRevenue": 5598350,
+    "refunds": 0,
+    "discounts": 776500,
+    "netRevenue": 4821850,
+    "tax": 438350,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-30",
+    "grossRevenue": 6831600,
+    "refunds": 0,
+    "discounts": 434000,
+    "netRevenue": 6397600,
+    "tax": 581600,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-01-31",
+    "grossRevenue": 7777000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 7777000,
+    "tax": 707000,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-01",
+    "grossRevenue": 8836700,
+    "refunds": 0,
+    "discounts": 623000,
+    "netRevenue": 8213700,
+    "tax": 746700,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-02",
+    "grossRevenue": 1504150,
+    "refunds": 0,
+    "discounts": 248500,
+    "netRevenue": 1255650,
+    "tax": 114150,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-03",
+    "grossRevenue": 1286400,
+    "refunds": 0,
+    "discounts": 336000,
+    "netRevenue": 950400,
+    "tax": 86400,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-04",
+    "grossRevenue": 869000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 869000,
+    "tax": 79000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-05",
+    "grossRevenue": 3735400,
+    "refunds": 0,
+    "discounts": 266000,
+    "netRevenue": 3469400,
+    "tax": 315400,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-06",
+    "grossRevenue": 6352200,
+    "refunds": 0,
+    "discounts": 168000,
+    "netRevenue": 6184200,
+    "tax": 562200,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-07",
+    "grossRevenue": 6006000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 6006000,
+    "tax": 546000,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-08",
+    "grossRevenue": 3388000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3388000,
+    "tax": 308000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-09",
+    "grossRevenue": 10032200,
+    "refunds": 0,
+    "discounts": 658000,
+    "netRevenue": 9374200,
+    "tax": 852200,
+    "orders": 20,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-10",
+    "grossRevenue": 8371100,
+    "refunds": 0,
+    "discounts": 329000,
+    "netRevenue": 8042100,
+    "tax": 731100,
+    "orders": 17,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-11",
+    "grossRevenue": 3708400,
+    "refunds": 0,
+    "discounts": 96000,
+    "netRevenue": 3612400,
+    "tax": 328400,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-12",
+    "grossRevenue": 4155500,
+    "refunds": 0,
+    "discounts": 245000,
+    "netRevenue": 3910500,
+    "tax": 355500,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-13",
+    "grossRevenue": 5628800,
+    "refunds": 0,
+    "discounts": 252000,
+    "netRevenue": 5376800,
+    "tax": 488800,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-14",
+    "grossRevenue": 5367750,
+    "refunds": 0,
+    "discounts": 332500,
+    "netRevenue": 5035250,
+    "tax": 457750,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-15",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-16",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-17",
+    "grossRevenue": 517000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 517000,
+    "tax": 47000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-18",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-19",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-20",
+    "grossRevenue": 2552000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2552000,
+    "tax": 232000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-21",
+    "grossRevenue": 4983000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4983000,
+    "tax": 453000,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-22",
+    "grossRevenue": 7711000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 7711000,
+    "tax": 701000,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-23",
+    "grossRevenue": 5610000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5610000,
+    "tax": 510000,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-24",
+    "grossRevenue": 7942000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 7942000,
+    "tax": 722000,
+    "orders": 16,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-25",
+    "grossRevenue": 2475000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2475000,
+    "tax": 225000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-26",
+    "grossRevenue": 6270000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 6270000,
+    "tax": 570000,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-27",
+    "grossRevenue": 13668200,
+    "refunds": 0,
+    "discounts": 48000,
+    "netRevenue": 13620200,
+    "tax": 1238200,
+    "orders": 20,
+    "cogs": null
+  },
+  {
+    "date": "2026-02-28",
+    "grossRevenue": 12733200,
+    "refunds": 0,
+    "discounts": 48000,
+    "netRevenue": 12685200,
+    "tax": 1153200,
+    "orders": 20,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-01",
+    "grossRevenue": 8035900,
+    "refunds": 0,
+    "discounts": 161000,
+    "netRevenue": 7874900,
+    "tax": 715900,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-02",
+    "grossRevenue": 5095950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 5015450,
+    "tax": 455950,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-03",
+    "grossRevenue": 4633600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 4549600,
+    "tax": 413600,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-04",
+    "grossRevenue": 2002000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2002000,
+    "tax": 182000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-05",
+    "grossRevenue": 1915200,
+    "refunds": 0,
+    "discounts": 98000,
+    "netRevenue": 1817200,
+    "tax": 165200,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-06",
+    "grossRevenue": 3586000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3586000,
+    "tax": 326000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-07",
+    "grossRevenue": 6256850,
+    "refunds": 0,
+    "discounts": 241500,
+    "netRevenue": 6015350,
+    "tax": 546850,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-08",
+    "grossRevenue": 4473800,
+    "refunds": 0,
+    "discounts": 252000,
+    "netRevenue": 4221800,
+    "tax": 383800,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-09",
+    "grossRevenue": 7546000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 7546000,
+    "tax": 686000,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-10",
+    "grossRevenue": 3369750,
+    "refunds": 0,
+    "discounts": 402500,
+    "netRevenue": 2967250,
+    "tax": 269750,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-11",
+    "grossRevenue": 2926000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2926000,
+    "tax": 266000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-12",
+    "grossRevenue": 4785000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4785000,
+    "tax": 435000,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-13",
+    "grossRevenue": 3465000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3465000,
+    "tax": 315000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-14",
+    "grossRevenue": 7798400,
+    "refunds": 0,
+    "discounts": 336000,
+    "netRevenue": 7462400,
+    "tax": 678400,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-15",
+    "grossRevenue": 3874600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 3790600,
+    "tax": 344600,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-16",
+    "grossRevenue": 7675150,
+    "refunds": 0,
+    "discounts": 1018500,
+    "netRevenue": 6656650,
+    "tax": 605150,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-17",
+    "grossRevenue": 3984950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 3904450,
+    "tax": 354950,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-18",
+    "grossRevenue": 7099800,
+    "refunds": 0,
+    "discounts": 282000,
+    "netRevenue": 6817800,
+    "tax": 619800,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-19",
+    "grossRevenue": 4917000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4917000,
+    "tax": 447000,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-20",
+    "grossRevenue": 3680550,
+    "refunds": 0,
+    "discounts": 374500,
+    "netRevenue": 3306050,
+    "tax": 300550,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-21",
+    "grossRevenue": 7128450,
+    "refunds": 0,
+    "discounts": 325500,
+    "netRevenue": 6802950,
+    "tax": 618450,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-22",
+    "grossRevenue": 3133800,
+    "refunds": 0,
+    "discounts": 342000,
+    "netRevenue": 2791800,
+    "tax": 253800,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-23",
+    "grossRevenue": 4028600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 3944600,
+    "tax": 358600,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-24",
+    "grossRevenue": 2252700,
+    "refunds": 0,
+    "discounts": 133000,
+    "netRevenue": 2119700,
+    "tax": 192700,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-25",
+    "grossRevenue": 2400950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 2320450,
+    "tax": 210950,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-26",
+    "grossRevenue": 5060000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5060000,
+    "tax": 460000,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-27",
+    "grossRevenue": 4736000,
+    "refunds": 0,
+    "discounts": 490000,
+    "netRevenue": 4246000,
+    "tax": 386000,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-28",
+    "grossRevenue": 7636300,
+    "refunds": 0,
+    "discounts": 637000,
+    "netRevenue": 6999300,
+    "tax": 636300,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-29",
+    "grossRevenue": 5851700,
+    "refunds": 0,
+    "discounts": 553000,
+    "netRevenue": 5298700,
+    "tax": 481700,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-30",
+    "grossRevenue": 5810050,
+    "refunds": 0,
+    "discounts": 639500,
+    "netRevenue": 5170550,
+    "tax": 470050,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-03-31",
+    "grossRevenue": 1100000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1100000,
+    "tax": 100000,
+    "orders": 1,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-01",
+    "grossRevenue": 3377000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3377000,
+    "tax": 307000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-02",
+    "grossRevenue": 1111000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1111000,
+    "tax": 101000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-03",
+    "grossRevenue": 2670000,
+    "refunds": 0,
+    "discounts": 140000,
+    "netRevenue": 2530000,
+    "tax": 230000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-04",
+    "grossRevenue": 1584000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1584000,
+    "tax": 144000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-05",
+    "grossRevenue": 1182550,
+    "refunds": 0,
+    "discounts": 164500,
+    "netRevenue": 1018050,
+    "tax": 92550,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-06",
+    "grossRevenue": 5203000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5203000,
+    "tax": 473000,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-07",
+    "grossRevenue": 6527200,
+    "refunds": 0,
+    "discounts": 68000,
+    "netRevenue": 6459200,
+    "tax": 587200,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-08",
+    "grossRevenue": 3498000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3498000,
+    "tax": 318000,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-09",
+    "grossRevenue": 3093800,
+    "refunds": 0,
+    "discounts": 192000,
+    "netRevenue": 2901800,
+    "tax": 263800,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-10",
+    "grossRevenue": 2747000,
+    "refunds": 0,
+    "discounts": 140000,
+    "netRevenue": 2607000,
+    "tax": 237000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-11",
+    "grossRevenue": 7663690,
+    "refunds": 0,
+    "discounts": 473100,
+    "netRevenue": 7190590,
+    "tax": 653690,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-12",
+    "grossRevenue": 2148650,
+    "refunds": 0,
+    "discounts": 73500,
+    "netRevenue": 2075150,
+    "tax": 188650,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-13",
+    "grossRevenue": 5280000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 5280000,
+    "tax": 480000,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-14",
+    "grossRevenue": 1221000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1221000,
+    "tax": 111000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-15",
+    "grossRevenue": 4503100,
+    "refunds": 0,
+    "discounts": 69000,
+    "netRevenue": 4434100,
+    "tax": 403100,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-16",
+    "grossRevenue": 1449150,
+    "refunds": 0,
+    "discounts": 138500,
+    "netRevenue": 1310650,
+    "tax": 119150,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-17",
+    "grossRevenue": 8126600,
+    "refunds": 0,
+    "discounts": 354000,
+    "netRevenue": 7772600,
+    "tax": 706600,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-18",
+    "grossRevenue": 8893300,
+    "refunds": 0,
+    "discounts": 497000,
+    "netRevenue": 8396300,
+    "tax": 763300,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-19",
+    "grossRevenue": 4970200,
+    "refunds": 0,
+    "discounts": 238000,
+    "netRevenue": 4732200,
+    "tax": 430200,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-20",
+    "grossRevenue": 3318800,
+    "refunds": 0,
+    "discounts": 252000,
+    "netRevenue": 3066800,
+    "tax": 278800,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-21",
+    "grossRevenue": 7174950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 7094450,
+    "tax": 644950,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-22",
+    "grossRevenue": 0,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 0,
+    "tax": 0,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-23",
+    "grossRevenue": 3413700,
+    "refunds": 0,
+    "discounts": 73000,
+    "netRevenue": 3340700,
+    "tax": 303700,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-24",
+    "grossRevenue": 2431000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2431000,
+    "tax": 221000,
+    "orders": 5,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-25",
+    "grossRevenue": 4550300,
+    "refunds": 0,
+    "discounts": 147000,
+    "netRevenue": 4403300,
+    "tax": 400300,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-26",
+    "grossRevenue": 9780150,
+    "refunds": 0,
+    "discounts": 318500,
+    "netRevenue": 9461650,
+    "tax": 860150,
+    "orders": 19,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-27",
+    "grossRevenue": 8822150,
+    "refunds": 0,
+    "discounts": 438500,
+    "netRevenue": 8383650,
+    "tax": 762150,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-28",
+    "grossRevenue": 7407000,
+    "refunds": 0,
+    "discounts": 840000,
+    "netRevenue": 6567000,
+    "tax": 597000,
+    "orders": 15,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-29",
+    "grossRevenue": 10007600,
+    "refunds": 0,
+    "discounts": 24000,
+    "netRevenue": 9983600,
+    "tax": 907600,
+    "orders": 19,
+    "cogs": null
+  },
+  {
+    "date": "2026-04-30",
+    "grossRevenue": 7530250,
+    "refunds": 0,
+    "discounts": 157500,
+    "netRevenue": 7372750,
+    "tax": 670250,
+    "orders": 15,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-01",
+    "grossRevenue": 8969350,
+    "refunds": 0,
+    "discounts": 176500,
+    "netRevenue": 8792850,
+    "tax": 799350,
+    "orders": 16,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-02",
+    "grossRevenue": 8909400,
+    "refunds": 0,
+    "discounts": 336000,
+    "netRevenue": 8573400,
+    "tax": 779400,
+    "orders": 14,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-03",
+    "grossRevenue": 2535550,
+    "refunds": 0,
+    "discounts": 164500,
+    "netRevenue": 2371050,
+    "tax": 215550,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-04",
+    "grossRevenue": 770000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 770000,
+    "tax": 70000,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-05",
+    "grossRevenue": 4565000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4565000,
+    "tax": 415000,
+    "orders": 16,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-06",
+    "grossRevenue": 6465850,
+    "refunds": 0,
+    "discounts": 241500,
+    "netRevenue": 6224350,
+    "tax": 565850,
+    "orders": 22,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-07",
+    "grossRevenue": 1949600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 1865600,
+    "tax": 169600,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-08",
+    "grossRevenue": 4571250,
+    "refunds": 0,
+    "discounts": 157500,
+    "netRevenue": 4413750,
+    "tax": 401250,
+    "orders": 20,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-09",
+    "grossRevenue": 996950,
+    "refunds": 0,
+    "discounts": 150500,
+    "netRevenue": 846450,
+    "tax": 76950,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-10",
+    "grossRevenue": 2489800,
+    "refunds": 0,
+    "discounts": 72000,
+    "netRevenue": 2417800,
+    "tax": 219800,
+    "orders": 14,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-11",
+    "grossRevenue": 2145000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2145000,
+    "tax": 195000,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-12",
+    "grossRevenue": 2090000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2090000,
+    "tax": 190000,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-13",
+    "grossRevenue": 4466000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4466000,
+    "tax": 406000,
+    "orders": 14,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-14",
+    "grossRevenue": 6106300,
+    "refunds": 0,
+    "discounts": 207000,
+    "netRevenue": 5899300,
+    "tax": 536300,
+    "orders": 24,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-15",
+    "grossRevenue": 6148400,
+    "refunds": 0,
+    "discounts": 336000,
+    "netRevenue": 5812400,
+    "tax": 528400,
+    "orders": 14,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-16",
+    "grossRevenue": 12021550,
+    "refunds": 0,
+    "discounts": 234500,
+    "netRevenue": 11787050,
+    "tax": 1071550,
+    "orders": 37,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-17",
+    "grossRevenue": 2732350,
+    "refunds": 0,
+    "discounts": 66500,
+    "netRevenue": 2665850,
+    "tax": 242350,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-18",
+    "grossRevenue": 3327200,
+    "refunds": 0,
+    "discounts": 168000,
+    "netRevenue": 3159200,
+    "tax": 287200,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-19",
+    "grossRevenue": 3008200,
+    "refunds": 0,
+    "discounts": 168000,
+    "netRevenue": 2840200,
+    "tax": 258200,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-20",
+    "grossRevenue": 2049900,
+    "refunds": 0,
+    "discounts": 71000,
+    "netRevenue": 1978900,
+    "tax": 179900,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-21",
+    "grossRevenue": 5118000,
+    "refunds": 0,
+    "discounts": 300000,
+    "netRevenue": 4818000,
+    "tax": 438000,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-22",
+    "grossRevenue": 5033400,
+    "refunds": 0,
+    "discounts": 376000,
+    "netRevenue": 4657400,
+    "tax": 423400,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-23",
+    "grossRevenue": 4991100,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 4907100,
+    "tax": 446100,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-24",
+    "grossRevenue": 6466650,
+    "refunds": 0,
+    "discounts": 453500,
+    "netRevenue": 6013150,
+    "tax": 546650,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-25",
+    "grossRevenue": 1883250,
+    "refunds": 0,
+    "discounts": 87500,
+    "netRevenue": 1795750,
+    "tax": 163250,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-26",
+    "grossRevenue": 1405500,
+    "refunds": 0,
+    "discounts": 25000,
+    "netRevenue": 1380500,
+    "tax": 125500,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-27",
+    "grossRevenue": 2511600,
+    "refunds": 0,
+    "discounts": 74000,
+    "netRevenue": 2437600,
+    "tax": 221600,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-28",
+    "grossRevenue": 2649200,
+    "refunds": 0,
+    "discounts": 238000,
+    "netRevenue": 2411200,
+    "tax": 219200,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-29",
+    "grossRevenue": 7121900,
+    "refunds": 0,
+    "discounts": 336000,
+    "netRevenue": 6785900,
+    "tax": 616900,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-30",
+    "grossRevenue": 10429750,
+    "refunds": 0,
+    "discounts": 477500,
+    "netRevenue": 9952250,
+    "tax": 904750,
+    "orders": 15,
+    "cogs": null
+  },
+  {
+    "date": "2026-05-31",
+    "grossRevenue": 1947000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1947000,
+    "tax": 177000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-01",
+    "grossRevenue": 6347000,
+    "refunds": 0,
+    "discounts": 220000,
+    "netRevenue": 6127000,
+    "tax": 557000,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-02",
+    "grossRevenue": 3644650,
+    "refunds": 0,
+    "discounts": 73500,
+    "netRevenue": 3571150,
+    "tax": 324650,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-03",
+    "grossRevenue": 5489750,
+    "refunds": 0,
+    "discounts": 157500,
+    "netRevenue": 5332250,
+    "tax": 484750,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-04",
+    "grossRevenue": 2554950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 2474450,
+    "tax": 224950,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-05",
+    "grossRevenue": 4525450,
+    "refunds": 0,
+    "discounts": 395500,
+    "netRevenue": 4129950,
+    "tax": 375450,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-06",
+    "grossRevenue": 5889300,
+    "refunds": 0,
+    "discounts": 67000,
+    "netRevenue": 5822300,
+    "tax": 529300,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-07",
+    "grossRevenue": 4951750,
+    "refunds": 0,
+    "discounts": 92500,
+    "netRevenue": 4859250,
+    "tax": 441750,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-08",
+    "grossRevenue": 1232000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 1232000,
+    "tax": 112000,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-09",
+    "grossRevenue": 2244000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 2244000,
+    "tax": 204000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-10",
+    "grossRevenue": 6336000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 6336000,
+    "tax": 576000,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-11",
+    "grossRevenue": 3742600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 3658600,
+    "tax": 332600,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-12",
+    "grossRevenue": 8214700,
+    "refunds": 0,
+    "discounts": 188000,
+    "netRevenue": 8026700,
+    "tax": 729700,
+    "orders": 14,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-13",
+    "grossRevenue": 6576960,
+    "refunds": 0,
+    "discounts": 670400,
+    "netRevenue": 5906560,
+    "tax": 536960,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-14",
+    "grossRevenue": 10400800,
+    "refunds": 0,
+    "discounts": 327000,
+    "netRevenue": 10073800,
+    "tax": 915800,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-15",
+    "grossRevenue": 9250550,
+    "refunds": 0,
+    "discounts": 224500,
+    "netRevenue": 9026050,
+    "tax": 820550,
+    "orders": 15,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-16",
+    "grossRevenue": 7397600,
+    "refunds": 0,
+    "discounts": 714000,
+    "netRevenue": 6683600,
+    "tax": 607600,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-17",
+    "grossRevenue": 1828250,
+    "refunds": 0,
+    "discounts": 87500,
+    "netRevenue": 1740750,
+    "tax": 158250,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-18",
+    "grossRevenue": 3647250,
+    "refunds": 0,
+    "discounts": 157500,
+    "netRevenue": 3489750,
+    "tax": 317250,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-19",
+    "grossRevenue": 12359100,
+    "refunds": 0,
+    "discounts": 709000,
+    "netRevenue": 11650100,
+    "tax": 1059100,
+    "orders": 15,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-20",
+    "grossRevenue": 9391800,
+    "refunds": 0,
+    "discounts": 572000,
+    "netRevenue": 8819800,
+    "tax": 801800,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-21",
+    "grossRevenue": 10086750,
+    "refunds": 0,
+    "discounts": 827500,
+    "netRevenue": 9259250,
+    "tax": 841750,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-22",
+    "grossRevenue": 7914550,
+    "refunds": 0,
+    "discounts": 494500,
+    "netRevenue": 7420050,
+    "tax": 674550,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-23",
+    "grossRevenue": 9097100,
+    "refunds": 0,
+    "discounts": 329000,
+    "netRevenue": 8768100,
+    "tax": 797100,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-24",
+    "grossRevenue": 5403600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 5319600,
+    "tax": 483600,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-25",
+    "grossRevenue": 2543350,
+    "refunds": 0,
+    "discounts": 416500,
+    "netRevenue": 2126850,
+    "tax": 193350,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-26",
+    "grossRevenue": 4608750,
+    "refunds": 0,
+    "discounts": 332500,
+    "netRevenue": 4276250,
+    "tax": 388750,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-27",
+    "grossRevenue": 10167200,
+    "refunds": 0,
+    "discounts": 628000,
+    "netRevenue": 9539200,
+    "tax": 867200,
+    "orders": 16,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-28",
+    "grossRevenue": 8884000,
+    "refunds": 0,
+    "discounts": 480000,
+    "netRevenue": 8404000,
+    "tax": 764000,
+    "orders": 19,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-29",
+    "grossRevenue": 7680800,
+    "refunds": 0,
+    "discounts": 632000,
+    "netRevenue": 7048800,
+    "tax": 640800,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-06-30",
+    "grossRevenue": 1005850,
+    "refunds": 0,
+    "discounts": 171500,
+    "netRevenue": 834350,
+    "tax": 75850,
+    "orders": 2,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-01",
+    "grossRevenue": 6004600,
+    "refunds": 0,
+    "discounts": 234000,
+    "netRevenue": 5770600,
+    "tax": 524600,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-02",
+    "grossRevenue": 3619000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3619000,
+    "tax": 329000,
+    "orders": 4,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-03",
+    "grossRevenue": 8339500,
+    "refunds": 0,
+    "discounts": 425000,
+    "netRevenue": 7914500,
+    "tax": 719500,
+    "orders": 14,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-04",
+    "grossRevenue": 11525850,
+    "refunds": 0,
+    "discounts": 76500,
+    "netRevenue": 11449350,
+    "tax": 1040850,
+    "orders": 17,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-05",
+    "grossRevenue": 4259250,
+    "refunds": 0,
+    "discounts": 87500,
+    "netRevenue": 4171750,
+    "tax": 379250,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-06",
+    "grossRevenue": 6070700,
+    "refunds": 0,
+    "discounts": 288000,
+    "netRevenue": 5782700,
+    "tax": 525700,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-07",
+    "grossRevenue": 5746900,
+    "refunds": 0,
+    "discounts": 171000,
+    "netRevenue": 5575900,
+    "tax": 506900,
+    "orders": 9,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-08",
+    "grossRevenue": 2217300,
+    "refunds": 0,
+    "discounts": 157000,
+    "netRevenue": 2060300,
+    "tax": 187300,
+    "orders": 3,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-09",
+    "grossRevenue": 2570800,
+    "refunds": 0,
+    "discounts": 252000,
+    "netRevenue": 2318800,
+    "tax": 210800,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-10",
+    "grossRevenue": 8934350,
+    "refunds": 0,
+    "discounts": 416500,
+    "netRevenue": 8517850,
+    "tax": 774350,
+    "orders": 17,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-11",
+    "grossRevenue": 8133350,
+    "refunds": 0,
+    "discounts": 176500,
+    "netRevenue": 7956850,
+    "tax": 723350,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-12",
+    "grossRevenue": 7608500,
+    "refunds": 0,
+    "discounts": 475000,
+    "netRevenue": 7133500,
+    "tax": 648500,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-13",
+    "grossRevenue": 7698350,
+    "refunds": 0,
+    "discounts": 346500,
+    "netRevenue": 7351850,
+    "tax": 668350,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-14",
+    "grossRevenue": 6560400,
+    "refunds": 0,
+    "discounts": 836000,
+    "netRevenue": 5724400,
+    "tax": 520400,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-15",
+    "grossRevenue": 5031120,
+    "refunds": 0,
+    "discounts": 288800,
+    "netRevenue": 4742320,
+    "tax": 431120,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-16",
+    "grossRevenue": 5312550,
+    "refunds": 0,
+    "discounts": 224500,
+    "netRevenue": 5088050,
+    "tax": 462550,
+    "orders": 14,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-17",
+    "grossRevenue": 5227600,
+    "refunds": 0,
+    "discounts": 84000,
+    "netRevenue": 5143600,
+    "tax": 467600,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-18",
+    "grossRevenue": 5084950,
+    "refunds": 0,
+    "discounts": 80500,
+    "netRevenue": 5004450,
+    "tax": 454950,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-19",
+    "grossRevenue": 7984150,
+    "refunds": 0,
+    "discounts": 73500,
+    "netRevenue": 7910650,
+    "tax": 719150,
+    "orders": 10,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-20",
+    "grossRevenue": 5849500,
+    "refunds": 0,
+    "discounts": 135000,
+    "netRevenue": 5714500,
+    "tax": 519500,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-21",
+    "grossRevenue": 4371250,
+    "refunds": 0,
+    "discounts": 507500,
+    "netRevenue": 3863750,
+    "tax": 351250,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-22",
+    "grossRevenue": 5497500,
+    "refunds": 0,
+    "discounts": 25000,
+    "netRevenue": 5472500,
+    "tax": 497500,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-23",
+    "grossRevenue": 5754800,
+    "refunds": 0,
+    "discounts": 312000,
+    "netRevenue": 5442800,
+    "tax": 494800,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-24",
+    "grossRevenue": 7788100,
+    "refunds": 0,
+    "discounts": 549000,
+    "netRevenue": 7239100,
+    "tax": 658100,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-25",
+    "grossRevenue": 5373900,
+    "refunds": 0,
+    "discounts": 51000,
+    "netRevenue": 5322900,
+    "tax": 483900,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-26",
+    "grossRevenue": 11704900,
+    "refunds": 0,
+    "discounts": 211000,
+    "netRevenue": 11493900,
+    "tax": 1044900,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-27",
+    "grossRevenue": 5640050,
+    "refunds": 0,
+    "discounts": 249500,
+    "netRevenue": 5390550,
+    "tax": 490050,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-28",
+    "grossRevenue": 1746300,
+    "refunds": 0,
+    "discounts": 27000,
+    "netRevenue": 1719300,
+    "tax": 156300,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-29",
+    "grossRevenue": 4883300,
+    "refunds": 0,
+    "discounts": 117000,
+    "netRevenue": 4766300,
+    "tax": 433300,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-30",
+    "grossRevenue": 8766950,
+    "refunds": 0,
+    "discounts": 660500,
+    "netRevenue": 8106450,
+    "tax": 736950,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-07-31",
+    "grossRevenue": 8946400,
+    "refunds": 0,
+    "discounts": 571000,
+    "netRevenue": 8375400,
+    "tax": 761400,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-01",
+    "grossRevenue": 7030850,
+    "refunds": 0,
+    "discounts": 311500,
+    "netRevenue": 6719350,
+    "tax": 610850,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-02",
+    "grossRevenue": 5511950,
+    "refunds": 0,
+    "discounts": 430500,
+    "netRevenue": 5081450,
+    "tax": 461950,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-03",
+    "grossRevenue": 9262400,
+    "refunds": 0,
+    "discounts": 436000,
+    "netRevenue": 8826400,
+    "tax": 802400,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-04",
+    "grossRevenue": 2495650,
+    "refunds": 0,
+    "discounts": 178500,
+    "netRevenue": 2317150,
+    "tax": 210650,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-05",
+    "grossRevenue": 7997900,
+    "refunds": 0,
+    "discounts": 46000,
+    "netRevenue": 7951900,
+    "tax": 722900,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-06",
+    "grossRevenue": 4921050,
+    "refunds": 0,
+    "discounts": 619500,
+    "netRevenue": 4301550,
+    "tax": 391050,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-07",
+    "grossRevenue": 7006500,
+    "refunds": 0,
+    "discounts": 555000,
+    "netRevenue": 6451500,
+    "tax": 586500,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-08",
+    "grossRevenue": 7361850,
+    "refunds": 0,
+    "discounts": 521500,
+    "netRevenue": 6840350,
+    "tax": 621850,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-09",
+    "grossRevenue": 5174850,
+    "refunds": 0,
+    "discounts": 171500,
+    "netRevenue": 5003350,
+    "tax": 454850,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-10",
+    "grossRevenue": 6097500,
+    "refunds": 0,
+    "discounts": 350000,
+    "netRevenue": 5747500,
+    "tax": 522500,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-11",
+    "grossRevenue": 7088850,
+    "refunds": 0,
+    "discounts": 226500,
+    "netRevenue": 6862350,
+    "tax": 623850,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-12",
+    "grossRevenue": 7349800,
+    "refunds": 0,
+    "discounts": 92000,
+    "netRevenue": 7257800,
+    "tax": 659800,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-13",
+    "grossRevenue": 9718650,
+    "refunds": 0,
+    "discounts": 273500,
+    "netRevenue": 9445150,
+    "tax": 858650,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-14",
+    "grossRevenue": 10016850,
+    "refunds": 0,
+    "discounts": 206500,
+    "netRevenue": 9810350,
+    "tax": 891850,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-15",
+    "grossRevenue": 11929900,
+    "refunds": 0,
+    "discounts": 931000,
+    "netRevenue": 10998900,
+    "tax": 999900,
+    "orders": 0,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-16",
+    "grossRevenue": 7107850,
+    "refunds": 0,
+    "discounts": 586500,
+    "netRevenue": 6521350,
+    "tax": 592850,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-17",
+    "grossRevenue": 6883750,
+    "refunds": 0,
+    "discounts": 132500,
+    "netRevenue": 6751250,
+    "tax": 613750,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-18",
+    "grossRevenue": 3829400,
+    "refunds": 0,
+    "discounts": 206000,
+    "netRevenue": 3623400,
+    "tax": 329400,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-19",
+    "grossRevenue": 4235000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 4235000,
+    "tax": 385000,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-20",
+    "grossRevenue": 5084500,
+    "refunds": 0,
+    "discounts": 305000,
+    "netRevenue": 4779500,
+    "tax": 434500,
+    "orders": 13,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-21",
+    "grossRevenue": 7437500,
+    "refunds": 0,
+    "discounts": 205000,
+    "netRevenue": 7232500,
+    "tax": 657500,
+    "orders": 15,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-22",
+    "grossRevenue": 7066500,
+    "refunds": 0,
+    "discounts": 175000,
+    "netRevenue": 6891500,
+    "tax": 626500,
+    "orders": 12,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-23",
+    "grossRevenue": 6296850,
+    "refunds": 0,
+    "discounts": 171500,
+    "netRevenue": 6125350,
+    "tax": 556850,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-24",
+    "grossRevenue": 2674550,
+    "refunds": 0,
+    "discounts": 204500,
+    "netRevenue": 2470050,
+    "tax": 224550,
+    "orders": 7,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-25",
+    "grossRevenue": 8245080,
+    "refunds": 0,
+    "discounts": 269200,
+    "netRevenue": 7975880,
+    "tax": 725080,
+    "orders": 15,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-26",
+    "grossRevenue": 9010350,
+    "refunds": 0,
+    "discounts": 261500,
+    "netRevenue": 8748850,
+    "tax": 795350,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-27",
+    "grossRevenue": 5670550,
+    "refunds": 0,
+    "discounts": 164500,
+    "netRevenue": 5506050,
+    "tax": 500550,
+    "orders": 11,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-28",
+    "grossRevenue": 3624500,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 3624500,
+    "tax": 329500,
+    "orders": 6,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-29",
+    "grossRevenue": 4021550,
+    "refunds": 0,
+    "discounts": 374500,
+    "netRevenue": 3647050,
+    "tax": 331550,
+    "orders": 8,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-30",
+    "grossRevenue": 18543300,
+    "refunds": 0,
+    "discounts": 1677000,
+    "netRevenue": 16866300,
+    "tax": 1533300,
+    "orders": 24,
+    "cogs": null
+  },
+  {
+    "date": "2026-08-31",
+    "grossRevenue": 10274000,
+    "refunds": 0,
+    "discounts": 0,
+    "netRevenue": 10274000,
+    "tax": 934000,
+    "orders": 16,
+    "cogs": null
+  }
+]

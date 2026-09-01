@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { assertISODate, validateInsightData } from "./data-validation";
+import { insightData } from "./data";
 import type { InsightData } from "./types";
 
 const emptyData = (): InsightData => ({
@@ -104,4 +105,67 @@ test("accepts null for unavailable social metrics", () => {
     },
   ];
   assert.doesNotThrow(() => validateInsightData(data));
+});
+
+test("ships the full two-year reporting boundary", () => {
+  const result = validateInsightData(insightData);
+  assert.deepEqual(result.revenue, {
+    start: "2024-09-01",
+    end: "2026-08-31",
+    rows: 730,
+  });
+});
+
+test("contains no credential-shaped keys", () => {
+  assert.doesNotMatch(
+    JSON.stringify(insightData),
+    /access[_-]?token|cookie|password|secret|bearer/i,
+  );
+});
+
+test("does not publish profit while COGS is unavailable", () => {
+  assert.ok(
+    insightData.revenue.every((row) => row.cogs === null || row.cogs > 0),
+  );
+});
+
+test("keeps the exact count of invoices with a payment timestamp", () => {
+  assert.equal(
+    insightData.revenue.reduce((sum, row) => sum + row.orders, 0),
+    3_888,
+  );
+});
+
+test("keeps Meta source checksums and coverage gaps", () => {
+  const instagram = insightData.social.filter(
+    (row) => row.platform === "instagram",
+  );
+  const facebook = insightData.social.filter(
+    (row) => row.platform === "facebook",
+  );
+  assert.equal(instagram.length, 730);
+  assert.equal(facebook.length, 730);
+  assert.equal(
+    instagram.reduce((sum, row) => sum + (row.views ?? 0), 0),
+    393_862,
+  );
+  assert.equal(
+    facebook.reduce((sum, row) => sum + (row.interactions ?? 0), 0),
+    2_420,
+  );
+  assert.equal(facebook[0].views, null);
+  assert.equal(
+    facebook.find((row) => row.date === "2025-08-01")?.views,
+    255,
+  );
+});
+
+test("ships verified content, product, and advertising summaries", () => {
+  assert.equal(insightData.content.length, 10);
+  assert.equal(insightData.content[0].views, 28_504);
+  assert.equal(insightData.products.length, 420);
+  assert.equal(
+    insightData.advertising.reduce((sum, row) => sum + row.spend, 0),
+    869_341,
+  );
 });

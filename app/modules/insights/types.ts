@@ -57,7 +57,7 @@ export type AdvertisingItem = {
   id: string;
   startDate: ISODate;
   endDate: ISODate;
-  platform: Platform;
+  platform: Platform | "meta";
   label: string;
   spend: number;
   resultType: string | null;

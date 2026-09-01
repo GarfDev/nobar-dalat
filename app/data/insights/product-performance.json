@@ -1,0 +1,3782 @@
+[
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Whisky sour",
+    "category": null,
+    "quantity": 45,
+    "revenue": 8550000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 32,
+    "revenue": 7360000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Old Fashioned",
+    "category": null,
+    "quantity": 36,
+    "revenue": 6840000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Jungle Bird",
+    "category": null,
+    "quantity": 31,
+    "revenue": 6820000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Khe xanh",
+    "category": null,
+    "quantity": 29,
+    "revenue": 6750000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Bespoke",
+    "category": null,
+    "quantity": 29,
+    "revenue": 6380000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 22,
+    "revenue": 5280000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Xứ Đông Dương",
+    "category": null,
+    "quantity": 21,
+    "revenue": 5040000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Hoang vu",
+    "category": null,
+    "quantity": 21,
+    "revenue": 5040000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Tequila chanh muối",
+    "category": null,
+    "quantity": 55,
+    "revenue": 4950000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Mưa nguồn",
+    "category": null,
+    "quantity": 19,
+    "revenue": 4560000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Hạ ẩm",
+    "category": null,
+    "quantity": 19,
+    "revenue": 4560000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Negroni",
+    "category": null,
+    "quantity": 24,
+    "revenue": 4560000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Mỹ khê",
+    "category": null,
+    "quantity": 18,
+    "revenue": 4320000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Tiếng chuông ngân",
+    "category": null,
+    "quantity": 17,
+    "revenue": 4080000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Dry Martini",
+    "category": null,
+    "quantity": 21,
+    "revenue": 3990000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Sương Nguyệt Ánh",
+    "category": null,
+    "quantity": 16,
+    "revenue": 3840000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Bespoke",
+    "category": null,
+    "quantity": 19,
+    "revenue": 3800000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Rừng ái ân",
+    "category": null,
+    "quantity": 15,
+    "revenue": 3600000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Sang thu",
+    "category": null,
+    "quantity": 15,
+    "revenue": 3450000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Phi lí",
+    "category": null,
+    "quantity": 15,
+    "revenue": 3450000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Last word",
+    "category": null,
+    "quantity": 14,
+    "revenue": 3400000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Mocktails",
+    "category": null,
+    "quantity": 21,
+    "revenue": 3150000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Beefeater Gin _ Tonic",
+    "category": null,
+    "quantity": 17,
+    "revenue": 3060000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Chiều hoang",
+    "category": null,
+    "quantity": 13,
+    "revenue": 2990000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Thiên thanh",
+    "category": null,
+    "quantity": 12,
+    "revenue": 2760000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Mùi ngò gai",
+    "category": null,
+    "quantity": 11,
+    "revenue": 2640000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Manhattan",
+    "category": null,
+    "quantity": 11,
+    "revenue": 2640000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Vesper Martini",
+    "category": null,
+    "quantity": 12,
+    "revenue": 2280000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Tommy's Margarita",
+    "category": null,
+    "quantity": 12,
+    "revenue": 2280000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Pina Colada",
+    "category": null,
+    "quantity": 10,
+    "revenue": 1940000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Penicillin",
+    "category": null,
+    "quantity": 8,
+    "revenue": 1920000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Classic",
+    "category": null,
+    "quantity": 9,
+    "revenue": 1710000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Tanqueray Ten _ Tonic",
+    "category": null,
+    "quantity": 7,
+    "revenue": 1540000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Highball",
+    "category": null,
+    "quantity": 7,
+    "revenue": 1260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "GOD FARTHER",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1200000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Absinth Sour 2",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1200000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Creyente Mezcal",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1150000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Absinthe Sour",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1050000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 4,
+    "revenue": 1000000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Askaig 100 Proof",
+    "category": null,
+    "quantity": 4,
+    "revenue": 1000000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Absinth Jade Terminus",
+    "category": null,
+    "quantity": 3,
+    "revenue": 840000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Absinth Euphoria 80%",
+    "category": null,
+    "quantity": 3,
+    "revenue": 780000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Hendricks Gin_tonic",
+    "category": null,
+    "quantity": 3,
+    "revenue": 720000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "OPIHR Oriental Spiced Gin_tonic",
+    "category": null,
+    "quantity": 3,
+    "revenue": 690000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Absinth Bohemicum 70%",
+    "category": null,
+    "quantity": 3,
+    "revenue": 690000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "MakerMark CaskStrength",
+    "category": null,
+    "quantity": 2,
+    "revenue": 580000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Daiquiri",
+    "category": null,
+    "quantity": 3,
+    "revenue": 570000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Gin fizz",
+    "category": null,
+    "quantity": 3,
+    "revenue": 570000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Woodford Reserve Double Oaked",
+    "category": null,
+    "quantity": 2,
+    "revenue": 560000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Margarita",
+    "category": null,
+    "quantity": 3,
+    "revenue": 550000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Naked and famous",
+    "category": null,
+    "quantity": 2,
+    "revenue": 520000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Wild Turkey Bourbon",
+    "category": null,
+    "quantity": 3,
+    "revenue": 510000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Sidecar",
+    "category": null,
+    "quantity": 2,
+    "revenue": 500000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Highball _ JohnnieWalker",
+    "category": null,
+    "quantity": 2,
+    "revenue": 450000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Stranger & Son",
+    "category": null,
+    "quantity": 2,
+    "revenue": 440000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Vodka Soda",
+    "category": null,
+    "quantity": 2,
+    "revenue": 380000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Gimlet",
+    "category": null,
+    "quantity": 2,
+    "revenue": 360000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Real Dutch Generve _ Tonic",
+    "category": null,
+    "quantity": 1,
+    "revenue": 300000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Talisker 10YO 2000's",
+    "category": null,
+    "quantity": 1,
+    "revenue": 300000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "bespoke(ly)",
+    "category": null,
+    "quantity": 1,
+    "revenue": 300000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "New Riff Rye",
+    "category": null,
+    "quantity": 1,
+    "revenue": 280000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Hendrick_ Negroni",
+    "category": null,
+    "quantity": 1,
+    "revenue": 260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Nordes _ Tonic",
+    "category": null,
+    "quantity": 1,
+    "revenue": 260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Two Stacks _ Irish Whiskey",
+    "category": null,
+    "quantity": 1,
+    "revenue": 260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 1,
+    "revenue": 260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Edradour 10YO halfshot(ly)",
+    "category": null,
+    "quantity": 1,
+    "revenue": 250000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Real Dutch Generve",
+    "category": null,
+    "quantity": 1,
+    "revenue": 250000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Sông Cái Dry Gin_tonic",
+    "category": null,
+    "quantity": 1,
+    "revenue": 240000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Extra Shot",
+    "category": null,
+    "quantity": 2,
+    "revenue": 240000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Four Pillar Rare Dry Gin_tonic",
+    "category": null,
+    "quantity": 1,
+    "revenue": 240000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Russell's Reserve 10Y",
+    "category": null,
+    "quantity": 1,
+    "revenue": 220000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Talisker 10YO 2000's halfshot",
+    "category": null,
+    "quantity": 1,
+    "revenue": 220000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "ROKU Gin_tonic",
+    "category": null,
+    "quantity": 1,
+    "revenue": 220000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Auchentoshan three wood",
+    "category": null,
+    "quantity": 1,
+    "revenue": 220000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Old Pal",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Laphroaig 10Y",
+    "category": null,
+    "quantity": 1,
+    "revenue": 200000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Zacapa 12Y",
+    "category": null,
+    "quantity": 1,
+    "revenue": 200000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "KNOB 9",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Tom Collins",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "White lady",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Askaig 100 Proof haftshot",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Clover club",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Japanese Slipper",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "MATCHA",
+    "category": null,
+    "quantity": 1,
+    "revenue": 180000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Maker Mark",
+    "category": null,
+    "quantity": 1,
+    "revenue": 170000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Shanky's Whip",
+    "category": null,
+    "quantity": 1,
+    "revenue": 170000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Fernet-Branca Shot",
+    "category": null,
+    "quantity": 1,
+    "revenue": 150000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "mùa hè của tôi",
+    "category": null,
+    "quantity": 2,
+    "revenue": 140000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "Bespoke Tea",
+    "category": null,
+    "quantity": 1,
+    "revenue": 100000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "cà phê sữa",
+    "category": null,
+    "quantity": 2,
+    "revenue": 80000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "matcha latte",
+    "category": null,
+    "quantity": 1,
+    "revenue": 70000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "latte",
+    "category": null,
+    "quantity": 1,
+    "revenue": 60000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "THA1 latte",
+    "category": null,
+    "quantity": 1,
+    "revenue": 60000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "bespoke coffee",
+    "category": null,
+    "quantity": 1,
+    "revenue": 55000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "coldbrew mận rượu vang",
+    "category": null,
+    "quantity": 1,
+    "revenue": 55000,
+    "discounts": null
+  },
+  {
+    "startDate": "2024-09-01",
+    "endDate": "2024-12-31",
+    "product": "bespoke tea",
+    "category": null,
+    "quantity": 1,
+    "revenue": 45000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Thi sĩ",
+    "category": null,
+    "quantity": 231,
+    "revenue": 51842000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Rừng ái ân",
+    "category": null,
+    "quantity": 160,
+    "revenue": 37143600,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Sương Nguyệt Ánh",
+    "category": null,
+    "quantity": 141,
+    "revenue": 33000000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Thiên thanh",
+    "category": null,
+    "quantity": 147,
+    "revenue": 32924500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Mocktails",
+    "category": null,
+    "quantity": 211,
+    "revenue": 31590000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Old Fashioned",
+    "category": null,
+    "quantity": 145,
+    "revenue": 27889500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Mưa nguồn",
+    "category": null,
+    "quantity": 110,
+    "revenue": 25644000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Sang thu",
+    "category": null,
+    "quantity": 111,
+    "revenue": 24966500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Whisky sour",
+    "category": null,
+    "quantity": 131,
+    "revenue": 24624000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Khe xanh",
+    "category": null,
+    "quantity": 96,
+    "revenue": 22788000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 95,
+    "revenue": 21769500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Bespoke",
+    "category": null,
+    "quantity": 99,
+    "revenue": 21549000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "HUYỀN",
+    "category": null,
+    "quantity": 96,
+    "revenue": 21510500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Negroni",
+    "category": null,
+    "quantity": 109,
+    "revenue": 21016000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 83,
+    "revenue": 19416000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Beefeater Gin _ Tonic",
+    "category": null,
+    "quantity": 82,
+    "revenue": 14448000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "NẶNG",
+    "category": null,
+    "quantity": 64,
+    "revenue": 14358000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Xứ Đông Dương",
+    "category": null,
+    "quantity": 59,
+    "revenue": 13908000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "KHÔNG",
+    "category": null,
+    "quantity": 59,
+    "revenue": 12860500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Tiếng chuông ngân",
+    "category": null,
+    "quantity": 54,
+    "revenue": 12639600,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "NGÃ",
+    "category": null,
+    "quantity": 55,
+    "revenue": 12275000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Mùi ngò gai",
+    "category": null,
+    "quantity": 47,
+    "revenue": 10944000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Dry Martini",
+    "category": null,
+    "quantity": 56,
+    "revenue": 10911500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Manhattan",
+    "category": null,
+    "quantity": 42,
+    "revenue": 9996000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Tommy's Margarita",
+    "category": null,
+    "quantity": 52,
+    "revenue": 9709000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Penicillin",
+    "category": null,
+    "quantity": 41,
+    "revenue": 9588000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Jungle Bird",
+    "category": null,
+    "quantity": 42,
+    "revenue": 9240000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "HỎI",
+    "category": null,
+    "quantity": 37,
+    "revenue": 8125500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 31,
+    "revenue": 7662500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Last word",
+    "category": null,
+    "quantity": 30,
+    "revenue": 7457000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "SẮC",
+    "category": null,
+    "quantity": 33,
+    "revenue": 7377500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Absinthe Sour",
+    "category": null,
+    "quantity": 31,
+    "revenue": 7186000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Classic",
+    "category": null,
+    "quantity": 36,
+    "revenue": 6840000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Tequila chanh muối",
+    "category": null,
+    "quantity": 74,
+    "revenue": 6660000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Phi lí",
+    "category": null,
+    "quantity": 27,
+    "revenue": 6210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Mỹ khê",
+    "category": null,
+    "quantity": 25,
+    "revenue": 6000000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Hạ ẩm",
+    "category": null,
+    "quantity": 25,
+    "revenue": 6000000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 18,
+    "revenue": 4680000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Bespoke",
+    "category": null,
+    "quantity": 22,
+    "revenue": 4400000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Highball",
+    "category": null,
+    "quantity": 19,
+    "revenue": 3420000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Hoang vu",
+    "category": null,
+    "quantity": 14,
+    "revenue": 3360000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Bespoke",
+    "category": null,
+    "quantity": 16,
+    "revenue": 3286500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Margarita",
+    "category": null,
+    "quantity": 16,
+    "revenue": 3040000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Absinth Sour 2",
+    "category": null,
+    "quantity": 12,
+    "revenue": 2880000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Chiều hoang",
+    "category": null,
+    "quantity": 12,
+    "revenue": 2760000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Sidecar",
+    "category": null,
+    "quantity": 10,
+    "revenue": 2600000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Pina Colada",
+    "category": null,
+    "quantity": 12,
+    "revenue": 2520000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Absinth Jade Terminus",
+    "category": null,
+    "quantity": 8,
+    "revenue": 2240000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "GOD FARTHER",
+    "category": null,
+    "quantity": 11,
+    "revenue": 2236500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Gin fizz",
+    "category": null,
+    "quantity": 11,
+    "revenue": 2176500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Wyoming Double Oak",
+    "category": null,
+    "quantity": 7,
+    "revenue": 2100000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "ROKU Gin_tonic",
+    "category": null,
+    "quantity": 9,
+    "revenue": 2020000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Boulevardier",
+    "category": null,
+    "quantity": 9,
+    "revenue": 1990000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Bacon cuộn cà chua nướng",
+    "category": null,
+    "quantity": 21,
+    "revenue": 1976000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Gimlet",
+    "category": null,
+    "quantity": 10,
+    "revenue": 1900000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Maker Mark",
+    "category": null,
+    "quantity": 11,
+    "revenue": 1870000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Hendricks Gin_tonic",
+    "category": null,
+    "quantity": 8,
+    "revenue": 1836000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Talisker 10YO 2000's",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1800000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1680000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Sazzerac",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1680000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Highball _ JohnnieWalker",
+    "category": null,
+    "quantity": 7,
+    "revenue": 1463000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "WoodFord Reserve",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1440000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "bespoke(ly)",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1350000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Suze Gimlet",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1280000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Daiquiri",
+    "category": null,
+    "quantity": 7,
+    "revenue": 1263500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Absinthe Grande 55% - 15ml",
+    "category": null,
+    "quantity": 7,
+    "revenue": 1260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Vesper Martini",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1160000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Tôm sốt rau chân vịt",
+    "category": null,
+    "quantity": 7,
+    "revenue": 1155000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Creyente Mezcal",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1150000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Tuxedo No.2",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1150000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Tanqueray Ten _ Tonic",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1100000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Barr hill _ Tonic",
+    "category": null,
+    "quantity": 4,
+    "revenue": 1058500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Absinth Euphoria 80%",
+    "category": null,
+    "quantity": 4,
+    "revenue": 1040000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Sông Cái Dry Gin_tonic",
+    "category": null,
+    "quantity": 4,
+    "revenue": 960000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "OPIHR Oriental Spiced Gin_tonic",
+    "category": null,
+    "quantity": 4,
+    "revenue": 920000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "bespoke(ly)",
+    "category": null,
+    "quantity": 3,
+    "revenue": 900000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Auchentoshan three wood",
+    "category": null,
+    "quantity": 4,
+    "revenue": 880000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "diplo planas rum coke",
+    "category": null,
+    "quantity": 3,
+    "revenue": 870000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Lạp Xưởng Sóc Trăng",
+    "category": null,
+    "quantity": 9,
+    "revenue": 855000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "J.W black label",
+    "category": null,
+    "quantity": 5,
+    "revenue": 850000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "The Ardmore 12Y Port wood finish",
+    "category": null,
+    "quantity": 3,
+    "revenue": 840000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Woodford Reserve Double Oaked",
+    "category": null,
+    "quantity": 3,
+    "revenue": 840000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "White lady",
+    "category": null,
+    "quantity": 4,
+    "revenue": 760000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Four Pillar Rare Dry Gin_tonic",
+    "category": null,
+    "quantity": 3,
+    "revenue": 720000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Ramos Gin Fizz",
+    "category": null,
+    "quantity": 3,
+    "revenue": 690000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "highball - buileit",
+    "category": null,
+    "quantity": 3,
+    "revenue": 660000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Old Pal",
+    "category": null,
+    "quantity": 3,
+    "revenue": 630000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Rob Roy",
+    "category": null,
+    "quantity": 3,
+    "revenue": 630000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Amaretto Sour",
+    "category": null,
+    "quantity": 3,
+    "revenue": 630000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Laphroaig 10Y",
+    "category": null,
+    "quantity": 3,
+    "revenue": 600000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "MakerMark CaskStrength",
+    "category": null,
+    "quantity": 2,
+    "revenue": 580000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Japanese Slipper",
+    "category": null,
+    "quantity": 3,
+    "revenue": 570000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Clover club",
+    "category": null,
+    "quantity": 3,
+    "revenue": 570000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "New Riff Rye",
+    "category": null,
+    "quantity": 2,
+    "revenue": 560000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Vieux Carre",
+    "category": null,
+    "quantity": 2,
+    "revenue": 520000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Laphroaig 12 E.o.I",
+    "category": null,
+    "quantity": 1,
+    "revenue": 520000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "tuxedo",
+    "category": null,
+    "quantity": 2,
+    "revenue": 500000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Absinth Bohemicum 70%",
+    "category": null,
+    "quantity": 2,
+    "revenue": 460000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Benromach 19 year 100th centary",
+    "category": null,
+    "quantity": 1,
+    "revenue": 450000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Green Chartreuse _ haft",
+    "category": null,
+    "quantity": 2,
+    "revenue": 420000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Rusty Nail",
+    "category": null,
+    "quantity": 2,
+    "revenue": 420000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Mai Tai",
+    "category": null,
+    "quantity": 2,
+    "revenue": 420000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Edradour 10Y Straight From the Cask",
+    "category": null,
+    "quantity": 1,
+    "revenue": 380000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Mojito",
+    "category": null,
+    "quantity": 2,
+    "revenue": 380000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Woodford Whiskysour",
+    "category": null,
+    "quantity": 1,
+    "revenue": 380000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "old fashioned - maker mark",
+    "category": null,
+    "quantity": 2,
+    "revenue": 379500,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "roku martini",
+    "category": null,
+    "quantity": 2,
+    "revenue": 364000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Rittenhouse rye",
+    "category": null,
+    "quantity": 2,
+    "revenue": 360000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Wild Turkey Bourbon",
+    "category": null,
+    "quantity": 2,
+    "revenue": 340000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 1,
+    "revenue": 330000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 1,
+    "revenue": 320000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "old fashioned - Laphroaig 10Y",
+    "category": null,
+    "quantity": 1,
+    "revenue": 300000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Cask Orkney 18YO",
+    "category": null,
+    "quantity": 1,
+    "revenue": 300000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Noble Oak",
+    "category": null,
+    "quantity": 1,
+    "revenue": 300000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Laphroaig 10YO bottled 2007",
+    "category": null,
+    "quantity": 1,
+    "revenue": 280000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "GIN NO.3 LONDON_tonic",
+    "category": null,
+    "quantity": 1,
+    "revenue": 270000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Michter's single barrel",
+    "category": null,
+    "quantity": 1,
+    "revenue": 260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Sông Cái Roselle tonic",
+    "category": null,
+    "quantity": 1,
+    "revenue": 260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Askaig 100 Proof",
+    "category": null,
+    "quantity": 1,
+    "revenue": 250000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Martini Plymouth",
+    "category": null,
+    "quantity": 1,
+    "revenue": 250000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Hightball_Auchentoshen",
+    "category": null,
+    "quantity": 1,
+    "revenue": 250000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Real Dutch Generve",
+    "category": null,
+    "quantity": 1,
+    "revenue": 250000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Barr Hill",
+    "category": null,
+    "quantity": 1,
+    "revenue": 240000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "brooklyn",
+    "category": null,
+    "quantity": 1,
+    "revenue": 240000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Porn Star Martini",
+    "category": null,
+    "quantity": 1,
+    "revenue": 240000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Old Fashioned _ Bulleit bourbon",
+    "category": null,
+    "quantity": 1,
+    "revenue": 230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Plantion O.F.T.D",
+    "category": null,
+    "quantity": 1,
+    "revenue": 230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Negroni_Tanqueray Ten",
+    "category": null,
+    "quantity": 1,
+    "revenue": 230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Martinez",
+    "category": null,
+    "quantity": 1,
+    "revenue": 230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "whisky sour _ maker mark",
+    "category": null,
+    "quantity": 1,
+    "revenue": 230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "highland park einar",
+    "category": null,
+    "quantity": 1,
+    "revenue": 230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Russell's Reserve 10Y",
+    "category": null,
+    "quantity": 1,
+    "revenue": 220000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Dalwhinnie 15YO",
+    "category": null,
+    "quantity": 1,
+    "revenue": 220000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "BESPOKE",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Plymouth",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "400 Conejos Mezcal",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Angel Face",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Midori Sour",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "New Riff Rye _ Haftshot",
+    "category": null,
+    "quantity": 1,
+    "revenue": 200000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Diplomatico Planas",
+    "category": null,
+    "quantity": 1,
+    "revenue": 200000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Tom Collins",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "The Botanist Gin",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Roku Gin",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "punt e mes",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Wild Turkey Rye",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "KNOB 9",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "highland park einar highball",
+    "category": null,
+    "quantity": 1,
+    "revenue": 182000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "NAKED MALT",
+    "category": null,
+    "quantity": 1,
+    "revenue": 180000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Fernet Branca",
+    "category": null,
+    "quantity": 1,
+    "revenue": 180000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Bulliet Bourbon",
+    "category": null,
+    "quantity": 1,
+    "revenue": 170000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Tanqueray Ten",
+    "category": null,
+    "quantity": 1,
+    "revenue": 170000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Zacapa 23 _ Haftshot",
+    "category": null,
+    "quantity": 1,
+    "revenue": 170000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "JOHNNIE WALKER DOUBLE BLACK",
+    "category": null,
+    "quantity": 1,
+    "revenue": 170000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Gỏi tôm đu đủ",
+    "category": null,
+    "quantity": 1,
+    "revenue": 165000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "matcha usucha hisui midori",
+    "category": null,
+    "quantity": 1,
+    "revenue": 140000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Midori",
+    "category": null,
+    "quantity": 1,
+    "revenue": 120000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Bulleit Bourbon _ Haftshot",
+    "category": null,
+    "quantity": 1,
+    "revenue": 100000,
+    "discounts": null
+  },
+  {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "product": "Chocolate",
+    "category": null,
+    "quantity": 1,
+    "revenue": 90000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Rừng ái ân",
+    "category": null,
+    "quantity": 348,
+    "revenue": 81348000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Thi sĩ",
+    "category": null,
+    "quantity": 290,
+    "revenue": 65009500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "HUYỀN",
+    "category": null,
+    "quantity": 230,
+    "revenue": 54060000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Mocktails",
+    "category": null,
+    "quantity": 359,
+    "revenue": 53797500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Loạng Choạng",
+    "category": null,
+    "quantity": 222,
+    "revenue": 53750000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "KHÔNG",
+    "category": null,
+    "quantity": 179,
+    "revenue": 42156000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Sương Nguyệt Ánh",
+    "category": null,
+    "quantity": 184,
+    "revenue": 41989000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "NẶNG",
+    "category": null,
+    "quantity": 171,
+    "revenue": 41346000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Old Fashioned",
+    "category": null,
+    "quantity": 199,
+    "revenue": 40960500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Tiếng chuông ngân",
+    "category": null,
+    "quantity": 168,
+    "revenue": 40303000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Negroni",
+    "category": null,
+    "quantity": 194,
+    "revenue": 39763500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Lan Man",
+    "category": null,
+    "quantity": 160,
+    "revenue": 37464000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Mưa nguồn",
+    "category": null,
+    "quantity": 143,
+    "revenue": 33865500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Penicillin",
+    "category": null,
+    "quantity": 136,
+    "revenue": 32621000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Bespoke",
+    "category": null,
+    "quantity": 138,
+    "revenue": 30217000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Whisky sour",
+    "category": null,
+    "quantity": 151,
+    "revenue": 28780500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 119,
+    "revenue": 26806500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Dry Martini",
+    "category": null,
+    "quantity": 114,
+    "revenue": 23646000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Beefeater Gin _ Tonic",
+    "category": null,
+    "quantity": 124,
+    "revenue": 23028000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Last word",
+    "category": null,
+    "quantity": 88,
+    "revenue": 22347000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 93,
+    "revenue": 21816000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Thiên thanh",
+    "category": null,
+    "quantity": 88,
+    "revenue": 19596000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "NGÃ",
+    "category": null,
+    "quantity": 75,
+    "revenue": 17580000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Manhattan",
+    "category": null,
+    "quantity": 69,
+    "revenue": 16648000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Lộn Xộn",
+    "category": null,
+    "quantity": 61,
+    "revenue": 15587000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Tommy's Margarita",
+    "category": null,
+    "quantity": 78,
+    "revenue": 15020000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "HỎI",
+    "category": null,
+    "quantity": 64,
+    "revenue": 14691500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Xứ Đông Dương",
+    "category": null,
+    "quantity": 63,
+    "revenue": 14484000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Highball",
+    "category": null,
+    "quantity": 66,
+    "revenue": 12123000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 46,
+    "revenue": 11450000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "SẮC",
+    "category": null,
+    "quantity": 46,
+    "revenue": 10404000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Tequila chanh muối",
+    "category": null,
+    "quantity": 101,
+    "revenue": 8995500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Sidecar",
+    "category": null,
+    "quantity": 34,
+    "revenue": 8749000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Absinthe Sour",
+    "category": null,
+    "quantity": 36,
+    "revenue": 8586000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Mùi ngò gai",
+    "category": null,
+    "quantity": 37,
+    "revenue": 8271500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 26,
+    "revenue": 6760000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Margarita",
+    "category": null,
+    "quantity": 33,
+    "revenue": 6177000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Hendricks Gin_tonic",
+    "category": null,
+    "quantity": 22,
+    "revenue": 5158000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Sazzerac",
+    "category": null,
+    "quantity": 18,
+    "revenue": 5040000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Gin fizz",
+    "category": null,
+    "quantity": 24,
+    "revenue": 4746000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Rusty Nail",
+    "category": null,
+    "quantity": 20,
+    "revenue": 4126500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Jungle Bird",
+    "category": null,
+    "quantity": 19,
+    "revenue": 3960000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "GOD FARTHER",
+    "category": null,
+    "quantity": 17,
+    "revenue": 3699000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Glenfarclas 20YO",
+    "category": null,
+    "quantity": 6,
+    "revenue": 3680000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "ardbeg 2014",
+    "category": null,
+    "quantity": 8,
+    "revenue": 3465000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Absinth Sour 2",
+    "category": null,
+    "quantity": 14,
+    "revenue": 3415000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Pina Colada",
+    "category": null,
+    "quantity": 16,
+    "revenue": 3360000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Bò một nắng muối kiến",
+    "category": null,
+    "quantity": 20,
+    "revenue": 3300000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Gimlet",
+    "category": null,
+    "quantity": 17,
+    "revenue": 3230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Boulevardier",
+    "category": null,
+    "quantity": 14,
+    "revenue": 3220000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 11,
+    "revenue": 2970000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "White lady",
+    "category": null,
+    "quantity": 15,
+    "revenue": 2920000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Laphroaig 12",
+    "category": null,
+    "quantity": 4,
+    "revenue": 2740000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Bespoke",
+    "category": null,
+    "quantity": 11,
+    "revenue": 2089500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "ROKU Gin_tonic",
+    "category": null,
+    "quantity": 9,
+    "revenue": 2076000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1920000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Whisky Sour _ Laphroaig",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1920000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "KAMIKI Whisky",
+    "category": null,
+    "quantity": 7,
+    "revenue": 1820000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Bespoke",
+    "category": null,
+    "quantity": 9,
+    "revenue": 1800000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "J.W black label",
+    "category": null,
+    "quantity": 9,
+    "revenue": 1670000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Black Russian",
+    "category": null,
+    "quantity": 8,
+    "revenue": 1580000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "KNOB 9",
+    "category": null,
+    "quantity": 8,
+    "revenue": 1520000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Maker Mark",
+    "category": null,
+    "quantity": 8,
+    "revenue": 1500000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1400000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Askaig 8",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1400000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Stranger & Son _ Tonic",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1350000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Russell's Reserve 10Y",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1340000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Classic",
+    "category": null,
+    "quantity": 7,
+    "revenue": 1330000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Daiquiri",
+    "category": null,
+    "quantity": 7,
+    "revenue": 1330000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Highball _ JohnnieWalker",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1320000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "J.W Black Label Highball",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Vodka Shot",
+    "category": null,
+    "quantity": 13,
+    "revenue": 1170000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Ramos Gin Fizz",
+    "category": null,
+    "quantity": 5,
+    "revenue": 1150000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Absinthe Grande 55% - 15ml",
+    "category": null,
+    "quantity": 6,
+    "revenue": 1080000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Nordes _ Tonic",
+    "category": null,
+    "quantity": 4,
+    "revenue": 1060000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Bacon cuộn cà chua nướng",
+    "category": null,
+    "quantity": 11,
+    "revenue": 1045000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Dirty Martini",
+    "category": null,
+    "quantity": 4,
+    "revenue": 960000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Sông Cái Dry Gin_tonic",
+    "category": null,
+    "quantity": 4,
+    "revenue": 960000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Clover club",
+    "category": null,
+    "quantity": 5,
+    "revenue": 950000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "highland park harard",
+    "category": null,
+    "quantity": 3,
+    "revenue": 840000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Laphroaig 10Y",
+    "category": null,
+    "quantity": 4,
+    "revenue": 840000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Corpse Reviver",
+    "category": null,
+    "quantity": 4,
+    "revenue": 840000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Canadian",
+    "category": null,
+    "quantity": 6,
+    "revenue": 780000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Sông Cái Roselle tonic",
+    "category": null,
+    "quantity": 3,
+    "revenue": 770000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Japanese Slipper",
+    "category": null,
+    "quantity": 4,
+    "revenue": 760000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Creag Isle 25 Highball",
+    "category": null,
+    "quantity": 1,
+    "revenue": 750000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Suze Gimlet",
+    "category": null,
+    "quantity": 3,
+    "revenue": 690000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "OPIHR Oriental Spiced Gin_tonic",
+    "category": null,
+    "quantity": 3,
+    "revenue": 690000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Highball MakerMark",
+    "category": null,
+    "quantity": 3,
+    "revenue": 660000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Evan William",
+    "category": null,
+    "quantity": 5,
+    "revenue": 660000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Benromach 19 year 100th centary",
+    "category": null,
+    "quantity": 1,
+    "revenue": 620000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "caol ila 1988",
+    "category": null,
+    "quantity": 1,
+    "revenue": 620000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "cao ila",
+    "category": null,
+    "quantity": 620000,
+    "revenue": 620000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Wyoming Double Oak",
+    "category": null,
+    "quantity": 2,
+    "revenue": 600000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Lagavulin 16YO",
+    "category": null,
+    "quantity": 1,
+    "revenue": 600000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Tanqueray Ten _ Tonic",
+    "category": null,
+    "quantity": 3,
+    "revenue": 583000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "roku martini",
+    "category": null,
+    "quantity": 2,
+    "revenue": 560000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Russell's Highball",
+    "category": null,
+    "quantity": 2,
+    "revenue": 560000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Woodford Reserve Double Oaked",
+    "category": null,
+    "quantity": 2,
+    "revenue": 560000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Aberlour Halfshot",
+    "category": null,
+    "quantity": 2,
+    "revenue": 560000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Ardbeg Highball",
+    "category": null,
+    "quantity": 1,
+    "revenue": 550000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Aberlour",
+    "category": null,
+    "quantity": 1,
+    "revenue": 540000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Absinth Jade Terminus",
+    "category": null,
+    "quantity": 2,
+    "revenue": 504000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "tuxedo",
+    "category": null,
+    "quantity": 2,
+    "revenue": 500000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Plymouth _ Tonic",
+    "category": null,
+    "quantity": 2,
+    "revenue": 500000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Abshinthe Grande 55% - 30ml",
+    "category": null,
+    "quantity": 2,
+    "revenue": 480000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Hanky Panky",
+    "category": null,
+    "quantity": 2,
+    "revenue": 480000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Four Pillar Rare Dry Gin_tonic",
+    "category": null,
+    "quantity": 2,
+    "revenue": 480000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "The Botanist Gin_tonic",
+    "category": null,
+    "quantity": 2,
+    "revenue": 480000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Diplomatico Planas",
+    "category": null,
+    "quantity": 2,
+    "revenue": 460000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Lady Triệu Tonic",
+    "category": null,
+    "quantity": 2,
+    "revenue": 460000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "beefeater",
+    "category": null,
+    "quantity": 3,
+    "revenue": 450000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Bespoke _ Highlevel",
+    "category": null,
+    "quantity": 1,
+    "revenue": 390000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Hendricks Gin",
+    "category": null,
+    "quantity": 2,
+    "revenue": 380000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Sông Cái Dry Gin",
+    "category": null,
+    "quantity": 2,
+    "revenue": 380000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Frangelico",
+    "category": null,
+    "quantity": 2,
+    "revenue": 360000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 1,
+    "revenue": 350000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Cask Orkney 18YO",
+    "category": null,
+    "quantity": 1,
+    "revenue": 350000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "JOHNNIE WALKER DOUBLE BLACK",
+    "category": null,
+    "quantity": 2,
+    "revenue": 340000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "bespoke",
+    "category": null,
+    "quantity": 1,
+    "revenue": 336000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Maker Mark CaskStrangth",
+    "category": null,
+    "quantity": 1,
+    "revenue": 320000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Benromach 19 year 100 centary",
+    "category": null,
+    "quantity": 1,
+    "revenue": 310000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Jose Cuervo",
+    "category": null,
+    "quantity": 2,
+    "revenue": 300000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Gin NO3 martini",
+    "category": null,
+    "quantity": 1,
+    "revenue": 300000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Noble Oak",
+    "category": null,
+    "quantity": 1,
+    "revenue": 300000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "The Ardmore 12Y Port wood finish",
+    "category": null,
+    "quantity": 1,
+    "revenue": 280000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Laphroaig 10YO bottled 2007",
+    "category": null,
+    "quantity": 1,
+    "revenue": 280000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "highball",
+    "category": null,
+    "quantity": 270000,
+    "revenue": 270000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "GIN NO.3 LONDON_tonic",
+    "category": null,
+    "quantity": 1,
+    "revenue": 270000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Michter's single barrel",
+    "category": null,
+    "quantity": 1,
+    "revenue": 260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Sidecar",
+    "category": null,
+    "quantity": 1,
+    "revenue": 260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Rittenhouse Highball",
+    "category": null,
+    "quantity": 1,
+    "revenue": 260000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Rittenhouse Highball",
+    "category": null,
+    "quantity": 1,
+    "revenue": 250000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Suối nguồn",
+    "category": null,
+    "quantity": 1,
+    "revenue": 240000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Khe xanh",
+    "category": null,
+    "quantity": 1,
+    "revenue": 240000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Sang thu",
+    "category": null,
+    "quantity": 2,
+    "revenue": 230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Absinth Bohemicum 70%",
+    "category": null,
+    "quantity": 1,
+    "revenue": 230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "highland park einar",
+    "category": null,
+    "quantity": 1,
+    "revenue": 230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "old fashioned - maker mark",
+    "category": null,
+    "quantity": 1,
+    "revenue": 230000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Stranger & Son",
+    "category": null,
+    "quantity": 1,
+    "revenue": 220000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Wild Turkey Rye",
+    "category": null,
+    "quantity": 1,
+    "revenue": 220000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "aviation",
+    "category": null,
+    "quantity": 1,
+    "revenue": 220000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Rob Roy",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Mai Tai",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Rosita",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Tito Martini",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Amaretto Sour",
+    "category": null,
+    "quantity": 1,
+    "revenue": 210000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Woodford Reserve Double Oaked halfshot",
+    "category": null,
+    "quantity": 1,
+    "revenue": 200000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Tequila Soda",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "God Mother",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Bee's Kiss",
+    "category": null,
+    "quantity": 1,
+    "revenue": 190000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "diplo planas rum coke",
+    "category": null,
+    "quantity": 1,
+    "revenue": 188500,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "OPIHR Oriental Spiced Gin",
+    "category": null,
+    "quantity": 1,
+    "revenue": 180000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Jim Bean Bourbon",
+    "category": null,
+    "quantity": 1,
+    "revenue": 180000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Amaro Montenegro",
+    "category": null,
+    "quantity": 1,
+    "revenue": 180000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Old Pal",
+    "category": null,
+    "quantity": 1,
+    "revenue": 168000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Fernet-Branca",
+    "category": null,
+    "quantity": 1,
+    "revenue": 160000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Highball Knob9",
+    "category": null,
+    "quantity": 1,
+    "revenue": 156000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "St Remy",
+    "category": null,
+    "quantity": 1,
+    "revenue": 150000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Wild Turkey Bourbon",
+    "category": null,
+    "quantity": 1,
+    "revenue": 130000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Tito",
+    "category": null,
+    "quantity": 1,
+    "revenue": 130000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Luxado",
+    "category": null,
+    "quantity": 1,
+    "revenue": 130000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Cointreau",
+    "category": null,
+    "quantity": 1,
+    "revenue": 120000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Sminoff",
+    "category": null,
+    "quantity": 1,
+    "revenue": 120000,
+    "discounts": null
+  },
+  {
+    "startDate": "2026-01-01",
+    "endDate": "2026-08-31",
+    "product": "Cynar",
+    "category": null,
+    "quantity": 2,
+    "revenue": 65000,
+    "discounts": null
+  }
+]

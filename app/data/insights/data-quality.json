@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-09-01",
+  "notes": [
+    "PosApp revenue contains 668 trading days; 62 missing calendar days are normalized as verified zero-sales days.",
+    "Order count represents completed invoice rows, not unique guests or physical table turns.",
+    "Twenty-four invoice rows without a payment timestamp are excluded from date-based order counts.",
+    "PosApp COGS is zero throughout the source report and is normalized to null.",
+    "Meta metrics use the platform reporting boundary and may not align perfectly with Asia/Ho_Chi_Minh trading dates.",
+    "Facebook views and viewers are available from 2025-08-01; earlier days are null because Meta marks the metric unavailable.",
+    "Instagram visits are unavailable for the selected two-year range.",
+    "Instagram follows are available from 2025-08-27 through 2026-08-30.",
+    "Product totals are supplied in three source windows: Sep-Dec 2024, calendar 2025, and Jan-Aug 2026.",
+    "This dataset is a static snapshot through 2026-08-31."
+  ],
+  "sourceTimezones": {
+    "posapp": "Asia/Ho_Chi_Minh",
+    "meta": "Platform reporting timezone"
+  },
+  "unavailableFields": [
+    "cogs",
+    "profit",
+    "grossMargin",
+    "attributedRevenue",
+    "roas",
+    "uniqueGuests"
+  ]
+}
