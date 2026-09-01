@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
+  buildAttributionPlan,
   buildDataReadiness,
   computeOperationalMetrics,
   computePlatformEfficiency,
@@ -72,4 +73,16 @@ test("scores current collection readiness and prioritizes unit economics", () =>
   assert.equal(readiness.score, 30);
   assert.equal(readiness.dimensions[0].code, "unit-economics");
   assert.equal(readiness.dimensions[0].priority, "critical");
+});
+
+test("builds an actionable Meta to PosApp attribution plan from current data gaps", () => {
+  const plan = buildAttributionPlan(insightData);
+  assert.equal(plan.status, "not-connected");
+  assert.equal(plan.statusLabel, "Chưa nối Meta với từng hóa đơn PosApp");
+  assert.equal(plan.phases[0].code, "campaign-code");
+  assert.equal(plan.phases[0].recommended, true);
+  assert.deepEqual(
+    plan.requiredFields.map((field) => field.key),
+    ["order_id", "paid_at", "net_revenue", "promo_code", "campaign_id", "customer_match"],
+  );
 });

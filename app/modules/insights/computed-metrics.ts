@@ -53,8 +53,94 @@ export type DataReadiness = {
   missingWeight: number;
 };
 
+export type AttributionPhase = {
+  code: "campaign-code" | "posapp-api" | "meta-offline";
+  step: string;
+  title: string;
+  timing: string;
+  recommended: boolean;
+  summary: string;
+  actions: string[];
+  outcome: string;
+};
+
+export type AttributionField = {
+  key: "order_id" | "paid_at" | "net_revenue" | "promo_code" | "campaign_id" | "customer_match";
+  label: string;
+  source: string;
+  purpose: string;
+};
+
+export type AttributionPlan = {
+  status: "connected" | "not-connected";
+  statusLabel: string;
+  phases: AttributionPhase[];
+  requiredFields: AttributionField[];
+};
+
 function safeDivide(numerator: number, denominator: number): number | null {
   return denominator === 0 ? null : numerator / denominator;
+}
+
+export function buildAttributionPlan(data: InsightData): AttributionPlan {
+  const unavailable = new Set(data.quality.unavailableFields ?? []);
+  const connected = !unavailable.has("attributedRevenue");
+  return {
+    status: connected ? "connected" : "not-connected",
+    statusLabel: connected ? "Đã có doanh thu theo chiến dịch" : "Chưa nối Meta với từng hóa đơn PosApp",
+    phases: [
+      {
+        code: "campaign-code",
+        step: "01",
+        title: "Gắn mã riêng cho từng chiến dịch",
+        timing: "Có thể bắt đầu tuần này",
+        recommended: true,
+        summary: "Mỗi bài quảng cáo hoặc chiến dịch có một mã dễ đọc, ví dụ IGREEL01 hoặc FBADS01.",
+        actions: [
+          "Đưa mã vào nội dung, tin nhắn, QR hoặc ưu đãi.",
+          "Thu ngân áp mã đó vào đúng hóa đơn trên PosApp.",
+          "Cuối tuần đối chiếu số đơn và doanh thu theo từng mã.",
+        ],
+        outcome: "Biết chiến dịch nào tạo đơn trực tiếp mà chưa cần tích hợp kỹ thuật.",
+      },
+      {
+        code: "posapp-api",
+        step: "02",
+        title: "Tự động lấy hóa đơn từ PosApp",
+        timing: "Sau khi quy trình nhập mã đã ổn",
+        recommended: false,
+        summary: "Dùng Open API hoặc webhook của PosApp để lấy hóa đơn, doanh thu và mã ưu đãi vào cùng bảng dữ liệu.",
+        actions: [
+          "Giữ mã hóa đơn duy nhất và thời gian thanh toán.",
+          "Lưu doanh thu thuần cùng mã chiến dịch trên đơn.",
+          "Ghép mã chiến dịch với campaign ID hoặc content ID của Meta.",
+        ],
+        outcome: "Dashboard tự cập nhật số đơn và doanh thu do từng chiến dịch mang về.",
+      },
+      {
+        code: "meta-offline",
+        step: "03",
+        title: "Gửi giao dịch tại quầy về Meta",
+        timing: "Chỉ làm sau khi dữ liệu đơn sạch",
+        recommended: false,
+        summary: "Gửi giao dịch hoàn tất vào Events Manager để Meta đối chiếu người đã xem hoặc nhấp quảng cáo trước khi mua tại quầy.",
+        actions: [
+          "Dùng mã hóa đơn để tránh gửi trùng giao dịch.",
+          "Chỉ dùng thông tin khách đã đồng ý và băm dữ liệu trước khi chia sẻ.",
+          "Theo dõi số sự kiện nhận được và tỷ lệ đối chiếu trong Meta.",
+        ],
+        outcome: "Có thêm doanh thu quy thuộc và ROAS offline để tối ưu quảng cáo.",
+      },
+    ],
+    requiredFields: [
+      { key: "order_id", label: "Mã hóa đơn", source: "PosApp", purpose: "Nhận diện một đơn và chống ghi trùng" },
+      { key: "paid_at", label: "Thời gian thanh toán", source: "PosApp", purpose: "Đối chiếu đúng thời điểm chiến dịch" },
+      { key: "net_revenue", label: "Doanh thu thuần", source: "PosApp", purpose: "Tính doanh thu và ROAS" },
+      { key: "promo_code", label: "Mã chiến dịch / ưu đãi", source: "Thu ngân + PosApp", purpose: "Cầu nối trực tiếp từ Meta sang hóa đơn" },
+      { key: "campaign_id", label: "Mã chiến dịch / nội dung Meta", source: "Meta", purpose: "Biết quảng cáo hoặc bài nào tạo đơn" },
+      { key: "customer_match", label: "SĐT hoặc email đã băm (không bắt buộc)", source: "PosApp CRM", purpose: "Tăng khả năng Meta đối chiếu giao dịch offline" },
+    ],
+  };
 }
 
 export function computeOperationalMetrics(rows: RevenueDay[]): OperationalMetrics {

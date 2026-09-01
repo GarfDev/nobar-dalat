@@ -16,7 +16,7 @@ import { insightData } from "./data";
 import { formatCompact, formatDate, formatDecimal, formatNumber, formatPercent, formatVND } from "./format";
 import { correlationDecision, correlationLabel, roasLabel } from "./interpretation";
 import { buildManagementFindings } from "./insight-rules";
-import { buildDataReadiness, buildSocialEfficiencyRows, computeOperationalMetrics, computePlatformEfficiency, computeWeekdayPerformance } from "./computed-metrics";
+import { buildAttributionPlan, buildDataReadiness, buildSocialEfficiencyRows, computeOperationalMetrics, computePlatformEfficiency, computeWeekdayPerformance } from "./computed-metrics";
 import { buildReport, clampRange, laggedCorrelation, type MetricPoint } from "./reporting";
 import { aggregateProductRanking } from "./product-ranking";
 import type { DateRange, ISODate } from "./types";
@@ -97,6 +97,7 @@ export function InsightsPage() {
   };
   const socialEfficiencyRows = buildSocialEfficiencyRows(platformEfficiency);
   const readiness = buildDataReadiness(insightData);
+  const attributionPlan = buildAttributionPlan(insightData);
   const trendData = report.monthlyRevenue.map((item) => ({
     label: item.month,
     primary: item.netRevenue,
@@ -273,6 +274,58 @@ export function InsightsPage() {
                 {correlationRows.map((item) => <article key={item.lag}><span>{item.lag === 0 ? "Cùng ngày" : `Sau ${item.lag} ngày`}</span><small className="correlation-code">Mức liên hệ (r)</small><strong>{item.correlation === null ? "—" : item.correlation.toFixed(2)}</strong><p>{correlationLabel(item.correlation)}</p><small>Dựa trên {formatNumber(item.pairs)} ngày có đủ dữ liệu</small></article>)}
               </div>
               <div className="interpretation-panel"><BadgeInfo /><div><strong>Cách đọc “hệ số r”</strong><p>Con số này chạy từ −1 đến +1. Càng gần 0 thì hai chỉ số càng ít đi cùng nhau; càng gần 1 hoặc −1 thì mối liên hệ càng rõ. <strong>Đây không phải bằng chứng rằng marketing làm doanh thu tăng hoặc giảm.</strong></p></div></div>
+              <div className="attribution-playbook">
+                <header className="attribution-heading">
+                  <div>
+                    <span>Cách có câu trả lời chính xác hơn</span>
+                    <h3>Nối Meta → mã chiến dịch → hóa đơn PosApp</h3>
+                    <p>Thay vì đoán từ hai đường số liệu theo ngày, hãy để mỗi hóa đơn mang theo dấu vết của chiến dịch đã đưa khách đến quán.</p>
+                  </div>
+                  <strong className={`attribution-status ${attributionPlan.status}`}>{attributionPlan.statusLabel}</strong>
+                </header>
+
+                <div className="attribution-phases">
+                  {attributionPlan.phases.map((phase) => (
+                    <article key={phase.code} className={phase.recommended ? "is-recommended" : undefined}>
+                      <div className="phase-top">
+                        <span>{phase.step}</span>
+                        <small>{phase.timing}</small>
+                      </div>
+                      <h4>{phase.title}</h4>
+                      <p>{phase.summary}</p>
+                      <ul>{phase.actions.map((action) => <li key={action}>{action}</li>)}</ul>
+                      <footer><strong>Kết quả:</strong> {phase.outcome}</footer>
+                    </article>
+                  ))}
+                </div>
+
+                <div className="attribution-fields">
+                  <div className="attribution-fields-copy">
+                    <span>Dữ liệu tối thiểu cần giữ</span>
+                    <h4>6 trường để nối đúng chiến dịch với đúng hóa đơn</h4>
+                    <p>Ưu tiên bốn trường đầu. Thông tin khách chỉ dùng khi khách đã đồng ý; không cần thu thông tin này để bắt đầu đo bằng mã chiến dịch.</p>
+                  </div>
+                  <div className="attribution-field-list">
+                    {attributionPlan.requiredFields.map((field) => (
+                      <div key={field.key}>
+                        <strong>{field.label}</strong>
+                        <span>{field.source}</span>
+                        <small>{field.purpose}</small>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="attribution-rule">
+                  <BadgeInfo />
+                  <div>
+                    <strong>Khi nào dashboard được phép hiện “doanh thu từ marketing”?</strong>
+                    <p>Khi mọi chiến dịch có mã riêng, thu ngân nhập mã đều đặn, hóa đơn không trùng và dữ liệu được cập nhật ít nhất mỗi tuần. Trước đó, phần tương quan phía trên chỉ nên dùng như tín hiệu tham khảo.</p>
+                  </div>
+                </div>
+
+                <p className="attribution-sources">Cơ sở triển khai: <a href="https://posapp.vn/tich-hop-erp-pos" target="_blank" rel="noreferrer">Open API PosApp</a> · <a href="https://posapp.vn/phan-mem-tich-diem-khach" target="_blank" rel="noreferrer">voucher và CRM PosApp</a> · <a href="https://www.facebookblueprint.com/student/page/532230-upload-offline-event-data" target="_blank" rel="noreferrer">giao dịch offline trên Meta</a></p>
+              </div>
             </section>
           </>}
 
