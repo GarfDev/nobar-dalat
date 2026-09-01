@@ -5,7 +5,7 @@ const links = [
   ["marketing", "Mạng xã hội"],
   ["content", "Nội dung"],
   ["advertising", "Quảng cáo"],
-  ["relationship", "Liên hệ dữ liệu"],
+  ["relationship", "Meta & doanh thu"],
   ["actions", "Kế hoạch"],
   ["data-notes", "Data readiness"],
 ];

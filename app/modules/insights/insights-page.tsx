@@ -14,7 +14,7 @@ import {
 
 import { insightData } from "./data";
 import { formatCompact, formatDate, formatDecimal, formatNumber, formatPercent, formatVND } from "./format";
-import { correlationLabel, roasLabel } from "./interpretation";
+import { correlationDecision, correlationLabel, roasLabel } from "./interpretation";
 import { buildManagementFindings } from "./insight-rules";
 import { buildDataReadiness, computeOperationalMetrics, computePlatformEfficiency } from "./computed-metrics";
 import { buildReport, clampRange, laggedCorrelation, type MetricPoint } from "./reporting";
@@ -132,6 +132,15 @@ export function InsightsPage() {
   const strongest = correlationRows
     .filter((item) => item.correlation !== null)
     .sort((a, b) => Math.abs(b.correlation ?? 0) - Math.abs(a.correlation ?? 0))[0];
+  const strongestLevel = !strongest || strongest.correlation === null
+    ? null
+    : Math.abs(strongest.correlation) < 0.2
+      ? "rất yếu"
+      : Math.abs(strongest.correlation) < 0.4
+        ? "yếu"
+        : Math.abs(strongest.correlation) < 0.7
+          ? "đáng chú ý"
+          : "mạnh";
 
   return (
     <main className="insights-page">
@@ -286,11 +295,16 @@ export function InsightsPage() {
             </section>
 
             <section id="relationship" className="report-section">
-              <SectionTitle index="07" kicker="Directional evidence" title="Marketing ↔ doanh thu" note="Đối chiếu tương tác Meta ngày D với doanh thu ngày D+n" />
+              <SectionTitle index="07" kicker="Câu hỏi kinh doanh" title="Tương tác Meta có đi cùng doanh thu?" note="So sánh lượng tương tác mỗi ngày với doanh thu cùng ngày và 1–3 ngày sau" />
+              <article className="relationship-summary">
+                <span>Kết luận ngắn</span>
+                <h3>{correlationDecision(strongest?.correlation ?? null)}</h3>
+                <p>{strongest ? `Tín hiệu cao nhất xuất hiện ${strongest.lag === 0 ? "ngay trong ngày" : `sau ${strongest.lag} ngày`}, ở mức ${strongestLevel} (r = ${strongest.correlation?.toFixed(2)}).` : "Khoảng chọn chưa có đủ ngày để thực hiện phép so sánh."}</p>
+              </article>
               <div className="correlation-grid">
-                {correlationRows.map((item) => <article key={item.lag}><span>D{item.lag ? `+${item.lag}` : ""}</span><strong>{item.correlation === null ? "—" : item.correlation.toFixed(2)}</strong><p>{correlationLabel(item.correlation)}</p><small>{formatNumber(item.pairs)} cặp ngày</small></article>)}
+                {correlationRows.map((item) => <article key={item.lag}><span>{item.lag === 0 ? "Cùng ngày" : `Sau ${item.lag} ngày`}</span><small className="correlation-code">Mức liên hệ (r)</small><strong>{item.correlation === null ? "—" : item.correlation.toFixed(2)}</strong><p>{correlationLabel(item.correlation)}</p><small>Dựa trên {formatNumber(item.pairs)} ngày có đủ dữ liệu</small></article>)}
               </div>
-              <div className="interpretation-panel"><BadgeInfo /><p>{strongest ? `Liên hệ tuyệt đối mạnh nhất trong kỳ nằm ở độ trễ D+${strongest.lag} (r = ${strongest.correlation?.toFixed(2)}), trên ${strongest.pairs} cặp ngày.` : "Chưa đủ dữ liệu biến thiên để đọc mối liên hệ trong kỳ."} <strong>Tương quan không chứng minh quan hệ nhân quả.</strong> Ranh giới ngày Meta có thể lệch so với ca bán hàng tại Việt Nam.</p></div>
+              <div className="interpretation-panel"><BadgeInfo /><div><strong>Cách đọc “hệ số r”</strong><p>Con số này chạy từ −1 đến +1. Càng gần 0 thì hai chỉ số càng ít đi cùng nhau; càng gần 1 hoặc −1 thì mối liên hệ càng rõ. <strong>Đây không phải bằng chứng rằng marketing làm doanh thu tăng hoặc giảm.</strong></p></div></div>
             </section>
           </>}
 
