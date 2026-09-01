@@ -12,7 +12,8 @@ test("formats missing rates as unavailable", () => {
 });
 
 test("formats compact Vietnamese counts", () => {
-  assert.equal(formatCompact(18_866), "18,9 N");
+  assert.equal(formatCompact(18_866), "18,9 nghìn");
+  assert.equal(formatCompact(1_250_000), "1,3 triệu");
 });
 
 test("formats computed ratios with controlled precision", () => {

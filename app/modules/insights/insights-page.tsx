@@ -16,14 +16,14 @@ import { insightData } from "./data";
 import { formatCompact, formatDate, formatDecimal, formatNumber, formatPercent, formatVND } from "./format";
 import { correlationDecision, correlationLabel, roasLabel } from "./interpretation";
 import { buildManagementFindings } from "./insight-rules";
-import { buildDataReadiness, computeOperationalMetrics, computePlatformEfficiency, computeWeekdayPerformance } from "./computed-metrics";
+import { buildDataReadiness, buildSocialEfficiencyRows, computeOperationalMetrics, computePlatformEfficiency, computeWeekdayPerformance } from "./computed-metrics";
 import { buildReport, clampRange, laggedCorrelation, type MetricPoint } from "./reporting";
 import { aggregateProductRanking } from "./product-ranking";
 import type { DateRange, ISODate } from "./types";
 import { KpiCard } from "./components/kpi-card";
 import { DualTrendChart } from "./components/dual-trend-chart";
 import { WeekdayPerformanceChart } from "./components/weekday-performance-chart";
-import { SocialFunnelChart } from "./components/social-funnel-chart";
+import { SocialEfficiencyChart } from "./components/social-efficiency-chart";
 import { InsightsNavigation } from "./insights-navigation";
 import { RangeControls, type ReportMode } from "./range-controls";
 
@@ -95,6 +95,7 @@ export function InsightsPage() {
     instagram: computePlatformEfficiency(selectedSocialRows, "instagram"),
     facebook: computePlatformEfficiency(selectedSocialRows, "facebook"),
   };
+  const socialEfficiencyRows = buildSocialEfficiencyRows(platformEfficiency);
   const readiness = buildDataReadiness(insightData);
   const trendData = report.monthlyRevenue.map((item) => ({
     label: item.month,
@@ -223,34 +224,22 @@ export function InsightsPage() {
           </section>
 
           <section id="marketing" className="report-section">
-            <SectionTitle index="04" kicker="Meta · organic" title="Sức khỏe mạng xã hội" note="Không cộng Facebook viewers với Instagram reach thành một chỉ số khán giả duy nhất" />
+            <SectionTitle index="04" kicker="Hiệu quả organic Meta" title="Instagram hay Facebook đang hiệu quả hơn?" note="So sánh tương tác, nhấp link và follow trên cùng mẫu số 1.000 lượt xem" />
             <div className="platform-grid">
               {report.social.map((platform) => {
                 const efficiency = platformEfficiency[platform.platform];
                 return <article key={platform.platform} className={`platform-card ${platform.platform}`}>
                 <div className="platform-heading"><span>{platform.platform === "instagram" ? "IG" : "FB"}</span><div><p>{platform.platform}</p><h3>{formatCompact(platform.views)} lượt xem</h3></div></div>
                 <dl>
-                  <div><dt>{platform.platform === "instagram" ? "Reach theo ngày" : "Viewers theo ngày"}</dt><dd>{formatCompact(platform.audience)}</dd></div>
                   <div><dt>Tương tác</dt><dd>{formatCompact(platform.interactions)}</dd></div>
                   <div><dt>Nhấp link</dt><dd>{formatCompact(platform.linkClicks)}</dd></div>
                   <div><dt>Theo dõi mới</dt><dd>{formatCompact(platform.follows)}</dd></div>
-                  <div><dt>Lượt thăm</dt><dd>{platform.visits === null ? "Không có" : formatCompact(platform.visits)}</dd></div>
-                  <div><dt>Interaction / view</dt><dd>{formatPercent(efficiency.engagementRate)}</dd></div>
-                  <div><dt>Click-through / view</dt><dd>{formatPercent(efficiency.clickThroughRate)}</dd></div>
-                  <div><dt>Follow / 1.000 views</dt><dd>{formatDecimal(efficiency.followPerThousandViews)}</dd></div>
-                  <div><dt>Mẫu so sánh được</dt><dd>{formatNumber(efficiency.comparableDays)} ngày</dd></div>
+                  <div><dt>Ngày đủ dữ liệu để so sánh</dt><dd>{formatNumber(efficiency.comparableDays)} ngày</dd></div>
                 </dl>
               </article>})}
             </div>
-            <div className="social-funnel-grid">
-              {report.social.map((platform) => <SocialFunnelChart key={platform.platform} platform={platform.platform} data={[
-                { label: "Lượt xem", value: platform.views },
-                { label: "Tương tác", value: platform.interactions },
-                { label: "Nhấp link", value: platform.linkClicks },
-                { label: "Theo dõi", value: platform.follows },
-              ]} />)}
-            </div>
-            <p className="footnote">Facebook views/viewers chỉ có từ 01.08.2025. Instagram visits không được nguồn cung cấp; follows chỉ có từ 27.08.2025 đến 30.08.2026.</p>
+            <SocialEfficiencyChart data={socialEfficiencyRows} />
+            <p className="footnote">Chưa thể kết luận nền tảng nào tạo doanh thu vì Meta và PosApp chưa được nối bằng UTM, mã ưu đãi hoặc order ID. Facebook chỉ có dữ liệu view từ 01.08.2025; dữ liệu follow Instagram chỉ bắt đầu từ 27.08.2025.</p>
           </section>
 
           {mode === "detailed" && <>

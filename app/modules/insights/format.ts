@@ -12,9 +12,9 @@ export function formatCompact(value: number | null): string {
   if (value === null) return "—";
   if (Math.abs(value) < 1_000) return formatNumber(value);
   if (Math.abs(value) < 1_000_000) {
-    return `${new Intl.NumberFormat("vi-VN", { maximumFractionDigits: 1 }).format(value / 1_000)} N`;
+    return `${new Intl.NumberFormat("vi-VN", { maximumFractionDigits: 1 }).format(value / 1_000)} nghìn`;
   }
-  return `${new Intl.NumberFormat("vi-VN", { maximumFractionDigits: 1 }).format(value / 1_000_000)} Tr`;
+  return `${new Intl.NumberFormat("vi-VN", { maximumFractionDigits: 1 }).format(value / 1_000_000)} triệu`;
 }
 
 export function formatDecimal(value: number | null, maximumFractionDigits = 1): string {

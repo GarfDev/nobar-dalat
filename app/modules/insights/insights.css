@@ -173,6 +173,12 @@
 .chart-tooltip strong { color: var(--paper); font: 500 .7rem monospace; }
 .library-chart.social-funnel { padding: 22px 16px 14px; }
 .library-chart.weekday-performance-chart { margin-top: 14px; background: linear-gradient(180deg, rgba(77,145,135,.055), transparent); }
+.library-chart.social-efficiency-chart { margin-top: 14px; background: linear-gradient(180deg, rgba(182,74,62,.04), rgba(77,145,135,.025)); }
+.social-answer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-bottom: 12px; border: 1px solid var(--line); background: var(--line); }
+.social-answer-grid article { display: grid; gap: 8px; padding: 17px; background: #141310; }
+.social-answer-grid span { color: var(--paper-dim); font-size: .6rem; text-transform: uppercase; letter-spacing: .08em; }
+.social-answer-grid strong { font-size: .84rem; }
+.social-answer-grid small { color: var(--brass); font: .63rem monospace; }
 .chart-answer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 12px; border: 1px solid var(--line); background: var(--line); }
 .chart-answer-grid article { display: grid; gap: 7px; padding: 16px 18px; background: #141310; }
 .chart-answer-grid span { color: var(--paper-dim); font-size: .61rem; text-transform: uppercase; letter-spacing: .08em; }
@@ -196,6 +202,7 @@
   .chart-heading { align-items: flex-start; flex-wrap: wrap; }.chart-heading small { width: 100%; margin-left: 0; text-align: left; }.trend-chart, .scatter-chart { padding: 16px 12px; }.scatter-chart > header { align-items: flex-start; flex-direction: column; }.scatter-chart svg text { font-size: 7px; }.scatter-chart figcaption { flex-wrap: wrap; }.scatter-chart figcaption strong { order: 3; width: 100%; }
   .library-chart { padding: 16px 8px 12px; }.library-chart .chart-heading { padding: 0 8px; }.library-chart .recharts-cartesian-axis-tick-value { font-size: 8px; }.library-chart figcaption { padding: 0 8px; flex-wrap: wrap; }.library-chart.social-funnel { padding-inline: 10px; }
   .chart-answer-grid { grid-template-columns: 1fr; margin-inline: 8px; }.chart-answer-grid article { padding: 13px 14px; }
+  .social-answer-grid { grid-template-columns: 1fr; margin-inline: 8px; }.social-answer-grid article { padding: 13px 14px; }
   .metric-strip { grid-template-columns: 1fr 1fr; }.metric-strip > svg { display: none; }.metric-strip > div { border-top: 1px solid var(--line); padding-top: 12px; }.ranking-list > div { grid-template-columns: 28px 1fr 90px; }.ranking-list i, .ranking-list small { display: none; }.platform-card { padding: 20px; }.content-grid article { min-height: 210px; }.ad-summary { grid-template-columns: auto 1fr; }.ad-summary > div:last-child { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 16px; }.correlation-grid { grid-template-columns: 1fr 1fr; }.correlation-grid article > strong { font-size: 2rem; margin: 15px 0 8px; }
   .readiness-hero { grid-template-columns: 1fr; }.readiness-score { width: 112px; height: 112px; }.readiness-legend { grid-template-columns: repeat(3, 1fr); }.readiness-list article { grid-template-columns: 28px 1fr; gap: 10px; }.readiness-action { grid-column: 2; border-left: 0; border-top: 1px solid var(--line); padding: 12px 0 0; }
 }

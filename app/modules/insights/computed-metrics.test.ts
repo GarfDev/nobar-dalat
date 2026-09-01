@@ -5,6 +5,7 @@ import {
   buildDataReadiness,
   computeOperationalMetrics,
   computePlatformEfficiency,
+  buildSocialEfficiencyRows,
   computeWeekdayPerformance,
 } from "./computed-metrics";
 import { insightData } from "./data";
@@ -36,6 +37,18 @@ test("uses only comparable social rows for rate denominators", () => {
     clickThroughRate: 0.02,
     followPerThousandViews: 10,
   });
+});
+
+test("compares social platforms on actions per thousand views", () => {
+  const rows = buildSocialEfficiencyRows({
+    instagram: { comparableDays: 10, engagementRate: 0.015, clickThroughRate: 0.001, followPerThousandViews: 2.8 },
+    facebook: { comparableDays: 10, engagementRate: 0.005, clickThroughRate: 0.002, followPerThousandViews: 0.9 },
+  });
+  assert.deepEqual(rows, [
+    { metric: "Tương tác", instagram: 15, facebook: 5 },
+    { metric: "Nhấp link", instagram: 1, facebook: 2 },
+    { metric: "Theo dõi", instagram: 2.8, facebook: 0.9 },
+  ]);
 });
 
 test("summarizes weekday demand using active days and paid orders", () => {

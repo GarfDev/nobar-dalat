@@ -18,6 +18,12 @@ export type PlatformEfficiency = {
   followPerThousandViews: number | null;
 };
 
+export type SocialEfficiencyRow = {
+  metric: string;
+  instagram: number | null;
+  facebook: number | null;
+};
+
 export type WeekdayPerformance = {
   weekday: number;
   activeDays: number;
@@ -99,6 +105,15 @@ export function computePlatformEfficiency(rows: SocialDay[], platform: Platform)
     followPerThousandViews:
       followViews === 0 ? null : (follows / followViews) * 1_000,
   };
+}
+
+export function buildSocialEfficiencyRows(platforms: Record<Platform, PlatformEfficiency>): SocialEfficiencyRow[] {
+  const perThousand = (value: number | null) => value === null ? null : value * 1_000;
+  return [
+    { metric: "Tương tác", instagram: perThousand(platforms.instagram.engagementRate), facebook: perThousand(platforms.facebook.engagementRate) },
+    { metric: "Nhấp link", instagram: perThousand(platforms.instagram.clickThroughRate), facebook: perThousand(platforms.facebook.clickThroughRate) },
+    { metric: "Theo dõi", instagram: platforms.instagram.followPerThousandViews, facebook: platforms.facebook.followPerThousandViews },
+  ];
 }
 
 export function computeWeekdayPerformance(rows: RevenueDay[]): WeekdayPerformance[] {
