@@ -26,6 +26,10 @@ The visual system references the current @nobardalat birthday posts without copy
 
 Use `iCiel Novecento Sans` from the repository for large display copy and `Beau Sans` for supporting copy. Large headings may use a slight oblique treatment, but letterforms must remain easy to read from the intended distance.
 
+## Official Logo
+
+Use the official Nobar symbol from `public/images/nobar-logo-color.png` on the warm off-white background. Do not recreate the mark or substitute a typed `NOBAR` wordmark. Use `public/images/nobar-logo-black-white.png` only where a monochrome treatment is necessary for legibility. Preserve the mark's proportions, clear space, and colours; do not crop, stretch, rotate, outline, or place decoration over it.
+
 ## Decorative Musician Illustration
 
 Use one original full-body character playing a trumpet as a recurring visual motif. The character uses loose black contours, flat imperfect colour fills, and subtle print grain. It appears large on the private-event sign, medium on the menu cover, and only as a small supporting crop on the parking sign so the arrow and instructions remain dominant.
@@ -37,7 +41,7 @@ Primary copy:
 - `ĐỖ XE ĐỐI DIỆN ĐƯỜNG`
 - `PARKING IS ACROSS THE STREET`
 
-Use a dominant horizontal arrow pointing toward the actual opposite side of the street. The arrow will be supplied as a right-pointing version unless the printer/site team requests the mirrored version. The Nobar wordmark and address sit in a small footer.
+Use a dominant horizontal arrow pointing toward the actual opposite side of the street. The arrow will be supplied as a right-pointing version unless the printer/site team requests the mirrored version. The official Nobar symbol and address sit in a small footer.
 
 ## Private Event Sign - 50 x 70 cm
 
