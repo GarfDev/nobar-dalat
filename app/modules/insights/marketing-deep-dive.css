@@ -1,0 +1,207 @@
+.marketing-deep-dive {
+  --m-bg: #111210;
+  --m-panel: #171815;
+  --m-paper: #ede9e0;
+  --m-muted: #a7a198;
+  --m-line: rgba(237, 233, 224, 0.15);
+  --m-brass: #c7a05a;
+  --m-instagram: #d66a59;
+  --m-facebook: #69aaa1;
+  --m-tiktok: #d7f4ef;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, transparent 24.9%, rgba(237, 233, 224, .025) 25%, transparent 25.1%, transparent 74.9%, rgba(237, 233, 224, .025) 75%, transparent 75.1%),
+    radial-gradient(circle at 76% 5%, rgba(105, 170, 161, .12), transparent 28rem),
+    var(--m-bg);
+  color: var(--m-paper);
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: .01em;
+}
+
+.marketing-deep-dive *, .marketing-deep-dive *::before, .marketing-deep-dive *::after { box-sizing: border-box; }
+.marketing-deep-dive h1, .marketing-deep-dive h2, .marketing-deep-dive h3, .marketing-deep-dive p { margin-top: 0; }
+.marketing-deep-dive h1, .marketing-deep-dive h2 { font-family: "iCiel Novecento sans", Arial, sans-serif; }
+.marketing-deep-dive button, .marketing-deep-dive input { font: inherit; }
+.marketing-deep-dive button, .marketing-deep-dive a { -webkit-tap-highlight-color: transparent; }
+.marketing-skip { position: fixed; left: 1rem; top: -5rem; z-index: 100; padding: .7rem 1rem; background: var(--m-paper); color: var(--m-bg); }
+.marketing-skip:focus { top: 1rem; }
+
+.marketing-hero { max-width: 1500px; margin: 0 auto; padding: 34px clamp(22px, 5vw, 78px) 62px; border-bottom: 1px solid var(--m-line); }
+.marketing-hero nav { display: flex; align-items: center; justify-content: space-between; padding-bottom: 60px; color: var(--m-muted); font: .65rem monospace; text-transform: uppercase; letter-spacing: .12em; }
+.marketing-hero nav a { display: inline-flex; align-items: center; gap: 8px; color: var(--m-paper); text-decoration: none; }
+.marketing-hero nav a:hover, .marketing-hero nav a:focus-visible { color: var(--m-brass); outline: none; }
+.marketing-hero nav svg { width: 15px; }
+.marketing-hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: clamp(30px, 8vw, 130px); align-items: end; }
+.marketing-eyebrow { margin-bottom: 20px; color: var(--m-brass); font: 600 .66rem monospace; text-transform: uppercase; letter-spacing: .16em; }
+.marketing-hero h1 { margin: 0; max-width: 920px; font-size: clamp(3.8rem, 9.5vw, 9rem); font-weight: 300; letter-spacing: -.07em; line-height: .78; text-transform: uppercase; }
+.marketing-hero h1 em { display: inline-block; margin-left: clamp(0px, 7vw, 100px); color: var(--m-facebook); font-style: normal; }
+.marketing-hero-copy { padding-bottom: 6px; }
+.marketing-hero-copy p { color: var(--m-muted); font-size: clamp(.9rem, 1.25vw, 1.08rem); line-height: 1.65; }
+.marketing-hero-copy strong { display: block; margin-top: 25px; padding-top: 18px; border-top: 1px solid var(--m-line); color: var(--m-paper); font-size: .82rem; }
+
+.marketing-controls { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 13px clamp(20px, 5vw, 76px); background: rgba(17, 18, 16, .94); border-bottom: 1px solid var(--m-line); backdrop-filter: blur(18px); }
+.marketing-controls > div { display: flex; align-items: center; gap: 5px; }
+.marketing-controls button { padding: 9px 13px; border: 1px solid transparent; background: transparent; color: var(--m-muted); font-size: .72rem; cursor: pointer; }
+.marketing-controls button:hover, .marketing-controls button:focus-visible { border-color: var(--m-line); color: var(--m-paper); outline: none; }
+.marketing-controls button.is-active { background: var(--m-facebook); color: #0d1614; }
+.marketing-date-fields label { display: flex; align-items: center; gap: 7px; color: var(--m-muted); font-size: .61rem; text-transform: uppercase; letter-spacing: .08em; }
+.marketing-date-fields input { padding: 8px; border: 1px solid var(--m-line); background: var(--m-panel); color: var(--m-paper); color-scheme: dark; font: .68rem monospace; }
+
+.marketing-answer, .channel-momentum, .signal-runway, .marketing-section, .marketing-footer { max-width: 1340px; margin-left: auto; margin-right: auto; }
+.marketing-answer { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 42px; padding: 58px clamp(22px, 4vw, 54px); border-left: 1px solid var(--m-line); border-right: 1px solid var(--m-line); border-bottom: 1px solid var(--m-line); background: linear-gradient(105deg, rgba(105,170,161,.11), transparent 62%); }
+.answer-mark { display: flex; align-items: start; gap: 10px; color: var(--m-facebook); }
+.answer-mark svg { width: 18px; }
+.answer-mark span { padding-top: 3px; font: 600 .63rem monospace; text-transform: uppercase; letter-spacing: .11em; }
+.marketing-answer h2 { margin-bottom: 12px; font-size: clamp(1.6rem, 3vw, 2.9rem); font-weight: 300; line-height: 1.15; letter-spacing: -.025em; }
+.marketing-answer p { max-width: 900px; margin: 0; color: var(--m-muted); line-height: 1.65; }
+
+.channel-momentum { display: grid; grid-template-columns: 1fr 1fr; border-left: 1px solid var(--m-line); border-right: 1px solid var(--m-line); border-bottom: 1px solid var(--m-line); }
+.channel-momentum > article { padding: 32px clamp(22px, 4vw, 46px); }
+.channel-momentum > article:first-child { border-right: 1px solid var(--m-line); }
+.channel-momentum article.instagram { box-shadow: inset 0 3px 0 var(--m-instagram); }
+.channel-momentum article.facebook { box-shadow: inset 0 3px 0 var(--m-facebook); }
+.channel-momentum header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.channel-momentum header span { font: 600 .68rem monospace; text-transform: uppercase; letter-spacing: .12em; }
+.channel-momentum .instagram header span { color: var(--m-instagram); }
+.channel-momentum .facebook header span { color: var(--m-facebook); }
+.channel-momentum header small { color: var(--m-muted); font-size: .63rem; }
+.momentum-numbers { display: grid; grid-template-columns: 1fr 1fr; margin: 30px 0 24px; border-top: 1px solid var(--m-line); border-bottom: 1px solid var(--m-line); }
+.momentum-numbers > div { display: flex; flex-direction: column; min-width: 0; padding: 22px 18px 22px 0; }
+.momentum-numbers > div + div { padding-left: 22px; border-left: 1px solid var(--m-line); }
+.momentum-numbers span { color: var(--m-muted); font-size: .65rem; }
+.momentum-numbers strong { margin: 13px 0 11px; font: 300 clamp(2rem, 4vw, 3.8rem)/1 "iCiel Novecento sans"; }
+.momentum-numbers em { font-size: .63rem; font-style: normal; }
+.is-positive { color: #82c9b9; }.is-negative { color: #e17b6b; }.is-missing { color: #77746d; }
+.channel-momentum article > p { min-height: 49px; margin-bottom: 24px; font-size: .78rem; line-height: 1.55; }
+.channel-momentum footer { color: var(--m-muted); font: .6rem/1.5 monospace; }
+
+.signal-runway { padding: 70px clamp(22px, 4vw, 54px); border-left: 1px solid var(--m-line); border-right: 1px solid var(--m-line); border-bottom: 1px solid var(--m-line); }
+.signal-runway > header { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 26px; }
+.signal-runway header span, .section-copy > span, .marketing-chart-heading span, .reading-guide > span, .tiktok-context > span { color: var(--m-brass); font: 600 .63rem monospace; text-transform: uppercase; letter-spacing: .12em; }
+.signal-runway h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 300; }
+.runway-track { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--m-line); border: 1px solid var(--m-line); }
+.runway-track::before { content: ""; position: absolute; z-index: 2; left: 10%; right: 10%; top: 42px; height: 2px; background: linear-gradient(90deg, var(--m-facebook), var(--m-brass) 65%, transparent); pointer-events: none; }
+.runway-track article { position: relative; min-height: 192px; padding: 25px 19px; background: var(--m-panel); }
+.runway-track svg { position: relative; z-index: 3; width: 18px; padding: 4px; box-sizing: content-box; background: var(--m-panel); color: var(--m-brass); }
+.runway-track article > span { display: block; margin-top: 27px; color: var(--m-muted); font-size: .64rem; }
+.runway-track strong { display: block; margin: 10px 0; font: 400 1.2rem monospace; }
+.runway-track small { color: #77746d; font-size: .61rem; line-height: 1.4; }
+.runway-track .is-gap { background: repeating-linear-gradient(135deg, #181614, #181614 8px, #201916 8px, #201916 9px); }
+.runway-track .is-gap svg, .runway-track .is-gap strong { color: var(--m-instagram); }
+
+.marketing-section { padding: 72px clamp(22px, 4vw, 54px); border-left: 1px solid var(--m-line); border-right: 1px solid var(--m-line); border-bottom: 1px solid var(--m-line); }
+.marketing-chart { margin: 0; min-width: 0; padding: 30px; border: 1px solid var(--m-line); background: linear-gradient(160deg, rgba(199,160,90,.045), transparent 38%), var(--m-panel); }
+.marketing-chart-heading { display: grid; grid-template-columns: minmax(260px, 1fr) minmax(220px, .62fr); gap: 34px; align-items: end; margin-bottom: 20px; }
+.marketing-chart-heading h2 { margin: 9px 0 0; font-size: clamp(1.35rem, 2.4vw, 2.2rem); font-weight: 300; line-height: 1.15; }
+.marketing-chart-heading p { margin: 0; color: var(--m-muted); font-size: .7rem; line-height: 1.6; }
+.metric-tabs { display: flex; gap: 5px; margin-bottom: 8px; }
+.metric-tabs button { padding: 8px 12px; border: 1px solid var(--m-line); background: transparent; color: var(--m-muted); font-size: .67rem; cursor: pointer; }
+.metric-tabs button:hover, .metric-tabs button:focus-visible { color: var(--m-paper); outline: 1px solid var(--m-brass); }
+.metric-tabs button.is-active { border-color: var(--m-brass); background: rgba(199,160,90,.12); color: var(--m-paper); }
+.marketing-chart figcaption { padding-top: 16px; border-top: 1px solid var(--m-line); color: var(--m-muted); font: .61rem/1.5 monospace; }
+.chart-pair { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr); gap: 14px; }
+.reading-guide { padding: 30px; border: 1px solid rgba(105,170,161,.35); background: linear-gradient(145deg, rgba(105,170,161,.1), transparent 50%); }
+.reading-guide > svg { width: 22px; margin-bottom: 30px; color: var(--m-facebook); }
+.reading-guide h2 { margin: 12px 0 24px; font-size: clamp(1.3rem, 2.5vw, 2.1rem); font-weight: 300; line-height: 1.2; }
+.reading-guide ol { margin: 0; padding: 0; list-style: none; counter-reset: guide; }
+.reading-guide li { position: relative; padding: 14px 0 14px 32px; border-top: 1px solid var(--m-line); color: var(--m-muted); font-size: .7rem; line-height: 1.5; counter-increment: guide; }
+.reading-guide li::before { content: counter(guide); position: absolute; left: 0; color: var(--m-brass); font: .62rem monospace; }
+.reading-guide li strong { color: var(--m-paper); }
+.reading-guide > p { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid var(--m-line); color: var(--m-instagram); font-size: .66rem; line-height: 1.55; }
+
+.section-copy { display: grid; grid-template-columns: minmax(260px, 1fr) minmax(220px, .7fr); gap: 8px 46px; align-items: end; margin-bottom: 34px; }
+.section-copy > span { grid-column: 1 / -1; }
+.section-copy h2 { margin: 6px 0 0; font-size: clamp(1.8rem, 4vw, 3.7rem); font-weight: 300; line-height: 1; letter-spacing: -.035em; }
+.section-copy > p { margin: 0; color: var(--m-muted); font-size: .72rem; line-height: 1.6; }
+.content-opportunity-list { border-top: 1px solid var(--m-line); }
+.content-opportunity-list article { display: grid; grid-template-columns: 42px minmax(220px, 1fr) minmax(330px, .75fr); gap: 18px; align-items: center; padding: 20px 5px; border-bottom: 1px solid var(--m-line); }
+.content-rank { color: var(--m-brass); font: .65rem monospace; }
+.content-opportunity-list small { color: var(--m-muted); font: .59rem monospace; text-transform: uppercase; }
+.content-opportunity-list h3 { margin: 8px 0 0; font-size: .86rem; line-height: 1.45; }
+.content-opportunity-list dl { display: grid; grid-template-columns: 1.35fr .75fr .9fr; margin: 0; }
+.content-opportunity-list dl div { padding: 4px 14px; border-left: 1px solid var(--m-line); }
+.content-opportunity-list dt { min-height: 28px; color: var(--m-muted); font-size: .57rem; line-height: 1.35; }
+.content-opportunity-list dd { margin: 8px 0 0; font: .72rem monospace; }
+.content-opportunity-list dl div:first-child dd { color: var(--m-facebook); font-size: 1rem; }
+.sample-warning { margin: 18px 0 0; color: var(--m-muted); font-size: .65rem; }
+
+.tiktok-deep-dive { display: grid; grid-template-columns: minmax(260px, .65fr) minmax(0, 1.35fr); gap: 14px; }
+.tiktok-context { padding: 34px; border: 1px solid rgba(215,244,239,.24); background: linear-gradient(145deg, rgba(215,244,239,.075), transparent 45%); }
+.tiktok-context > span { color: var(--m-tiktok); }
+.tiktok-context h2 { margin: 16px 0 20px; font-size: clamp(1.55rem, 3vw, 2.7rem); font-weight: 300; line-height: 1.12; }
+.tiktok-context > p { color: var(--m-muted); font-size: .74rem; line-height: 1.65; }
+.tiktok-context > div { display: flex; flex-direction: column; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--m-line); }
+.tiktok-context > div strong { font: 300 2.8rem "iCiel Novecento sans"; }
+.tiktok-context > div span { color: var(--m-muted); font-size: .65rem; }
+.tiktok-chart-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 10px; background: var(--m-line); }
+.tiktok-chart-notes article { min-width: 0; padding: 14px; background: var(--m-panel); }
+.tiktok-chart-notes strong { display: block; color: var(--m-tiktok); font: .62rem monospace; }
+.tiktok-chart-notes span { display: block; overflow: hidden; margin: 8px 0; color: var(--m-paper); font-size: .63rem; text-overflow: ellipsis; white-space: nowrap; }
+.tiktok-chart-notes small { color: var(--m-muted); font-size: .57rem; line-height: 1.45; }
+
+.collection-table { border-top: 1px solid var(--m-line); }
+.collection-table article { display: grid; grid-template-columns: 42px minmax(260px, 1.15fr) minmax(240px, .85fr) 92px; gap: 18px; align-items: center; padding: 24px 5px; border-bottom: 1px solid var(--m-line); }
+.collection-order { color: var(--m-brass); font: .64rem monospace; }
+.collection-main small { color: var(--m-facebook); font: .58rem monospace; text-transform: uppercase; letter-spacing: .07em; }
+.collection-main h3 { margin: 8px 0 7px; font-size: .88rem; }
+.collection-main p, .collection-fields p { margin: 0; color: var(--m-muted); font-size: .66rem; line-height: 1.5; }
+.collection-fields { padding-left: 20px; border-left: 1px solid var(--m-line); }
+.collection-fields span { display: block; margin-bottom: 7px; color: var(--m-brass); font: .58rem monospace; text-transform: uppercase; }
+.collection-table article > strong { color: var(--m-paper); font: .61rem/1.4 monospace; text-align: right; }
+
+.marketing-footer { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 18px; align-items: start; padding: 34px clamp(22px, 4vw, 54px) 70px; border-left: 1px solid var(--m-line); border-right: 1px solid var(--m-line); }
+.marketing-footer > svg { width: 19px; color: var(--m-brass); }
+.marketing-footer strong { display: block; margin-bottom: 7px; font-size: .73rem; }
+.marketing-footer p { max-width: 850px; margin: 0; color: var(--m-muted); font-size: .65rem; line-height: 1.55; }
+.marketing-footer a { display: inline-flex; align-items: center; gap: 8px; color: var(--m-paper); font-size: .67rem; text-decoration: none; }
+.marketing-footer a:hover, .marketing-footer a:focus-visible { color: var(--m-brass); outline: none; }
+.marketing-footer a svg { width: 15px; }
+
+@media (max-width: 980px) {
+  .marketing-hero-grid, .marketing-answer, .channel-momentum, .chart-pair, .tiktok-deep-dive { grid-template-columns: 1fr; }
+  .marketing-hero-copy { max-width: 680px; }
+  .marketing-answer { gap: 22px; }
+  .channel-momentum > article:first-child { border-right: 0; border-bottom: 1px solid var(--m-line); }
+  .runway-track { grid-template-columns: repeat(3, 1fr); }
+  .runway-track::before { display: none; }
+  .content-opportunity-list article { grid-template-columns: 38px 1fr; }
+  .content-opportunity-list dl { grid-column: 2; }
+  .collection-table article { grid-template-columns: 36px 1fr 88px; }
+  .collection-fields { grid-column: 2 / -1; padding: 14px 0 0; border-top: 1px solid var(--m-line); border-left: 0; }
+}
+
+@media (max-width: 680px) {
+  .marketing-hero { padding-bottom: 38px; }
+  .marketing-hero nav { padding-bottom: 42px; }
+  .marketing-hero nav span { display: none; }
+  .marketing-hero h1 { font-size: clamp(3.25rem, 17vw, 5.4rem); }
+  .marketing-hero h1 em { margin-left: 0; }
+  .marketing-controls { position: relative; align-items: stretch; flex-direction: column; overflow-x: auto; }
+  .marketing-date-fields { flex-wrap: wrap; }
+  .marketing-date-fields label { flex: 1; }
+  .marketing-date-fields input { min-width: 0; width: 100%; }
+  .marketing-answer, .signal-runway, .marketing-section { padding-top: 46px; padding-bottom: 46px; }
+  .momentum-numbers { grid-template-columns: 1fr; }
+  .momentum-numbers > div + div { padding-left: 0; border-top: 1px solid var(--m-line); border-left: 0; }
+  .runway-track { grid-template-columns: 1fr 1fr; }
+  .marketing-chart { padding: 22px 12px; }
+  .marketing-chart-heading, .section-copy { grid-template-columns: 1fr; gap: 14px; }
+  .section-copy > span { grid-column: auto; }
+  .metric-tabs { overflow-x: auto; }
+  .metric-tabs button { flex: 0 0 auto; }
+  .content-opportunity-list article { grid-template-columns: 32px 1fr; }
+  .content-opportunity-list dl { grid-template-columns: 1fr 1fr; }
+  .content-opportunity-list dl div { border-left: 0; border-top: 1px solid var(--m-line); padding: 12px 8px 8px 0; }
+  .content-opportunity-list dl div:first-child { grid-column: 1 / -1; }
+  .tiktok-chart-notes { grid-template-columns: 1fr; }
+  .collection-table article { grid-template-columns: 28px 1fr; }
+  .collection-table article > strong { grid-column: 2; text-align: left; color: var(--m-brass); }
+  .collection-fields { grid-column: 2; }
+  .marketing-footer { grid-template-columns: auto 1fr; }
+  .marketing-footer a { grid-column: 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marketing-deep-dive *, .marketing-deep-dive *::before, .marketing-deep-dive *::after { scroll-behavior: auto !important; transition: none !important; }
+}

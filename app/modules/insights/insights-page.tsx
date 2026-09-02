@@ -236,6 +236,7 @@ export function InsightsPage() {
               tiktok={tiktokSnapshot}
               tiktokSummary={tiktokSummary}
               metaRangeLabel={`${formatDate(range.start)}–${formatDate(range.end)}`}
+              marketingHref={`/insights/marketing?from=${range.start}&to=${range.end}`}
             />
           </section>
 
