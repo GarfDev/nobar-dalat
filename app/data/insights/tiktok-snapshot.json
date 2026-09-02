@@ -1,0 +1,65 @@
+{
+  "period": { "start": "2025-09-02", "end": "2026-09-01" },
+  "updatedAt": "2026-09-01",
+  "approximateTotals": true,
+  "totals": {
+    "videoViews": 280700,
+    "profileViews": 7800,
+    "likes": 11200,
+    "comments": 334,
+    "shares": 1700
+  },
+  "trafficSources": [
+    { "source": "For You", "share": 0.712 },
+    { "source": "Trang cá nhân", "share": 0.152 },
+    { "source": "Tìm kiếm", "share": 0.131 },
+    { "source": "Đang theo dõi", "share": 0.005 }
+  ],
+  "topPosts": [
+    {
+      "id": "7602235811374894356",
+      "date": "2026-02-02",
+      "label": "quán tẻn rụ ngon | lư thâm và chi pu | nobar đà lạt | cosy chill TikTok #dalat",
+      "durationSeconds": 22,
+      "views": 38000,
+      "viewsApproximate": true,
+      "likes": 2065,
+      "comments": 6,
+      "shares": 385,
+      "saves": 622,
+      "averageWatchSeconds": 6.29,
+      "completionRate": 0.043,
+      "newFollowers": 54
+    },
+    {
+      "id": "tiktok-2025-10-28-top-2",
+      "date": "2025-10-28",
+      "label": "hâhhahhaahh",
+      "durationSeconds": 53,
+      "views": 32000,
+      "viewsApproximate": true,
+      "likes": 908,
+      "comments": 9,
+      "shares": 95,
+      "saves": 372,
+      "averageWatchSeconds": 19.74,
+      "completionRate": 0.149,
+      "newFollowers": 253
+    },
+    {
+      "id": "tiktok-2026-05-30-top-3",
+      "date": "2026-05-30",
+      "label": "nobar đà lạt tới nói cả buổi luôn #dalat #dalattrip #bardalat #dalatnight #dalatdidau",
+      "durationSeconds": 20,
+      "views": 24000,
+      "viewsApproximate": true,
+      "likes": 1968,
+      "comments": 10,
+      "shares": 407,
+      "saves": 841,
+      "averageWatchSeconds": 5.43,
+      "completionRate": 0.054,
+      "newFollowers": 62
+    }
+  ]
+}

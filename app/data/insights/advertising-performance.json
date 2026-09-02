@@ -1,0 +1,32 @@
+[
+  {
+    "id": "messages-2026-08",
+    "startDate": "2026-08-27",
+    "endDate": "2026-08-31",
+    "platform": "meta",
+    "label": "Chào bạn mến!",
+    "spend": 477495,
+    "resultType": "Messaging conversations started",
+    "results": 2,
+    "views": 4501,
+    "audience": 213,
+    "trackedPurchases": null,
+    "attributedRevenue": null,
+    "deliveryStatus": "Not delivering"
+  },
+  {
+    "id": "local-awareness-2025-10",
+    "startDate": "2025-10-19",
+    "endDate": "2025-10-29",
+    "platform": "meta",
+    "label": "Promoting local business NObar Dalat",
+    "spend": 391846,
+    "resultType": "Reach",
+    "results": 32655,
+    "views": 67457,
+    "audience": 32655,
+    "trackedPurchases": null,
+    "attributedRevenue": null,
+    "deliveryStatus": "Completed"
+  }
+]
