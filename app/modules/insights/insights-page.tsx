@@ -12,23 +12,23 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import { insightData } from "./data";
+import { insightData, tiktokSnapshot } from "./data";
 import { formatCompact, formatDate, formatDecimal, formatNumber, formatPercent, formatVND } from "./format";
 import { correlationLagSummary, roasLabel } from "./interpretation";
 import { buildManagementFindings } from "./insight-rules";
-import { buildAttributionPlan, buildDataReadiness, buildSocialEfficiencyRows, computeCommunityQuality, computeOperationalMetrics, computePlatformEfficiency, computeWeekdayPerformance } from "./computed-metrics";
+import { buildAttributionPlan, buildDataReadiness, buildUnifiedMarketingRows, computeCommunityQuality, computeOperationalMetrics, computePlatformEfficiency, computeWeekdayPerformance, summarizeTikTokTopPosts } from "./computed-metrics";
 import { buildReport, clampRange, laggedCorrelation, type MetricPoint } from "./reporting";
 import { aggregateProductRanking } from "./product-ranking";
 import type { DateRange, ISODate } from "./types";
 import { KpiCard } from "./components/kpi-card";
 import { DualTrendChart } from "./components/dual-trend-chart";
 import { WeekdayPerformanceChart } from "./components/weekday-performance-chart";
-import { SocialEfficiencyChart } from "./components/social-efficiency-chart";
 import { InsightsNavigation } from "./insights-navigation";
 import { RangeControls, type ReportMode } from "./range-controls";
 import { cleanContentLabel } from "./content-label";
 import { CorrelationLagChart } from "./components/correlation-lag-chart";
 import { CommunityQualityPanel } from "./components/community-quality-panel";
+import { UnifiedMarketingPanel } from "./components/unified-marketing-panel";
 
 const COVERAGE: DateRange = { start: "2024-09-01", end: "2026-08-31" };
 const DEFAULT_RANGE: DateRange = { start: "2026-06-03", end: "2026-08-31" };
@@ -98,7 +98,17 @@ export function InsightsPage() {
     instagram: computePlatformEfficiency(selectedSocialRows, "instagram"),
     facebook: computePlatformEfficiency(selectedSocialRows, "facebook"),
   };
-  const socialEfficiencyRows = buildSocialEfficiencyRows(platformEfficiency);
+  const unifiedMarketingRows = buildUnifiedMarketingRows(
+    report.social.map((platform) => {
+      const engagementRate = platformEfficiency[platform.platform].engagementRate;
+      return {
+        ...platform,
+        actionsPerThousandViews: engagementRate === null ? null : engagementRate * 1_000,
+      };
+    }),
+    tiktokSnapshot,
+  );
+  const tiktokSummary = summarizeTikTokTopPosts(tiktokSnapshot.topPosts);
   const readiness = buildDataReadiness(insightData);
   const attributionPlan = buildAttributionPlan(insightData);
   const trendData = report.monthlyRevenue.map((item) => ({
@@ -157,7 +167,7 @@ export function InsightsPage() {
               <KpiCard eyebrow="Doanh thu thuần" value={formatVND(report.revenue.netRevenue)} delta={report.revenueGrowth} source="POSAPP" accent="brass" />
               <KpiCard eyebrow="Đơn hoàn tất" value={formatNumber(report.revenue.orders)} delta={report.orderGrowth} source="POSAPP" accent="teal" note="Chỉ số gần nhất với lượt bàn; không phải số khách hay vòng quay bàn." />
               <KpiCard eyebrow="Giá trị TB / đơn" value={formatVND(report.revenue.averageOrderValue)} source="POSAPP" accent="brass" />
-              <KpiCard eyebrow="Tương tác social" value={formatCompact(socialTotals.interactions)} source="META" accent="red" note={`${formatCompact(socialTotals.views)} lượt xem có dữ liệu`} />
+              <KpiCard eyebrow="Tương tác Meta" value={formatCompact(socialTotals.interactions)} source="META" accent="red" note={`${formatCompact(socialTotals.views)} lượt xem có dữ liệu`} />
             </div>
             <div className="computed-block">
               <header><Gauge size={17} /><span>Computed decision metrics</span><small>Tính từ nguồn đã chuẩn hóa trong kỳ chọn</small></header>
@@ -220,22 +230,13 @@ export function InsightsPage() {
           </section>
 
           <section id="marketing" className="report-section">
-            <SectionTitle index="04" kicker="Hiệu quả organic Meta" title="Instagram hay Facebook đang hiệu quả hơn?" note="So sánh tương tác, nhấp link và follow trên cùng mẫu số 1.000 lượt xem" />
-            <div className="platform-grid">
-              {report.social.map((platform) => {
-                const efficiency = platformEfficiency[platform.platform];
-                return <article key={platform.platform} className={`platform-card ${platform.platform}`}>
-                <div className="platform-heading"><span>{platform.platform === "instagram" ? "IG" : "FB"}</span><div><p>{platform.platform}</p><h3>{formatCompact(platform.views)} lượt xem</h3></div></div>
-                <dl>
-                  <div><dt>Tương tác</dt><dd>{formatCompact(platform.interactions)}</dd></div>
-                  <div><dt>Nhấp link</dt><dd>{formatCompact(platform.linkClicks)}</dd></div>
-                  <div><dt>Theo dõi mới</dt><dd>{formatCompact(platform.follows)}</dd></div>
-                  <div><dt>Ngày đủ dữ liệu để so sánh</dt><dd>{formatNumber(efficiency.comparableDays)} ngày</dd></div>
-                </dl>
-              </article>})}
-            </div>
-            <SocialEfficiencyChart data={socialEfficiencyRows} />
-            <p className="footnote">Chưa thể kết luận nền tảng nào tạo doanh thu vì Meta và PosApp chưa được nối bằng UTM, mã ưu đãi hoặc order ID. Facebook chỉ có dữ liệu view từ 01.08.2025; dữ liệu follow Instagram chỉ bắt đầu từ 27.08.2025.</p>
+            <SectionTitle index="04" kicker="Tình hình marketing" title="Một bức tranh, ba kênh" note="Instagram + Facebook theo khoảng đang chọn · TikTok là snapshot 365 ngày gần nhất" />
+            <UnifiedMarketingPanel
+              rows={unifiedMarketingRows}
+              tiktok={tiktokSnapshot}
+              tiktokSummary={tiktokSummary}
+              metaRangeLabel={`${formatDate(range.start)}–${formatDate(range.end)}`}
+            />
           </section>
 
           {mode === "detailed" && <>

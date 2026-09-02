@@ -8,10 +8,27 @@ import {
   computeOperationalMetrics,
   computePlatformEfficiency,
   buildSocialEfficiencyRows,
+  buildUnifiedMarketingRows,
+  summarizeTikTokTopPosts,
   computeWeekdayPerformance,
 } from "./computed-metrics";
 import { insightData } from "./data";
-import type { ContentItem, RevenueDay, SocialDay } from "./types";
+import type { ContentItem, RevenueDay, SocialDay, TikTokSnapshot } from "./types";
+
+const tiktokFixture: TikTokSnapshot = {
+  period: { start: "2025-09-02", end: "2026-09-01" },
+  updatedAt: "2026-09-01",
+  approximateTotals: true,
+  totals: { videoViews: 10_000, profileViews: 500, likes: 300, comments: 20, shares: 80 },
+  trafficSources: [
+    { source: "For You", share: 0.7 },
+    { source: "Search", share: 0.3 },
+  ],
+  topPosts: [
+    { id: "one", date: "2026-02-02", label: "One", durationSeconds: 20, views: 2_000, viewsApproximate: true, likes: 100, comments: 4, shares: 30, saves: 50, averageWatchSeconds: 5, completionRate: 0.1, newFollowers: 10 },
+    { id: "two", date: "2025-10-28", label: "Two", durationSeconds: 50, views: 1_000, viewsApproximate: true, likes: 80, comments: 5, shares: 10, saves: 70, averageWatchSeconds: 20, completionRate: 0.2, newFollowers: 20 },
+  ],
+};
 
 test("computes operating-day efficiency without treating closed days as service days", () => {
   const rows: RevenueDay[] = [
@@ -51,6 +68,26 @@ test("compares social platforms on actions per thousand views", () => {
     { metric: "Nhấp link", instagram: 1, facebook: 2 },
     { metric: "Theo dõi", instagram: 2.8, facebook: 0.9 },
   ]);
+});
+
+test("puts TikTok beside Meta without hiding its fixed snapshot scope", () => {
+  const rows = buildUnifiedMarketingRows([
+    { platform: "instagram", views: 2_000, interactions: 30, actionsPerThousandViews: 12 },
+    { platform: "facebook", views: 1_000, interactions: 5 },
+  ], tiktokFixture);
+  assert.deepEqual(rows, [
+    { platform: "instagram", views: 2_000, actions: 30, actionsPerThousandViews: 12, scope: "selected-range", approximate: false },
+    { platform: "facebook", views: 1_000, actions: 5, actionsPerThousandViews: 5, scope: "selected-range", approximate: false },
+    { platform: "tiktok", views: 10_000, actions: 400, actionsPerThousandViews: 40, scope: "fixed-snapshot", approximate: true },
+  ]);
+});
+
+test("identifies the TikTok posts that retain viewers, earn saves and create followers", () => {
+  assert.deepEqual(summarizeTikTokTopPosts(tiktokFixture.topPosts), {
+    bestRetentionPostId: "two",
+    mostSavedPostId: "two",
+    bestFollowerConversionPostId: "two",
+  });
 });
 
 test("summarizes weekday demand using active days and paid orders", () => {

@@ -1,4 +1,4 @@
-import type { ContentItem, InsightData, Platform, RevenueDay, SocialDay } from "./types";
+import type { ContentItem, InsightData, MarketingPlatform, Platform, RevenueDay, SocialDay, TikTokPostSnapshot, TikTokSnapshot } from "./types";
 
 export type OperationalMetrics = {
   calendarDays: number;
@@ -22,6 +22,21 @@ export type SocialEfficiencyRow = {
   metric: string;
   instagram: number | null;
   facebook: number | null;
+};
+
+export type UnifiedMarketingRow = {
+  platform: MarketingPlatform;
+  views: number;
+  actions: number | null;
+  actionsPerThousandViews: number | null;
+  scope: "selected-range" | "fixed-snapshot";
+  approximate: boolean;
+};
+
+export type TikTokTopPostSummary = {
+  bestRetentionPostId: string | null;
+  mostSavedPostId: string | null;
+  bestFollowerConversionPostId: string | null;
 };
 
 export type WeekdayPerformance = {
@@ -239,6 +254,48 @@ export function buildSocialEfficiencyRows(platforms: Record<Platform, PlatformEf
     { metric: "Nhấp link", instagram: perThousand(platforms.instagram.clickThroughRate), facebook: perThousand(platforms.facebook.clickThroughRate) },
     { metric: "Theo dõi", instagram: platforms.instagram.followPerThousandViews, facebook: platforms.facebook.followPerThousandViews },
   ];
+}
+
+export function buildUnifiedMarketingRows(
+  metaRows: Array<{ platform: Platform; views: number | null; interactions: number | null; actionsPerThousandViews?: number | null }>,
+  tiktok: TikTokSnapshot,
+): UnifiedMarketingRow[] {
+  const meta = metaRows.map((row): UnifiedMarketingRow => ({
+    platform: row.platform,
+    views: row.views ?? 0,
+    actions: row.interactions,
+    actionsPerThousandViews: row.actionsPerThousandViews !== undefined
+      ? row.actionsPerThousandViews
+      : row.views && row.interactions !== null
+        ? (row.interactions / row.views) * 1_000
+        : null,
+    scope: "selected-range",
+    approximate: false,
+  }));
+  const tiktokActions = tiktok.totals.likes + tiktok.totals.comments + tiktok.totals.shares;
+  return [
+    ...meta,
+    {
+      platform: "tiktok",
+      views: tiktok.totals.videoViews,
+      actions: tiktokActions,
+      actionsPerThousandViews: tiktok.totals.videoViews
+        ? (tiktokActions / tiktok.totals.videoViews) * 1_000
+        : null,
+      scope: "fixed-snapshot",
+      approximate: tiktok.approximateTotals,
+    },
+  ];
+}
+
+export function summarizeTikTokTopPosts(posts: TikTokPostSnapshot[]): TikTokTopPostSummary {
+  const pick = (score: (post: TikTokPostSnapshot) => number) =>
+    posts.reduce<TikTokPostSnapshot | null>((best, post) => !best || score(post) > score(best) ? post : best, null)?.id ?? null;
+  return {
+    bestRetentionPostId: pick((post) => post.completionRate),
+    mostSavedPostId: pick((post) => post.saves),
+    bestFollowerConversionPostId: pick((post) => post.views ? post.newFollowers / post.views : 0),
+  };
 }
 
 export function computeWeekdayPerformance(rows: RevenueDay[]): WeekdayPerformance[] {

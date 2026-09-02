@@ -4,9 +4,10 @@ import products from "~/data/insights/product-performance.json";
 import quality from "~/data/insights/data-quality.json";
 import revenue from "~/data/insights/revenue-daily.json";
 import social from "~/data/insights/social-daily.json";
+import tiktok from "~/data/insights/tiktok-snapshot.json";
 
 import { validateInsightData } from "./data-validation";
-import type { InsightData } from "./types";
+import type { InsightData, TikTokSnapshot } from "./types";
 
 export const insightData = {
   revenue,
@@ -18,3 +19,4 @@ export const insightData = {
 } as InsightData;
 
 export const dataCoverage = validateInsightData(insightData);
+export const tiktokSnapshot = tiktok as TikTokSnapshot;

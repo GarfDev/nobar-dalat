@@ -1,5 +1,6 @@
 export type ISODate = `${number}-${number}-${number}`;
 export type Platform = "facebook" | "instagram";
+export type MarketingPlatform = Platform | "tiktok";
 export type DateRange = { start: ISODate; end: ISODate };
 
 export type RevenueDay = {
@@ -97,4 +98,35 @@ export type DataCoverage = {
   products: SourceCoverage | null;
   content: SourceCoverage | null;
   advertising: SourceCoverage | null;
+};
+
+export type TikTokPostSnapshot = {
+  id: string;
+  date: ISODate;
+  label: string;
+  durationSeconds: number;
+  views: number;
+  viewsApproximate: boolean;
+  likes: number;
+  comments: number;
+  shares: number;
+  saves: number;
+  averageWatchSeconds: number;
+  completionRate: number;
+  newFollowers: number;
+};
+
+export type TikTokSnapshot = {
+  period: DateRange;
+  updatedAt: ISODate;
+  approximateTotals: boolean;
+  totals: {
+    videoViews: number;
+    profileViews: number;
+    likes: number;
+    comments: number;
+    shares: number;
+  };
+  trafficSources: Array<{ source: string; share: number }>;
+  topPosts: TikTokPostSnapshot[];
 };
