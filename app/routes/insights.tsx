@@ -1,14 +1,14 @@
-import { InsightsPage } from "~/modules/insights/insights-page";
+import { OverviewReport } from "~/modules/insights/business-reports";
 import "~/modules/insights/insights.css";
 
 export function meta() {
   return [
-    { title: "NObar · Marketing & F&B Insights" },
+    { title: "NObar · Báo cáo tổng hợp" },
     { name: "robots", content: "noindex, nofollow" },
     { name: "description", content: "Báo cáo vận hành nội bộ NObar." },
   ];
 }
 
 export default function InsightsRoute() {
-  return <InsightsPage />;
+  return <OverviewReport />;
 }

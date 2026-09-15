@@ -1,4 +1,11 @@
 .marketing-deep-dive {
+  --ink: #111210;
+  --paper: #ede9e0;
+  --paper-dim: #a7a198;
+  --line: rgba(237, 233, 224, 0.15);
+  --brass: #c7a05a;
+  --teal: #69aaa1;
+  --red: #d66a59;
   --m-bg: #111210;
   --m-panel: #171815;
   --m-paper: #ede9e0;
