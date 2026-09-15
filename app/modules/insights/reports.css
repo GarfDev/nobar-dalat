@@ -1,0 +1,330 @@
+.report-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px max(24px, 4vw);
+  background: #141512;
+  border-bottom: 1px solid #393a32;
+  color: #e7e1d5;
+  font-family: Arial, sans-serif;
+}
+.report-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #c39a55;
+}
+.report-brand span {
+  font-size: 12px;
+  font-weight: normal;
+  color: #aaa399;
+}
+.report-tabs > div {
+  display: flex;
+  gap: 6px;
+}
+.report-tabs a {
+  padding: 12px 18px;
+  color: #aaa399;
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+}
+.report-tabs a[aria-current="page"] {
+  color: #e7e1d5;
+  border-color: #c39a55;
+  background: #23241e;
+}
+.report-tabs a:focus-visible,
+.reports-page button:focus-visible,
+.reports-page a:focus-visible {
+  outline: 2px solid #c39a55;
+  outline-offset: 3px;
+}
+.reports-heading,
+.reports-body,
+.reports-footer {
+  max-width: 1300px;
+  margin: auto;
+  padding: 32px;
+}
+.reports-heading {
+  padding-top: 44px;
+  padding-bottom: 32px;
+}
+.reports-heading > p:first-child {
+  color: #c39a55;
+  font-size: 12px;
+}
+.reports-heading h1 {
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.15;
+  margin: 12px 0;
+  font-weight: 500;
+}
+.reports-heading p,
+.reports-heading small {
+  color: #aaa399;
+  line-height: 1.6;
+}
+.reports-heading small {
+  font-size: 12px;
+}
+.reports-filters {
+  padding: 14px max(24px, 4vw);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background: #191a16;
+  border-block: 1px solid #393a32;
+}
+.reports-filters > div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.reports-filters button {
+  background: transparent;
+  color: #e7e1d5;
+  border: 1px solid #45473a;
+  padding: 9px 15px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.reports-filters button[aria-pressed="true"] {
+  background: #c39a55;
+  color: #111;
+}
+.reports-filters label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  color: #aaa399;
+}
+.reports-filters input {
+  background: #23241e;
+  border: 1px solid #45473a;
+  color: #e7e1d5;
+  padding: 8px;
+  color-scheme: dark;
+}
+.reports-section {
+  padding: 24px 0 38px;
+  border-bottom: 1px solid #393a32;
+}
+.reports-section > header {
+  margin-bottom: 22px;
+}
+.reports-section > header > p:first-child {
+  font-size: 12px;
+  color: #c39a55;
+}
+.reports-section h2 {
+  font-size: clamp(23px, 3vw, 32px);
+  margin: 8px 0;
+  line-height: 1.25;
+}
+.reports-section > header p,
+.reports-note {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #aaa399;
+}
+.reports-note {
+  margin: 16px 0 0;
+}
+.reports-briefs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.reports-briefs article {
+  padding: 25px;
+  border: 1px solid #393a32;
+  background: #191a16;
+  display: flex;
+  flex-direction: column;
+}
+.reports-briefs span {
+  color: #c39a55;
+  font-size: 12px;
+}
+.reports-briefs h3 {
+  font-size: 20px;
+  line-height: 1.45;
+  margin: 18px 0;
+}
+.reports-briefs p {
+  font-size: 14px;
+  color: #aaa399;
+  line-height: 1.7;
+}
+.reports-briefs a {
+  margin-top: auto;
+  padding-top: 16px;
+  color: #d9b87b;
+  font-size: 14px;
+}
+.reports-table {
+  overflow: auto;
+  border: 1px solid #393a32;
+}
+.reports-table table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+  font-size: 14px;
+}
+.reports-table th {
+  text-align: left;
+  color: #c39a55;
+  font-weight: normal;
+  background: #191a16;
+}
+.reports-table td,
+.reports-table th {
+  padding: 16px 20px;
+  border-bottom: 1px solid #393a32;
+  line-height: 1.6;
+}
+.reports-table tr:last-child td {
+  border-bottom: 0;
+}
+.reports-notice {
+  padding: 22px;
+  border: 1px solid #75603b;
+  background: #211e17;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #ddd0b9;
+}
+.reports-notice p {
+  margin: 8px 0 0;
+}
+.reports-details {
+  margin-top: 20px;
+}
+.reports-details summary {
+  padding: 16px 0;
+  cursor: pointer;
+  color: #d9b87b;
+}
+.reports-footer {
+  font-size: 12px;
+  color: #aaa399;
+  line-height: 1.65;
+}
+.reports-page .kpi-card {
+  min-height: 190px;
+}
+.reports-page .kpi-card > strong {
+  font-family: Arial, sans-serif;
+  font-size: clamp(20px, 2vw, 30px);
+  line-height: 1.35;
+  margin-top: 24px;
+}
+.marketing-deep-dive .marketing-hero {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.marketing-deep-dive .marketing-hero h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.marketing-deep-dive .marketing-hero h1 em {
+  margin-left: 0;
+}
+.marketing-deep-dive .marketing-hero-grid {
+  gap: 36px;
+}
+.marketing-deep-dive .marketing-eyebrow {
+  font-size: 12px;
+}
+.marketing-deep-dive .marketing-hero-copy p {
+  font-size: 14px;
+}
+.marketing-deep-dive .marketing-hero-copy strong {
+  margin-top: 12px;
+}
+.marketing-deep-dive .marketing-answer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media (max-width: 760px) {
+  .report-tabs {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 16px;
+  }
+  .report-tabs > div {
+    justify-content: space-between;
+  }
+  .report-tabs a {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .reports-filters {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .reports-heading,
+  .reports-body,
+  .reports-footer {
+    padding: 24px 16px;
+  }
+  .reports-briefs {
+    grid-template-columns: 1fr;
+  }
+  .reports-page .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .reports-page .kpi-card {
+    padding: 16px;
+  }
+  .reports-page .kpi-card > strong {
+    font-size: 20px;
+  }
+}
+.reports-filters {
+  flex-wrap: wrap;
+}
+.reports-filters > small {
+  flex-basis: 100%;
+  color: #aaa399;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.social-growth-panel {
+  margin: 0 auto;
+  padding: 32px;
+  max-width: 1300px;
+}
+.latest-social-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 20px;
+}
+.latest-social-grid .reports-table table {
+  min-width: 420px;
+}
+.latest-social-grid .reports-table td,
+.latest-social-grid .reports-table th {
+  padding: 10px;
+  font-size: 13px;
+}
+.social-growth-panel a {
+  color: #d9b87b;
+}
+.social-growth-panel > .reports-notice:last-child {
+  margin-top: 24px;
+}
+@media (max-width: 760px) {
+  .latest-social-grid {
+    grid-template-columns: 1fr;
+  }
+  .social-growth-panel {
+    padding: 24px 16px;
+  }
+}

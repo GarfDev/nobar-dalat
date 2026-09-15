@@ -1,4 +1,4 @@
-import { BarChart3, Clock3, MapPin, Search, Sparkles } from "lucide-react";
+import { ArrowUpRight, BarChart3, Clock3, MapPin, Search, Sparkles } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 import type { TikTokTopPostSummary, UnifiedMarketingRow } from "../computed-metrics";
@@ -10,6 +10,7 @@ type UnifiedMarketingPanelProps = {
   tiktok: TikTokSnapshot;
   tiktokSummary: TikTokTopPostSummary;
   metaRangeLabel: string;
+  marketingHref: string;
 };
 
 const platformMeta: Record<MarketingPlatform, { label: string; short: string; color: string }> = {
@@ -30,7 +31,7 @@ function postBadge(id: string, summary: TikTokTopPostSummary) {
   return badges.join(" · ");
 }
 
-export function UnifiedMarketingPanel({ rows, tiktok, tiktokSummary, metaRangeLabel }: UnifiedMarketingPanelProps) {
+export function UnifiedMarketingPanel({ rows, tiktok, tiktokSummary, metaRangeLabel, marketingHref }: UnifiedMarketingPanelProps) {
   const chartRows = rows.map((row) => ({
     ...row,
     label: platformMeta[row.platform].label,
@@ -45,7 +46,7 @@ export function UnifiedMarketingPanel({ rows, tiktok, tiktokSummary, metaRangeLa
       <header className="marketing-thesis">
         <div><Sparkles aria-hidden="true" /><span>Kết luận đa kênh</span></div>
         <h3>TikTok đang tạo phản ứng mạnh; Instagram giữ quy mô Meta; Facebook kéo người xem tới link tốt hơn.</h3>
-        <p>Đọc từng kênh theo đúng vai trò. Chưa có mã nối sang hóa đơn nên đây là hiệu suất tạo chú ý và hành động, không phải doanh thu do marketing tạo ra.</p>
+        <aside className="marketing-thesis-action"><p>Đọc từng kênh theo đúng vai trò. Chưa có mã nối sang hóa đơn nên đây là hiệu suất tạo chú ý và hành động, không phải doanh thu do marketing tạo ra.</p><a href={marketingHref}>Mở trang phân tích marketing <ArrowUpRight /></a></aside>
       </header>
 
       <div className="channel-ledger">

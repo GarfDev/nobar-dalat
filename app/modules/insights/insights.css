@@ -133,7 +133,11 @@
 .unified-marketing { display: grid; gap: 14px; }
 .marketing-thesis { display: grid; grid-template-columns: minmax(140px, .3fr) minmax(300px, 1fr) minmax(240px, .65fr); gap: 26px; align-items: center; padding: 26px 28px; border: 1px solid rgba(195,154,85,.42); background: linear-gradient(110deg, rgba(195,154,85,.09), transparent 62%); }
 .marketing-thesis > div { display: flex; align-items: center; gap: 9px; color: var(--brass); }.marketing-thesis svg { width: 17px; }.marketing-thesis span { font: 600 .62rem monospace; text-transform: uppercase; letter-spacing: .1em; }
-.marketing-thesis h3 { margin: 0; font-size: clamp(1rem, 1.8vw, 1.35rem); line-height: 1.4; }.marketing-thesis > p { margin: 0; color: var(--paper-dim); font-size: .69rem; line-height: 1.55; }
+.marketing-thesis h3 { margin: 0; font-size: clamp(1rem, 1.8vw, 1.35rem); line-height: 1.4; }.marketing-thesis > p, .marketing-thesis-action p { margin: 0; color: var(--paper-dim); font-size: .69rem; line-height: 1.55; }
+.marketing-thesis-action { display: grid; gap: 13px; }
+.marketing-thesis-action a { display: inline-flex; align-items: center; gap: 7px; width: fit-content; color: var(--paper); font-size: .66rem; text-decoration-color: var(--brass); text-underline-offset: 4px; }
+.marketing-thesis-action a:hover, .marketing-thesis-action a:focus-visible { color: var(--brass); outline: none; }
+.marketing-thesis-action a svg { width: 14px; }
 .channel-ledger { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--line); background: var(--line); }
 .channel-row { min-width: 0; padding: 22px; background: #13120f; box-shadow: inset 0 3px 0 var(--brass); }.channel-instagram { box-shadow: inset 0 3px 0 var(--red); }.channel-facebook { box-shadow: inset 0 3px 0 var(--teal); }.channel-tiktok { box-shadow: inset 0 3px 0 #d6f6f1; }
 .channel-identity { display: flex; align-items: center; gap: 13px; min-height: 46px; }.channel-identity > span { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line); color: var(--brass); font: 600 .63rem monospace; }.channel-tiktok .channel-identity > span { color: #d6f6f1; }
