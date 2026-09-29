@@ -6,13 +6,14 @@ import { redirect } from "react-router";
 export async function clientLoader({ request }: Route.ClientLoaderArgs) {
   const url = new URL(request.url);
 
-  // Detect browser language
+  // Prefer an explicit language choice, then the browser language.
   let lang = "en";
-  if (typeof navigator !== "undefined" && navigator.language) {
-    const browserLang = navigator.language.split("-")[0].toLowerCase();
-    if (browserLang === "vi") {
-      lang = "vi";
-    }
+  try {
+    const stored = window.localStorage.getItem("i18nextLng")?.toLowerCase().replace("_", "-").split("-")[0];
+    if (stored === "vi" || stored === "en") lang = stored;
+    else if (navigator.language?.split("-")[0].toLowerCase() === "vi") lang = "vi";
+  } catch {
+    if (typeof navigator !== "undefined" && navigator.language?.split("-")[0].toLowerCase() === "vi") lang = "vi";
   }
 
   url.pathname = `/${lang}`;

@@ -10,6 +10,21 @@ import type { MediaItem } from "../modules/welcome/branding/carousel";
 
 const SUPPORTED = new Set(["en", "vi"]);
 
+export const links: Route.LinksFunction = () => [
+  {
+    rel: "preload",
+    href: "/fonts/icel-novecentosans/iCielNovecentosans-Normal.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  },
+  ...[1, 2, 3, 4, 5, 6].map((number) => ({
+    rel: "preload",
+    as: "image",
+    href: `/images/menu-optimized/image_${number}.webp`,
+  })),
+];
+
 export async function clientLoader({
   params,
   request,

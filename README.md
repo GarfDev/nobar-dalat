@@ -16,6 +16,37 @@ A modern, production-ready template for building full-stack React applications u
 
 ## Getting Started
 
+### Shared expense manager
+
+The private expense manager is at `/expenses`. It is designed for quick entry on a phone: enter the amount, pick or type a category and optional subcategory, and save. New categories and subcategories can be created in their own autocomplete fields. Subcategory suggestions are scoped to the selected category. The ledger supports monthly totals, category totals, editing, and deletion. All phones read from the same database.
+
+Before entering real expenses:
+
+1. Run [`supabase/migrations/20260929000000_expenses.sql`](supabase/migrations/20260929000000_expenses.sql), [`supabase/migrations/20260929010000_expense_subcategories.sql`](supabase/migrations/20260929010000_expense_subcategories.sql), and [`supabase/migrations/20260929020000_private_access.sql`](supabase/migrations/20260929020000_private_access.sql) in order in the Supabase SQL editor.
+2. Set the server environment variables `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` shown in `.env.example` on the deployment and local server. Never expose the secret key with a `VITE_` prefix.
+3. Run `npm run access:set-password`. This generates a new password, stores only its salted hash in Supabase, and prints the password once. To choose a password instead, pipe it to the command on standard input. Open `/expenses` on each phone and enter that password.
+
+If the database is not configured, the page remains readable but saving is disabled, so no entry appears to sync when it has only been saved on one device.
+
+PosApp revenue is shown as disconnected until the cafe's PosApp Open API access and revenue endpoint details are provided. The existing static insights data is not presented as live revenue.
+
+### Private pages
+
+The homepage (`/`, `/en`, `/vi`) is public. All other pages require a password.
+With Supabase configured, the password hash is stored in `private_access` and
+only the server's secret key can read it. Keep the key in the server environment:
+
+```bash
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-server-only-secret-key
+```
+
+A successful sign-in stays valid for 60 days on that device. Changing the
+password revokes previous sessions within 30 seconds. The session signing key
+is derived from the Supabase secret key unless `ACCESS_SESSION_SECRET` is set.
+Keep either key stable across deployments. Without Supabase, local development
+can use `ACCESS_PASSWORD` and `ACCESS_SESSION_SECRET` as a legacy fallback.
+
 ### Installation
 
 Install the dependencies:

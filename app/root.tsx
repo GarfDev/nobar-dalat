@@ -5,54 +5,29 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "react-router";
+import { lazy, Suspense } from "react";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import type { Route } from "./+types/root";
 import "./app.css";
-import i18next from "./i18n";
-import { CursorSync } from "~/components/cursor-sync";
+import { checkAccess } from "~/lib/access.server";
+
+const CursorSync = lazy(async () => {
+  const module = await import("~/components/cursor-sync");
+  return { default: module.CursorSync };
+});
+
+export async function loader({ request }: Route.LoaderArgs) {
+  const response = await checkAccess(request);
+  if (response) throw response;
+  return null;
+}
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preload",
-    href: "/fonts/icel-novecentosans/iCielNovecentosans-Normal.woff2",
-    as: "font",
-    type: "font/woff2",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "preload",
-    as: "image",
-    href: "/images/menu-optimized/image_1.webp",
-  },
-  {
-    rel: "preload",
-    as: "image",
-    href: "/images/menu-optimized/image_2.webp",
-  },
-  {
-    rel: "preload",
-    as: "image",
-    href: "/images/menu-optimized/image_3.webp",
-  },
-  {
-    rel: "preload",
-    as: "image",
-    href: "/images/menu-optimized/image_4.webp",
-  },
-  {
-    rel: "preload",
-    as: "image",
-    href: "/images/menu-optimized/image_5.webp",
-  },
-  {
-    rel: "preload",
-    as: "image",
-    href: "/images/menu-optimized/image_6.webp",
-  },
   { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
   {
     rel: "icon",
@@ -81,19 +56,6 @@ export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/favicon.ico" },
   { rel: "manifest", href: "/site.webmanifest" },
 ];
-
-function pickClientLanguage() {
-  try {
-    const stored = window.localStorage.getItem("i18nextLng");
-    const nav = navigator.language?.split("-")[0];
-    const candidate = (stored || nav || i18next.language || "en").toLowerCase();
-    const base = candidate.replace("_", "-").split("-")[0];
-    const supported = (i18next.options.supportedLngs || []) as string[];
-    return supported.includes(base) ? base : "en";
-  } catch {
-    return "en";
-  }
-}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -144,7 +106,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
 
         {children}
-        <CursorSync />
         <ScrollRestoration />
         <Scripts />
         <Analytics />
@@ -155,30 +116,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 export default function App() {
-  // Client-only: after hydration, switch to user's preferred language to avoid hydration mismatch.
-  if (typeof window !== "undefined") {
-    // If user is at root ("/"), push them to their language-prefixed path.
-    if (window.location.pathname === "/") {
-      const desired = pickClientLanguage();
-      const target = `/${desired}`;
-      if (window.location.pathname !== target) {
-        window.history.replaceState(null, "", target);
-      }
-      if (i18next.language !== desired) {
-        void i18next.changeLanguage(desired);
-      }
-    } else {
-      // Otherwise just ensure i18n matches the URL-based language set by lang route
-      const seg = window.location.pathname.split("/")[1]?.toLowerCase();
-      if (seg === "en" || seg === "vi") {
-        if (i18next.language !== seg) void i18next.changeLanguage(seg);
-      }
-    }
-  }
-
+  const location = useLocation();
+  const isPublicPage = ["/", "/en", "/vi"].includes(location.pathname.replace(/\/$/, "") || "/");
   return (
     <>
       <Outlet />
+      {isPublicPage && <Suspense fallback={null}><CursorSync /></Suspense>}
     </>
   );
 }

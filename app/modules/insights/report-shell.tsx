@@ -56,6 +56,7 @@ export function ReportNavigation({
           ["/insights", "Tổng hợp"],
           ["/insights/finance", "Tài chính"],
           ["/insights/marketing", "Marketing"],
+          ["/expenses", "Nhập chi phí"],
         ].map(([path, label]) => (
           <Link
             key={path}
