@@ -8,6 +8,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ReactLenis } from "lenis/react";
 import { useRef, useEffect, type ElementRef } from "react";
 import type { MediaItem } from "./branding/carousel";
+import { createHorizontalGestureGuard } from "./horizontal-gesture";
 
 const BLUR_INPUT_RANGE = [0, 0.45, 0.85];
 const OPACITY_INPUT_RANGE = [0, 0.25, 0.8];
@@ -17,6 +18,7 @@ export function Welcome({ carouselItems }: { carouselItems: MediaItem[] }) {
   const mapRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const allowGestureScroll = useRef(createHorizontalGestureGuard());
 
   // 1. Concept entering (covers Branding)
   const { scrollYProgress: conceptProgress } = useScroll({
@@ -129,6 +131,15 @@ export function Welcome({ carouselItems }: { carouselItems: MediaItem[] }) {
         smoothWheel: true,
         syncTouch: true,
         touchMultiplier: 1.5,
+        virtualScroll: ({ event, deltaX, deltaY }) =>
+          allowGestureScroll.current({
+            type: event.type,
+            inHorizontalArea:
+              event.target instanceof Element &&
+              Boolean(event.target.closest("[data-horizontal-swipe]")),
+            deltaX,
+            deltaY,
+          }),
       }}
     >
       <div className="card-container">

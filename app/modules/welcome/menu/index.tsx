@@ -255,7 +255,10 @@ export function Menu() {
     >
       {/* Category Navigation - Top */}
       <div className="absolute top-8 md:top-12 z-30 w-full flex justify-center pointer-events-none">
-        <div className="flex gap-2 md:gap-4 overflow-x-auto pb-4 no-scrollbar max-w-full px-4 pointer-events-auto snap-x snap-mandatory items-center [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+        <div
+          data-horizontal-swipe
+          className="flex gap-2 md:gap-4 overflow-x-auto touch-pan-x pb-4 no-scrollbar max-w-full px-4 pointer-events-auto snap-x snap-mandatory items-center [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+        >
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
@@ -339,7 +342,7 @@ export function Menu() {
           key={`${activeCategory}-${page}`}
           className="absolute w-full h-full flex items-center justify-center px-6 pb-24 pt-16 md:px-12 lg:px-20 md:pb-0 md:pt-0"
         >
-          <div className="w-full max-w-6xl h-full md:h-[60vh] lg:h-[70vh] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
+          <div className="w-full max-w-6xl h-full md:h-[60vh] lg:h-[70vh] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0 touch-none md:touch-auto">
             {/* Text Part - Light text on dark background */}
             <div className="w-full md:w-1/2 flex items-center justify-end z-0 md:-mr-12">
               <DrinkInfo drink={drink} direction={direction} />
@@ -347,6 +350,7 @@ export function Menu() {
 
             {/* Image Part */}
             <motion.div
+              data-horizontal-swipe
               custom={direction}
               variants={imageVariants}
               initial="enter"
