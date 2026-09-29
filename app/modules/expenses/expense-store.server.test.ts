@@ -15,19 +15,19 @@ test("saving a new subcategory associates it with the selected parent", async ()
     const table = new URL(request.url).pathname.split("/").pop() || "";
     const body = request.method === "POST" ? await request.json() as Record<string, unknown> : null;
     if (body) posted.push({ table, body });
-    const data = table === "expense_categories" ? [{ id: "category-id", name: "Nguyên liệu" }]
+    const data = table === "expense_categories" ? [{ id: "category-id", name: "Chi phí CCDC, NVL" }]
       : table === "expense_subcategories" && request.method === "GET" ? []
-      : table === "expense_subcategories" ? [{ id: "subcategory-id", name: "Trái cây" }]
+      : table === "expense_subcategories" ? [{ id: "subcategory-id", name: "CCDC" }]
       : [{ id: "expense-id" }];
     const single = request.headers.get("accept")?.includes("vnd.pgrst.object");
     return new Response(JSON.stringify(single ? data[0] : data), { status: 200, headers: { "content-type": "application/json" } });
   };
 
   try {
-    const id = await saveExpense({ amount: 75000, category: "Nguyên liệu", subcategory: "Trái cây", note: "", date: "2026-09-29", paymentMethod: "cash" });
+    const id = await saveExpense({ amount: 75000, category: "Chi phí CCDC, NVL", subcategory: "CCDC", note: "", date: "2026-09-29", paymentMethod: "cash" });
     assert.equal(id, "expense-id");
     assert.deepEqual(posted, [
-      { table: "expense_subcategories", body: { category_id: "category-id", name: "Trái cây", search_key: "trai cay" } },
+      { table: "expense_subcategories", body: { category_id: "category-id", name: "CCDC", search_key: "ccdc" } },
       { table: "expenses", body: { amount: 75000, category_id: "category-id", subcategory_id: "subcategory-id", note: "", spent_on: "2026-09-29", payment_method: "cash" } },
     ]);
   } finally {

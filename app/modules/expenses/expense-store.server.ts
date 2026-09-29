@@ -4,6 +4,11 @@ import type { parseExpenseInput } from "./expense-input";
 
 type ExpenseInput = NonNullable<ReturnType<typeof parseExpenseInput>>;
 
+const LEGACY_CATEGORY_KEYS = new Set([
+  "nguyen lieu", "luong & nhan su", "dien nuoc", "mat bang",
+  "vat tu", "marketing", "di lai", "khac",
+]);
+
 function database() {
   const url = process.env.SUPABASE_URL || process.env.VITE_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -34,7 +39,7 @@ export async function loadExpenseData(month: string) {
     .order("created_at", { ascending: false })
     .range(offset, offset + 999);
   const [categoriesResult, subcategoriesResult, firstPage] = await Promise.all([
-    db.from("expense_categories").select("id, name").order("created_at"),
+    db.from("expense_categories").select("id, name, search_key").order("created_at"),
     db.from("expense_subcategories").select("category_id, name").order("created_at"),
     page(0),
   ]);
@@ -56,7 +61,7 @@ export async function loadExpenseData(month: string) {
       const category = Array.isArray(relation) ? relation[0]?.name : relation?.name;
       const subcategory = Array.isArray(subrelation) ? subrelation[0]?.name : subrelation?.name;
       expenses.push({
-        id: String(row.id), amount: Number(row.amount), category: category || "Khác",
+        id: String(row.id), amount: Number(row.amount), category: category || "Chi ngoài nhóm",
         subcategory: subcategory || "",
         note: String(row.note || ""), date: String(row.spent_on),
         paymentMethod: row.payment_method === "transfer" ? "transfer" : "cash",
@@ -68,7 +73,12 @@ export async function loadExpenseData(month: string) {
     result = await page(offset);
     if (result.error) throw new Error("Không tải được chi phí. Hãy kiểm tra kết nối Supabase.");
   }
-  return { configured: true as const, categories: (categoriesResult.data ?? []).map((item) => item.name), subcategories, expenses };
+  return {
+    configured: true as const,
+    categories: (categoriesResult.data ?? []).filter((item) => !LEGACY_CATEGORY_KEYS.has(item.search_key)).map((item) => item.name),
+    subcategories,
+    expenses,
+  };
 }
 
 async function ensureCategory(name: string, db: NonNullable<ReturnType<typeof database>>) {

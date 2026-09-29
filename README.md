@@ -22,7 +22,7 @@ The private expense manager is at `/expenses`. It is designed for quick entry on
 
 Before entering real expenses:
 
-1. Run [`supabase/migrations/20260929000000_expenses.sql`](supabase/migrations/20260929000000_expenses.sql), [`supabase/migrations/20260929010000_expense_subcategories.sql`](supabase/migrations/20260929010000_expense_subcategories.sql), and [`supabase/migrations/20260929020000_private_access.sql`](supabase/migrations/20260929020000_private_access.sql) in order in the Supabase SQL editor.
+1. Run [`supabase/migrations/20260929000000_expenses.sql`](supabase/migrations/20260929000000_expenses.sql), [`supabase/migrations/20260929010000_expense_subcategories.sql`](supabase/migrations/20260929010000_expense_subcategories.sql), [`supabase/migrations/20260929020000_private_access.sql`](supabase/migrations/20260929020000_private_access.sql), and [`supabase/migrations/20260929030000_expense_categories_from_report.sql`](supabase/migrations/20260929030000_expense_categories_from_report.sql) in order in the Supabase SQL editor.
 2. Set the server environment variables `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` shown in `.env.example` on the deployment and local server. Never expose the secret key with a `VITE_` prefix.
 3. Run `npm run access:set-password`. This generates a new password, stores only its salted hash in Supabase, and prints the password once. To choose a password instead, pipe it to the command on standard input. Open `/expenses` on each phone and enter that password.
 

@@ -14,14 +14,12 @@ export type Expense = {
 export type ExpenseSubcategory = { category: string; name: string };
 
 export const DEFAULT_CATEGORIES = [
-  "Nguyên liệu",
-  "Lương & nhân sự",
-  "Điện nước",
-  "Mặt bằng",
-  "Vật tư",
-  "Marketing",
-  "Đi lại",
-  "Khác",
+  "Chi phí rượu",
+  "Chi phí CCDC, NVL",
+  "Chi phí cố định",
+  "Lương Sơn + Dũng",
+  "Tái đầu tư",
+  "Chi ngoài nhóm",
 ];
 
 export function categoryKey(value: string) {

@@ -109,7 +109,7 @@ export default function ExpensesRoute() {
   const amountRef = useRef<HTMLInputElement>(null);
   const lastResponse = useRef<unknown>(null);
 
-  const categories = useMemo(() => [...new Set([...storedCategories, ...localCategories, ...DEFAULT_CATEGORIES])], [storedCategories, localCategories]);
+  const categories = useMemo(() => [...new Set([...DEFAULT_CATEGORIES, ...storedCategories, ...localCategories])], [storedCategories, localCategories]);
   const allSubcategories = useMemo(() => [...storedSubcategories, ...localSubcategories], [storedSubcategories, localSubcategories]);
   const subcategories = useMemo(() => subcategoriesForCategory(allSubcategories, category), [allSubcategories, category]);
   const recentCategories = useMemo(() => expenses.slice(0, 20).map((expense) => expense.category), [expenses]);
@@ -262,12 +262,12 @@ export default function ExpensesRoute() {
                 <p id="amount-hint" className="expense-field-hint">Nhập số tiền, không cần dấu chấm.</p>
 
                 <ExpenseChoiceField id="expense-category" label="NHÓM CHI" hint="Tìm hoặc thêm" value={category}
-                  onChange={changeCategory} options={categories} recent={recentCategories} placeholder="Ví dụ: Nguyên liệu"
+                  onChange={changeCategory} options={categories} recent={recentCategories} placeholder="Ví dụ: Chi phí rượu"
                   createLabel="Tạo nhóm" onCreate={createCategory} canCreate={configured && !busy && !loadError} />
 
                 {category.trim() && <ExpenseChoiceField id="expense-subcategory" label="NHÓM CHI CON" hint="Tìm hoặc thêm"
                   value={subcategory} onChange={setSubcategory} options={subcategories} recent={recentSubcategories}
-                  placeholder="Ví dụ: Trái cây" createLabel="Tạo nhóm con" onCreate={createSubcategory}
+                  placeholder="Ví dụ: Khoản cụ thể" createLabel="Tạo nhóm con" onCreate={createSubcategory}
                   canCreate={configured && !busy && !loadError} optional />}
 
                 <button className="expense-more-toggle" type="button" aria-expanded={showExtra} aria-controls="expense-extra"
